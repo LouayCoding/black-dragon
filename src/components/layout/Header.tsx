@@ -1,21 +1,23 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-
-const navLinks = [
-  { href: '#home', label: '홈 Home' },
-  { href: '#about', label: '소개 About' },
-  { href: '#programs', label: '프로그램 Programs' },
-  { href: '#schedule', label: '일정 Schedule' },
-  { href: '#instructors', label: '사범 Instructors' },
-  { href: '#gallery', label: '갤러리 Gallery' },
-  { href: '#contact', label: '연락 Contact' },
-];
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { href: '#home', label: t('Home', 'Home') },
+    { href: '#about', label: t('Over Ons', 'About') },
+    { href: '#programs', label: t('Programmas', 'Programs') },
+    { href: '#schedule', label: t('Rooster', 'Schedule') },
+    { href: '#instructors', label: t('Instructeurs', 'Instructors') },
+    { href: '#gallery', label: t('Galerij', 'Gallery') },
+    { href: '#contact', label: t('Contact', 'Contact') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +27,10 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'nl' ? 'en' : 'nl');
+  };
 
   return (
     <header
@@ -63,24 +69,43 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden lg:block">
+        {/* Right side buttons */}
+        <div className="hidden lg:flex items-center gap-3">
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
+            aria-label="Toggle language"
+          >
+            <Globe size={18} />
+            <span className="uppercase">{language}</span>
+          </button>
+
           <Button
             asChild
             className="btn-korean bg-primary hover:bg-accent text-primary-foreground px-6"
           >
-            <a href="#register">등록 Register</a>
+            <a href="#register">{t('Inschrijven', 'Register')}</a>
           </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          <button
+            onClick={toggleLanguage}
+            className="p-2 text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle language"
+          >
+            <Globe size={20} />
+          </button>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -106,7 +131,7 @@ export function Header() {
             className="mt-4 btn-korean bg-primary hover:bg-accent text-primary-foreground"
           >
             <a href="#register" onClick={() => setIsMobileMenuOpen(false)}>
-              등록 Register Now
+              {t('Nu Inschrijven', 'Register Now')}
             </a>
           </Button>
         </nav>

@@ -1,3 +1,4 @@
+import { LanguageProvider } from '@/hooks/useLanguage';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -11,20 +12,22 @@ import { Toaster } from '@/components/ui/sonner';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ProgramsSection />
-        <ScheduleSection />
-        <InstructorsSection />
-        <GallerySection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <Toaster position="top-right" />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ProgramsSection />
+          <ScheduleSection />
+          <InstructorsSection />
+          <GallerySection />
+          <ContactSection />
+        </main>
+        <Footer />
+        <Toaster position="top-right" />
+      </div>
+    </LanguageProvider>
   );
 };
 

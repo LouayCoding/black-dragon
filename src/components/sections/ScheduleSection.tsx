@@ -1,42 +1,44 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useLanguage } from '@/hooks/useLanguage';
 import { cn } from '@/lib/utils';
 import { Clock } from 'lucide-react';
 
-const schedule = [
-  { day: 'Monday', classes: [
-    { time: '4:00 PM', name: 'Little Tigers', duration: '45 min' },
-    { time: '5:00 PM', name: 'Youth Program', duration: '60 min' },
-    { time: '6:30 PM', name: 'Adult Training', duration: '75 min' },
-  ]},
-  { day: 'Tuesday', classes: [
-    { time: '4:30 PM', name: 'Youth Program', duration: '60 min' },
-    { time: '6:00 PM', name: 'Teen Warriors', duration: '75 min' },
-    { time: '7:30 PM', name: 'Competition Team', duration: '90 min' },
-  ]},
-  { day: 'Wednesday', classes: [
-    { time: '4:00 PM', name: 'Little Tigers', duration: '45 min' },
-    { time: '5:00 PM', name: 'Youth Program', duration: '60 min' },
-    { time: '6:30 PM', name: 'Adult Training', duration: '75 min' },
-  ]},
-  { day: 'Thursday', classes: [
-    { time: '4:30 PM', name: 'Youth Program', duration: '60 min' },
-    { time: '6:00 PM', name: 'Teen Warriors', duration: '75 min' },
-    { time: '7:30 PM', name: 'Competition Team', duration: '90 min' },
-  ]},
-  { day: 'Friday', classes: [
-    { time: '4:00 PM', name: 'Little Tigers', duration: '45 min' },
-    { time: '5:00 PM', name: 'Family Class', duration: '60 min' },
-    { time: '6:30 PM', name: 'Adult Training', duration: '75 min' },
-  ]},
-  { day: 'Saturday', classes: [
-    { time: '9:00 AM', name: 'All Levels Open Mat', duration: '120 min' },
-    { time: '11:30 AM', name: 'Competition Team', duration: '90 min' },
-    { time: '2:00 PM', name: 'Private Lessons', duration: 'By Appt' },
-  ]},
-];
-
 export function ScheduleSection() {
   const { ref, isVisible } = useScrollReveal();
+  const { t } = useLanguage();
+
+  const schedule = [
+    { day: t('Maandag', 'Monday'), classes: [
+      { time: '16:00', name: t('Kleine Tijgers', 'Little Tigers'), duration: '45 min' },
+      { time: '17:00', name: t('Jeugd Programma', 'Youth Program'), duration: '60 min' },
+      { time: '18:30', name: t('Volwassenen Training', 'Adult Training'), duration: '75 min' },
+    ]},
+    { day: t('Dinsdag', 'Tuesday'), classes: [
+      { time: '16:30', name: t('Jeugd Programma', 'Youth Program'), duration: '60 min' },
+      { time: '18:00', name: t('Tiener Krijgers', 'Teen Warriors'), duration: '75 min' },
+      { time: '19:30', name: t('Wedstrijdteam', 'Competition Team'), duration: '90 min' },
+    ]},
+    { day: t('Woensdag', 'Wednesday'), classes: [
+      { time: '16:00', name: t('Kleine Tijgers', 'Little Tigers'), duration: '45 min' },
+      { time: '17:00', name: t('Jeugd Programma', 'Youth Program'), duration: '60 min' },
+      { time: '18:30', name: t('Volwassenen Training', 'Adult Training'), duration: '75 min' },
+    ]},
+    { day: t('Donderdag', 'Thursday'), classes: [
+      { time: '16:30', name: t('Jeugd Programma', 'Youth Program'), duration: '60 min' },
+      { time: '18:00', name: t('Tiener Krijgers', 'Teen Warriors'), duration: '75 min' },
+      { time: '19:30', name: t('Wedstrijdteam', 'Competition Team'), duration: '90 min' },
+    ]},
+    { day: t('Vrijdag', 'Friday'), classes: [
+      { time: '16:00', name: t('Kleine Tijgers', 'Little Tigers'), duration: '45 min' },
+      { time: '17:00', name: t('Gezinsles', 'Family Class'), duration: '60 min' },
+      { time: '18:30', name: t('Volwassenen Training', 'Adult Training'), duration: '75 min' },
+    ]},
+    { day: t('Zaterdag', 'Saturday'), classes: [
+      { time: '09:00', name: t('Open Training Alle Niveaus', 'All Levels Open Mat'), duration: '120 min' },
+      { time: '11:30', name: t('Wedstrijdteam', 'Competition Team'), duration: '90 min' },
+      { time: '14:00', name: t('Privélessen', 'Private Lessons'), duration: t('Op afspraak', 'By Appt') },
+    ]},
+  ];
 
   return (
     <section id="schedule" className="py-24 bg-background relative">
@@ -46,13 +48,15 @@ export function ScheduleSection() {
           "text-center max-w-3xl mx-auto mb-16 transition-all duration-700",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          <p className="text-primary font-medium tracking-widest text-sm mb-4">일정 SCHEDULE</p>
+          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('ROOSTER', 'SCHEDULE')}</p>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Weekly <span className="text-primary">Class Schedule</span>
+            {t('Wekelijks ', 'Weekly ')}<span className="text-primary">{t('Lesrooster', 'Class Schedule')}</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Find the perfect class time that fits your schedule. 
-            We offer flexible training options throughout the week.
+            {t(
+              'Vind de perfecte lestijd die in je schema past. We bieden flexibele trainingsopties gedurende de hele week.',
+              'Find the perfect class time that fits your schedule. We offer flexible training options throughout the week.'
+            )}
           </p>
         </div>
 
@@ -103,7 +107,10 @@ export function ScheduleSection() {
           "text-center text-muted-foreground text-sm mt-10 transition-all duration-700 delay-400",
           isVisible ? "opacity-100" : "opacity-0"
         )}>
-          * Schedule subject to change for holidays and special events. Contact us for the most current information.
+          {t(
+            '* Rooster kan wijzigen tijdens feestdagen en speciale evenementen. Neem contact op voor de meest actuele informatie.',
+            '* Schedule subject to change for holidays and special events. Contact us for the most current information.'
+          )}
         </p>
       </div>
     </section>
