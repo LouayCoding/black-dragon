@@ -1,6 +1,7 @@
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
+import heroBgImg from '@/assets/hero-bg.jpg';
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -8,10 +9,22 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBgImg})` }}
+      />
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-secondary/80" />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 via-transparent to-secondary" />
+
       {/* Animated Background Pattern */}
-      <div className="absolute inset-0 korean-pattern opacity-30" />
+      <div className="absolute inset-0 korean-pattern opacity-20" />
       
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-32 h-32 border border-primary/20 rounded-full animate-float" />
