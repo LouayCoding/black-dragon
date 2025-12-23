@@ -16,6 +16,7 @@ export function Header() {
     { href: '#schedule', label: t('Rooster', 'Schedule') },
     { href: '#instructors', label: t('Instructeurs', 'Instructors') },
     { href: '#gallery', label: t('Galerij', 'Gallery') },
+    { href: '#faq', label: t('FAQ', 'FAQ') },
     { href: '#contact', label: t('Contact', 'Contact') },
   ];
 
