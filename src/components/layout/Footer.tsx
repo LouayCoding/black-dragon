@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -5,21 +6,23 @@ export function Footer() {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { label: t('Over Ons', 'About Us'), href: '#about' },
-    { label: t('Programmas', 'Programs'), href: '#programs' },
-    { label: t('Rooster', 'Schedule'), href: '#schedule' },
-    { label: t('Instructeurs', 'Instructors'), href: '#instructors' },
-    { label: t('Galerij', 'Gallery'), href: '#gallery' },
-    { label: t('Contact', 'Contact'), href: '#contact' },
+    { label: t('Over Ons', 'About Us'), href: '/about' },
+    { label: t('Programmas', 'Programs'), href: '/programs' },
+    { label: t('Rooster', 'Schedule'), href: '/schedule' },
+    { label: t('Prijzen', 'Pricing'), href: '/pricing' },
+    { label: t('Instructeurs', 'Instructors'), href: '/instructors' },
+    { label: t('Galerij', 'Gallery'), href: '/gallery' },
+    { label: t('FAQ', 'FAQ'), href: '/faq' },
+    { label: t('Contact', 'Contact'), href: '/contact' },
   ];
 
   const programs = [
-    t('Kinderlessen', 'Children Classes'),
-    t('Tiener Programma', 'Teen Programs'),
-    t('Volwassenen Training', 'Adult Training'),
-    t('Gezinslessen', 'Family Classes'),
-    t('Wedstrijdteam', 'Competition Team'),
-    t('Privélessen', 'Private Lessons'),
+    { label: t('Kinderlessen', 'Children Classes'), href: '/programs' },
+    { label: t('Tiener Programma', 'Teen Programs'), href: '/programs' },
+    { label: t('Volwassenen Training', 'Adult Training'), href: '/programs' },
+    { label: t('Gezinslessen', 'Family Classes'), href: '/programs' },
+    { label: t('Wedstrijdteam', 'Competition Team'), href: '/programs' },
+    { label: t('Privélessen', 'Private Lessons'), href: '/contact' },
   ];
 
   return (
@@ -29,15 +32,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center transition-transform group-hover:scale-110">
                 <span className="text-primary-foreground font-serif text-xl font-bold">道</span>
               </div>
               <div>
                 <h3 className="font-serif text-lg font-bold">태권도</h3>
                 <p className="text-xs text-secondary-foreground/60 tracking-widest">TAEKWONDO</p>
               </div>
-            </div>
+            </Link>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed mb-6">
               {t(
                 'Ontdek de oude Koreaanse krijgskunst Taekwondo. Bouw kracht, discipline en zelfvertrouwen op door onze deskundige programmas.',
@@ -62,13 +65,13 @@ export function Footer() {
             <h4 className="font-serif text-lg font-semibold mb-6">{t('Snelle Links', 'Quick Links')}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
+                <li key={link.href + link.label}>
+                  <Link
+                    to={link.href}
                     className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -79,13 +82,13 @@ export function Footer() {
             <h4 className="font-serif text-lg font-semibold mb-6">{t('Onze Programmas', 'Our Programs')}</h4>
             <ul className="space-y-3">
               {programs.map((program) => (
-                <li key={program}>
-                  <a
-                    href="#programs"
+                <li key={program.label}>
+                  <Link
+                    to={program.href}
                     className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
-                    {program}
-                  </a>
+                    {program.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -126,12 +129,12 @@ export function Footer() {
             © {new Date().getFullYear()} Taekwondo Dojang. {t('Alle rechten voorbehouden.', 'All rights reserved.')}
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-secondary-foreground/50 hover:text-primary text-sm transition-colors">
+            <Link to="/faq" className="text-secondary-foreground/50 hover:text-primary text-sm transition-colors">
               {t('Privacybeleid', 'Privacy Policy')}
-            </a>
-            <a href="#" className="text-secondary-foreground/50 hover:text-primary text-sm transition-colors">
+            </Link>
+            <Link to="/faq" className="text-secondary-foreground/50 hover:text-primary text-sm transition-colors">
               {t('Algemene Voorwaarden', 'Terms of Service')}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
