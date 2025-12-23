@@ -17,6 +17,7 @@ export function Header() {
     { href: '/about', label: t('Over Ons', 'About') },
     { href: '/programs', label: t('Programmas', 'Programs') },
     { href: '/schedule', label: t('Rooster', 'Schedule') },
+    { href: '/pricing', label: t('Prijzen', 'Pricing') },
     { href: '/instructors', label: t('Instructeurs', 'Instructors') },
     { href: '/testimonials', label: t('Getuigenissen', 'Testimonials') },
     { href: '/gallery', label: t('Galerij', 'Gallery') },
