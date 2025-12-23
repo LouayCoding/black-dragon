@@ -1,18 +1,38 @@
-import { LanguageProvider } from '@/hooks/useLanguage';
+import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { PageHero } from '@/components/PageHero';
 import { GallerySection } from '@/components/sections/GallerySection';
+import { BackToTop } from '@/components/BackToTop';
+
+function GalleryContent() {
+  const { t } = useLanguage();
+  
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="pt-20">
+        <PageHero
+          koreanText="갤러리"
+          title={t('Foto', 'Photo')}
+          titleHighlight={t('Galerij', 'Gallery')}
+          subtitle={t(
+            'Bekijk momenten van excellentie, toewijding en prestaties van onze gemeenschap.',
+            'View moments of excellence, dedication, and achievements from our community.'
+          )}
+        />
+        <GallerySection />
+      </main>
+      <Footer />
+      <BackToTop />
+    </div>
+  );
+}
 
 const GalleryPage = () => {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main className="pt-20">
-          <GallerySection />
-        </main>
-        <Footer />
-      </div>
+      <GalleryContent />
     </LanguageProvider>
   );
 };

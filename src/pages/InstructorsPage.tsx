@@ -1,18 +1,38 @@
-import { LanguageProvider } from '@/hooks/useLanguage';
+import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { PageHero } from '@/components/PageHero';
 import { InstructorsSection } from '@/components/sections/InstructorsSection';
+import { BackToTop } from '@/components/BackToTop';
+
+function InstructorsContent() {
+  const { t } = useLanguage();
+  
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="pt-20">
+        <PageHero
+          koreanText="사범"
+          title={t('Onze', 'Our')}
+          titleHighlight={t('Instructeurs', 'Instructors')}
+          subtitle={t(
+            'Leer van wereldklasse meesters met decennia aan ervaring en kampioenschapskwalificaties.',
+            'Learn from world-class masters with decades of experience and championship credentials.'
+          )}
+        />
+        <InstructorsSection />
+      </main>
+      <Footer />
+      <BackToTop />
+    </div>
+  );
+}
 
 const InstructorsPage = () => {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main className="pt-20">
-          <InstructorsSection />
-        </main>
-        <Footer />
-      </div>
+      <InstructorsContent />
     </LanguageProvider>
   );
 };

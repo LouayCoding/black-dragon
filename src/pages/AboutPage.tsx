@@ -1,18 +1,38 @@
-import { LanguageProvider } from '@/hooks/useLanguage';
+import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { PageHero } from '@/components/PageHero';
 import { AboutSection } from '@/components/sections/AboutSection';
+import { BackToTop } from '@/components/BackToTop';
+
+function AboutContent() {
+  const { t } = useLanguage();
+  
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="pt-20">
+        <PageHero
+          koreanText="소개"
+          title={t('Over', 'About')}
+          titleHighlight={t('Onze School', 'Our School')}
+          subtitle={t(
+            'Ontdek onze geschiedenis, waarden en toewijding aan authentiek Taekwondo onderwijs.',
+            'Discover our history, values, and commitment to authentic Taekwondo education.'
+          )}
+        />
+        <AboutSection />
+      </main>
+      <Footer />
+      <BackToTop />
+    </div>
+  );
+}
 
 const AboutPage = () => {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main className="pt-20">
-          <AboutSection />
-        </main>
-        <Footer />
-      </div>
+      <AboutContent />
     </LanguageProvider>
   );
 };
