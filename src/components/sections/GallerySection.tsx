@@ -4,6 +4,16 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
 
+// Import gallery images
+import highKickImg from '@/assets/gallery/high-kick.jpg';
+import championshipImg from '@/assets/gallery/championship.jpg';
+import blackBeltCeremonyImg from '@/assets/gallery/black-belt-ceremony.jpg';
+import poomsaeImg from '@/assets/gallery/poomsae.jpg';
+import littleTigersImg from '@/assets/gallery/little-tigers.jpg';
+import sparringImg from '@/assets/gallery/sparring.jpg';
+import breakingImg from '@/assets/gallery/breaking.jpg';
+import beltPromotionImg from '@/assets/gallery/belt-promotion.jpg';
+
 export function GallerySection() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -11,14 +21,14 @@ export function GallerySection() {
   const { t } = useLanguage();
 
   const galleryItems = [
-    { id: 1, category: 'training', title: t('Hoge Trap Oefening', 'High Kick Practice'), korean: '차기' },
-    { id: 2, category: 'competition', title: t('Nationaal Kampioenschap', 'National Championship'), korean: '대회' },
-    { id: 3, category: 'ceremony', title: t('Zwarte Band Ceremonie', 'Black Belt Ceremony'), korean: '심사' },
-    { id: 4, category: 'training', title: t('Poomsae Vormen', 'Poomsae Forms'), korean: '품새' },
-    { id: 5, category: 'youth', title: t('Kleine Tijgers Les', 'Little Tigers Class'), korean: '어린이' },
-    { id: 6, category: 'competition', title: t('Sparringwedstrijd', 'Sparring Match'), korean: '겨루기' },
-    { id: 7, category: 'training', title: t('Breektechniek', 'Breaking Technique'), korean: '격파' },
-    { id: 8, category: 'ceremony', title: t('Bandpromotie', 'Belt Promotion'), korean: '승급' },
+    { id: 1, category: 'training', title: t('Hoge Trap Oefening', 'High Kick Practice'), korean: '차기', image: highKickImg },
+    { id: 2, category: 'competition', title: t('Nationaal Kampioenschap', 'National Championship'), korean: '대회', image: championshipImg },
+    { id: 3, category: 'ceremony', title: t('Zwarte Band Ceremonie', 'Black Belt Ceremony'), korean: '심사', image: blackBeltCeremonyImg },
+    { id: 4, category: 'training', title: t('Poomsae Vormen', 'Poomsae Forms'), korean: '품새', image: poomsaeImg },
+    { id: 5, category: 'youth', title: t('Kleine Tijgers Les', 'Little Tigers Class'), korean: '어린이', image: littleTigersImg },
+    { id: 6, category: 'competition', title: t('Sparringwedstrijd', 'Sparring Match'), korean: '겨루기', image: sparringImg },
+    { id: 7, category: 'training', title: t('Breektechniek', 'Breaking Technique'), korean: '격파', image: breakingImg },
+    { id: 8, category: 'ceremony', title: t('Bandpromotie', 'Belt Promotion'), korean: '승급', image: beltPromotionImg },
   ];
 
   const categories = [
@@ -83,18 +93,18 @@ export function GallerySection() {
             <button
               key={item.id}
               onClick={() => setSelectedImage(item.id)}
-              className="group relative aspect-square overflow-hidden rounded-lg bg-gradient-dark cursor-pointer"
+              className="group relative aspect-square overflow-hidden rounded-lg cursor-pointer"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              {/* Placeholder content */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-serif text-4xl text-primary/30 group-hover:text-primary/50 transition-colors">
-                  {item.korean}
-                </span>
-              </div>
+              {/* Image */}
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <p className="text-secondary-foreground font-medium text-sm">{item.title}</p>
                   <p className="text-secondary-foreground/60 text-xs">{item.korean}</p>
@@ -119,15 +129,15 @@ export function GallerySection() {
             >
               <X size={32} />
             </button>
-            <div className="max-w-4xl w-full aspect-video bg-gradient-dark rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <span className="font-serif text-8xl text-primary/30">
-                  {galleryItems.find(i => i.id === selectedImage)?.korean}
-                </span>
-                <p className="text-secondary-foreground mt-4">
-                  {galleryItems.find(i => i.id === selectedImage)?.title}
-                </p>
-              </div>
+            <div className="max-w-4xl w-full">
+              <img 
+                src={galleryItems.find(i => i.id === selectedImage)?.image}
+                alt={galleryItems.find(i => i.id === selectedImage)?.title}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
+              <p className="text-secondary-foreground text-center mt-4 text-lg">
+                {galleryItems.find(i => i.id === selectedImage)?.title}
+              </p>
             </div>
           </div>
         )}
