@@ -403,3 +403,7 @@ We thank everyone for their patience during the renovation. The new room is the 
 export function getNewsById(id: string): NewsItem | undefined {
   return newsData.find(item => item.id === id);
 }
+
+export function getRelatedNews(currentId: string, limit: number = 3): NewsItem[] {
+  return newsData.filter(item => item.id !== currentId).slice(0, limit);
+}
