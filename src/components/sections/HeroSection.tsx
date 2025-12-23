@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -65,7 +66,7 @@ export function HeroSection() {
               size="lg"
               className="btn-korean bg-primary hover:bg-accent text-primary-foreground px-8 py-6 text-lg font-semibold shadow-glow"
             >
-              <a href="#register">{t('Start Je Reis', 'Start Your Journey')}</a>
+              <Link to="/contact">{t('Start Je Reis', 'Start Your Journey')}</Link>
             </Button>
             <Button
               asChild
@@ -73,7 +74,7 @@ export function HeroSection() {
               size="lg"
               className="border-korean-white/30 text-korean-white hover:bg-korean-white/10 px-8 py-6 text-lg"
             >
-              <a href="#programs">{t('Bekijk Programmas', 'Explore Programs')}</a>
+              <Link to="/programs">{t('Bekijk Programmas', 'Explore Programs')}</Link>
             </Button>
           </div>
 
