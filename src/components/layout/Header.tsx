@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useTheme } from '@/hooks/useTheme';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -93,6 +95,20 @@ export function Header() {
 
         {/* Right side buttons */}
         <div className="hidden lg:flex items-center gap-3">
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className={cn(
+              "p-2 rounded-full transition-colors",
+              isHomePage && !isScrolled
+                ? "text-white/70 hover:text-white hover:bg-white/10"
+                : "text-foreground/70 hover:text-primary hover:bg-muted"
+            )}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
@@ -118,6 +134,18 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <div className="lg:hidden flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className={cn(
+              "p-2 transition-colors",
+              isHomePage && !isScrolled
+                ? "text-white hover:text-white/80"
+                : "text-foreground hover:text-primary"
+            )}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <button
             onClick={toggleLanguage}
             className={cn(
