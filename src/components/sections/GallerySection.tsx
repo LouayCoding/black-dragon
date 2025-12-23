@@ -1,31 +1,33 @@
 import { useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useLanguage } from '@/hooks/useLanguage';
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
-
-const galleryItems = [
-  { id: 1, category: 'training', title: 'High Kick Practice', korean: '차기' },
-  { id: 2, category: 'competition', title: 'National Championship', korean: '대회' },
-  { id: 3, category: 'ceremony', title: 'Black Belt Ceremony', korean: '심사' },
-  { id: 4, category: 'training', title: 'Poomsae Forms', korean: '품새' },
-  { id: 5, category: 'youth', title: 'Little Tigers Class', korean: '어린이' },
-  { id: 6, category: 'competition', title: 'Sparring Match', korean: '겨루기' },
-  { id: 7, category: 'training', title: 'Breaking Technique', korean: '격파' },
-  { id: 8, category: 'ceremony', title: 'Belt Promotion', korean: '승급' },
-];
-
-const categories = [
-  { id: 'all', label: 'All' },
-  { id: 'training', label: 'Training' },
-  { id: 'competition', label: 'Competition' },
-  { id: 'ceremony', label: 'Ceremonies' },
-  { id: 'youth', label: 'Youth' },
-];
 
 export function GallerySection() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const { ref, isVisible } = useScrollReveal();
+  const { t } = useLanguage();
+
+  const galleryItems = [
+    { id: 1, category: 'training', title: t('Hoge Trap Oefening', 'High Kick Practice'), korean: '차기' },
+    { id: 2, category: 'competition', title: t('Nationaal Kampioenschap', 'National Championship'), korean: '대회' },
+    { id: 3, category: 'ceremony', title: t('Zwarte Band Ceremonie', 'Black Belt Ceremony'), korean: '심사' },
+    { id: 4, category: 'training', title: t('Poomsae Vormen', 'Poomsae Forms'), korean: '품새' },
+    { id: 5, category: 'youth', title: t('Kleine Tijgers Les', 'Little Tigers Class'), korean: '어린이' },
+    { id: 6, category: 'competition', title: t('Sparringwedstrijd', 'Sparring Match'), korean: '겨루기' },
+    { id: 7, category: 'training', title: t('Breektechniek', 'Breaking Technique'), korean: '격파' },
+    { id: 8, category: 'ceremony', title: t('Bandpromotie', 'Belt Promotion'), korean: '승급' },
+  ];
+
+  const categories = [
+    { id: 'all', label: t('Alles', 'All') },
+    { id: 'training', label: t('Training', 'Training') },
+    { id: 'competition', label: t('Wedstrijd', 'Competition') },
+    { id: 'ceremony', label: t('Ceremonies', 'Ceremonies') },
+    { id: 'youth', label: t('Jeugd', 'Youth') },
+  ];
 
   const filteredItems = activeCategory === 'all' 
     ? galleryItems 
@@ -39,12 +41,15 @@ export function GallerySection() {
           "text-center max-w-3xl mx-auto mb-12 transition-all duration-700",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          <p className="text-primary font-medium tracking-widest text-sm mb-4">갤러리 GALLERY</p>
+          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('GALERIJ', 'GALLERY')}</p>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Moments of <span className="text-primary">Excellence</span>
+            {t('Momenten van ', 'Moments of ')}<span className="text-primary">{t('Excellentie', 'Excellence')}</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Capturing the spirit, dedication, and achievements of our Taekwondo community.
+            {t(
+              'Het vastleggen van de geest, toewijding en prestaties van onze Taekwondo gemeenschap.',
+              'Capturing the spirit, dedication, and achievements of our Taekwondo community.'
+            )}
           </p>
         </div>
 

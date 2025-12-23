@@ -1,7 +1,10 @@
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="home"
@@ -30,14 +33,16 @@ export function HeroSection() {
           
           {/* Main Heading */}
           <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-korean-white mb-6 leading-tight">
-            The Way of the
-            <span className="block text-primary mt-2">Foot & Fist</span>
+            {t('De Weg van de', 'The Way of the')}
+            <span className="block text-primary mt-2">{t('Voet & Vuist', 'Foot & Fist')}</span>
           </h1>
 
           {/* Subtitle */}
           <p className="animate-fade-up-delay-2 text-korean-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Master the ancient Korean martial art that builds strength, discipline, and unshakeable confidence. 
-            Begin your journey today.
+            {t(
+              'Beheers de oude Koreaanse krijgskunst die kracht, discipline en onwankelbaar zelfvertrouwen opbouwt. Begin vandaag nog met je reis.',
+              'Master the ancient Korean martial art that builds strength, discipline, and unshakeable confidence. Begin your journey today.'
+            )}
           </p>
 
           {/* CTA Buttons */}
@@ -47,7 +52,7 @@ export function HeroSection() {
               size="lg"
               className="btn-korean bg-primary hover:bg-accent text-primary-foreground px-8 py-6 text-lg font-semibold shadow-glow"
             >
-              <a href="#register">Start Your Journey</a>
+              <a href="#register">{t('Start Je Reis', 'Start Your Journey')}</a>
             </Button>
             <Button
               asChild
@@ -55,16 +60,16 @@ export function HeroSection() {
               size="lg"
               className="border-korean-white/30 text-korean-white hover:bg-korean-white/10 px-8 py-6 text-lg"
             >
-              <a href="#programs">Explore Programs</a>
+              <a href="#programs">{t('Bekijk Programmas', 'Explore Programs')}</a>
             </Button>
           </div>
 
           {/* Stats */}
           <div className="animate-fade-up-delay-3 mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
             {[
-              { value: '25+', label: 'Years Experience' },
-              { value: '500+', label: 'Students Trained' },
-              { value: '50+', label: 'Black Belts' },
+              { value: '25+', label: t('Jaar Ervaring', 'Years Experience') },
+              { value: '500+', label: t('Leerlingen', 'Students Trained') },
+              { value: '50+', label: t('Zwarte Banden', 'Black Belts') },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <p className="font-serif text-3xl md:text-4xl font-bold text-primary">{stat.value}</p>
@@ -80,7 +85,7 @@ export function HeroSection() {
         href="#about"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-korean-white/50 hover:text-primary transition-colors duration-300 group"
       >
-        <span className="text-xs tracking-widest">SCROLL</span>
+        <span className="text-xs tracking-widest">{t('SCROLL', 'SCROLL')}</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>
     </section>
