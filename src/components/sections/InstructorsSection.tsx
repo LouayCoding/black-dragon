@@ -3,6 +3,12 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { cn } from '@/lib/utils';
 import { Award, Star } from 'lucide-react';
 
+// Import instructor images
+import grandmasterKimImg from '@/assets/instructors/grandmaster-kim.jpg';
+import masterLeeImg from '@/assets/instructors/master-lee.jpg';
+import masterParkImg from '@/assets/instructors/master-park.jpg';
+import instructorChoiImg from '@/assets/instructors/instructor-choi.jpg';
+
 export function InstructorsSection() {
   const { ref, isVisible } = useScrollReveal();
   const { t } = useLanguage();
@@ -14,6 +20,7 @@ export function InstructorsSection() {
       role: t('Hoofdinstructeur', 'Head Instructor'),
       rank: t('8e Dan Zwarte Band', '8th Dan Black Belt'),
       experience: t('40+ jaar', '40+ years'),
+      image: grandmasterKimImg,
       bio: t(
         'Een levende legende in Koreaanse vechtkunsten, Grootmeester Kim heeft zijn leven gewijd aan het behouden van de authentieke tradities van Taekwondo terwijl hij leermethoden aanpast voor moderne studenten.',
         'A living legend in Korean martial arts, Grandmaster Kim has dedicated his life to preserving the authentic traditions of Taekwondo while adapting teaching methods for modern students.'
@@ -30,6 +37,7 @@ export function InstructorsSection() {
       role: t('Senior Instructeur', 'Senior Instructor'),
       rank: t('6e Dan Zwarte Band', '6th Dan Black Belt'),
       experience: t('25 jaar', '25 years'),
+      image: masterLeeImg,
       bio: t(
         'Meester Lee is gespecialiseerd in vormen en wedstrijdvoorbereiding. Haar studenten hebben talloze nationale en internationale kampioenschappen gewonnen.',
         'Master Lee specializes in forms and competition preparation. Her students have won numerous national and international championships.'
@@ -46,6 +54,7 @@ export function InstructorsSection() {
       role: t('Wedstrijdcoach', 'Competition Coach'),
       rank: t('5e Dan Zwarte Band', '5th Dan Black Belt'),
       experience: t('18 jaar', '18 years'),
+      image: masterParkImg,
       bio: t(
         'Voormalig nationaal team atleet, Meester Park brengt elite-niveau trainingstechnieken en competitieve mentaliteitsontwikkeling naar ons wedstrijdteam.',
         'Former national team athlete, Master Park brings elite-level training techniques and competitive mindset development to our competition team.'
@@ -62,6 +71,7 @@ export function InstructorsSection() {
       role: t('Leider Kinderprogramma', "Children's Program Lead"),
       rank: t('4e Dan Zwarte Band', '4th Dan Black Belt'),
       experience: t('12 jaar', '12 years'),
+      image: instructorChoiImg,
       bio: t(
         'Specialist in vroegkinderlijke vechtsporteducatie, Instructeur Choi maakt het leren van Taekwondo leuk en boeiend voor onze jongste leerlingen.',
         'Specialist in early childhood martial arts education, Instructor Choi makes learning Taekwondo fun and engaging for our youngest students.'
@@ -109,11 +119,13 @@ export function InstructorsSection() {
               style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
               <div className="flex flex-col sm:flex-row">
-                {/* Photo Placeholder */}
-                <div className="sm:w-48 h-48 sm:h-auto bg-gradient-dark flex items-center justify-center flex-shrink-0">
-                  <div className="text-center">
-                    <span className="font-serif text-5xl text-primary/50">{instructor.korean}</span>
-                  </div>
+                {/* Photo */}
+                <div className="sm:w-48 h-48 sm:h-auto flex-shrink-0 overflow-hidden">
+                  <img 
+                    src={instructor.image} 
+                    alt={instructor.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
 
                 {/* Content */}
