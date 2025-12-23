@@ -1,9 +1,71 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
+
+interface NewsletterSubscription {
+  id: string;
+  email: string;
+  createdAt: string;
+}
 
 export function Footer() {
   const { t } = useLanguage();
+  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscriptions, setSubscriptions] = useLocalStorage<NewsletterSubscription[]>('newsletter-subscriptions', []);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) return;
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: t('Ongeldig e-mailadres', 'Invalid email address'),
+        description: t('Voer een geldig e-mailadres in.', 'Please enter a valid email address.'),
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    // Check if already subscribed
+    if (subscriptions.some(sub => sub.email.toLowerCase() === email.toLowerCase())) {
+      toast({
+        title: t('Al aangemeld', 'Already subscribed'),
+        description: t('Dit e-mailadres is al aangemeld voor onze nieuwsbrief.', 'This email is already subscribed to our newsletter.'),
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    const newSubscription: NewsletterSubscription = {
+      id: Date.now().toString(),
+      email: email.trim(),
+      createdAt: new Date().toISOString(),
+    };
+
+    setSubscriptions([...subscriptions, newSubscription]);
+    setEmail('');
+    setIsSubmitting(false);
+
+    toast({
+      title: t('Succesvol aangemeld!', 'Successfully subscribed!'),
+      description: t('Bedankt voor je aanmelding voor onze nieuwsbrief.', 'Thank you for subscribing to our newsletter.'),
+    });
+  };
 
   const quickLinks = [
     { label: t('Over Ons', 'About Us'), href: '/about' },
@@ -27,6 +89,37 @@ export function Footer() {
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
+      {/* Newsletter Section */}
+      <div className="bg-primary/10 border-b border-primary/20">
+        <div className="container mx-auto px-4 py-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
+              {t('Blijf op de hoogte', 'Stay Updated')}
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              {t(
+                'Ontvang het laatste nieuws, evenementen en exclusieve aanbiedingen direct in je inbox.',
+                'Get the latest news, events, and exclusive offers delivered straight to your inbox.'
+              )}
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <Input
+                type="email"
+                placeholder={t('Je e-mailadres', 'Your email address')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 bg-card border-border focus:border-primary"
+                required
+              />
+              <Button type="submit" disabled={isSubmitting} className="gap-2">
+                <Send size={16} />
+                {isSubmitting ? t('Aanmelden...', 'Subscribing...') : t('Aanmelden', 'Subscribe')}
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
