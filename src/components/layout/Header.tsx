@@ -53,10 +53,16 @@ export function Header() {
             <span className="text-primary-foreground font-serif text-xl font-bold">道</span>
           </div>
           <div className="hidden sm:block">
-            <h1 className="font-serif text-lg font-bold text-foreground leading-tight">
+            <h1 className={cn(
+              "font-serif text-lg font-bold leading-tight transition-colors",
+              isHomePage && !isScrolled ? "text-white" : "text-foreground"
+            )}>
               태권도
             </h1>
-            <p className="text-xs text-muted-foreground tracking-widest">TAEKWONDO</p>
+            <p className={cn(
+              "text-xs tracking-widest transition-colors",
+              isHomePage && !isScrolled ? "text-white/70" : "text-muted-foreground"
+            )}>TAEKWONDO</p>
           </div>
         </Link>
 
@@ -70,7 +76,9 @@ export function Header() {
                 "px-4 py-2 text-sm font-medium transition-colors duration-300 relative group",
                 location.pathname === link.href
                   ? "text-primary"
-                  : "text-foreground/80 hover:text-primary"
+                  : isHomePage && !isScrolled
+                    ? "text-white/90 hover:text-white"
+                    : "text-foreground/80 hover:text-primary"
               )}
             >
               {link.label}
@@ -87,7 +95,12 @@ export function Header() {
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
+            className={cn(
+              "flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors",
+              isHomePage && !isScrolled
+                ? "text-white/70 hover:text-white"
+                : "text-foreground/70 hover:text-primary"
+            )}
             aria-label="Toggle language"
           >
             <Globe size={18} />
@@ -106,14 +119,24 @@ export function Header() {
         <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={toggleLanguage}
-            className="p-2 text-foreground hover:text-primary transition-colors"
+            className={cn(
+              "p-2 transition-colors",
+              isHomePage && !isScrolled
+                ? "text-white hover:text-white/80"
+                : "text-foreground hover:text-primary"
+            )}
             aria-label="Toggle language"
           >
             <Globe size={20} />
           </button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-foreground hover:text-primary transition-colors"
+            className={cn(
+              "p-2 transition-colors",
+              isHomePage && !isScrolled
+                ? "text-white hover:text-white/80"
+                : "text-foreground hover:text-primary"
+            )}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
