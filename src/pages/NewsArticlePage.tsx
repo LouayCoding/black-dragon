@@ -3,7 +3,7 @@ import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BackToTop } from '@/components/BackToTop';
-import { getNewsById } from '@/data/newsData';
+import { getNewsById, getRelatedNews } from '@/data/newsData';
 import { Calendar, ArrowLeft, Tag, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -11,6 +11,7 @@ function NewsArticleContent() {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
   const article = id ? getNewsById(id) : undefined;
+  const relatedArticles = id ? getRelatedNews(id, 3) : [];
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -176,6 +177,57 @@ function NewsArticleContent() {
                 </Link>
               </div>
             </div>
+
+            {/* Related Articles */}
+            {relatedArticles.length > 0 && (
+              <div className="max-w-5xl mx-auto mt-16">
+                <h2 className="font-serif text-2xl font-bold text-foreground mb-8 text-center">
+                  {t('Gerelateerde Artikelen', 'Related Articles')}
+                </h2>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {relatedArticles.map((related) => {
+                    const relatedTitle = language === 'nl' ? related.title.nl : related.title.en;
+                    const relatedExcerpt = language === 'nl' ? related.excerpt.nl : related.excerpt.en;
+                    const relatedType = language === 'nl' ? related.type.nl : related.type.en;
+
+                    return (
+                      <Link
+                        key={related.id}
+                        to={`/news/${related.id}`}
+                        className="group bg-card rounded-lg border border-border overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+                      >
+                        <div className="relative h-40 overflow-hidden">
+                          <img
+                            src={related.image}
+                            alt={relatedTitle}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent" />
+                          <span className={cn(
+                            "absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-semibold",
+                            getTypeColor(relatedType)
+                          )}>
+                            {relatedType}
+                          </span>
+                        </div>
+                        <div className="p-4">
+                          <div className="flex items-center gap-2 text-muted-foreground text-xs mb-2">
+                            <Calendar className="w-3 h-3" />
+                            <time dateTime={related.date}>{formatDate(related.date)}</time>
+                          </div>
+                          <h3 className="font-serif font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
+                            {relatedTitle}
+                          </h3>
+                          <p className="text-muted-foreground text-sm line-clamp-2">
+                            {relatedExcerpt}
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         </article>
       </main>
