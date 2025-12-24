@@ -21,9 +21,9 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 8%;
 
-    /* Primary - Traditional Korean Red (Dancheongsaek) */
-    --primary: 0 75% 45%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - Orange/Gold */
+    --primary: 39 98% 50%;
+    --primary-foreground: 0 0% 0%;
 
     /* Secondary - Elegant Black */
     --secondary: 0 0% 8%;
@@ -32,47 +32,47 @@
     --muted: 0 0% 94%;
     --muted-foreground: 0 0% 40%;
 
-    /* Accent - Deep Korean Red */
-    --accent: 0 70% 38%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Darker Orange */
+    --accent: 39 90% 45%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 88%;
     --input: 0 0% 88%;
-    --ring: 0 75% 45%;
+    --ring: 39 98% 50%;
 
     --radius: 0.25rem;
 
     /* Custom Korean palette */
-    --korean-red: 0 75% 45%;
-    --korean-red-dark: 0 70% 35%;
-    --korean-red-light: 0 65% 55%;
+    --korean-red: 39 98% 50%;
+    --korean-red-dark: 39 90% 40%;
+    --korean-red-light: 39 95% 60%;
     --korean-black: 0 0% 8%;
     --korean-white: 0 0% 98%;
     --korean-gold: 45 85% 50%;
     --korean-cream: 40 30% 95%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 15%) 50%, hsl(0 75% 25%) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(0 75% 45%) 0%, hsl(0 70% 35%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 15%) 50%, hsl(39 98% 35%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(39 98% 50%) 0%, hsl(39 90% 40%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 12%) 100%);
 
     /* Shadows */
     --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.15);
     --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
-    --shadow-glow: 0 0 60px hsl(0 75% 45% / 0.3);
+    --shadow-glow: 0 0 60px hsl(39 98% 50% / 0.3);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 0 75% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 39 98% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: 0 0% 94%;
     --sidebar-accent-foreground: 0 0% 15%;
     --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 0 75% 45%;
+    --sidebar-ring: 39 98% 50%;
   }
 
   .dark {
@@ -85,8 +85,8 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 0 70% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 39 98% 55%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 95%;
@@ -94,30 +94,30 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 65% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 39 90% 48%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 0 70% 50%;
+    --ring: 39 98% 55%;
 
-    --korean-red: 0 70% 50%;
-    --korean-red-dark: 0 65% 40%;
-    --korean-red-light: 0 60% 60%;
+    --korean-red: 39 98% 55%;
+    --korean-red-dark: 39 90% 45%;
+    --korean-red-light: 39 95% 65%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 50%, hsl(0 70% 15%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 50%, hsl(39 98% 25%) 100%);
 
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 0 70% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 39 98% 55%;
+    --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 90%;
     --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 0 70% 50%;
+    --sidebar-ring: 39 98% 55%;
   }
 }
 
@@ -330,4 +330,17 @@
 /* Smooth scroll offset for fixed header */
 section[id] {
   scroll-margin-top: 80px;
+}
+
+/* Professional spacing system */
+.section-padding {
+  @apply py-12 md:py-16 lg:py-20;
+}
+
+.section-padding-lg {
+  @apply py-16 md:py-20 lg:py-24;
+}
+
+.section-padding-sm {
+  @apply py-8 md:py-12 lg:py-16;
 }

@@ -96,7 +96,7 @@ export function ProgramsSection() {
   ];
 
   return (
-    <section id="programs" className="py-24 bg-muted/50 relative overflow-hidden">
+    <section id="programs" className="section-padding bg-muted/30 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
       
@@ -124,7 +124,7 @@ export function ProgramsSection() {
             <div
               key={index}
               className={cn(
-                "group bg-card rounded-lg border border-border p-6 hover:border-primary/50 hover:shadow-card transition-all duration-500",
+                "group bg-card rounded-xl border border-border p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               )}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}

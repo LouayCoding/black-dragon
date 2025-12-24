@@ -10,31 +10,22 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBgImg})` }}
+        style={{ 
+          backgroundImage: `url(/hero.jpg)`,
+        }}
       />
       
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-secondary/80" />
+      {/* Dark Overlay with Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/85 to-black/90" />
       
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 via-transparent to-secondary" />
-
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 korean-pattern opacity-20" />
-      
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 border border-primary/20 rounded-full animate-float" />
-      <div className="absolute bottom-40 right-20 w-24 h-24 border border-primary/30 rounded-full animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/3 right-1/4 w-4 h-4 bg-primary/40 rounded-full animate-pulse-glow" />
-      
-      {/* Korean Calligraphy Background */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5 select-none pointer-events-none">
-        <span className="font-serif text-[40vw] text-primary-foreground leading-none">道</span>
+      {/* Subtle Red Accent */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-transparent to-transparent" />
       </div>
 
       {/* Main Content */}
@@ -46,13 +37,13 @@ export function HeroSection() {
           </p>
           
           {/* Main Heading */}
-          <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-korean-white mb-6 leading-tight">
+          <h1 className="animate-fade-up-delay-1 font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-korean-white mb-6 leading-tight">
             {t('De Weg van de', 'The Way of the')}
             <span className="block text-primary mt-2">{t('Voet & Vuist', 'Foot & Fist')}</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="animate-fade-up-delay-2 text-korean-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="animate-fade-up-delay-2 text-korean-white/70 text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
             {t(
               'Beheers de oude Koreaanse krijgskunst die kracht, discipline en onwankelbaar zelfvertrouwen opbouwt. Begin vandaag nog met je reis.',
               'Master the ancient Korean martial art that builds strength, discipline, and unshakeable confidence. Begin your journey today.'
@@ -79,7 +70,7 @@ export function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div className="animate-fade-up-delay-3 mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+          <div className="animate-fade-up-delay-3 mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto">
             {[
               { value: '25+', label: t('Jaar Ervaring', 'Years Experience') },
               { value: '500+', label: t('Leerlingen', 'Students Trained') },

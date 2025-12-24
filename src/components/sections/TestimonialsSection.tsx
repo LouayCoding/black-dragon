@@ -65,7 +65,7 @@ export function TestimonialsSection() {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-background relative overflow-hidden">
+    <section id="testimonials" className="section-padding bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
@@ -94,7 +94,7 @@ export function TestimonialsSection() {
             <div
               key={index}
               className={cn(
-                "group bg-card border border-border rounded-lg p-6 hover:border-primary/30 hover:shadow-card transition-all duration-500",
+                "group bg-card border border-border rounded-xl p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               )}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}

@@ -51,22 +51,12 @@ export function Header() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-            <span className="text-primary-foreground font-serif text-xl font-bold">道</span>
-          </div>
-          <div className="hidden sm:block">
-            <h1 className={cn(
-              "font-serif text-lg font-bold leading-tight transition-colors",
-              isHomePage && !isScrolled ? "text-white" : "text-foreground"
-            )}>
-              태권도
-            </h1>
-            <p className={cn(
-              "text-xs tracking-widest transition-colors",
-              isHomePage && !isScrolled ? "text-white/70" : "text-muted-foreground"
-            )}>TAEKWONDO</p>
-          </div>
+        <Link to="/" className="group">
+          <img 
+            src="/logo.png" 
+            alt="Taekwondo Logo" 
+            className="h-16 w-auto transition-transform duration-300 group-hover:scale-110"
+          />
         </Link>
 
         {/* Desktop Navigation */}

@@ -7,7 +7,7 @@ export function AboutSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-24 bg-background relative overflow-hidden">
+    <section id="about" className="section-padding bg-background relative overflow-hidden">
       {/* Decorative Pattern */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       
@@ -70,7 +70,7 @@ export function AboutSection() {
               ].map((value, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-card rounded border border-border hover:border-primary/50 transition-colors group"
+                  className="p-5 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300 group"
                 >
                   <p className="text-primary font-serif text-xl mb-1 group-hover:scale-110 transition-transform inline-block">
                     {value.korean}

@@ -56,7 +56,7 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-muted/50 relative">
+    <section id="contact" className="section-padding bg-muted/30 relative">
       <div ref={ref} className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Info */}
@@ -92,9 +92,14 @@ export function ContactSection() {
 
           {/* Registration Form */}
           <div id="register" className={cn(
-            "bg-card rounded-lg border border-border p-8 transition-all duration-700 delay-200",
+            "relative bg-gradient-to-br from-card via-card to-muted/30 rounded-xl border border-border p-8 shadow-lg transition-all duration-700 delay-200 overflow-hidden",
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
           )}>
+            {/* Decorative accent */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
+            
+            <div className="relative">
             <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">{t('Nu Inschrijven', 'Register Now')}</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <Input
@@ -149,6 +154,7 @@ export function ContactSection() {
                 {isSubmitting ? t('Verzenden...', 'Submitting...') : t('Gratis Proefles Aanvragen', 'Request Free Trial')}
               </Button>
             </form>
+            </div>
           </div>
         </div>
       </div>

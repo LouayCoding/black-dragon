@@ -88,30 +88,41 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      {/* Newsletter Section */}
-      <div className="bg-primary/10 border-b border-primary/20">
-        <div className="container mx-auto px-4 py-10">
+    <footer className="bg-black text-white">
+      {/* Newsletter Section - Simplified */}
+      <div className="bg-muted/30 border-b border-border">
+        <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
+            {/* Heading */}
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
               {t('Blijf op de hoogte', 'Stay Updated')}
             </h3>
+            
+            {/* Description */}
             <p className="text-muted-foreground mb-6">
               {t(
-                'Ontvang het laatste nieuws, evenementen en exclusieve aanbiedingen direct in je inbox.',
-                'Get the latest news, events, and exclusive offers delivered straight to your inbox.'
+                'Ontvang het laatste nieuws en exclusieve aanbiedingen.',
+                'Get the latest news and exclusive offers.'
               )}
             </p>
+            
+            {/* Form */}
             <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input
                 type="email"
                 placeholder={t('Je e-mailadres', 'Your email address')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-card border-border focus:border-primary"
+                className="flex-1 h-12"
                 required
               />
-              <Button type="submit" disabled={isSubmitting} className="gap-2">
+              <Button 
+                type="submit" 
+                disabled={isSubmitting} 
+                variant="outline"
+                size="lg"
+                className="gap-2 h-12 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              >
                 <Send size={16} />
                 {isSubmitting ? t('Aanmelden...', 'Subscribing...') : t('Aanmelden', 'Subscribe')}
               </Button>
@@ -121,7 +132,7 @@ export function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 bg-black">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
@@ -131,10 +142,10 @@ export function Footer() {
               </div>
               <div>
                 <h3 className="font-serif text-lg font-bold">태권도</h3>
-                <p className="text-xs text-secondary-foreground/60 tracking-widest">TAEKWONDO</p>
+                <p className="text-xs text-white/60 tracking-widest">TAEKWONDO</p>
               </div>
             </Link>
-            <p className="text-secondary-foreground/70 text-sm leading-relaxed mb-6">
+            <p className="text-white/70 text-sm leading-relaxed mb-6">
               {t(
                 'Ontdek de oude Koreaanse krijgskunst Taekwondo. Bouw kracht, discipline en zelfvertrouwen op door onze deskundige programmas.',
                 'Discover the ancient Korean martial art of Taekwondo. Build strength, discipline, and confidence through our expert-led programs.'
@@ -145,7 +156,7 @@ export function Footer() {
                 <a
                   key={index}
                   href="#"
-                  className="w-10 h-10 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 >
                   <Icon size={18} />
                 </a>
@@ -161,7 +172,7 @@ export function Footer() {
                 <li key={link.href + link.label}>
                   <Link
                     to={link.href}
-                    className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 text-sm"
+                    className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {link.label}
                   </Link>
@@ -178,7 +189,7 @@ export function Footer() {
                 <li key={program.label}>
                   <Link
                     to={program.href}
-                    className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 text-sm"
+                    className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {program.label}
                   </Link>
@@ -193,20 +204,20 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-secondary-foreground/70 text-sm">
+                <span className="text-white/70 text-sm">
                   Marktstraat 123<br />
                   1234 AB Amsterdam
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary flex-shrink-0" />
-                <a href="tel:+31201234567" className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm">
+                <a href="tel:+31201234567" className="text-white/70 hover:text-primary transition-colors text-sm">
                   (020) 123-4567
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary flex-shrink-0" />
-                <a href="mailto:info@taekwondo.nl" className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm">
+                <a href="mailto:info@taekwondo.nl" className="text-white/70 hover:text-primary transition-colors text-sm">
                   info@taekwondo.nl
                 </a>
               </li>
@@ -218,14 +229,14 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-secondary-foreground/10">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-secondary-foreground/50 text-sm text-center md:text-left">
+          <p className="text-white/50 text-sm text-center md:text-left">
             © {new Date().getFullYear()} Taekwondo Dojang. {t('Alle rechten voorbehouden.', 'All rights reserved.')}
           </p>
           <div className="flex gap-6">
-            <Link to="/faq" className="text-secondary-foreground/50 hover:text-primary text-sm transition-colors">
+            <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
               {t('Privacybeleid', 'Privacy Policy')}
             </Link>
-            <Link to="/faq" className="text-secondary-foreground/50 hover:text-primary text-sm transition-colors">
+            <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
               {t('Algemene Voorwaarden', 'Terms of Service')}
             </Link>
           </div>

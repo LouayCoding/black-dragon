@@ -107,7 +107,7 @@ export function PricingSection() {
   ];
 
   return (
-    <section className="py-24 bg-muted/30 relative">
+    <section className="section-padding bg-muted/30 relative">
       <div ref={ref} className="container mx-auto px-4">
         {/* Plans Grid */}
         <div className={cn(
@@ -118,10 +118,10 @@ export function PricingSection() {
             <div
               key={index}
               className={cn(
-                "relative bg-card rounded-lg border p-6 transition-all duration-500 hover:shadow-card",
+                "relative bg-card rounded-xl border p-6 transition-all duration-300 hover:-translate-y-1",
                 plan.highlighted
-                  ? "border-primary shadow-glow"
-                  : "border-border hover:border-primary/30"
+                  ? "border-primary shadow-lg ring-2 ring-primary/20"
+                  : "border-border hover:border-primary/30 hover:shadow-lg"
               )}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
             >

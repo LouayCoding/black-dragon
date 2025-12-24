@@ -41,7 +41,7 @@ export function ScheduleSection() {
   ];
 
   return (
-    <section id="schedule" className="py-24 bg-background relative">
+    <section id="schedule" className="section-padding bg-background relative">
       <div ref={ref} className="container mx-auto px-4">
         {/* Header */}
         <div className={cn(
@@ -68,7 +68,7 @@ export function ScheduleSection() {
           {schedule.map((daySchedule, dayIndex) => (
             <div
               key={dayIndex}
-              className="bg-card rounded-lg border border-border overflow-hidden hover:border-primary/30 transition-colors"
+              className="bg-card rounded-xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300"
             >
               {/* Day Header */}
               <div className="bg-secondary px-5 py-4">

@@ -5,22 +5,26 @@ interface PageHeroProps {
   titleHighlight?: string;
   subtitle?: string;
   koreanText?: string;
+  backgroundImage?: string;
 }
 
-export function PageHero({ title, titleHighlight, subtitle, koreanText }: PageHeroProps) {
+export function PageHero({ title, titleHighlight, subtitle, koreanText, backgroundImage }: PageHeroProps) {
   return (
-    <section className="relative py-24 md:py-32 bg-secondary overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 korean-pattern opacity-10" />
+    <section className="relative py-16 md:py-20 bg-muted/50 overflow-hidden">
+      {/* Background Image (optional) */}
+      {backgroundImage && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+      )}
       
-      {/* Decorative Elements */}
-      <div className="absolute top-10 right-10 w-32 h-32 border border-primary/20 rounded-full" />
-      <div className="absolute bottom-10 left-10 w-24 h-24 border border-primary/10 rounded-full" />
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted" />
       
-      {/* Korean Character Background */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5 select-none pointer-events-none">
-        <span className="font-serif text-[30vw] text-primary-foreground leading-none">道</span>
-      </div>
+      {/* Red Accent Overlays */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10 text-center">
         {koreanText && (
@@ -30,7 +34,7 @@ export function PageHero({ title, titleHighlight, subtitle, koreanText }: PageHe
         )}
         
         <h1 className={cn(
-          "font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-korean-white mb-6 leading-tight animate-fade-up-delay-1"
+          "font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight animate-fade-up-delay-1"
         )}>
           {title}
           {titleHighlight && (
@@ -39,7 +43,7 @@ export function PageHero({ title, titleHighlight, subtitle, koreanText }: PageHe
         </h1>
         
         {subtitle && (
-          <p className="text-korean-white/70 text-lg md:text-xl max-w-2xl mx-auto animate-fade-up-delay-2">
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto animate-fade-up-delay-2">
             {subtitle}
           </p>
         )}

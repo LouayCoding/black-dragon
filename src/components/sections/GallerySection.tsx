@@ -44,7 +44,7 @@ export function GallerySection() {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-24 bg-background relative">
+    <section id="gallery" className="section-padding bg-background relative">
       <div ref={ref} className="container mx-auto px-4">
         {/* Header */}
         <div className={cn(
@@ -93,7 +93,7 @@ export function GallerySection() {
             <button
               key={item.id}
               onClick={() => setSelectedImage(item.id)}
-              className="group relative aspect-square overflow-hidden rounded-lg cursor-pointer"
+              className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer hover:shadow-lg transition-shadow duration-300"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {/* Image */}
@@ -112,7 +112,7 @@ export function GallerySection() {
               </div>
 
               {/* Hover border effect */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/50 rounded-lg transition-colors" />
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/50 rounded-xl transition-colors" />
             </button>
           ))}
         </div>
