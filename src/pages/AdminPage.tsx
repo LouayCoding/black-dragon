@@ -7,7 +7,8 @@ import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Users, Mail, Calendar, Trash2, Lock, LogOut } from 'lucide-react';
+import { Users, Mail, Calendar, Trash2, Lock, LogOut, Search, X } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
@@ -47,6 +48,11 @@ export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useLocalStorage<boolean>('admin-authenticated', false);
   const [pin, setPin] = useState('');
   const [pinError, setPinError] = useState(false);
+  
+  // Search and filter states
+  const [registrationSearch, setRegistrationSearch] = useState('');
+  const [programFilter, setProgramFilter] = useState<string>('all');
+  const [subscriptionSearch, setSubscriptionSearch] = useState('');
 
   const handlePinSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,6 +107,24 @@ export default function AdminPage() {
       description: t('De nieuwsbrief aanmelding is succesvol verwijderd.', 'The newsletter subscription has been successfully deleted.'),
     });
   };
+
+  // Filter registrations based on search and program filter
+  const filteredRegistrations = registrations.filter((reg) => {
+    const matchesSearch = registrationSearch === '' || 
+      reg.name.toLowerCase().includes(registrationSearch.toLowerCase()) ||
+      reg.email.toLowerCase().includes(registrationSearch.toLowerCase()) ||
+      reg.phone?.toLowerCase().includes(registrationSearch.toLowerCase());
+    
+    const matchesProgram = programFilter === 'all' || reg.program === programFilter;
+    
+    return matchesSearch && matchesProgram;
+  });
+
+  // Filter subscriptions based on search
+  const filteredSubscriptions = subscriptions.filter((sub) => {
+    return subscriptionSearch === '' || 
+      sub.email.toLowerCase().includes(subscriptionSearch.toLowerCase());
+  });
 
   // PIN login screen
   if (!isAuthenticated) {
@@ -199,10 +223,50 @@ export default function AdminPage() {
                   {t('Overzicht van alle proefles aanmeldingen', 'Overview of all trial class registrations')}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
+                {/* Search and Filter Controls */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      placeholder={t('Zoek op naam, email of telefoon...', 'Search by name, email or phone...')}
+                      value={registrationSearch}
+                      onChange={(e) => setRegistrationSearch(e.target.value)}
+                      className="pl-9 pr-9"
+                    />
+                    {registrationSearch && (
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
+                        onClick={() => setRegistrationSearch('')}
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    )}
+                  </div>
+                  <Select value={programFilter} onValueChange={setProgramFilter}>
+                    <SelectTrigger className="w-full sm:w-[200px]">
+                      <SelectValue placeholder={t('Filter op programma', 'Filter by program')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">{t('Alle programma\'s', 'All programs')}</SelectItem>
+                      <SelectItem value="little-tigers">Kleine Tijgers (4-6)</SelectItem>
+                      <SelectItem value="youth">Jeugd Programma (7-12)</SelectItem>
+                      <SelectItem value="teen">Tiener Krijgers (13-17)</SelectItem>
+                      <SelectItem value="adult">Volwassenen Training (18+)</SelectItem>
+                      <SelectItem value="family">Gezinslessen</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
                 {registrations.length === 0 ? (
                   <p className="text-muted-foreground text-center py-8">
                     {t('Nog geen registraties ontvangen.', 'No registrations received yet.')}
+                  </p>
+                ) : filteredRegistrations.length === 0 ? (
+                  <p className="text-muted-foreground text-center py-8">
+                    {t('Geen resultaten gevonden.', 'No results found.')}
                   </p>
                 ) : (
                   <Table>
@@ -217,7 +281,7 @@ export default function AdminPage() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {registrations.map((reg) => (
+                      {filteredRegistrations.map((reg) => (
                         <TableRow key={reg.id}>
                           <TableCell className="font-medium">{reg.name}</TableCell>
                           <TableCell>{reg.email}</TableCell>
@@ -262,10 +326,35 @@ export default function AdminPage() {
                   {t('Overzicht van alle nieuwsbrief abonnees', 'Overview of all newsletter subscribers')}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
+                {/* Search Control */}
+                <div className="relative max-w-md">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder={t('Zoek op email...', 'Search by email...')}
+                    value={subscriptionSearch}
+                    onChange={(e) => setSubscriptionSearch(e.target.value)}
+                    className="pl-9 pr-9"
+                  />
+                  {subscriptionSearch && (
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
+                      onClick={() => setSubscriptionSearch('')}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  )}
+                </div>
+
                 {subscriptions.length === 0 ? (
                   <p className="text-muted-foreground text-center py-8">
                     {t('Nog geen nieuwsbrief aanmeldingen.', 'No newsletter subscriptions yet.')}
+                  </p>
+                ) : filteredSubscriptions.length === 0 ? (
+                  <p className="text-muted-foreground text-center py-8">
+                    {t('Geen resultaten gevonden.', 'No results found.')}
                   </p>
                 ) : (
                   <Table>
@@ -277,7 +366,7 @@ export default function AdminPage() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {subscriptions.map((sub) => (
+                      {filteredSubscriptions.map((sub) => (
                         <TableRow key={sub.id}>
                           <TableCell className="font-medium">{sub.email}</TableCell>
                           <TableCell className="text-muted-foreground text-sm">
