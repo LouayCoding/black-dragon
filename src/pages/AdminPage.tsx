@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { PageHero } from '@/components/PageHero';
@@ -6,8 +7,9 @@ import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Users, Mail, Calendar, Trash2 } from 'lucide-react';
+import { Users, Mail, Calendar, Trash2, Lock, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 
 interface Registration {
@@ -34,11 +36,45 @@ const programLabels: Record<string, string> = {
   'family': 'Gezinslessen',
 };
 
+// PIN code voor admin toegang - wijzig deze naar je eigen code
+const ADMIN_PIN = '1234';
+
 export default function AdminPage() {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [registrations, setRegistrations] = useLocalStorage<Registration[]>('tkd-registrations', []);
   const [subscriptions, setSubscriptions] = useLocalStorage<NewsletterSubscription[]>('newsletter-subscriptions', []);
+  const [isAuthenticated, setIsAuthenticated] = useLocalStorage<boolean>('admin-authenticated', false);
+  const [pin, setPin] = useState('');
+  const [pinError, setPinError] = useState(false);
+
+  const handlePinSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (pin === ADMIN_PIN) {
+      setIsAuthenticated(true);
+      setPinError(false);
+      toast({
+        title: t('Welkom!', 'Welcome!'),
+        description: t('Je bent nu ingelogd als beheerder.', 'You are now logged in as administrator.'),
+      });
+    } else {
+      setPinError(true);
+      toast({
+        title: t('Onjuiste PIN', 'Incorrect PIN'),
+        description: t('Probeer het opnieuw.', 'Please try again.'),
+        variant: 'destructive',
+      });
+    }
+    setPin('');
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    toast({
+      title: t('Uitgelogd', 'Logged out'),
+      description: t('Je bent uitgelogd uit het admin dashboard.', 'You have been logged out of the admin dashboard.'),
+    });
+  };
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('nl-NL', {
@@ -66,6 +102,45 @@ export default function AdminPage() {
     });
   };
 
+  // PIN login screen
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 flex items-center justify-center bg-muted/30">
+          <Card className="w-full max-w-md mx-4">
+            <CardHeader className="text-center">
+              <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Lock className="h-6 w-6 text-primary" />
+              </div>
+              <CardTitle>{t('Admin Toegang', 'Admin Access')}</CardTitle>
+              <CardDescription>
+                {t('Voer de PIN-code in om toegang te krijgen tot het admin dashboard.', 'Enter the PIN code to access the admin dashboard.')}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handlePinSubmit} className="space-y-4">
+                <Input
+                  type="password"
+                  placeholder={t('PIN-code', 'PIN code')}
+                  value={pin}
+                  onChange={(e) => setPin(e.target.value)}
+                  className={pinError ? 'border-destructive' : ''}
+                  maxLength={10}
+                  autoFocus
+                />
+                <Button type="submit" className="w-full">
+                  {t('Inloggen', 'Login')}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -74,6 +149,16 @@ export default function AdminPage() {
           title={t('Admin Dashboard', 'Admin Dashboard')}
           subtitle={t('Beheer registraties en nieuwsbrief aanmeldingen', 'Manage registrations and newsletter subscriptions')}
         />
+
+        {/* Logout Button */}
+        <div className="container mx-auto px-4 pt-8">
+          <div className="flex justify-end">
+            <Button variant="outline" onClick={handleLogout} className="gap-2">
+              <LogOut className="h-4 w-4" />
+              {t('Uitloggen', 'Logout')}
+            </Button>
+          </div>
+        </div>
 
         <section className="py-16">
           <div className="container mx-auto px-4 space-y-12">
