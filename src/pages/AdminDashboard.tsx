@@ -47,6 +47,11 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [overduePayments, setOverduePayments] = useState<(Payment & { student: Student })[]>([]);
+  const [todaysLessons, setTodaysLessons] = useState<Lesson[]>([]);
+  const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
+  const [recentActivity, setRecentActivity] = useState<ActivityLog[]>([]);
+  const [attendanceStats, setAttendanceStats] = useState<{ date: string; present: number; total: number }[]>([]);
 
   useAdminShortcuts();
 
@@ -394,22 +399,19 @@ export default function AdminDashboard() {
                 {t('Snelle Check-in', 'Quick Check-in')}
               </h2>
               <div className="space-y-4">
-                {todaysLessons.map((lesson) => {
-                  // Mock students for this lesson (would come from schedule)
-                  const lessonStudents = students.filter(s => 
-                    (lesson.program === 'Jeugd Training' && s.program === 'youth') ||
-                    (lesson.program === 'Volwassenen' && s.program === 'adult')
-                  ).slice(0, 6);
+                {todaysLessons.length > 0 ? todaysLessons.map((lesson) => {
+                  // Filter students for this lesson based on program
+                  const lessonStudents = students.filter(s => s.program === lesson.program).slice(0, 6);
                   
                   return (
                     <div key={lesson.id} className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-4">
                       <div className="flex items-center justify-between mb-3">
                         <div>
                           <div className="font-medium text-zinc-900 dark:text-zinc-100">
-                            {lesson.program}
+                            {lesson.title}
                           </div>
                           <div className="text-sm text-zinc-500 dark:text-zinc-400">
-                            {lesson.time} • {lessonStudents.length} {t('leerlingen', 'students')}
+                            {lesson.start_time.substring(0, 5)}-{lesson.end_time.substring(0, 5)} • {lessonStudents.length} {t('leerlingen', 'students')}
                           </div>
                         </div>
                         <button
@@ -434,7 +436,11 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                   );
-                })}
+                }) : (
+                  <div className="text-center py-8 text-zinc-500 dark:text-zinc-400">
+                    {t('Geen lessen vandaag', 'No lessons today')}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -466,24 +472,34 @@ export default function AdminDashboard() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Recent Activity */}
               <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6">
-                <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
-                  <FileText className="w-5 h-5" />
+                <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-4">
                   {t('Recente Activiteit', 'Recent Activity')}
                 </h2>
                 <div className="space-y-3">
-                  {recentActivity.map((activity) => (
-                    <div key={activity.id} className="flex items-start gap-3 p-3 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors">
-                      <div className="w-2 h-2 rounded-full bg-blue-600 mt-2" />
-                      <div className="flex-1">
-                        <div className="text-sm text-zinc-900 dark:text-zinc-100">
-                          {activity.text}
-                        </div>
-                        <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
-                          {activity.time}
+                  {recentActivity.length > 0 ? (
+                    recentActivity.map((activity) => (
+                      <div key={activity.id} className="flex items-center gap-3 p-3 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
+                        <div className="w-2 h-2 rounded-full bg-blue-600" />
+                        <div className="flex-1">
+                          <div className="text-sm text-zinc-900 dark:text-zinc-100">
+                            {activity.description}
+                          </div>
+                          <div className="text-xs text-zinc-500 dark:text-zinc-400">
+                            {activity.created_at ? new Date(activity.created_at).toLocaleString('nl-NL', { 
+                              hour: '2-digit', 
+                              minute: '2-digit',
+                              day: 'numeric',
+                              month: 'short'
+                            }) : ''}
+                          </div>
                         </div>
                       </div>
+                    ))
+                  ) : (
+                    <div className="text-center py-4 text-zinc-500 dark:text-zinc-400">
+                      {t('Geen recente activiteit', 'No recent activity')}
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
@@ -547,38 +563,40 @@ export default function AdminDashboard() {
                   {t('Komende Evenementen', 'Upcoming Events')}
                 </h2>
                 <div className="space-y-3">
-                  {/* Mock events - would come from database */}
-                  {[
-                    { id: 1, type: 'exam', title: 'Bandexamen', titleEn: 'Belt Exam', date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), participants: 12, color: 'blue' },
-                    { id: 2, type: 'holiday', title: 'Kerstvakantie', titleEn: 'Christmas Holiday', date: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), participants: 0, color: 'red' },
-                    { id: 3, type: 'demo', title: 'Open Dag', titleEn: 'Open Day', date: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000), participants: 25, color: 'green' },
-                  ].map((event) => (
-                    <div
-                      key={event.id}
-                      className={`flex items-center justify-between p-4 rounded-lg border border-${event.color}-200 dark:border-${event.color}-900/30 bg-${event.color}-50 dark:bg-${event.color}-950/10`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-10 h-10 rounded-full bg-${event.color}-100 dark:bg-${event.color}-900/30 flex items-center justify-center`}>
-                          <Calendar className={`w-5 h-5 text-${event.color}-600 dark:text-${event.color}-400`} />
-                        </div>
-                        <div>
-                          <div className="font-medium text-zinc-900 dark:text-zinc-100">
-                            {event.title}
-                          </div>
-                          <div className="text-sm text-zinc-500 dark:text-zinc-400">
-                            {event.date.toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long' })}
-                            {event.participants > 0 && ` • ${event.participants} ${t('deelnemers', 'participants')}`}
-                          </div>
-                        </div>
-                      </div>
-                      <button
-                        onClick={() => navigate('/admin/schedule')}
-                        className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                  {upcomingEvents.length > 0 ? upcomingEvents.map((event) => {
+                    const eventColor = event.type === 'exam' ? 'blue' : event.type === 'holiday' ? 'red' : 'green';
+                    return (
+                      <div
+                        key={event.id}
+                        className={`flex items-center justify-between p-4 rounded-lg border border-${eventColor}-200 dark:border-${eventColor}-900/30 bg-${eventColor}-50 dark:bg-${eventColor}-950/10`}
                       >
-                        {t('Details', 'Details')}
-                      </button>
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-full bg-${eventColor}-100 dark:bg-${eventColor}-900/30 flex items-center justify-center`}>
+                            <Calendar className={`w-5 h-5 text-${eventColor}-600 dark:text-${eventColor}-400`} />
+                          </div>
+                          <div>
+                            <div className="font-medium text-zinc-900 dark:text-zinc-100">
+                              {event.title}
+                            </div>
+                            <div className="text-sm text-zinc-500 dark:text-zinc-400">
+                              {new Date(event.event_date).toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long' })}
+                              {event.current_participants && event.current_participants > 0 && ` • ${event.current_participants} ${t('deelnemers', 'participants')}`}
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => navigate('/admin/schedule')}
+                          className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                        >
+                          {t('Details', 'Details')}
+                        </button>
+                      </div>
+                    );
+                  }) : (
+                    <div className="text-center py-8 text-zinc-500 dark:text-zinc-400">
+                      {t('Geen komende evenementen', 'No upcoming events')}
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
@@ -591,12 +609,13 @@ export default function AdminDashboard() {
                 <div className="space-y-4">
                   {/* Simple bar chart */}
                   <div className="space-y-3">
-                    {['Ma', 'Di', 'Wo', 'Do', 'Vr'].map((day, index) => {
-                      const percentage = 85 + Math.random() * 15;
+                    {attendanceStats.length > 0 ? attendanceStats.slice(0, 5).map((stat) => {
+                      const percentage = stat.total > 0 ? (stat.present / stat.total) * 100 : 0;
+                      const dayName = new Date(stat.date).toLocaleDateString('nl-NL', { weekday: 'short' });
                       return (
-                        <div key={day}>
+                        <div key={stat.date}>
                           <div className="flex items-center justify-between text-sm mb-1">
-                            <span className="text-zinc-600 dark:text-zinc-400">{day}</span>
+                            <span className="text-zinc-600 dark:text-zinc-400">{dayName}</span>
                             <span className="font-medium text-zinc-900 dark:text-zinc-100">
                               {Math.round(percentage)}%
                             </span>
@@ -609,20 +628,40 @@ export default function AdminDashboard() {
                           </div>
                         </div>
                       );
-                    })}
+                    }) : (
+                      ['Ma', 'Di', 'Wo', 'Do', 'Vr'].map((day) => (
+                        <div key={day}>
+                          <div className="flex items-center justify-between text-sm mb-1">
+                            <span className="text-zinc-600 dark:text-zinc-400">{day}</span>
+                            <span className="font-medium text-zinc-500 dark:text-zinc-500">-</span>
+                          </div>
+                          <div className="h-2 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+                            <div className="h-full bg-zinc-300 dark:bg-zinc-700 rounded-full" style={{ width: '0%' }} />
+                          </div>
+                        </div>
+                      ))
+                    )}
                   </div>
                   
                   {/* Insights */}
                   <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800">
                     <div className="text-sm text-zinc-600 dark:text-zinc-400 space-y-2">
-                      <div className="flex items-center gap-2">
-                        <TrendingUp className="w-4 h-4 text-green-600" />
-                        <span>{t('Gemiddeld 92% aanwezigheid deze week', 'Average 92% attendance this week')}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <AlertCircle className="w-4 h-4 text-yellow-600" />
-                        <span>{t('5 leerlingen vaak afwezig', '5 students frequently absent')}</span>
-                      </div>
+                      {attendanceStats.length > 0 ? (
+                        <>
+                          <div className="flex items-center gap-2">
+                            <TrendingUp className="w-4 h-4 text-green-600" />
+                            <span>
+                              {t('Gemiddeld', 'Average')} {Math.round(
+                                attendanceStats.reduce((acc, stat) => acc + (stat.total > 0 ? (stat.present / stat.total) * 100 : 0), 0) / attendanceStats.length
+                              )}% {t('aanwezigheid deze week', 'attendance this week')}
+                            </span>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="text-center text-zinc-500 dark:text-zinc-400">
+                          {t('Geen aanwezigheidsdata beschikbaar', 'No attendance data available')}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
