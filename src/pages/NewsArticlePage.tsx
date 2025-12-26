@@ -1,17 +1,71 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BackToTop } from '@/components/BackToTop';
-import { getNewsById, getRelatedNews } from '@/data/newsData';
 import { Calendar, ArrowLeft, Tag, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+interface NewsArticle {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  image_url: string | null;
+  published: boolean;
+  published_at: string | null;
+  created_at: string;
+}
 
 function NewsArticleContent() {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
-  const article = id ? getNewsById(id) : undefined;
-  const relatedArticles = id ? getRelatedNews(id, 3) : [];
+  const [article, setArticle] = useState<NewsArticle | null>(null);
+  const [relatedArticles, setRelatedArticles] = useState<NewsArticle[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (id) {
+      loadArticle(id);
+    }
+  }, [id]);
+
+  const loadArticle = async (slug: string) => {
+    try {
+      const { supabase } = await import('@/lib/supabase');
+      
+      // Fetch main article
+      const { data: articleData, error: articleError } = await supabase
+        .from('news_articles')
+        .select('*')
+        .eq('slug', slug)
+        .eq('published', true)
+        .single();
+
+      if (articleError) throw articleError;
+      setArticle(articleData);
+
+      // Fetch related articles
+      const { data: relatedData, error: relatedError } = await supabase
+        .from('news_articles')
+        .select('*')
+        .eq('published', true)
+        .neq('slug', slug)
+        .order('published_at', { ascending: false })
+        .limit(3);
+
+      if (!relatedError && relatedData) {
+        setRelatedArticles(relatedData);
+      }
+    } catch (error) {
+      console.error('Error loading article:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -40,6 +94,21 @@ function NewsArticleContent() {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="pt-32 pb-24">
+          <div className="container mx-auto px-4 text-center">
+            <div className="h-8 w-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <p className="text-muted-foreground">{t('Laden...', 'Loading...')}</p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   if (!article) {
     return (
       <div className="min-h-screen bg-background">
@@ -66,10 +135,6 @@ function NewsArticleContent() {
     );
   }
 
-  const title = language === 'nl' ? article.title.nl : article.title.en;
-  const type = language === 'nl' ? article.type.nl : article.type.en;
-  const content = language === 'nl' ? article.content.nl : article.content.en;
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -77,8 +142,8 @@ function NewsArticleContent() {
         {/* Hero Image */}
         <div className="relative h-[50vh] min-h-[400px]">
           <img
-            src={article.image}
-            alt={title}
+            src={article.image_url || '/placeholder.svg'}
+            alt={article.title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent" />
@@ -99,37 +164,34 @@ function NewsArticleContent() {
 
               {/* Type Badge */}
               <div className="mb-4">
-                <span className={cn(
-                  "px-3 py-1 rounded-full text-xs font-semibold inline-flex items-center gap-1",
-                  getTypeColor(type)
-                )}>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold inline-flex items-center gap-1 bg-blue-600 text-white">
                   <Tag className="w-3 h-3" />
-                  {type}
+                  {t('Nieuws', 'News')}
                 </span>
               </div>
 
               {/* Title */}
               <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {title}
+                {article.title}
               </h1>
 
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm mb-8 pb-8 border-b border-border">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <time dateTime={article.date}>{formatDate(article.date)}</time>
+                  <time dateTime={article.published_at || article.created_at}>
+                    {formatDate(article.published_at || article.created_at)}
+                  </time>
                 </div>
-                {article.author && (
-                  <div className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    <span>{article.author}</span>
-                  </div>
-                )}
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4" />
+                  <span>{article.author}</span>
+                </div>
               </div>
 
               {/* Content */}
               <div className="prose prose-lg max-w-none text-foreground">
-                {content.split('\n\n').map((paragraph, index) => {
+                {article.content.split('\n\n').map((paragraph, index) => {
                   if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
                     return (
                       <h3 key={index} className="font-serif text-xl font-semibold text-foreground mt-8 mb-4">
@@ -186,40 +248,35 @@ function NewsArticleContent() {
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   {relatedArticles.map((related) => {
-                    const relatedTitle = language === 'nl' ? related.title.nl : related.title.en;
-                    const relatedExcerpt = language === 'nl' ? related.excerpt.nl : related.excerpt.en;
-                    const relatedType = language === 'nl' ? related.type.nl : related.type.en;
-
                     return (
                       <Link
                         key={related.id}
-                        to={`/news/${related.id}`}
+                        to={`/news/${related.slug}`}
                         className="group bg-card rounded-lg border border-border overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
                       >
                         <div className="relative h-40 overflow-hidden">
                           <img
-                            src={related.image}
-                            alt={relatedTitle}
+                            src={related.image_url || '/placeholder.svg'}
+                            alt={related.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent" />
-                          <span className={cn(
-                            "absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-semibold",
-                            getTypeColor(relatedType)
-                          )}>
-                            {relatedType}
+                          <span className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-semibold bg-blue-600 text-white">
+                            {t('Nieuws', 'News')}
                           </span>
                         </div>
                         <div className="p-4">
                           <div className="flex items-center gap-2 text-muted-foreground text-xs mb-2">
                             <Calendar className="w-3 h-3" />
-                            <time dateTime={related.date}>{formatDate(related.date)}</time>
+                            <time dateTime={related.published_at || related.created_at}>
+                              {formatDate(related.published_at || related.created_at)}
+                            </time>
                           </div>
                           <h3 className="font-serif font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
-                            {relatedTitle}
+                            {related.title}
                           </h3>
                           <p className="text-muted-foreground text-sm line-clamp-2">
-                            {relatedExcerpt}
+                            {related.excerpt}
                           </p>
                         </div>
                       </Link>

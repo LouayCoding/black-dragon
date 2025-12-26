@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['"Noto Serif KR"', 'serif'],
-        sans: ['"Noto Sans KR"', 'sans-serif'],
+        serif: ['"Lexend"', 'sans-serif'],
+        sans: ['"Poppins"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

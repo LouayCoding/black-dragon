@@ -2,6 +2,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useLanguage } from '@/hooks/useLanguage';
 import { cn } from '@/lib/utils';
 import { Clock } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function ScheduleSection() {
   const { ref, isVisible } = useScrollReveal();
@@ -44,10 +45,13 @@ export function ScheduleSection() {
     <section id="schedule" className="section-padding bg-background relative">
       <div ref={ref} className="container mx-auto px-4">
         {/* Header */}
-        <div className={cn(
-          "text-center max-w-3xl mx-auto mb-16 transition-all duration-700",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('ROOSTER', 'SCHEDULE')}</p>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
             {t('Wekelijks ', 'Weekly ')}<span className="text-primary">{t('Lesrooster', 'Class Schedule')}</span>
@@ -58,60 +62,83 @@ export function ScheduleSection() {
               'Find the perfect class time that fits your schedule. We offer flexible training options throughout the week.'
             )}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Schedule Grid */}
-        <div className={cn(
-          "grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 delay-200",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          {schedule.map((daySchedule, dayIndex) => (
-            <div
-              key={dayIndex}
-              className="bg-card rounded-xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300"
-            >
-              {/* Day Header */}
-              <div className="bg-secondary px-5 py-4">
-                <h3 className="font-serif text-lg font-semibold text-secondary-foreground">
-                  {daySchedule.day}
-                </h3>
-              </div>
-
-              {/* Classes */}
-              <div className="p-5 space-y-4">
-                {daySchedule.classes.map((cls, classIndex) => (
-                  <div
-                    key={classIndex}
-                    className="flex items-start gap-4 pb-4 border-b border-border last:border-0 last:pb-0"
-                  >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Clock className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-foreground">{cls.name}</p>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-                        <span>{cls.time}</span>
-                        <span className="w-1 h-1 rounded-full bg-muted-foreground" />
-                        <span>{cls.duration}</span>
-                      </div>
-                    </div>
-                  </div>
+        {/* Professional Schedule Table */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto bg-card rounded-lg border border-border overflow-hidden shadow-lg"
+        >
+          {/* Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-secondary">
+                  <th className="text-left py-4 px-6 font-serif text-lg text-secondary-foreground">
+                    {t('Dag', 'Day')}
+                  </th>
+                  <th className="text-left py-4 px-6 font-serif text-lg text-secondary-foreground">
+                    {t('Tijd', 'Time')}
+                  </th>
+                  <th className="text-left py-4 px-6 font-serif text-lg text-secondary-foreground">
+                    {t('Les', 'Class')}
+                  </th>
+                  <th className="text-left py-4 px-6 font-serif text-lg text-secondary-foreground">
+                    {t('Duur', 'Duration')}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {schedule.map((daySchedule, dayIndex) => (
+                  daySchedule.classes.map((cls, classIndex) => (
+                    <motion.tr
+                      key={`${dayIndex}-${classIndex}`}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: (dayIndex * daySchedule.classes.length + classIndex) * 0.05 }}
+                      className="border-b border-border last:border-0 hover:bg-primary/5 transition-colors"
+                    >
+                      {classIndex === 0 && (
+                        <td 
+                          rowSpan={daySchedule.classes.length} 
+                          className="py-4 px-6 font-semibold text-foreground border-r border-border bg-muted/30"
+                        >
+                          {daySchedule.day}
+                        </td>
+                      )}
+                      <td className="py-4 px-6">
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-primary" />
+                          <span className="font-medium text-foreground">{cls.time}</span>
+                        </div>
+                      </td>
+                      <td className="py-4 px-6 text-foreground">{cls.name}</td>
+                      <td className="py-4 px-6 text-muted-foreground">{cls.duration}</td>
+                    </motion.tr>
+                  ))
                 ))}
-              </div>
-            </div>
-          ))}
-        </div>
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
 
         {/* Note */}
-        <p className={cn(
-          "text-center text-muted-foreground text-sm mt-10 transition-all duration-700 delay-400",
-          isVisible ? "opacity-100" : "opacity-0"
-        )}>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-center text-muted-foreground text-sm mt-10"
+        >
           {t(
             '* Rooster kan wijzigen tijdens feestdagen en speciale evenementen. Neem contact op voor de meest actuele informatie.',
             '* Schedule subject to change for holidays and special events. Contact us for the most current information.'
           )}
-        </p>
+        </motion.p>
       </div>
     </section>
   );

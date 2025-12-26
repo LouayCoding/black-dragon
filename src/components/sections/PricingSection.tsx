@@ -11,34 +11,17 @@ export function PricingSection() {
 
   const plans = [
     {
-      name: t('Proefmaand', 'Trial Month'),
-      price: '49',
-      period: t('/eerste maand', '/first month'),
-      description: t(
-        'Perfect om Taekwondo te ontdekken zonder verplichting.',
-        'Perfect to discover Taekwondo without commitment.'
-      ),
-      features: [
-        t('Onbeperkt lessen volgen', 'Unlimited classes'),
-        t('Leendobok (uniform)', 'Loaner dobok (uniform)'),
-        t('Toegang tot alle programmas', 'Access to all programs'),
-        t('Geen inschrijfkosten', 'No registration fee'),
-      ],
-      highlighted: false,
-      cta: t('Start Proefmaand', 'Start Trial'),
-    },
-    {
-      name: t('Basis Lidmaatschap', 'Basic Membership'),
-      price: '65',
+      name: t('Basis', 'Basic'),
+      price: '32,50',
       period: t('/maand', '/month'),
       description: t(
-        'Ideaal voor studenten die 2x per week willen trainen.',
-        'Ideal for students who want to train twice a week.'
+        'Ideaal voor beginners die 1x per week willen trainen.',
+        'Ideal for beginners who want to train once a week.'
       ),
       features: [
-        t('2 lessen per week', '2 classes per week'),
-        t('Toegang tot basisprogrammas', 'Access to basic programs'),
-        t('Bandexamens inbegrepen', 'Belt exams included'),
+        t('1x per week training', '1x per week training'),
+        t('1x per jaar bandexamen', '1x per year belt exam'),
+        t('Toegang tot basisprogramma', 'Access to basic program'),
         t('Online lesmateriaal', 'Online training materials'),
         t('Maandelijks opzegbaar', 'Monthly cancellation'),
       ],
@@ -46,63 +29,63 @@ export function PricingSection() {
       cta: t('Kies Basis', 'Choose Basic'),
     },
     {
-      name: t('Premium Lidmaatschap', 'Premium Membership'),
-      price: '89',
+      name: t('Standaard', 'Standard'),
+      price: t('TBN', 'TBD'),
       period: t('/maand', '/month'),
       description: t(
         'Onze meest populaire optie voor toegewijde leerlingen.',
         'Our most popular option for dedicated students.'
       ),
       features: [
-        t('Onbeperkt lessen per week', 'Unlimited classes per week'),
+        t('2x per week training', '2x per week training'),
+        t('2x per jaar bandexamen', '2x per year belt exam'),
         t('Toegang tot alle programmas', 'Access to all programs'),
-        t('Bandexamens inbegrepen', 'Belt exams included'),
-        t('1 privéles per maand', '1 private lesson per month'),
-        t('Wedstrijdtraining toegang', 'Competition training access'),
-        t('10% korting sportwinkel', '10% equipment discount'),
-        t('Prioriteit bij evenementen', 'Priority event registration'),
+        t('Online lesmateriaal', 'Online training materials'),
+        t('Maandelijks opzegbaar', 'Monthly cancellation'),
       ],
       highlighted: true,
       popular: true,
-      cta: t('Kies Premium', 'Choose Premium'),
+      cta: t('Kies Standaard', 'Choose Standard'),
     },
     {
-      name: t('Gezinslidmaatschap', 'Family Membership'),
-      price: '149',
+      name: t('Intensief', 'Intensive'),
+      price: '45',
       period: t('/maand', '/month'),
       description: t(
-        'Train samen als gezin met maximaal 4 leden.',
-        'Train together as a family with up to 4 members.'
+        'Voor serieuze atleten die maximale vooruitgang willen.',
+        'For serious athletes who want maximum progress.'
       ),
       features: [
-        t('Tot 4 gezinsleden', 'Up to 4 family members'),
-        t('Onbeperkt lessen voor iedereen', 'Unlimited classes for all'),
-        t('Gezinslessen inbegrepen', 'Family classes included'),
-        t('Alle bandexamens inbegrepen', 'All belt exams included'),
-        t('Gedeelde privélessen', 'Shared private lessons'),
-        t('15% korting sportwinkel', '15% equipment discount'),
+        t('3x per week training', '3x per week training'),
+        t('Toegang tot alle programmas', 'Access to all programs'),
+        t('Bandexamens inbegrepen', 'Belt exams included'),
+        t('Wedstrijdtraining toegang', 'Competition training access'),
+        t('Online lesmateriaal', 'Online training materials'),
+        t('Prioriteit bij evenementen', 'Priority event registration'),
       ],
       highlighted: false,
-      cta: t('Kies Gezin', 'Choose Family'),
+      cta: t('Kies Intensief', 'Choose Intensive'),
     },
   ];
 
   const extras = [
     {
+      name: t('Eenmalige Inschrijfkosten', 'One-time Registration Fee'),
+      price: '30',
+      period: undefined,
+      description: t('Verplicht bij eerste inschrijving', 'Required upon first registration'),
+    },
+    {
       name: t('Privéles', 'Private Lesson'),
       price: '50',
+      period: undefined,
       description: t('1-op-1 training met een instructeur', '1-on-1 training with an instructor'),
     },
     {
       name: t('Bandexamen (los)', 'Belt Exam (single)'),
       price: '35',
+      period: undefined,
       description: t('Voor niet-leden of extra examens', 'For non-members or extra exams'),
-    },
-    {
-      name: t('Wedstrijdpakket', 'Competition Package'),
-      price: '25',
-      period: t('/maand', '/month'),
-      description: t('Extra training voor wedstrijdatleten', 'Extra training for competition athletes'),
     },
   ];
 
@@ -111,7 +94,7 @@ export function PricingSection() {
       <div ref={ref} className="container mx-auto px-4">
         {/* Plans Grid */}
         <div className={cn(
-          "grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 transition-all duration-700",
+          "grid md:grid-cols-3 gap-6 mb-20 transition-all duration-700",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           {plans.map((plan, index) => (
@@ -192,6 +175,47 @@ export function PricingSection() {
           </div>
         </div>
 
+        {/* Ooievaarspas Section */}
+        <div className={cn(
+          "mt-12 p-6 bg-primary/5 rounded-lg border border-primary/20 max-w-2xl mx-auto transition-all duration-700 delay-400",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
+          <h3 className="font-serif text-xl font-semibold text-foreground text-center mb-3">
+            {t('Ooievaarspas Houders', 'Ooievaarspas Holders')}
+          </h3>
+          <p className="text-muted-foreground text-sm text-center mb-4">
+            {t(
+              'Wij accepteren de Ooievaarspas! Profiteer van aantrekkelijke kortingen op onze lidmaatschappen.',
+              'We accept the Ooievaarspas! Benefit from attractive discounts on our memberships.'
+            )}
+          </p>
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="text-center p-4 bg-card rounded-lg border border-border">
+              <p className="text-2xl font-bold text-primary mb-1">100%</p>
+              <p className="text-sm text-muted-foreground">
+                {t('Vergoeding onder 18 jaar', 'Reimbursement under 18 years')}
+              </p>
+            </div>
+            <div className="text-center p-4 bg-card rounded-lg border border-border">
+              <p className="text-2xl font-bold text-primary mb-1">50%</p>
+              <p className="text-sm text-muted-foreground">
+                {t('Vergoeding boven 18 jaar', 'Reimbursement over 18 years')}
+              </p>
+            </div>
+          </div>
+          <div className="text-center">
+            <Button asChild>
+              <a 
+                href="https://ooievaarspas.nl/aanbiedingen/taekwondo-black-dragon/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {t('Bekijk op Ooievaarspas.nl', 'View on Ooievaarspas.nl')}
+              </a>
+            </Button>
+          </div>
+        </div>
+
         {/* Bottom Note */}
         <div className={cn(
           "text-center mt-12 p-6 bg-card rounded-lg border border-border max-w-2xl mx-auto transition-all duration-700 delay-500",
@@ -199,8 +223,8 @@ export function PricingSection() {
         )}>
           <p className="text-muted-foreground text-sm mb-4">
             {t(
-              'Alle prijzen zijn inclusief BTW. Jaarlijkse betalingen ontvangen 10% korting. Neem contact op voor bedrijfs- en groepstarieven.',
-              'All prices include VAT. Annual payments receive 10% discount. Contact us for corporate and group rates.'
+              'Alle prijzen zijn inclusief BTW. Eenmalige inschrijfkosten van €30 zijn verplicht bij eerste aanmelding. Lidmaatschap TBN (Taekwondo Bond Nederland) wordt aanbevolen. Neem contact op voor meer informatie.',
+              'All prices include VAT. One-time registration fee of €30 is required upon first sign-up. TBN (Taekwondo Bond Nederland) membership is recommended. Contact us for more information.'
             )}
           </p>
           <Button asChild variant="outline">

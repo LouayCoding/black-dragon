@@ -1,35 +1,66 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cn } from '@/lib/utils';
 import { Calendar, ArrowRight, Tag, Search, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { newsData } from '@/data/newsData';
 import { Input } from '@/components/ui/input';
+
+interface NewsArticle {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  image_url: string | null;
+  published: boolean;
+  published_at: string | null;
+  created_at: string;
+}
 
 export function NewsSection() {
   const { ref, isVisible } = useScrollReveal();
   const { language, t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
+  const [articles, setArticles] = useState<NewsArticle[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadArticles();
+  }, []);
+
+  const loadArticles = async () => {
+    try {
+      const { supabase } = await import('@/lib/supabase');
+      const { data, error } = await supabase
+        .from('news_articles')
+        .select('*')
+        .eq('published', true)
+        .order('published_at', { ascending: false });
+
+      if (error) throw error;
+      setArticles(data || []);
+    } catch (error) {
+      console.error('Error loading articles:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const filteredNews = useMemo(() => {
-    if (!searchQuery.trim()) return newsData;
+    if (!searchQuery.trim()) return articles;
     
     const query = searchQuery.toLowerCase();
-    return newsData.filter((item) => {
-      const title = language === 'nl' ? item.title.nl : item.title.en;
-      const excerpt = language === 'nl' ? item.excerpt.nl : item.excerpt.en;
-      const type = language === 'nl' ? item.type.nl : item.type.en;
-      const content = language === 'nl' ? item.content.nl : item.content.en;
-      
+    return articles.filter((item) => {
       return (
-        title.toLowerCase().includes(query) ||
-        excerpt.toLowerCase().includes(query) ||
-        type.toLowerCase().includes(query) ||
-        content.toLowerCase().includes(query)
+        item.title.toLowerCase().includes(query) ||
+        item.excerpt.toLowerCase().includes(query) ||
+        item.content.toLowerCase().includes(query) ||
+        item.author.toLowerCase().includes(query)
       );
     });
-  }, [searchQuery, language]);
+  }, [searchQuery, articles]);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -56,6 +87,10 @@ export function NewsSection() {
       default:
         return 'bg-muted text-muted-foreground';
     }
+  };
+
+  const getBadgeColor = () => {
+    return 'bg-blue-600 text-white';
   };
 
   return (
@@ -97,12 +132,13 @@ export function NewsSection() {
           "grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          {filteredNews.length > 0 ? (
+          {loading ? (
+            <div className="col-span-full text-center py-16">
+              <div className="h-8 w-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+              <p className="text-muted-foreground">{t('Laden...', 'Loading...')}</p>
+            </div>
+          ) : filteredNews.length > 0 ? (
             filteredNews.map((item, index) => {
-              const title = language === 'nl' ? item.title.nl : item.title.en;
-              const type = language === 'nl' ? item.type.nl : item.type.en;
-              const excerpt = language === 'nl' ? item.excerpt.nl : item.excerpt.en;
-
               return (
                 <article
                   key={item.id}
@@ -113,19 +149,19 @@ export function NewsSection() {
                   style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
                 >
                   {/* Image */}
-                  <Link to={`/news/${item.id}`} className="block relative aspect-video overflow-hidden">
+                  <Link to={`/news/${item.slug}`} className="block relative aspect-video overflow-hidden">
                     <img
-                      src={item.image}
-                      alt={title}
+                      src={item.image_url || '/placeholder.svg'}
+                      alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
                       <span className={cn(
                         "px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1",
-                        getTypeColor(type)
+                        getBadgeColor()
                       )}>
                         <Tag className="w-3 h-3" />
-                        {type}
+                        {t('Nieuws', 'News')}
                       </span>
                     </div>
                   </Link>
@@ -134,21 +170,23 @@ export function NewsSection() {
                   <div className="p-6">
                     <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
                       <Calendar className="w-4 h-4" />
-                      <time dateTime={item.date}>{formatDate(item.date)}</time>
+                      <time dateTime={item.published_at || item.created_at}>
+                        {formatDate(item.published_at || item.created_at)}
+                      </time>
                     </div>
                     
-                    <Link to={`/news/${item.id}`}>
+                    <Link to={`/news/${item.slug}`}>
                       <h3 className="font-serif text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {title}
+                        {item.title}
                       </h3>
                     </Link>
                     
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                      {excerpt}
+                      {item.excerpt}
                     </p>
 
                     <Link
-                      to={`/news/${item.id}`}
+                      to={`/news/${item.slug}`}
                       className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors group/link"
                     >
                       {t('Lees meer', 'Read more')}

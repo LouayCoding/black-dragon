@@ -2,87 +2,32 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useLanguage } from '@/hooks/useLanguage';
 import { cn } from '@/lib/utils';
 import { Award, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Import instructor images
-import grandmasterKimImg from '@/assets/instructors/grandmaster-kim.jpg';
-import masterLeeImg from '@/assets/instructors/master-lee.jpg';
-import masterParkImg from '@/assets/instructors/master-park.jpg';
-import instructorChoiImg from '@/assets/instructors/instructor-choi.jpg';
+import rachidImg from '@/assets/instructors/grandmaster-kim.jpg';
 
 export function InstructorsSection() {
   const { ref, isVisible } = useScrollReveal();
   const { t } = useLanguage();
 
-  const instructors = [
-    {
-      name: 'Grootmeester Kim Jae-hoon',
-      korean: '김재훈',
-      role: t('Hoofdinstructeur', 'Head Instructor'),
-      rank: t('8e Dan Zwarte Band', '8th Dan Black Belt'),
-      experience: t('40+ jaar', '40+ years'),
-      image: grandmasterKimImg,
-      bio: t(
-        'Een levende legende in Koreaanse vechtkunsten, Grootmeester Kim heeft zijn leven gewijd aan het behouden van de authentieke tradities van Taekwondo terwijl hij leermethoden aanpast voor moderne studenten.',
-        'A living legend in Korean martial arts, Grandmaster Kim has dedicated his life to preserving the authentic traditions of Taekwondo while adapting teaching methods for modern students.'
-      ),
-      achievements: [
-        t('World Taekwondo Hall of Fame', 'World Taekwondo Hall of Fame'),
-        t('Olympisch Team Coach', 'Olympic Team Coach'),
-        t('Auteur van 3 vechtsportboeken', 'Author of 3 martial arts books'),
-      ],
-    },
-    {
-      name: 'Meester Lee Soo-min',
-      korean: '이수민',
-      role: t('Senior Instructeur', 'Senior Instructor'),
-      rank: t('6e Dan Zwarte Band', '6th Dan Black Belt'),
-      experience: t('25 jaar', '25 years'),
-      image: masterLeeImg,
-      bio: t(
-        'Meester Lee is gespecialiseerd in vormen en wedstrijdvoorbereiding. Haar studenten hebben talloze nationale en internationale kampioenschappen gewonnen.',
-        'Master Lee specializes in forms and competition preparation. Her students have won numerous national and international championships.'
-      ),
-      achievements: [
-        t('3x Nationaal Kampioen', '3x National Champion'),
-        t('Gecertificeerd Internationaal Scheidsrechter', 'Certified International Referee'),
-        t('Jeugdontwikkeling Specialist', 'Youth Development Specialist'),
-      ],
-    },
-    {
-      name: 'Meester Park Jung-woo',
-      korean: '박정우',
-      role: t('Wedstrijdcoach', 'Competition Coach'),
-      rank: t('5e Dan Zwarte Band', '5th Dan Black Belt'),
-      experience: t('18 jaar', '18 years'),
-      image: masterParkImg,
-      bio: t(
-        'Voormalig nationaal team atleet, Meester Park brengt elite-niveau trainingstechnieken en competitieve mentaliteitsontwikkeling naar ons wedstrijdteam.',
-        'Former national team athlete, Master Park brings elite-level training techniques and competitive mindset development to our competition team.'
-      ),
-      achievements: [
-        t('Voormalig Nationaal Team Lid', 'Former National Team Member'),
-        t('Pan-Amerikaanse Bronzen Medaille', 'Pan-American Bronze Medalist'),
-        t('Sportpsychologie Gecertificeerd', 'Sports Psychology Certified'),
-      ],
-    },
-    {
-      name: 'Instructeur Choi Min-ji',
-      korean: '최민지',
-      role: t('Leider Kinderprogramma', "Children's Program Lead"),
-      rank: t('4e Dan Zwarte Band', '4th Dan Black Belt'),
-      experience: t('12 jaar', '12 years'),
-      image: instructorChoiImg,
-      bio: t(
-        'Specialist in vroegkinderlijke vechtsporteducatie, Instructeur Choi maakt het leren van Taekwondo leuk en boeiend voor onze jongste leerlingen.',
-        'Specialist in early childhood martial arts education, Instructor Choi makes learning Taekwondo fun and engaging for our youngest students.'
-      ),
-      achievements: [
-        t('Kinderontwikkeling Gecertificeerd', 'Child Development Certified'),
-        t('Kleine Tijgers Programma Ontwerper', 'Little Tigers Program Creator'),
-        t('Anti-Pesten Voorvechter', 'Anti-Bullying Advocate'),
-      ],
-    },
-  ];
+  const instructor = {
+    name: 'Rachid Ousllam',
+    role: t('Hoofdinstructeur & Eigenaar', 'Head Instructor & Owner'),
+    rank: t('5e Dan Zwarte Band', '5th Dan Black Belt'),
+    experience: t('25+ jaar', '25+ years'),
+    image: rachidImg,
+    bio: t(
+      'Rachid Ousllam is de oprichter en hoofdinstructeur van onze dojang. Met meer dan 25 jaar ervaring in Taekwondo combineert hij traditionele Koreaanse technieken met moderne trainingsmethoden om studenten van alle leeftijden te begeleiden op hun vechtkunstreis.',
+      'Rachid Ousllam is the founder and head instructor of our dojang. With over 25 years of experience in Taekwondo, he combines traditional Korean techniques with modern training methods to guide students of all ages on their martial arts journey.'
+    ),
+    achievements: [
+      t('25+ jaar Taekwondo ervaring', '25+ years Taekwondo experience'),
+      t('5e Dan Zwarte Band', '5th Dan Black Belt'),
+      t('Oprichter van 2 locaties', 'Founder of 2 locations'),
+      t('500+ studenten getraind', '500+ students trained'),
+    ],
+  };
 
   return (
     <section id="instructors" className="section-padding bg-muted/30 relative overflow-hidden">
@@ -91,78 +36,87 @@ export function InstructorsSection() {
       
       <div ref={ref} className="container mx-auto px-4">
         {/* Header */}
-        <div className={cn(
-          "text-center max-w-3xl mx-auto mb-16 transition-all duration-700",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('INSTRUCTEURS', 'INSTRUCTORS')}</p>
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            {t('Leer van de ', 'Learn from the ')}<span className="text-primary">{t('Meesters', 'Masters')}</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('INSTRUCTEUR', 'INSTRUCTOR')}</p>
+          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            {t('Ontmoet Je ', 'Meet Your ')}
+            <span className="text-primary">{t('Instructeur', 'Instructor')}</span>
           </h2>
           <p className="text-muted-foreground text-lg">
             {t(
-              'Onze wereldklasse instructeurs brengen decennia aan ervaring, kampioenschapskwalificaties en een passie voor onderwijs naar elke les.',
-              'Our world-class instructors bring decades of experience, championship credentials, and a passion for teaching to every class.'
+              'Leer van een gecertificeerde 5e Dan zwarte band instructeur met meer dan 25 jaar ervaring in traditionele Taekwondo.',
+              'Learn from a certified 5th Dan black belt instructor with over 25 years of experience in traditional Taekwondo.'
             )}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Instructors Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {instructors.map((instructor, index) => (
-            <div
-              key={index}
-              className={cn(
-                "group bg-card rounded-xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1",
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              )}
-              style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
-            >
-              <div className="flex flex-col sm:flex-row">
-                {/* Photo */}
-                <div className="sm:w-48 h-48 sm:h-auto flex-shrink-0 overflow-hidden">
-                  <img 
-                    src={instructor.image} 
-                    alt={instructor.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 p-6">
-                  {/* Header */}
-                  <div className="mb-4">
-                    <p className="text-xs text-primary font-medium tracking-wider mb-1">{instructor.role}</p>
-                    <h3 className="font-serif text-xl font-semibold text-foreground">{instructor.name}</h3>
-                    <div className="flex items-center gap-3 mt-2 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Award className="w-4 h-4 text-primary" />
-                        {instructor.rank}
-                      </span>
-                      <span>•</span>
-                      <span>{instructor.experience}</span>
-                    </div>
-                  </div>
-
-                  {/* Bio */}
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {instructor.bio}
-                  </p>
-
-                  {/* Achievements */}
-                  <div className="space-y-2">
-                    {instructor.achievements.map((achievement, aIndex) => (
-                      <div key={aIndex} className="flex items-center gap-2 text-xs text-foreground/70">
-                        <Star className="w-3 h-3 text-primary flex-shrink-0" />
-                        <span>{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+        {/* Instructor Profile */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 items-center"
+        >
+          {/* Photo */}
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            className="relative"
+          >
+            <div className="relative aspect-[3/4] rounded-lg overflow-hidden border border-border shadow-xl">
+              <img
+                src={instructor.image}
+                alt={instructor.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              
+              {/* Rank Badge */}
+              <div className="absolute top-6 right-6 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-semibold shadow-glow">
+                {instructor.rank}
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
+
+          {/* Content */}
+          <div>
+            <h3 className="font-serif text-4xl font-bold text-foreground mb-2">{instructor.name}</h3>
+            <p className="text-primary text-lg font-medium mb-6">{instructor.role}</p>
+
+            {/* Experience */}
+            <div className="flex items-center gap-3 mb-6 text-foreground">
+              <Award className="w-6 h-6 text-primary" />
+              <span className="text-lg font-semibold">{instructor.experience} {t('ervaring', 'experience')}</span>
+            </div>
+
+            {/* Bio */}
+            <p className="text-muted-foreground text-base leading-relaxed mb-8">
+              {instructor.bio}
+            </p>
+
+            {/* Achievements */}
+            <div>
+              <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+                {t('Prestaties', 'Achievements')}
+              </p>
+              <div className="space-y-3">
+                {instructor.achievements.map((achievement, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <Star className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{achievement}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

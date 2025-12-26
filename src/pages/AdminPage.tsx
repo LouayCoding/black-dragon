@@ -1,67 +1,47 @@
 import { useState } from 'react';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { PageHero } from '@/components/PageHero';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Users, Mail, Calendar, Trash2, Lock, LogOut, Search, X } from 'lucide-react';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { DashboardSidebar } from '@/components/dashboard/DashboardSidebar';
+import { StudentProfile } from '@/components/dashboard/StudentProfile';
+import { AbsenceReport } from '@/components/dashboard/AbsenceReport';
+import { StudentSchedule } from '@/components/dashboard/StudentSchedule';
+import { StudentProgress } from '@/components/dashboard/StudentProgress';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-interface Registration {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  program: string;
-  message: string;
-  createdAt: string;
-}
-
-interface NewsletterSubscription {
-  id: string;
-  email: string;
-  createdAt: string;
-}
-
-const programLabels: Record<string, string> = {
-  'little-tigers': 'Kleine Tijgers (4-6)',
-  'youth': 'Jeugd Programma (7-12)',
-  'teen': 'Tiener Krijgers (13-17)',
-  'adult': 'Volwassenen Training (18+)',
-  'family': 'Gezinslessen',
+// Mock student data - in real app this would come from backend
+const mockStudent = {
+  name: 'Jan de Vries',
+  email: 'jan.devries@email.nl',
+  phone: '06 12345678',
+  address: 'Hoofdstraat 123, 1234 AB Amsterdam',
+  program: 'Jeugd Programma (7-12 jaar)',
+  belt: 'Gele Band',
+  joinDate: 'Januari 2024',
 };
 
-// PIN code voor admin toegang - wijzig deze naar je eigen code
-const ADMIN_PIN = '1234';
+// PIN code voor student toegang - wijzig deze naar je eigen code
+const STUDENT_PIN = '1234';
 
 export default function AdminPage() {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const [registrations, setRegistrations] = useLocalStorage<Registration[]>('tkd-registrations', []);
-  const [subscriptions, setSubscriptions] = useLocalStorage<NewsletterSubscription[]>('newsletter-subscriptions', []);
-  const [isAuthenticated, setIsAuthenticated] = useLocalStorage<boolean>('admin-authenticated', false);
+  const [isAuthenticated, setIsAuthenticated] = useLocalStorage<boolean>('student-authenticated', false);
   const [pin, setPin] = useState('');
   const [pinError, setPinError] = useState(false);
-  
-  // Search and filter states
-  const [registrationSearch, setRegistrationSearch] = useState('');
-  const [programFilter, setProgramFilter] = useState<string>('all');
-  const [subscriptionSearch, setSubscriptionSearch] = useState('');
 
   const handlePinSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (pin === ADMIN_PIN) {
+    if (pin === STUDENT_PIN) {
       setIsAuthenticated(true);
       setPinError(false);
       toast({
-        title: t('Welkom!', 'Welcome!'),
-        description: t('Je bent nu ingelogd als beheerder.', 'You are now logged in as administrator.'),
+        title: t('Welkom terug!', 'Welcome back!'),
+        description: t('Je bent ingelogd in je leerling portal.', 'You are logged into your student portal.'),
       });
     } else {
       setPinError(true);
@@ -78,324 +58,136 @@ export default function AdminPage() {
     setIsAuthenticated(false);
     toast({
       title: t('Uitgelogd', 'Logged out'),
-      description: t('Je bent uitgelogd uit het admin dashboard.', 'You have been logged out of the admin dashboard.'),
+      description: t('Je bent uitgelogd uit de leerling portal.', 'You have been logged out of the student portal.'),
     });
   };
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('nl-NL', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  };
-
-  const deleteRegistration = (id: string) => {
-    setRegistrations(registrations.filter(r => r.id !== id));
-    toast({
-      title: t('Registratie verwijderd', 'Registration deleted'),
-      description: t('De registratie is succesvol verwijderd.', 'The registration has been successfully deleted.'),
-    });
-  };
-
-  const deleteSubscription = (id: string) => {
-    setSubscriptions(subscriptions.filter(s => s.id !== id));
-    toast({
-      title: t('Aanmelding verwijderd', 'Subscription deleted'),
-      description: t('De nieuwsbrief aanmelding is succesvol verwijderd.', 'The newsletter subscription has been successfully deleted.'),
-    });
-  };
-
-  // Filter registrations based on search and program filter
-  const filteredRegistrations = registrations.filter((reg) => {
-    const matchesSearch = registrationSearch === '' || 
-      reg.name.toLowerCase().includes(registrationSearch.toLowerCase()) ||
-      reg.email.toLowerCase().includes(registrationSearch.toLowerCase()) ||
-      reg.phone?.toLowerCase().includes(registrationSearch.toLowerCase());
-    
-    const matchesProgram = programFilter === 'all' || reg.program === programFilter;
-    
-    return matchesSearch && matchesProgram;
-  });
-
-  // Filter subscriptions based on search
-  const filteredSubscriptions = subscriptions.filter((sub) => {
-    return subscriptionSearch === '' || 
-      sub.email.toLowerCase().includes(subscriptionSearch.toLowerCase());
-  });
 
   // PIN login screen
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1 flex items-center justify-center bg-muted/30">
-          <Card className="w-full max-w-md mx-4">
-            <CardHeader className="text-center">
-              <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                <Lock className="h-6 w-6 text-primary" />
-              </div>
-              <CardTitle>{t('Admin Toegang', 'Admin Access')}</CardTitle>
-              <CardDescription>
-                {t('Voer de PIN-code in om toegang te krijgen tot het admin dashboard.', 'Enter the PIN code to access the admin dashboard.')}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handlePinSubmit} className="space-y-4">
+      <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-950">
+        <div className="w-full max-w-md mx-4">
+          <div className="text-center mb-8">
+            <div className="mx-auto w-16 h-16 bg-blue-50 dark:bg-blue-950/30 rounded-2xl flex items-center justify-center mb-4">
+              <Lock className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            </div>
+            <h1 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-2">
+              {t('Leerling Portal', 'Student Portal')}
+            </h1>
+            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+              {t('Voer je PIN-code in om toegang te krijgen.', 'Enter your PIN code to access.')}
+            </p>
+          </div>
+          
+          <div className="rounded-2xl bg-white dark:bg-zinc-900 shadow-sm p-8">
+            <form onSubmit={handlePinSubmit} className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2 block">
+                  {t('PIN-code', 'PIN code')}
+                </label>
                 <Input
                   type="password"
-                  placeholder={t('PIN-code', 'PIN code')}
+                  placeholder="••••"
                   value={pin}
                   onChange={(e) => setPin(e.target.value)}
-                  className={pinError ? 'border-destructive' : ''}
+                  className={`h-12 ${pinError ? 'border-red-500 dark:border-red-400' : 'border-zinc-200 dark:border-zinc-800'}`}
                   maxLength={10}
                   autoFocus
                 />
-                <Button type="submit" className="w-full">
-                  {t('Inloggen', 'Login')}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </main>
-        <Footer />
+              </div>
+              <button
+                type="submit"
+                className="w-full h-12 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                {t('Inloggen', 'Login')}
+              </button>
+            </form>
+          </div>
+          
+          <p className="text-center text-xs text-zinc-500 dark:text-zinc-400 mt-6">
+            {t('Neem contact op met je instructeur als je je PIN bent vergeten', 'Contact your instructor if you forgot your PIN')}
+          </p>
+        </div>
       </div>
     );
   }
 
+  // Student Dashboard
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
-        <PageHero
-          title={t('Admin Dashboard', 'Admin Dashboard')}
-          subtitle={t('Beheer registraties en nieuwsbrief aanmeldingen', 'Manage registrations and newsletter subscriptions')}
-        />
+    <div className="min-h-screen bg-background">
+      <DashboardSidebar onLogout={handleLogout} />
+      
+      {/* Main Content */}
+      <div className="lg:pl-64">
+        <div className="p-4 md:p-6 lg:p-8 pt-20 lg:pt-8">
+          <Routes>
+            {/* Dashboard Home */}
+            <Route path="/" element={
+              <div className="space-y-4 md:space-y-6">
+                <div>
+                  <h1 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
+                    {t('Welkom terug!', 'Welcome back!')}
+                  </h1>
+                  <p className="text-sm md:text-base text-muted-foreground">
+                    {t('Hier is je overzicht', 'Here is your overview')}
+                  </p>
+                </div>
 
-        {/* Logout Button */}
-        <div className="container mx-auto px-4 pt-8">
-          <div className="flex justify-end">
-            <Button variant="outline" onClick={handleLogout} className="gap-2">
-              <LogOut className="h-4 w-4" />
-              {t('Uitloggen', 'Logout')}
-            </Button>
-          </div>
+                <StudentProfile student={mockStudent} />
+
+                <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                  <Card>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base md:text-lg">{t('Volgende Les', 'Next Class')}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-xs md:text-sm text-muted-foreground mb-2">{t('Maandag', 'Monday')}</p>
+                      <p className="text-xl md:text-2xl font-bold text-foreground">17:00</p>
+                      <p className="text-xs md:text-sm text-muted-foreground mt-1">{t('Jeugd Programma', 'Youth Program')}</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base md:text-lg">{t('Aanwezigheid', 'Attendance')}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-xl md:text-2xl font-bold text-primary">95%</p>
+                      <p className="text-xs md:text-sm text-muted-foreground mt-1">
+                        {t('19 van 20 lessen', '19 of 20 classes')}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            } />
+
+            {/* Schedule */}
+            <Route path="/schedule" element={<StudentSchedule />} />
+
+            {/* Absence Report */}
+            <Route path="/absence" element={
+              <div className="max-w-2xl">
+                <AbsenceReport />
+              </div>
+            } />
+
+            {/* Progress */}
+            <Route path="/progress" element={<StudentProgress />} />
+
+            {/* Profile */}
+            <Route path="/profile" element={
+              <div className="max-w-4xl">
+                <StudentProfile student={mockStudent} />
+              </div>
+            } />
+
+            {/* Redirect */}
+            <Route path="*" element={<Navigate to="/student" replace />} />
+          </Routes>
         </div>
-
-        <section className="py-16">
-          <div className="container mx-auto px-4 space-y-12">
-            {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card>
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">
-                    {t('Totaal Registraties', 'Total Registrations')}
-                  </CardTitle>
-                  <Users className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold">{registrations.length}</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">
-                    {t('Nieuwsbrief Aanmeldingen', 'Newsletter Subscriptions')}
-                  </CardTitle>
-                  <Mail className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold">{subscriptions.length}</div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Registrations Table */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="h-5 w-5" />
-                  {t('Proefles Registraties', 'Trial Class Registrations')}
-                </CardTitle>
-                <CardDescription>
-                  {t('Overzicht van alle proefles aanmeldingen', 'Overview of all trial class registrations')}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {/* Search and Filter Controls */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <div className="relative flex-1">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      placeholder={t('Zoek op naam, email of telefoon...', 'Search by name, email or phone...')}
-                      value={registrationSearch}
-                      onChange={(e) => setRegistrationSearch(e.target.value)}
-                      className="pl-9 pr-9"
-                    />
-                    {registrationSearch && (
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
-                        onClick={() => setRegistrationSearch('')}
-                      >
-                        <X className="h-4 w-4" />
-                      </Button>
-                    )}
-                  </div>
-                  <Select value={programFilter} onValueChange={setProgramFilter}>
-                    <SelectTrigger className="w-full sm:w-[200px]">
-                      <SelectValue placeholder={t('Filter op programma', 'Filter by program')} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">{t('Alle programma\'s', 'All programs')}</SelectItem>
-                      <SelectItem value="little-tigers">Kleine Tijgers (4-6)</SelectItem>
-                      <SelectItem value="youth">Jeugd Programma (7-12)</SelectItem>
-                      <SelectItem value="teen">Tiener Krijgers (13-17)</SelectItem>
-                      <SelectItem value="adult">Volwassenen Training (18+)</SelectItem>
-                      <SelectItem value="family">Gezinslessen</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {registrations.length === 0 ? (
-                  <p className="text-muted-foreground text-center py-8">
-                    {t('Nog geen registraties ontvangen.', 'No registrations received yet.')}
-                  </p>
-                ) : filteredRegistrations.length === 0 ? (
-                  <p className="text-muted-foreground text-center py-8">
-                    {t('Geen resultaten gevonden.', 'No results found.')}
-                  </p>
-                ) : (
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>{t('Naam', 'Name')}</TableHead>
-                        <TableHead>Email</TableHead>
-                        <TableHead>{t('Telefoon', 'Phone')}</TableHead>
-                        <TableHead>{t('Programma', 'Program')}</TableHead>
-                        <TableHead>{t('Datum', 'Date')}</TableHead>
-                        <TableHead className="w-[50px]"></TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {filteredRegistrations.map((reg) => (
-                        <TableRow key={reg.id}>
-                          <TableCell className="font-medium">{reg.name}</TableCell>
-                          <TableCell>{reg.email}</TableCell>
-                          <TableCell>{reg.phone || '-'}</TableCell>
-                          <TableCell>
-                            <Badge variant="secondary">
-                              {programLabels[reg.program] || reg.program}
-                            </Badge>
-                          </TableCell>
-                          <TableCell className="text-muted-foreground text-sm">
-                            <div className="flex items-center gap-1">
-                              <Calendar className="h-3 w-3" />
-                              {formatDate(reg.createdAt)}
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              onClick={() => deleteRegistration(reg.id)}
-                              className="text-destructive hover:text-destructive hover:bg-destructive/10"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </Button>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Newsletter Subscriptions Table */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Mail className="h-5 w-5" />
-                  {t('Nieuwsbrief Aanmeldingen', 'Newsletter Subscriptions')}
-                </CardTitle>
-                <CardDescription>
-                  {t('Overzicht van alle nieuwsbrief abonnees', 'Overview of all newsletter subscribers')}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {/* Search Control */}
-                <div className="relative max-w-md">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    placeholder={t('Zoek op email...', 'Search by email...')}
-                    value={subscriptionSearch}
-                    onChange={(e) => setSubscriptionSearch(e.target.value)}
-                    className="pl-9 pr-9"
-                  />
-                  {subscriptionSearch && (
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
-                      onClick={() => setSubscriptionSearch('')}
-                    >
-                      <X className="h-4 w-4" />
-                    </Button>
-                  )}
-                </div>
-
-                {subscriptions.length === 0 ? (
-                  <p className="text-muted-foreground text-center py-8">
-                    {t('Nog geen nieuwsbrief aanmeldingen.', 'No newsletter subscriptions yet.')}
-                  </p>
-                ) : filteredSubscriptions.length === 0 ? (
-                  <p className="text-muted-foreground text-center py-8">
-                    {t('Geen resultaten gevonden.', 'No results found.')}
-                  </p>
-                ) : (
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Email</TableHead>
-                        <TableHead>{t('Aangemeld op', 'Subscribed on')}</TableHead>
-                        <TableHead className="w-[50px]"></TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {filteredSubscriptions.map((sub) => (
-                        <TableRow key={sub.id}>
-                          <TableCell className="font-medium">{sub.email}</TableCell>
-                          <TableCell className="text-muted-foreground text-sm">
-                            <div className="flex items-center gap-1">
-                              <Calendar className="h-3 w-3" />
-                              {formatDate(sub.createdAt)}
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              onClick={() => deleteSubscription(sub.id)}
-                              className="text-destructive hover:text-destructive hover:bg-destructive/10"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </Button>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                )}
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-      </main>
-      <Footer />
+      </div>
     </div>
   );
 }
