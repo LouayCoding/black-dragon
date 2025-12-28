@@ -1,11 +1,46 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
-import { cn } from '@/lib/utils';
 import { Star, Quote } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function TestimonialsSection() {
-  const { ref, isVisible } = useScrollReveal();
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(headerRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: 'top 80%',
+        },
+      });
+
+      if (cardsRef.current) {
+        const cards = cardsRef.current.querySelectorAll('.testimonial-card');
+        gsap.from(cards, {
+          opacity: 0,
+          y: 40,
+          duration: 0.6,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: 'top 75%',
+          },
+        });
+      }
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   const testimonials = [
     {
@@ -13,8 +48,8 @@ export function TestimonialsSection() {
       role: t('Ouder van Liam (8 jaar)', 'Parent of Liam (8 years)'),
       rating: 5,
       text: t(
-        'Mijn zoon is volledig getransformeerd sinds hij begon met Taekwondo. Zijn zelfvertrouwen is enorm gegroeid en hij heeft geleerd om respectvol met anderen om te gaan. De instructeurs zijn geweldig met kinderen!',
-        'My son has been completely transformed since he started Taekwondo. His confidence has grown enormously and he has learned to treat others with respect. The instructors are amazing with children!'
+        'Mijn zoon is volledig getransformeerd sinds hij begon met taekwondo. Zijn zelfvertrouwen is enorm gegroeid en hij heeft geleerd om respectvol met anderen om te gaan.',
+        'My son has been completely transformed since he started taekwondo. His confidence has grown enormously and he has learned to treat others with respect.'
       ),
     },
     {
@@ -22,8 +57,8 @@ export function TestimonialsSection() {
       role: t('Volwassen leerling, 2 jaar ervaring', 'Adult student, 2 years experience'),
       rating: 5,
       text: t(
-        'Als 35-jarige was ik nerveus om te beginnen, maar de sfeer is zo welkom dat ik me meteen thuis voelde. Ik ben fitter dan ooit en heb onlangs mijn groene band behaald. Een fantastische ervaring!',
-        'As a 35-year-old, I was nervous to start, but the atmosphere is so welcoming that I immediately felt at home. I am fitter than ever and recently earned my green belt. A fantastic experience!'
+        'Als 35-jarige was ik nerveus om te beginnen, maar de sfeer is zo welkom dat ik me meteen thuis voelde. Ik ben fitter dan ooit en heb onlangs mijn groene band behaald.',
+        'As a 35-year-old, I was nervous to start, but the atmosphere is so welcoming that I immediately felt at home. I am fitter than ever and recently earned my green belt.'
       ),
     },
     {
@@ -31,8 +66,8 @@ export function TestimonialsSection() {
       role: t('Zwarte band leerling', 'Black belt student'),
       rating: 5,
       text: t(
-        'Na 5 jaar training heb ik eindelijk mijn zwarte band behaald. De reis was uitdagend maar ongelooflijk lonend. Grootmeester Kim is een inspirerende leraar die het beste in elke leerling naar boven haalt.',
-        'After 5 years of training, I finally earned my black belt. The journey was challenging but incredibly rewarding. Grandmaster Kim is an inspiring teacher who brings out the best in every student.'
+        'Na 5 jaar training heb ik eindelijk mijn zwarte band behaald. De reis was uitdagend maar ongelooflijk lonend.',
+        'After 5 years of training, I finally earned my black belt. The journey was challenging but incredibly rewarding.'
       ),
     },
     {
@@ -40,8 +75,8 @@ export function TestimonialsSection() {
       role: t('Ouder van Mila (6 jaar)', 'Parent of Mila (6 years)'),
       rating: 5,
       text: t(
-        'Het Kleine Tijgers programma is perfect voor onze dochter. Ze leert discipline en coördinatie terwijl ze plezier heeft. De maandelijkse rapportages over haar voortgang zijn een geweldige toevoeging.',
-        'The Little Tigers program is perfect for our daughter. She learns discipline and coordination while having fun. The monthly progress reports are a great addition.'
+        'Het kleine tijgers programma is perfect voor onze dochter. Ze leert discipline en coördinatie terwijl ze plezier heeft.',
+        'The little tigers program is perfect for our daughter. She learns discipline and coordination while having fun.'
       ),
     },
     {
@@ -49,8 +84,8 @@ export function TestimonialsSection() {
       role: t('Wedstrijdatleet', 'Competition athlete'),
       rating: 5,
       text: t(
-        'Dankzij de uitstekende coaching van Meester Park heb ik dit jaar brons gewonnen op het NK. De focus op techniek én mentale weerbaarheid maakt deze school uniek.',
-        'Thanks to the excellent coaching from Master Park, I won bronze at the National Championship this year. The focus on technique and mental resilience makes this school unique.'
+        'Dankzij de uitstekende coaching heb ik dit jaar brons gewonnen op het NK. De focus op techniek én mentale weerbaarheid maakt deze school uniek.',
+        'Thanks to the excellent coaching, I won bronze at the national championship this year. The focus on technique and mental resilience makes this school unique.'
       ),
     },
     {
@@ -58,92 +93,73 @@ export function TestimonialsSection() {
       role: t('Volwassen leerling, 6 maanden ervaring', 'Adult student, 6 months experience'),
       rating: 5,
       text: t(
-        'Ik zocht een manier om fit te worden en stress kwijt te raken. Taekwondo biedt dit en zoveel meer. De gemeenschap hier is als een tweede familie geworden.',
-        'I was looking for a way to get fit and relieve stress. Taekwondo offers this and so much more. The community here has become like a second family.'
+        'Ik zocht een manier om fit te worden en stress kwijt te raken. Taekwondo biedt dit en zoveel meer.',
+        'I was looking for a way to get fit and relieve stress. Taekwondo offers this and so much more.'
       ),
     },
   ];
 
   return (
-    <section id="testimonials" className="section-padding bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
-      
-      <div ref={ref} className="container mx-auto px-4 relative z-10">
+    <section ref={sectionRef} id="testimonials" className="py-32 bg-background">
+      <div className="container mx-auto px-4 max-w-7xl">
+        
         {/* Header */}
-        <div className={cn(
-          "text-center max-w-3xl mx-auto mb-16 transition-all duration-700",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('GETUIGENISSEN', 'TESTIMONIALS')}</p>
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            {t('Wat Onze ', 'What Our ')}<span className="text-primary">{t('Leerlingen Zeggen', 'Students Say')}</span>
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            {t(
-              'Ontdek de ervaringen van onze leerlingen en hun families. Hun verhalen inspireren ons elke dag.',
-              'Discover the experiences of our students and their families. Their stories inspire us every day.'
-            )}
-          </p>
+        <div ref={headerRef} className="mb-24">
+          <div className="max-w-3xl space-y-8">
+            <div className="inline-block">
+              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
+                {t('Getuigenissen', 'Testimonials')}
+              </span>
+            </div>
+            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+              {t('Wat onze', 'What our')}<br />
+              <span className="text-primary">{t('leerlingen zeggen', 'students say')}</span>
+            </h2>
+            <div className="w-20 h-1 bg-primary"></div>
+            <div className="space-y-8 max-w-2xl">
+              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
+                {t(
+                  'Echte verhalen. Echte resultaten.',
+                  'Real stories. Real results.'
+                )}
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={cn(
-                "group bg-card border border-border rounded-xl p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1",
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              )}
-              style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
+              className="testimonial-card bg-background p-8 sm:p-10 border-l-4 border-primary hover:bg-muted/30 transition-colors duration-300"
             >
-              {/* Quote icon */}
-              <Quote className="w-8 h-8 text-primary/20 mb-4" />
-              
               {/* Rating */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                 ))}
               </div>
 
               {/* Text */}
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+              <p className="text-foreground/80 text-base leading-[1.8] mb-8">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                  <span className="text-primary-foreground font-semibold text-sm">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary font-bold text-base">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground text-sm">{testimonial.name}</p>
-                  <p className="text-muted-foreground text-xs">{testimonial.role}</p>
+                  <p className="font-bold text-foreground text-base">{testimonial.name}</p>
+                  <p className="text-foreground/60 text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className={cn(
-          "text-center mt-12 transition-all duration-700 delay-500",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <p className="text-muted-foreground mb-4">
-            {t('Klaar om je eigen verhaal te schrijven?', 'Ready to write your own story?')}
-          </p>
-          <a 
-            href="#register" 
-            className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
-          >
-            {t('Start vandaag nog', 'Start today')} →
-          </a>
         </div>
       </div>
     </section>

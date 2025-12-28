@@ -90,22 +90,22 @@ export function AboutSection() {
                 {t('Over Ons', 'About Us')}
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-[1.15]">
+            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               {t('Taekwondo', 'Taekwondo')}<br />
               <span className="text-primary">Black Dragon</span>
             </h2>
-            <div className="w-16 h-0.5 bg-primary"></div>
-            <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/80 text-lg sm:text-xl leading-[1.7] font-light">
+            <div className="w-20 h-1 bg-primary"></div>
+            <div className="space-y-8 max-w-2xl">
+              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
                 {t(
-                  'Een sportclub gebaseerd op discipline, respect en vertrouwen.',
-                  'A sports club based on discipline, respect and trust.'
+                  'Discipline. Respect. Vertrouwen.',
+                  'Discipline. Respect. Trust.'
                 )}
               </p>
-              <p className="text-foreground/60 text-base leading-[1.7]">
+              <p className="text-foreground/70 text-base sm:text-lg leading-[1.8]">
                 {t(
-                  'Aangesloten bij Taekwondo Bond Nederland, IMAF-Nederland en World Taekwondo Federatie.',
-                  'Affiliated with Taekwondo Bond Nederland, IMAF-Netherlands and World Taekwondo Federation.'
+                  'Sinds 2013 begeleiden wij studenten van alle leeftijden in hun persoonlijke groei door traditionele Taekwondo.',
+                  'Since 2013, we guide students of all ages in their personal growth through traditional Taekwondo.'
                 )}
               </p>
             </div>
@@ -122,12 +122,12 @@ export function AboutSection() {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="stat-item bg-background p-10 sm:p-12 text-center"
+                className="stat-item bg-background p-12 sm:p-16 text-center"
               >
-                <div className="font-serif text-5xl sm:text-6xl font-bold text-primary mb-3">
+                <div className="font-serif text-6xl sm:text-7xl font-bold text-primary mb-4">
                   {stat.value}
                 </div>
-                <div className="text-xs sm:text-sm uppercase tracking-[0.15em] text-foreground/60 font-medium">
+                <div className="text-sm uppercase tracking-wider text-foreground/70 font-semibold">
                   {stat.label}
                 </div>
               </div>
@@ -137,11 +137,11 @@ export function AboutSection() {
 
         {/* Core Values */}
         <div ref={valuesRef}>
-          <div className="mb-14">
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
+          <div className="mb-16">
+            <h3 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
               {t('Kernwaarden', 'Core Values')}
             </h3>
-            <div className="w-12 h-0.5 bg-primary mt-4"></div>
+            <div className="w-16 h-1 bg-primary mt-6"></div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
@@ -155,11 +155,11 @@ export function AboutSection() {
                 key={index}
                 className="value-card bg-background p-8 sm:p-10 hover:bg-muted/30 transition-colors duration-300"
               >
-                <div className="text-5xl sm:text-6xl mb-5 text-primary">{value.korean}</div>
-                <h4 className="font-bold text-lg sm:text-xl text-foreground mb-2 tracking-tight">
+                <div className="text-6xl sm:text-7xl mb-6 text-primary font-light">{value.korean}</div>
+                <h4 className="font-bold text-xl text-foreground mb-3">
                   {value.english}
                 </h4>
-                <p className="text-foreground/60 text-sm leading-[1.6] max-w-[28ch]">
+                <p className="text-foreground/70 text-sm leading-[1.7] max-w-[30ch]">
                   {value.desc}
                 </p>
               </div>

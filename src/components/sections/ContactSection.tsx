@@ -1,15 +1,59 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
-import { cn } from '@/lib/utils';
-import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { MembershipBenefits } from '@/components/shared/MembershipBenefits';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function ContactSection() {
-  const { ref, isVisible } = useScrollReveal();
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const locationsRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(headerRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: 'top 80%',
+        },
+      });
+
+      if (locationsRef.current) {
+        const locations = locationsRef.current.querySelectorAll('.location-card');
+        gsap.from(locations, {
+          opacity: 0,
+          y: 60,
+          duration: 0.8,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: locationsRef.current,
+            start: 'top 75%',
+          },
+        });
+      }
+
+      gsap.from(ctaRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: 'top 80%',
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   const locations = [
     {
@@ -31,48 +75,42 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-background relative overflow-hidden">
-      {/* Decorative Pattern */}
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      
-      <div ref={ref} className="container mx-auto px-4">
+    <section ref={sectionRef} id="contact" className="py-32 bg-background">
+      <div className="container mx-auto px-4 max-w-7xl">
+        
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('CONTACT', 'CONTACT')}</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-            {t('Bezoek ', 'Visit ')}<span className="text-primary">{t('Ons', 'Us')}</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {t(
-              'We hebben 2 trainingslocaties in Den Haag. Kom langs voor een gratis proefles!',
-              'We have 2 training locations in The Hague. Come by for a free trial class!'
-            )}
-          </p>
-        </motion.div>
+        <div ref={headerRef} className="mb-24">
+          <div className="max-w-3xl space-y-8">
+            <div className="inline-block">
+              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
+                {t('Contact', 'Contact')}
+              </span>
+            </div>
+            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+              {t('Bezoek', 'Visit')}<br />
+              <span className="text-primary">{t('ons', 'us')}</span>
+            </h2>
+            <div className="w-20 h-1 bg-primary"></div>
+            <div className="space-y-8 max-w-2xl">
+              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
+                {t(
+                  'Twee locaties. Eén passie.',
+                  'Two locations. One passion.'
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Locations Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div ref={locationsRef} className="grid lg:grid-cols-2 gap-16 mb-24">
           {locations.map((location, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group"
+              className="location-card space-y-8"
             >
               {/* Google Map */}
-              <motion.div 
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
-                className="relative h-72 w-full rounded-lg overflow-hidden border border-border shadow-card mb-6"
-              >
+              <div className="relative h-80 w-full overflow-hidden">
                 <iframe
                   src={location.mapUrl}
                   width="100%"
@@ -81,105 +119,76 @@ export function ContactSection() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale-[50%] group-hover:grayscale-0 transition-all duration-500"
+                  className="grayscale hover:grayscale-0 transition-all duration-500"
                 />
-              </motion.div>
+              </div>
 
               {/* Location Details */}
-              <div>
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-6">{location.name}</h3>
+              <div className="space-y-8">
+                <h3 className="font-serif text-3xl font-bold text-foreground">{location.name}</h3>
                 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
+                    <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{t('Adres', 'Address')}</p>
-                      <p className="text-foreground font-medium">{location.address}</p>
+                      <p className="text-sm font-semibold text-foreground/60 mb-1">{t('Adres', 'Address')}</p>
+                      <p className="text-foreground text-base font-medium">{location.address}</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-primary" />
-                    </div>
+                    <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{t('Telefoon', 'Phone')}</p>
-                      <a href={`tel:${location.phone}`} className="text-foreground font-medium hover:text-primary transition-colors">
+                      <p className="text-sm font-semibold text-foreground/60 mb-1">{t('Telefoon', 'Phone')}</p>
+                      <a href={`tel:${location.phone}`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
                         {location.phone}
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-primary" />
-                    </div>
+                    <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Email</p>
-                      <a href={`mailto:${location.email}`} className="text-foreground font-medium hover:text-primary transition-colors">
+                      <p className="text-sm font-semibold text-foreground/60 mb-1">Email</p>
+                      <a href={`mailto:${location.email}`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
                         {location.email}
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5 text-primary" />
-                    </div>
+                    <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{t('Openingstijden', 'Hours')}</p>
-                      <p className="text-foreground font-medium">{location.hours}</p>
+                      <p className="text-sm font-semibold text-foreground/60 mb-1">{t('Trainingstijden', 'Training times')}</p>
+                      <p className="text-foreground text-base font-medium">{location.hours}</p>
                     </div>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        {/* Membership Benefits */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-16"
-        >
-          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-foreground text-center mb-8">
-            {t('Waarom lid worden?', 'Why become a member?')}
-          </h3>
-          <MembershipBenefits variant="compact" />
-        </motion.div>
-
-        {/* Registration CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center"
-        >
-          <div className="inline-block">
-            <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
+        {/* CTA */}
+        <div ref={ctaRef} className="text-center">
+          <div className="max-w-2xl mx-auto space-y-8">
+            <h3 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
               {t('Klaar om te beginnen?', 'Ready to start?')}
             </h3>
-            <p className="text-muted-foreground mb-8">
-              {t('Claim je gratis proefles vandaag', 'Claim your free trial today')}
+            <p className="text-foreground/70 text-lg">
+              {t('Claim je gratis proefles vandaag.', 'Claim your free trial today.')}
             </p>
             <Button
               asChild
               size="lg"
-              className="btn-korean bg-primary hover:bg-accent text-primary-foreground"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-full"
             >
-              <Link to="/register" className="flex items-center gap-2">
-                {t('🥋 Probeer Gratis', '🥋 Try Free')}
-                <ArrowRight className="w-5 h-5" />
+              <Link to="/register">
+                {t('Probeer gratis', 'Try free')}
               </Link>
             </Button>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

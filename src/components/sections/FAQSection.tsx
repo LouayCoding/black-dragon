@@ -1,23 +1,54 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
-import { cn } from '@/lib/utils';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function FAQSection() {
-  const { ref, isVisible } = useScrollReveal();
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const accordionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(headerRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: 'top 80%',
+        },
+      });
+
+      gsap.from(accordionRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: accordionRef.current,
+          start: 'top 75%',
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   const faqs = [
     {
-      question: t('Vanaf welke leeftijd kan mijn kind beginnen met Taekwondo?', 'At what age can my child start Taekwondo?'),
+      question: t('Vanaf welke leeftijd kan mijn kind beginnen met taekwondo?', 'At what age can my child start taekwondo?'),
       answer: t(
-        'Wij bieden ons Kleine Tijgers programma aan voor kinderen vanaf 4 jaar. Dit programma is speciaal ontworpen om jonge kinderen spelenderwijs kennis te laten maken met basisvaardigheden, discipline en zelfvertrouwen.',
-        'We offer our Little Tigers program for children from 4 years old. This program is specially designed to introduce young children to basic skills, discipline, and self-confidence through play.'
+        'Wij bieden ons kleine tijgers programma aan voor kinderen vanaf 4 jaar. Dit programma is speciaal ontworpen om jonge kinderen spelenderwijs kennis te laten maken met basisvaardigheden.',
+        'We offer our little tigers program for children from 4 years old. This program is specially designed to introduce young children to basic skills through play.'
       ),
     },
     {
@@ -72,62 +103,51 @@ export function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-muted/30 relative">
-      <div ref={ref} className="container mx-auto px-4">
+    <section ref={sectionRef} id="faq" className="py-32 bg-muted/30">
+      <div className="container mx-auto px-4 max-w-7xl">
+        
         {/* Header */}
-        <div className={cn(
-          "text-center max-w-3xl mx-auto mb-12 transition-all duration-700",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('VEELGESTELDE VRAGEN', 'FAQ')}</p>
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            {t('Heb je ', 'Have ')}<span className="text-primary">{t('Vragen?', 'Questions?')}</span>
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            {t(
-              'Hier vind je antwoorden op de meest gestelde vragen. Staat je vraag er niet bij? Neem gerust contact met ons op!',
-              'Here you will find answers to the most frequently asked questions. Is your question not listed? Feel free to contact us!'
-            )}
-          </p>
+        <div ref={headerRef} className="mb-24">
+          <div className="max-w-3xl space-y-8">
+            <div className="inline-block">
+              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
+                {t('Veelgestelde vragen', 'FAQ')}
+              </span>
+            </div>
+            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+              {t('Heb je', 'Have')}<br />
+              <span className="text-primary">{t('vragen?', 'questions?')}</span>
+            </h2>
+            <div className="w-20 h-1 bg-primary"></div>
+            <div className="space-y-8 max-w-2xl">
+              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
+                {t(
+                  'Antwoorden op je vragen.',
+                  'Answers to your questions.'
+                )}
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* FAQ Accordion */}
-        <div className={cn(
-          "max-w-3xl mx-auto transition-all duration-700 delay-200",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <Accordion type="single" collapsible className="space-y-4">
+        <div ref={accordionRef} className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-6">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6 data-[state=open]:border-primary/30 transition-colors"
+                className="bg-background border-l-4 border-primary px-8 py-2 hover:bg-muted/30 transition-colors"
               >
-                <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary py-5">
+                <AccordionTrigger className="text-left font-bold text-lg text-foreground hover:text-primary py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                <AccordionContent className="text-foreground/80 pb-6 leading-[1.8] text-base">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
-
-        {/* CTA */}
-        <div className={cn(
-          "text-center mt-12 transition-all duration-700 delay-300",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <p className="text-muted-foreground mb-4">
-            {t('Nog meer vragen?', 'Still have questions?')}
-          </p>
-          <a 
-            href="#contact" 
-            className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
-          >
-            {t('Neem contact met ons op', 'Contact us')} →
-          </a>
         </div>
       </div>
     </section>

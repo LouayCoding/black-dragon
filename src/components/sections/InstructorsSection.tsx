@@ -1,15 +1,45 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
-import { cn } from '@/lib/utils';
 import { Award, Star } from 'lucide-react';
-import { motion } from 'framer-motion';
-
-// Import instructor images
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import rachidImg from '@/assets/instructors/grandmaster-kim.jpg';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function InstructorsSection() {
-  const { ref, isVisible } = useScrollReveal();
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const profileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Header animation
+      gsap.from(headerRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: 'top 80%',
+        },
+      });
+
+      // Profile animation
+      gsap.from(profileRef.current, {
+        opacity: 0,
+        y: 60,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: profileRef.current,
+          start: 'top 75%',
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   const instructor = {
     name: 'R. Ousllam',
@@ -31,93 +61,87 @@ export function InstructorsSection() {
   };
 
   return (
-    <section id="instructors" className="section-padding bg-muted/30 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      
-      <div ref={ref} className="container mx-auto px-4">
+    <section ref={sectionRef} id="instructors" className="py-32 bg-muted/30">
+      <div className="container mx-auto px-4 max-w-7xl">
+        
         {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('INSTRUCTEUR', 'INSTRUCTOR')}</p>
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            {t('Ontmoet Je ', 'Meet Your ')}
-            <span className="text-primary">{t('Instructeur', 'Instructor')}</span>
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            {t(
-              'Leer van een rijksgediplomeerd Taekwondo Trainer Niveau 3 met jarenlange ervaring en brede kennis die iedereen begeleidt naar succes.',
-              'Learn from a nationally certified Taekwondo Trainer Level 3 with years of experience and broad knowledge who guides everyone to success.'
-            )}
-          </p>
-        </motion.div>
+        <div ref={headerRef} className="mb-24">
+          <div className="max-w-3xl space-y-8">
+            <div className="inline-block">
+              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
+                {t('Instructeur', 'Instructor')}
+              </span>
+            </div>
+            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+              {t('Jouw', 'Your')}<br />
+              <span className="text-primary">{t('Instructeur', 'Instructor')}</span>
+            </h2>
+            <div className="w-20 h-1 bg-primary"></div>
+            <div className="space-y-8 max-w-2xl">
+              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
+                {t(
+                  'Ervaring. Expertise. Passie.',
+                  'Experience. Expertise. Passion.'
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Instructor Profile */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 items-center"
-        >
+        <div ref={profileRef} className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
           {/* Photo */}
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-            className="relative"
-          >
-            <div className="relative aspect-[3/4] rounded-lg overflow-hidden border border-border shadow-xl">
+          <div>
+            <div className="relative aspect-[3/4] overflow-hidden">
               <img
                 src={instructor.image}
                 alt={instructor.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
               {/* Rank Badge */}
-              <div className="absolute top-6 right-6 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-semibold shadow-glow">
+              <div className="absolute top-6 right-6 bg-primary text-primary-foreground px-4 py-2 font-bold text-sm">
                 {instructor.rank}
               </div>
+
+              {/* Name Overlay */}
+              <div className="absolute bottom-6 left-6 right-6">
+                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-2">{instructor.name}</h3>
+                <p className="text-primary text-base font-semibold">{instructor.role}</p>
+              </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Content */}
-          <div>
-            <h3 className="font-serif text-4xl font-bold text-foreground mb-2">{instructor.name}</h3>
-            <p className="text-primary text-lg font-medium mb-6">{instructor.role}</p>
-
+          <div className="space-y-10">
             {/* Experience */}
-            <div className="flex items-center gap-3 mb-6 text-foreground">
-              <Award className="w-6 h-6 text-primary" />
-              <span className="text-lg font-semibold">{instructor.experience} {t('ervaring', 'experience')}</span>
+            <div className="flex items-center gap-4">
+              <Award className="w-7 h-7 text-primary flex-shrink-0" />
+              <span className="text-xl font-bold text-foreground">{instructor.experience} {t('ervaring', 'experience')}</span>
             </div>
 
             {/* Bio */}
-            <p className="text-muted-foreground text-base leading-relaxed mb-8">
+            <p className="text-foreground/80 text-lg leading-[1.8] max-w-[45ch]">
               {instructor.bio}
             </p>
 
             {/* Achievements */}
             <div>
-              <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-                {t('Prestaties', 'Achievements')}
-              </p>
-              <div className="space-y-3">
+              <h4 className="text-base font-bold text-foreground mb-8">
+                {t('Specialisaties', 'Specializations')}
+              </h4>
+              <div className="space-y-5">
                 {instructor.achievements.map((achievement, i) => (
-                  <div key={i} className="flex items-start gap-3">
+                  <div key={i} className="flex items-start gap-4">
                     <Star className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{achievement}</span>
+                    <span className="text-foreground/80 text-base leading-[1.7]">{achievement}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

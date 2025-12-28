@@ -55,7 +55,7 @@ export function Header() {
           <img 
             src="/logo.png" 
             alt="Taekwondo Logo" 
-            className="h-20 w-auto transition-transform duration-300 group-hover:scale-110"
+            className="h-14 sm:h-16 md:h-20 w-auto transition-transform duration-300 group-hover:scale-110"
           />
         </Link>
 

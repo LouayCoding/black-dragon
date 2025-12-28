@@ -121,16 +121,16 @@ export function ProgramsSection() {
                 {t('Programmas', 'Programs')}
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-[1.15]">
-              {t('Training voor', 'Training for')}<br />
-              <span className="text-primary">{t('Elke Reis', 'Every Journey')}</span>
+            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+              {t('Jouw', 'Your')}<br />
+              <span className="text-primary">{t('Taekwondo Reis', 'Taekwondo Journey')}</span>
             </h2>
-            <div className="w-16 h-0.5 bg-primary"></div>
-            <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/80 text-lg sm:text-xl leading-[1.7] font-light">
+            <div className="w-20 h-1 bg-primary"></div>
+            <div className="space-y-8 max-w-2xl">
+              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
                 {t(
-                  'Van kleine tijgers tot ervaren wedstrijdvechters, wij bieden programmas op maat voor elke leeftijd en elk niveau.',
-                  'From tiny tigers to seasoned competitors, we offer programs tailored to every age and skill level.'
+                  'Van 4 tot 99 jaar. Van eerste stap tot zwarte band.',
+                  'From 4 to 99 years. From first step to black belt.'
                 )}
               </p>
             </div>
@@ -167,20 +167,20 @@ export function ProgramsSection() {
               </div>
 
               {/* Content */}
-              <div className="p-8 sm:p-10">
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              <div className="p-10 sm:p-12">
+                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-6 leading-tight">
                   {program.title}
                 </h3>
-                <p className="text-foreground/70 text-sm leading-[1.7] mb-6 max-w-[32ch]">
+                <p className="text-foreground/80 text-base leading-[1.8] mb-8 max-w-[35ch]">
                   {program.description}
                 </p>
 
                 {/* Features */}
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-4 mb-10">
                   {program.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3 text-sm text-foreground/80">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                      <span className="leading-[1.6]">{feature}</span>
+                      <span className="w-2 h-2 rounded-full bg-primary mt-1 flex-shrink-0" />
+                      <span className="leading-[1.7]">{feature}</span>
                     </li>
                   ))}
                 </ul>
