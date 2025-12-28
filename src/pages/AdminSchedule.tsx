@@ -26,35 +26,35 @@ interface ClassSchedule {
 const mockClasses: ClassSchedule[] = [
   {
     id: '1',
-    name: 'Kleine Tijgers',
+    name: 'Taekwondo KIDS/JUGD',
     day: 'Maandag',
-    time: '16:00',
-    duration: 45,
-    instructor: 'Rachid Ousllam',
-    location: 'Amsterdam',
+    time: '17:00',
+    duration: 60,
+    instructor: 'R. Ousllam',
+    location: 'Draaistraat 16',
     maxStudents: 15,
     students: ['1', '2'],
   },
   {
     id: '2',
-    name: 'Jeugd Programma',
+    name: 'Taekwondo JUGD/JUNIOREN',
     day: 'Maandag',
-    time: '17:00',
+    time: '18:00',
     duration: 60,
-    instructor: 'Rachid Ousllam',
-    location: 'Amsterdam',
+    instructor: 'R. Ousllam',
+    location: 'Draaistraat 16',
     maxStudents: 20,
     students: ['1'],
   },
   {
     id: '3',
-    name: 'Volwassenen Training',
+    name: 'Taekwondo KIDS/JUGD',
     day: 'Dinsdag',
-    time: '19:00',
-    duration: 90,
-    instructor: 'Rachid Ousllam',
-    location: 'Rotterdam',
-    maxStudents: 25,
+    time: '18:00',
+    duration: 60,
+    instructor: 'R. Ousllam',
+    location: 'Withuysstraat 2',
+    maxStudents: 15,
     students: ['3'],
   },
 ];
@@ -156,8 +156,8 @@ export default function AdminSchedule() {
   const days = ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'];
   const dayOptions = days.map(day => ({ value: day, label: day }));
   const locationOptions = [
-    { value: 'Amsterdam', label: 'Amsterdam' },
-    { value: 'Rotterdam', label: 'Rotterdam' },
+    { value: 'Draaistraat 16', label: 'Draaistraat 16 - De Ontmoetingsschool' },
+    { value: 'Withuysstraat 2', label: 'Withuysstraat 2 - Gert van Wijkschool' },
   ];
 
   return (

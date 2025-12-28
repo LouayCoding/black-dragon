@@ -12,20 +12,21 @@ export function InstructorsSection() {
   const { t } = useLanguage();
 
   const instructor = {
-    name: 'Rachid Ousllam',
-    role: t('Hoofdinstructeur & Eigenaar', 'Head Instructor & Owner'),
-    rank: t('5e Dan Zwarte Band', '5th Dan Black Belt'),
-    experience: t('25+ jaar', '25+ years'),
+    name: 'R. Ousllam',
+    role: t('Hoofdtrainer & Mentaal Begeleider', 'Head Trainer & Mental Coach'),
+    rank: t('3e Dan Zwarte Band', '3rd Dan Black Belt'),
+    experience: t('Sinds 2013', 'Since 2013'),
     image: rachidImg,
     bio: t(
-      'Rachid Ousllam is de oprichter en hoofdinstructeur van onze dojang. Met meer dan 25 jaar ervaring in Taekwondo combineert hij traditionele Koreaanse technieken met moderne trainingsmethoden om studenten van alle leeftijden te begeleiden op hun vechtkunstreis.',
-      'Rachid Ousllam is the founder and head instructor of our dojang. With over 25 years of experience in Taekwondo, he combines traditional Korean techniques with modern training methods to guide students of all ages on their martial arts journey.'
+      'Rijksgediplomeerd Taekwondo Trainer Niveau 3 | Gecertificeerd Coach met Continentale Licentie. Erkend door Taekwondobond Nederland (TBN) en NOC*NSF. Oprichter van Taekwondo Black Dragon Den Haag (2013) en houder van de 3e Dan in Taekwondo, officieel erkend door World Taekwondo (WT) en TBN.',
+      'Nationally Certified Taekwondo Trainer Level 3 | Certified Coach with Continental License. Recognized by Taekwondobond Nederland (TBN) and NOC*NSF. Founder of Taekwondo Black Dragon The Hague (2013) and holder of the 3rd Dan in Taekwondo, officially recognized by World Taekwondo (WT) and TBN.'
     ),
     achievements: [
-      t('25+ jaar Taekwondo ervaring', '25+ years Taekwondo experience'),
-      t('5e Dan Zwarte Band', '5th Dan Black Belt'),
-      t('Oprichter van 2 locaties', 'Founder of 2 locations'),
-      t('500+ studenten getraind', '500+ students trained'),
+      t('Mentale begeleiding: versterkt zelfvertrouwen en veerkracht', 'Mental coaching: strengthens confidence and resilience'),
+      t('Persoonlijke aanpak: trainingen afgestemd op niveau en doelen', 'Personal approach: training tailored to level and goals'),
+      t('Ervaring met alle leeftijden: van kinderen tot volwassenen', 'Experience with all ages: from children to adults'),
+      t('Focus op discipline en respect: persoonlijke groei naast techniek', 'Focus on discipline and respect: personal growth alongside technique'),
+      t('Competitie & recreatie: plezier én prestatie in sport', 'Competition & recreation: fun and performance in sports'),
     ],
   };
 
@@ -50,8 +51,8 @@ export function InstructorsSection() {
           </h2>
           <p className="text-muted-foreground text-lg">
             {t(
-              'Leer van een gecertificeerde 5e Dan zwarte band instructeur met meer dan 25 jaar ervaring in traditionele Taekwondo.',
-              'Learn from a certified 5th Dan black belt instructor with over 25 years of experience in traditional Taekwondo.'
+              'Leer van een rijksgediplomeerd Taekwondo Trainer Niveau 3 met jarenlange ervaring en brede kennis die iedereen begeleidt naar succes.',
+              'Learn from a nationally certified Taekwondo Trainer Level 3 with years of experience and broad knowledge who guides everyone to success.'
             )}
           </p>
         </motion.div>

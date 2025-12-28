@@ -1,128 +1,170 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
-import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import sparringImg from '@/assets/gallery/sparring.jpg';
 import highKickImg from '@/assets/gallery/high-kick.jpg';
 import littleTigersImg from '@/assets/gallery/little-tigers.jpg';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function AboutSection() {
-  const { ref: sectionRef, isVisible } = useScrollReveal();
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const imagesRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const valuesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Header animation
+      gsap.from(headerRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: 'top 80%',
+        },
+      });
+
+      // Images stagger animation
+      if (imagesRef.current) {
+        const images = imagesRef.current.querySelectorAll('.image-card');
+        gsap.from(images, {
+          opacity: 0,
+          y: 60,
+          duration: 0.6,
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: imagesRef.current,
+            start: 'top 75%',
+          },
+        });
+      }
+
+      // Stats animation
+      if (statsRef.current) {
+        const stats = statsRef.current.querySelectorAll('.stat-item');
+        gsap.from(stats, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.5,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: statsRef.current,
+            start: 'top 80%',
+          },
+        });
+      }
+
+      // Values animation
+      if (valuesRef.current) {
+        const values = valuesRef.current.querySelectorAll('.value-card');
+        gsap.from(values, {
+          opacity: 0,
+          y: 40,
+          duration: 0.5,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: valuesRef.current,
+            start: 'top 80%',
+          },
+        });
+      }
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="about" className="section-padding bg-background relative overflow-hidden">
-      {/* Decorative Pattern */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      
-      <div ref={sectionRef} className="container mx-auto px-4">
-        {/* Content First */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <p className="text-primary font-medium tracking-widest text-sm mb-4">{t('OVER ONS', 'ABOUT US')}</p>
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-            {t('Traditie Eren,', 'Honoring Tradition,')}<br />
-            <span className="text-primary">{t('Kampioenen Bouwen', 'Building Champions')}</span>
-          </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-            {t(
-              'Onze dojang is meer dan een trainingscentrum—het is een gemeenschap gewijd aan de authentieke beoefening van Taekwondo. Met 25+ jaar ervaring combineren we eeuwenoude technieken met moderne trainingsmethoden.',
-              'Our dojang is more than a training center—it is a community dedicated to the authentic practice of Taekwondo. With 25+ years of experience, we blend time-honored techniques with modern training methodologies.'
-            )}
-          </p>
-        </motion.div>
-
-        {/* Image Showcase Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {[
-            { img: sparringImg, title: t('Sparring', 'Sparring'), desc: t('Wedstrijdvoorbereiding', 'Competition prep') },
-            { img: highKickImg, title: t('Technieken', 'Techniques'), desc: t('Perfecte uitvoering', 'Perfect execution') },
-            { img: littleTigersImg, title: t('Jeugd', 'Youth'), desc: t('Vanaf 4 jaar', 'From age 4') },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ y: -8 }}
-              className="group relative"
-            >
-              <div className="relative aspect-[3/4] rounded-lg overflow-hidden border border-border shadow-lg">
-                <img 
-                  src={item.img} 
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                
-                {/* Text Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-korean-white">
-                  <h3 className="font-serif text-2xl font-bold mb-1">{item.title}</h3>
-                  <p className="text-sm text-korean-white/80">{item.desc}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+    <section ref={sectionRef} id="about" className="py-32 bg-background">
+      <div className="container mx-auto px-4 max-w-7xl">
+        
+        {/* Header Section */}
+        <div ref={headerRef} className="mb-24">
+          <div className="max-w-3xl space-y-8">
+            <div className="inline-block">
+              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
+                {t('Over Ons', 'About Us')}
+              </span>
+            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-[1.15]">
+              {t('Taekwondo', 'Taekwondo')}<br />
+              <span className="text-primary">Black Dragon</span>
+            </h2>
+            <div className="w-16 h-0.5 bg-primary"></div>
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-foreground/80 text-lg sm:text-xl leading-[1.7] font-light">
+                {t(
+                  'Een sportclub gebaseerd op discipline, respect en vertrouwen.',
+                  'A sports club based on discipline, respect and trust.'
+                )}
+              </p>
+              <p className="text-foreground/60 text-base leading-[1.7]">
+                {t(
+                  'Aangesloten bij Taekwondo Bond Nederland, IMAF-Nederland en World Taekwondo Federatie.',
+                  'Affiliated with Taekwondo Bond Nederland, IMAF-Netherlands and World Taekwondo Federation.'
+                )}
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Stats Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-16"
-        >
-          {[
-            { value: '25+', label: t('Jaar Ervaring', 'Years Experience') },
-            { value: '500+', label: t('Studenten', 'Students') },
-            { value: '2', label: t('Locaties', 'Locations') },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              className="text-center"
-            >
-              <p className="font-serif text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</p>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Stats Grid */}
+        <div ref={statsRef} className="mb-28">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border max-w-4xl mx-auto">
+            {[
+              { value: '2013', label: t('Opgericht', 'Founded') },
+              { value: '100+', label: t('Studenten', 'Students') },
+              { value: '2', label: t('Locaties', 'Locations') },
+            ].map((stat, index) => (
+              <div
+                key={index}
+                className="stat-item bg-background p-10 sm:p-12 text-center"
+              >
+                <div className="font-serif text-5xl sm:text-6xl font-bold text-primary mb-3">
+                  {stat.value}
+                </div>
+                <div className="text-xs sm:text-sm uppercase tracking-[0.15em] text-foreground/60 font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        {/* Core Values - Horizontal */}
-        <div className="grid md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-
-          {[
-                { korean: '예의', english: t('Beleefdheid', 'Courtesy'), desc: t('Respect in alle interacties', 'Respect in all interactions') },
-                { korean: '염치', english: t('Integriteit', 'Integrity'), desc: t('Eerlijkheid en sterke moraal', 'Honesty and strong morals') },
-                { korean: '인내', english: t('Doorzettingsvermogen', 'Perseverance'), desc: t('Nooit opgeven mentaliteit', 'Never give up spirit') },
-                { korean: '극기', english: t('Zelfbeheersing', 'Self-Control'), desc: t('Beheers je emoties', 'Master your emotions') },
-          ].map((value, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-all duration-300 group text-center"
-            >
-              <p className="text-primary font-serif text-3xl mb-2 group-hover:scale-110 transition-transform inline-block">
-                {value.korean}
-              </p>
-              <p className="font-semibold text-foreground mb-1">{value.english}</p>
-              <p className="text-xs text-muted-foreground">{value.desc}</p>
-            </motion.div>
-          ))}
+        {/* Core Values */}
+        <div ref={valuesRef}>
+          <div className="mb-14">
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
+              {t('Kernwaarden', 'Core Values')}
+            </h3>
+            <div className="w-12 h-0.5 bg-primary mt-4"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            {[
+              { korean: '예의', english: t('Beleefdheid', 'Courtesy'), desc: t('Respect in alle interacties', 'Respect in all interactions') },
+              { korean: '염치', english: t('Integriteit', 'Integrity'), desc: t('Eerlijkheid en sterke moraal', 'Honesty and strong morals') },
+              { korean: '인내', english: t('Doorzettingsvermogen', 'Perseverance'), desc: t('Nooit opgeven', 'Never give up') },
+              { korean: '극기', english: t('Zelfbeheersing', 'Self-Control'), desc: t('Beheers je emoties', 'Master emotions') },
+            ].map((value, index) => (
+              <div
+                key={index}
+                className="value-card bg-background p-8 sm:p-10 hover:bg-muted/30 transition-colors duration-300"
+              >
+                <div className="text-5xl sm:text-6xl mb-5 text-primary">{value.korean}</div>
+                <h4 className="font-bold text-lg sm:text-xl text-foreground mb-2 tracking-tight">
+                  {value.english}
+                </h4>
+                <p className="text-foreground/60 text-sm leading-[1.6] max-w-[28ch]">
+                  {value.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

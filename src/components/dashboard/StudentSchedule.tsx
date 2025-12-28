@@ -7,9 +7,9 @@ export function StudentSchedule() {
   const { t } = useLanguage();
 
   const schedule = [
-    { day: t('Maandag', 'Monday'), time: '17:00', class: t('Jeugd Programma', 'Youth Program'), duration: '60 min', location: 'Amsterdam' },
-    { day: t('Woensdag', 'Wednesday'), time: '17:00', class: t('Jeugd Programma', 'Youth Program'), duration: '60 min', location: 'Amsterdam' },
-    { day: t('Vrijdag', 'Friday'), time: '17:00', class: t('Jeugd Programma', 'Youth Program'), duration: '60 min', location: 'Amsterdam' },
+    { day: t('Maandag', 'Monday'), time: '17:00-18:00', class: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), duration: '60 min', location: 'Draaistraat 16' },
+    { day: t('Woensdag', 'Wednesday'), time: '17:00-18:00', class: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), duration: '60 min', location: 'Draaistraat 16' },
+    { day: t('Vrijdag', 'Friday'), time: '19:00-20:00', class: t('Vrouwentraining', 'Women Training'), duration: '60 min', location: 'Draaistraat 16' },
   ];
 
   return (

@@ -30,7 +30,7 @@ export default function AdminStudents() {
     age: '',
     program: 'youth',
     belt: 'Witte band',
-    location: 'Amsterdam',
+    location: 'Draaistraat 16',
   });
 
   // Enable keyboard shortcuts
@@ -75,8 +75,8 @@ export default function AdminStudents() {
   ];
 
   const locationOptions = [
-    { value: 'Amsterdam', label: 'Amsterdam' },
-    { value: 'Rotterdam', label: 'Rotterdam' },
+    { value: 'Draaistraat 16', label: 'Draaistraat 16 - De Ontmoetingsschool' },
+    { value: 'Withuysstraat 2', label: 'Withuysstraat 2 - Gert van Wijkschool' },
   ];
 
   const beltOptions = [
@@ -117,7 +117,7 @@ export default function AdminStudents() {
         emergency_phone: '',
         program: newStudent.program as 'little-tigers' | 'youth' | 'adult',
         belt: newStudent.belt,
-        location: newStudent.location as 'Amsterdam' | 'Rotterdam',
+        location: newStudent.location as 'Den Haag',
         join_date: new Date().toISOString().split('T')[0],
         attendance: 100,
         last_class: new Date().toISOString().split('T')[0],
@@ -137,7 +137,7 @@ export default function AdminStudents() {
         age: '',
         program: 'youth',
         belt: 'Witte band',
-        location: 'Amsterdam',
+        location: 'Draaistraat 16',
       });
       
       toast({
@@ -207,8 +207,8 @@ export default function AdminStudents() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">{t('Alle locaties', 'All locations')}</SelectItem>
-                  <SelectItem value="Amsterdam">Amsterdam</SelectItem>
-                  <SelectItem value="Rotterdam">Rotterdam</SelectItem>
+                  <SelectItem value="Draaistraat 16">Draaistraat 16</SelectItem>
+                  <SelectItem value="Withuysstraat 2">Withuysstraat 2</SelectItem>
                 </SelectContent>
               </Select>
             </div>

@@ -260,8 +260,8 @@ export default function AdminAttendance() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">{t('Alle locaties', 'All locations')}</SelectItem>
-                      <SelectItem value="Amsterdam">Amsterdam</SelectItem>
-                      <SelectItem value="Rotterdam">Rotterdam</SelectItem>
+                      <SelectItem value="Draaistraat 16">Draaistraat 16</SelectItem>
+                      <SelectItem value="Withuysstraat 2">Withuysstraat 2</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

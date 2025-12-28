@@ -10,34 +10,28 @@ export function ScheduleSection() {
 
   const schedule = [
     { day: t('Maandag', 'Monday'), classes: [
-      { time: '16:00', name: t('Kleine Tijgers', 'Little Tigers'), duration: '45 min' },
-      { time: '17:00', name: t('Jeugd Programma', 'Youth Program'), duration: '60 min' },
-      { time: '18:30', name: t('Volwassenen Training', 'Adult Training'), duration: '75 min' },
+      { time: '17:00-18:00', name: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '18:00-19:00', name: t('Taekwondo JUGD/JUNIOREN', 'Taekwondo YOUTH/JUNIORS'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '19:30-20:30', name: t('Taekwondo/Krachttraining', 'Taekwondo/Strength Training'), location: 'Draaistraat 16', duration: '60 min' },
     ]},
     { day: t('Dinsdag', 'Tuesday'), classes: [
-      { time: '16:30', name: t('Jeugd Programma', 'Youth Program'), duration: '60 min' },
-      { time: '18:00', name: t('Tiener Krijgers', 'Teen Warriors'), duration: '75 min' },
-      { time: '19:30', name: t('Wedstrijdteam', 'Competition Team'), duration: '90 min' },
+      { time: '18:00-19:00', name: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), location: 'Withuysstraat 2', duration: '60 min' },
     ]},
     { day: t('Woensdag', 'Wednesday'), classes: [
-      { time: '16:00', name: t('Kleine Tijgers', 'Little Tigers'), duration: '45 min' },
-      { time: '17:00', name: t('Jeugd Programma', 'Youth Program'), duration: '60 min' },
-      { time: '18:30', name: t('Volwassenen Training', 'Adult Training'), duration: '75 min' },
+      { time: '17:00-18:00', name: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '18:00-19:00', name: t('Taekwondo JUGD/JUNIOREN', 'Taekwondo YOUTH/JUNIORS'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '19:30-20:30', name: t('Taekwondo/Krachttraining', 'Taekwondo/Strength Training'), location: 'Draaistraat 16', duration: '60 min' },
     ]},
     { day: t('Donderdag', 'Thursday'), classes: [
-      { time: '16:30', name: t('Jeugd Programma', 'Youth Program'), duration: '60 min' },
-      { time: '18:00', name: t('Tiener Krijgers', 'Teen Warriors'), duration: '75 min' },
-      { time: '19:30', name: t('Wedstrijdteam', 'Competition Team'), duration: '90 min' },
+      { time: '18:00-19:00', name: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), location: 'Withuysstraat 2', duration: '60 min' },
     ]},
     { day: t('Vrijdag', 'Friday'), classes: [
-      { time: '16:00', name: t('Kleine Tijgers', 'Little Tigers'), duration: '45 min' },
-      { time: '17:00', name: t('Gezinsles', 'Family Class'), duration: '60 min' },
-      { time: '18:30', name: t('Volwassenen Training', 'Adult Training'), duration: '75 min' },
+      { time: '17:00-18:00', name: t('Taekwondo/Krachttraining', 'Taekwondo/Strength Training'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '19:00-20:00', name: t('Vrouwentraining totaal', 'Women Training Total'), location: 'Draaistraat 16', duration: '60 min' },
     ]},
     { day: t('Zaterdag', 'Saturday'), classes: [
-      { time: '09:00', name: t('Open Training Alle Niveaus', 'All Levels Open Mat'), duration: '120 min' },
-      { time: '11:30', name: t('Wedstrijdteam', 'Competition Team'), duration: '90 min' },
-      { time: '14:00', name: t('Privélessen', 'Private Lessons'), duration: t('Op afspraak', 'By Appt') },
+      { time: '12:00-13:30', name: t('PT training', 'PT Training'), location: 'Draaistraat 16', duration: '90 min' },
+      { time: '13:30-14:30', name: t('PT training', 'PT Training'), location: 'Draaistraat 16', duration: '60 min' },
     ]},
   ];
 
@@ -87,7 +81,7 @@ export function ScheduleSection() {
                     {t('Les', 'Class')}
                   </th>
                   <th className="text-left py-4 px-6 font-serif text-lg text-secondary-foreground">
-                    {t('Duur', 'Duration')}
+                    {t('Locatie', 'Location')}
                   </th>
                 </tr>
               </thead>
@@ -117,7 +111,7 @@ export function ScheduleSection() {
                         </div>
                       </td>
                       <td className="py-4 px-6 text-foreground">{cls.name}</td>
-                      <td className="py-4 px-6 text-muted-foreground">{cls.duration}</td>
+                      <td className="py-4 px-6 text-muted-foreground text-sm">{cls.location}</td>
                     </motion.tr>
                   ))
                 ))}

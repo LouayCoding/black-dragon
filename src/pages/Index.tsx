@@ -11,7 +11,6 @@ import { GallerySection } from '@/components/sections/GallerySection';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { BackToTop } from '@/components/BackToTop';
-import { MobileCTA } from '@/components/MobileCTA';
 import { Toaster } from '@/components/ui/sonner';
 
 const Index = () => {
@@ -32,7 +31,6 @@ const Index = () => {
         </main>
         <Footer />
         <BackToTop />
-        <MobileCTA />
         <Toaster position="top-right" />
       </div>
     </LanguageProvider>

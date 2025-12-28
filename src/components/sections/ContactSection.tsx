@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { MembershipBenefits } from '@/components/shared/MembershipBenefits';
 
 export function ContactSection() {
   const { ref, isVisible } = useScrollReveal();
@@ -12,20 +13,20 @@ export function ContactSection() {
 
   const locations = [
     {
-      name: t('Locatie Amsterdam', 'Amsterdam Location'),
-      address: 'Marktstraat 123, 1234 AB Amsterdam',
-      phone: '(020) 123-4567',
-      email: 'amsterdam@taekwondo.nl',
-      hours: t('Ma-Za: 16:00 - 21:00', 'Mon-Sat: 4PM - 9PM'),
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.8674920555147!2d4.893697615744!3d52.37403597978802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c3db87e4bb%3A0xb3a175ceffbd0a9f!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1234567890123!5m2!1sen!2snl',
+      name: t('Draaistraat 16 - De Ontmoetingsschool', 'Draaistraat 16 - De Ontmoetingsschool'),
+      address: 'Draaistraat 16, 2516 EK Den Haag',
+      phone: '06 12345678',
+      email: 'info@taekwondoblackdragon.nl',
+      hours: t('Ma/Wo/Vr/Za', 'Mon/Wed/Fri/Sat'),
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.123!2d4.3007!3d52.0705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b72e9e0e0e0e%3A0x0!2sDraaistraat%2016%2C%20Den%20Haag!5e0!3m2!1snl!2snl!4v1234567890123!5m2!1snl!2snl',
     },
     {
-      name: t('Locatie Rotterdam', 'Rotterdam Location'),
-      address: 'Coolsingel 45, 3011 AD Rotterdam',
-      phone: '(010) 987-6543',
-      email: 'rotterdam@taekwondo.nl',
-      hours: t('Ma-Za: 17:00 - 22:00', 'Mon-Sat: 5PM - 10PM'),
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2460.8674920555147!2d4.479097615744!3d51.92403597978802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c433a3b5c4b3bb%3A0xb3a175ceffbd0a9f!2sRotterdam%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1234567890123!5m2!1sen!2snl',
+      name: t('Withuysstraat 2 - Gert van Wijkschool', 'Withuysstraat 2 - Gert van Wijkschool'),
+      address: 'Withuysstraat 2, Den Haag',
+      phone: '06 12345678',
+      email: 'info@taekwondoblackdragon.nl',
+      hours: t('Di/Do', 'Tue/Thu'),
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.123!2d4.3007!3d52.0705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b72e9e0e0e0e%3A0x0!2sWithuysstraat%202%2C%20Den%20Haag!5e0!3m2!1snl!2snl!4v1234567890123!5m2!1snl!2snl',
     },
   ];
 
@@ -49,8 +50,8 @@ export function ContactSection() {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {t(
-              'We hebben 2 locaties in Nederland. Kom langs voor een gratis proefles!',
-              'We have 2 locations in the Netherlands. Visit us for a free trial class!'
+              'We hebben 2 trainingslocaties in Den Haag. Kom langs voor een gratis proefles!',
+              'We have 2 training locations in The Hague. Come by for a free trial class!'
             )}
           </p>
         </motion.div>
@@ -138,12 +139,26 @@ export function ContactSection() {
           ))}
         </div>
 
-        {/* Registration CTA */}
+        {/* Membership Benefits */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-16"
+        >
+          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-foreground text-center mb-8">
+            {t('Waarom lid worden?', 'Why become a member?')}
+          </h3>
+          <MembershipBenefits variant="compact" />
+        </motion.div>
+
+        {/* Registration CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center"
         >
           <div className="inline-block">

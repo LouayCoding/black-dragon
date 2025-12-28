@@ -76,6 +76,8 @@ export function Footer() {
     { label: t('Galerij', 'Gallery'), href: '/gallery' },
     { label: t('FAQ', 'FAQ'), href: '/faq' },
     { label: t('Contact', 'Contact'), href: '/contact' },
+    { label: t('Gedragscode', 'Code of Conduct'), href: '/code-of-conduct' },
+    { label: t('Huis- en Gedragsregels', 'House Rules'), href: '/house-rules' },
   ];
 
   const programs = [
@@ -138,17 +140,17 @@ export function Footer() {
           <div>
             <Link to="/" className="flex items-center gap-3 mb-6 group">
               <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center transition-transform group-hover:scale-110">
-                <span className="text-primary-foreground font-serif text-xl font-bold">道</span>
+                <span className="text-primary-foreground font-serif text-xl font-bold">龍</span>
               </div>
               <div>
-                <h3 className="font-serif text-lg font-bold">태권도</h3>
-                <p className="text-xs text-white/60 tracking-widest">TAEKWONDO</p>
+                <h3 className="font-serif text-lg font-bold">태권도 블랙 드래곤</h3>
+                <p className="text-xs text-white/60 tracking-widest">BLACK DRAGON</p>
               </div>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               {t(
-                'Ontdek de oude Koreaanse krijgskunst Taekwondo. Bouw kracht, discipline en zelfvertrouwen op door onze deskundige programmas.',
-                'Discover the ancient Korean martial art of Taekwondo. Build strength, discipline, and confidence through our expert-led programs.'
+                'Taekwondo Vereniging Black Dragon is een Goudse sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo.',
+                'Taekwondo Association Black Dragon is a Gouda sports club for self-defense and Olympic martial arts. Affiliated with TBN, IMAF-Netherlands and World Taekwondo.'
               )}
             </p>
             <div className="flex gap-3">
@@ -205,20 +207,20 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-white/70 text-sm">
-                  Marktstraat 123<br />
-                  1234 AB Amsterdam
+                  De Draaistraat<br />
+                  2516 EK Den Haag
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary flex-shrink-0" />
-                <a href="tel:+31201234567" className="text-white/70 hover:text-primary transition-colors text-sm">
-                  (020) 123-4567
+                <a href="tel:+31612345678" className="text-white/70 hover:text-primary transition-colors text-sm">
+                  06 12345678
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary flex-shrink-0" />
-                <a href="mailto:info@taekwondo.nl" className="text-white/70 hover:text-primary transition-colors text-sm">
-                  info@taekwondo.nl
+                <a href="mailto:info@taekwondoblackdragon.nl" className="text-white/70 hover:text-primary transition-colors text-sm">
+                  info@taekwondoblackdragon.nl
                 </a>
               </li>
             </ul>
@@ -232,7 +234,16 @@ export function Footer() {
           <p className="text-white/50 text-sm text-center md:text-left">
             © {new Date().getFullYear()} Taekwondo Dojang. {t('Alle rechten voorbehouden.', 'All rights reserved.')}
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
+            <Link to="/code-of-conduct" className="text-white/50 hover:text-primary text-sm transition-colors">
+              {t('Gedragscode', 'Code of Conduct')}
+            </Link>
+            <Link to="/anti-bullying-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
+              {t('Pestprotocol', 'Anti-Bullying Protocol')}
+            </Link>
+            <Link to="/sexual-harassment-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
+              {t('Protocol Seksuele Intimidatie', 'Sexual Harassment Protocol')}
+            </Link>
             <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
               {t('Privacybeleid', 'Privacy Policy')}
             </Link>

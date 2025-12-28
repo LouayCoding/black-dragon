@@ -18,7 +18,7 @@ const mockStudent = {
   name: 'Jan de Vries',
   email: 'jan.devries@email.nl',
   phone: '06 12345678',
-  address: 'Hoofdstraat 123, 1234 AB Amsterdam',
+  address: 'De Draaistraat, 2516 EK Den Haag',
   program: 'Jeugd Programma (7-12 jaar)',
   belt: 'Gele Band',
   joinDate: 'Januari 2024',

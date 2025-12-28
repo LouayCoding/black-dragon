@@ -91,8 +91,8 @@ export default function AdminStudentDetail() {
   ];
 
   const locationOptions = [
-    { value: 'Amsterdam', label: 'Amsterdam' },
-    { value: 'Rotterdam', label: 'Rotterdam' },
+    { value: 'Draaistraat 16', label: 'Draaistraat 16 - De Ontmoetingsschool' },
+    { value: 'Withuysstraat 2', label: 'Withuysstraat 2 - Gert van Wijkschool' },
   ];
 
   const beltOptions = [

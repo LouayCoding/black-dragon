@@ -43,8 +43,8 @@ export function RegistrationForm() {
   ];
 
   const locations = [
-    { value: 'amsterdam', label: 'Amsterdam' },
-    { value: 'rotterdam', label: 'Rotterdam' },
+    { value: 'draaistraat-16', label: t('Draaistraat 16 - De Ontmoetingsschool', 'Draaistraat 16 - De Ontmoetingsschool') },
+    { value: 'withuysstraat-2', label: t('Withuysstraat 2 - Gert van Wijkschool', 'Withuysstraat 2 - Gert van Wijkschool') },
   ];
 
   return (

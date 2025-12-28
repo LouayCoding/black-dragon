@@ -3,6 +3,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { RegistrationForm } from '@/components/RegistrationForm';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { MembershipBenefits } from '@/components/shared/MembershipBenefits';
 
 export function RegistrationPage() {
   const { t } = useLanguage();
@@ -34,6 +35,14 @@ export function RegistrationPage() {
             <span>✓ {t('Geen verplichtingen', 'No obligations')}</span>
             <span>✓ {t('Direct antwoord', 'Quick response')}</span>
           </div>
+        </div>
+
+        {/* Membership Benefits */}
+        <div className="mb-12">
+          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-korean-white text-center mb-8">
+            {t('Waarom lid worden?', 'Why become a member?')}
+          </h3>
+          <MembershipBenefits variant="dark" className="max-w-5xl mx-auto" />
         </div>
 
         {/* Registration Form */}

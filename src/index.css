@@ -62,7 +62,7 @@
     /* Shadows */
     --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.15);
     --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
-    --shadow-glow: 0 0 60px hsl(39 98% 50% / 0.3);
+    --shadow-glow: 0 4px 20px -4px hsl(0 0% 0% / 0.2);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;

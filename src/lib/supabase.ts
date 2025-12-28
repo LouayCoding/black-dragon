@@ -25,7 +25,7 @@ export interface Student {
   emergency_phone: string;
   program: 'little-tigers' | 'youth' | 'adult';
   belt: string;
-  location: 'Amsterdam' | 'Rotterdam';
+  location: 'Draaistraat 16' | 'Withuysstraat 2';
   join_date: string;
   attendance: number;
   last_class: string | null;

@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Check, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { MembershipBenefits } from '@/components/shared/MembershipBenefits';
 
 export function PricingSection() {
   const { ref, isVisible } = useScrollReveal();
@@ -92,6 +93,17 @@ export function PricingSection() {
   return (
     <section className="section-padding bg-muted/30 relative">
       <div ref={ref} className="container mx-auto px-4">
+        {/* Membership Benefits */}
+        <div className={cn(
+          "mb-16 transition-all duration-700",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
+          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-foreground text-center mb-8">
+            {t('Waarom lid worden?', 'Why become a member?')}
+          </h3>
+          <MembershipBenefits variant="default" />
+        </div>
+
         {/* Plans Grid */}
         <div className={cn(
           "grid md:grid-cols-3 gap-6 mb-20 transition-all duration-700",

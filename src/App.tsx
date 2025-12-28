@@ -29,6 +29,10 @@ import AdminNews from "./pages/AdminNews";
 import AdminAttendance from "./pages/AdminAttendance";
 import AdminLogin from "./pages/AdminLogin";
 import { RegistrationPage } from "./pages/RegistrationPage";
+import CodeOfConductPage from "./pages/CodeOfConductPage";
+import AntiBullyingProtocolPage from "./pages/AntiBullyingProtocolPage";
+import HouseRulesPage from "./pages/HouseRulesPage";
+import SexualHarassmentProtocolPage from "./pages/SexualHarassmentProtocolPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -55,6 +59,10 @@ const App = () => (
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/news" element={<NewsPage />} />
               <Route path="/news/:id" element={<NewsArticlePage />} />
+              <Route path="/code-of-conduct" element={<CodeOfConductPage />} />
+              <Route path="/anti-bullying-protocol" element={<AntiBullyingProtocolPage />} />
+              <Route path="/house-rules" element={<HouseRulesPage />} />
+              <Route path="/sexual-harassment-protocol" element={<SexualHarassmentProtocolPage />} />
               <Route path="/student/*" element={<AdminPage />} />
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin" element={<AdminDashboard />} />
