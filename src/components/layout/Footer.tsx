@@ -91,48 +91,6 @@ export function Footer() {
 
   return (
     <footer className="bg-black text-white">
-      {/* Newsletter Section - Simplified */}
-      <div className="bg-muted/30 border-b border-border">
-        <div className="container mx-auto px-4 py-12 md:py-16">
-          <div className="max-w-2xl mx-auto text-center">
-            {/* Heading */}
-            <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
-              {t('Blijf op de hoogte', 'Stay Updated')}
-            </h3>
-            
-            {/* Description */}
-            <p className="text-muted-foreground mb-6">
-              {t(
-                'Ontvang het laatste nieuws en exclusieve aanbiedingen.',
-                'Get the latest news and exclusive offers.'
-              )}
-            </p>
-            
-            {/* Form */}
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder={t('Je e-mailadres', 'Your email address')}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-12"
-                required
-              />
-              <Button 
-                type="submit" 
-                disabled={isSubmitting} 
-                variant="outline"
-                size="lg"
-                className="gap-2 h-12 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                <Send size={16} />
-                {isSubmitting ? t('Aanmelden...', 'Subscribing...') : t('Aanmelden', 'Subscribe')}
-              </Button>
-            </form>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16 bg-black">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -229,28 +187,26 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-secondary-foreground/10">
-        <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/50 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Taekwondo Dojang. {t('Alle rechten voorbehouden.', 'All rights reserved.')}
-          </p>
-          <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
-            <Link to="/code-of-conduct" className="text-white/50 hover:text-primary text-sm transition-colors">
-              {t('Gedragscode', 'Code of Conduct')}
-            </Link>
-            <Link to="/anti-bullying-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
-              {t('Pestprotocol', 'Anti-Bullying Protocol')}
-            </Link>
-            <Link to="/sexual-harassment-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
-              {t('Protocol Seksuele Intimidatie', 'Sexual Harassment Protocol')}
-            </Link>
-            <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
-              {t('Privacybeleid', 'Privacy Policy')}
-            </Link>
-            <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
-              {t('Algemene Voorwaarden', 'Terms of Service')}
-            </Link>
-          </div>
+      <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-white/50 text-sm text-center md:text-left">
+          © {new Date().getFullYear()} Taekwondo Dojang. {t('Alle rechten voorbehouden.', 'All rights reserved.')}
+        </p>
+        <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
+          <Link to="/code-of-conduct" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {t('Gedragscode', 'Code of Conduct')}
+          </Link>
+          <Link to="/anti-bullying-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {t('Pestprotocol', 'Anti-Bullying Protocol')}
+          </Link>
+          <Link to="/sexual-harassment-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {t('Protocol Seksuele Intimidatie', 'Sexual Harassment Protocol')}
+          </Link>
+          <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {t('Privacybeleid', 'Privacy Policy')}
+          </Link>
+          <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {t('Algemene Voorwaarden', 'Terms of Service')}
+          </Link>
         </div>
       </div>
     </footer>
