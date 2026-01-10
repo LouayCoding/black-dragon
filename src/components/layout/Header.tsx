@@ -67,7 +67,7 @@ export function Header() {
             <img 
               src="/logo.png" 
               alt="Taekwondo Black Dragon Logo" 
-              className="h-16 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-20 lg:h-24 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 

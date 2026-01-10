@@ -97,7 +97,7 @@ export function HeroSection() {
             </p>
             <h1 
               ref={titleRef}
-              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-none mb-4"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-4"
             >
               {'Taekwondo'.split('').map((letter, i) => (
                 <span key={i} className="letter inline-block">{letter}</span>
