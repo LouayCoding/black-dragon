@@ -78,6 +78,7 @@ export function PartnersSection() {
         'Kinderen tot 18 jaar krijgen 100% korting, 18 jaar of ouder 50% korting op contributie.',
         'Children up to 18 years get 100% discount, 18 years or older 50% discount on membership.'
       ),
+      logo: '/partners/ooievaarspas.png',
     },
     {
       icon: GraduationCap,
@@ -87,6 +88,7 @@ export function PartnersSection() {
         'Via Leergeld kunnen gezinnen een vergoeding krijgen voor sportkleding en benodigdheden.',
         'Through Leergeld, families can receive an allowance for sports clothing and supplies.'
       ),
+      logo: '/partners/leergeld.png',
     },
     {
       icon: Briefcase,
@@ -95,6 +97,61 @@ export function PartnersSection() {
         'Wij zijn erkend als stagebedrijf door SBB en bieden stageplekken voor aankomende sportinstructeurs.',
         'We are recognized as an internship company by SBB and offer internship positions for aspiring sports instructors.'
       ),
+      logo: '/partners/sbb-beeldmerk.webp',
+    },
+    {
+      icon: Briefcase,
+      title: t('Taekwondo Bond Nederland', 'Taekwondo Bond Nederland'),
+      description: t(
+        'Aangesloten bij de officiële Nederlandse Taekwondo bond, erkend door NOC*NSF.',
+        'Affiliated with the official Dutch Taekwondo federation, recognized by NOC*NSF.'
+      ),
+      logo: '/partners/taekwondo-bond-nederland.png',
+    },
+    {
+      icon: Briefcase,
+      title: t('World Taekwondo', 'World Taekwondo'),
+      description: t(
+        'Internationaal erkend door World Taekwondo, de wereldwijde taekwondo federatie.',
+        'Internationally recognized by World Taekwondo, the global taekwondo federation.'
+      ),
+      logo: '/partners/world-taekwondo.png',
+    },
+    {
+      icon: Briefcase,
+      title: t('NOC*NSF', 'NOC*NSF'),
+      description: t(
+        'Erkend door NOC*NSF, de Nederlandse sportkoepel voor topsport en breedtesport.',
+        'Recognized by NOC*NSF, the Dutch sports umbrella for elite and recreational sports.'
+      ),
+      logo: '/partners/noc-nsf.png',
+    },
+    {
+      icon: Briefcase,
+      title: t('Vechtsport Autoriteit', 'Martial Arts Authority'),
+      description: t(
+        'Erkend door de Vechtsport Autoriteit voor veilige en kwalitatieve vechtsportbeoefening.',
+        'Recognized by the Martial Arts Authority for safe and quality martial arts practice.'
+      ),
+      logo: '/partners/vechtsport-autoriteit.png',
+    },
+    {
+      icon: Briefcase,
+      title: t('Kukkiwon', 'Kukkiwon'),
+      description: t(
+        'Erkend door Kukkiwon, het wereldwijde hoofdkwartier van Taekwondo in Zuid-Korea.',
+        'Recognized by Kukkiwon, the world headquarters of Taekwondo in South Korea.'
+      ),
+      logo: '/partners/kukkiwon.jpg',
+    },
+    {
+      icon: Briefcase,
+      title: t('European Taekwondo', 'European Taekwondo'),
+      description: t(
+        'Aangesloten bij European Taekwondo Union, de Europese Taekwondo federatie.',
+        'Affiliated with European Taekwondo Union, the European Taekwondo federation.'
+      ),
+      logo: '/partners/european-taekwondo.png',
     },
   ];
 
@@ -119,15 +176,25 @@ export function PartnersSection() {
         </div>
 
         {/* Discount Programs */}
-        <div ref={cardsRef} className="grid sm:grid-cols-3 gap-6 mb-24 max-w-6xl mx-auto">
+        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24 max-w-7xl mx-auto">
           {discountPrograms.map((program, index) => (
             <div
               key={index}
               className="partner-card bg-card p-8 hover:bg-muted/30 transition-colors duration-300"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <program.icon className="w-6 h-6 text-primary" />
-              </div>
+              {program.logo ? (
+                <div className="w-24 h-16 flex items-center justify-center mb-4">
+                  <img 
+                    src={program.logo} 
+                    alt={program.title}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ) : (
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <program.icon className="w-6 h-6 text-primary" />
+                </div>
+              )}
               <h3 className="font-bold text-xl text-foreground mb-2">
                 {program.title}
               </h3>
@@ -167,24 +234,25 @@ export function PartnersSection() {
         </div>
 
         {/* Partner Logos */}
-        <div ref={logosRef} className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div ref={logosRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
           {[
-            { name: 'TBN', full: 'Taekwondo Bond Nederland' },
-            { name: 'World Taekwondo', full: 'World Taekwondo Federation' },
-            { name: 'IMAF', full: 'IMAF Nederland' },
-            { name: 'NOC*NSF', full: 'NOC*NSF' },
+            { name: 'Taekwondo Bond Nederland', logo: '/partners/taekwondo-bond-nederland.png' },
+            { name: 'World Taekwondo', logo: '/partners/world-taekwondo.png' },
+            { name: 'European Taekwondo', logo: '/partners/european-taekwondo.png' },
+            { name: 'Kukkiwon', logo: '/partners/kukkiwon.jpg' },
+            { name: 'NOC*NSF', logo: '/partners/noc-nsf.png' },
+            { name: 'Vechtsport Autoriteit', logo: '/partners/vechtsport-autoriteit.png' },
           ].map((item, index) => (
             <div
               key={index}
-              className="affiliation-logo bg-card p-10 flex items-center justify-center hover:bg-muted/30 transition-colors duration-300"
+              className="affiliation-logo bg-card p-6 flex items-center justify-center hover:bg-muted/30 transition-colors duration-300"
             >
-              <div className="text-center">
-                <div className="w-full h-20 flex items-center justify-center mb-3">
-                  <div className="text-foreground/40 text-xs font-semibold uppercase tracking-wider">
-                    {item.name}
-                  </div>
-                </div>
-              </div>
+              <img 
+                src={item.logo} 
+                alt={item.name}
+                className="max-w-full max-h-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                title={item.name}
+              />
             </div>
           ))}
         </div>
