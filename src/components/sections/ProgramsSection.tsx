@@ -80,30 +80,30 @@ export function ProgramsSection() {
     {
       icon: Zap,
       image: sparringImg,
-      title: t('Jeugd Programma', 'Youth Program'),
+      title: t('Jeugd', 'Youth'),
       age: t('7-17 jaar', 'Ages 7-17'),
       description: t(
         'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
         'Comprehensive training developing discipline, fitness, and self-defense skills while building strong character foundations.'
       ),
       features: [
-        t('Band progressie', 'Belt progression'),
-        t('Vormen & sparren', 'Forms & sparring'),
-        t('Leiderschapstraining', 'Leadership training'),
+        t('Zelfvertrouwen opbouwen', 'Build self-confidence'),
+        t('Zelfverdediging', 'Self-defense'),
+        t('Discipline & respect', 'Discipline & respect'),
       ],
     },
     {
       icon: Target,
       image: highKickImg,
-      title: t('Volwassenen Fitness', 'Adult Fitness'),
+      title: t('Volwassenen', 'Adults'),
       age: t('18+ jaar', 'Ages 18+'),
       description: t(
-        'Dynamische training die traditionele Taekwondo combineert met moderne fitnessprincipes voor complete fysieke conditie.',
-        'Dynamic training combining traditional Taekwondo with modern fitness principles for complete physical conditioning.'
+        'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',
+        'Dynamic training focused on personal development, working on self-confidence, conditioning and mental strength.'
       ),
       features: [
-        t('Full-body workout', 'Full-body workout'),
-        t('Stressverlichting', 'Stress relief'),
+        t('Zelfvertrouwen opbouwen', 'Build self-confidence'),
+        t('Conditie verbeteren', 'Improve conditioning'),
         t('Zelfverdediging', 'Self-defense'),
       ],
     },
@@ -129,8 +129,8 @@ export function ProgramsSection() {
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
                 {t(
-                  'Van 4 tot 99 jaar. Van eerste stap tot zwarte band.',
-                  'From 4 to 99 years. From first step to black belt.'
+                  'Vanaf 4 jaar en ouder. Van eerste stap tot zwarte band.',
+                  'From 4 years and older. From first step to black belt.'
                 )}
               </p>
             </div>

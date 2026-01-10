@@ -44,8 +44,8 @@ export function TestimonialsSection() {
 
   const testimonials = [
     {
-      name: 'Sophie van den Berg',
-      role: t('Ouder van Liam (8 jaar)', 'Parent of Liam (8 years)'),
+      name: 'Fatima El Amrani',
+      role: t('Ouder van Youssef (8 jaar)', 'Parent of Youssef (8 years)'),
       rating: 5,
       text: t(
         'Mijn zoon is volledig getransformeerd sinds hij begon met taekwondo. Zijn zelfvertrouwen is enorm gegroeid en hij heeft geleerd om respectvol met anderen om te gaan.',
@@ -53,7 +53,7 @@ export function TestimonialsSection() {
       ),
     },
     {
-      name: 'Mark Jansen',
+      name: 'Rajesh Bhairosingh',
       role: t('Volwassen leerling, 2 jaar ervaring', 'Adult student, 2 years experience'),
       rating: 5,
       text: t(
@@ -62,7 +62,7 @@ export function TestimonialsSection() {
       ),
     },
     {
-      name: 'Emma de Vries',
+      name: 'Carmen Rodríguez',
       role: t('Zwarte band leerling', 'Black belt student'),
       rating: 5,
       text: t(
@@ -71,8 +71,8 @@ export function TestimonialsSection() {
       ),
     },
     {
-      name: 'Jan Bakker',
-      role: t('Ouder van Mila (6 jaar)', 'Parent of Mila (6 years)'),
+      name: 'Pieter van der Meer',
+      role: t('Ouder van Emma (6 jaar)', 'Parent of Emma (6 years)'),
       rating: 5,
       text: t(
         'Het kleine tijgers programma is perfect voor onze dochter. Ze leert discipline en coördinatie terwijl ze plezier heeft.',
@@ -80,7 +80,7 @@ export function TestimonialsSection() {
       ),
     },
     {
-      name: 'Lisa Vermeer',
+      name: 'Ioana Popescu',
       role: t('Wedstrijdatleet', 'Competition athlete'),
       rating: 5,
       text: t(
@@ -89,7 +89,7 @@ export function TestimonialsSection() {
       ),
     },
     {
-      name: 'Robert Smit',
+      name: 'Mohammed Azzouz',
       role: t('Volwassen leerling, 6 maanden ervaring', 'Adult student, 6 months experience'),
       rating: 5,
       text: t(

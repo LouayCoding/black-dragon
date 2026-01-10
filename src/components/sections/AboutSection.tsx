@@ -104,7 +104,7 @@ export function AboutSection() {
               </p>
               <p className="text-foreground/70 text-base sm:text-lg leading-[1.8]">
                 {t(
-                  'Sinds 2013 begeleiden wij studenten van alle leeftijden in hun persoonlijke groei door traditionele Taekwondo.',
+                  'Sinds 2013 begeleiden wij leden van alle leeftijden in hun persoonlijke groei door traditionele Taekwondo.',
                   'Since 2013, we guide students of all ages in their personal growth through traditional Taekwondo.'
                 )}
               </p>
@@ -117,7 +117,7 @@ export function AboutSection() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border max-w-4xl mx-auto">
             {[
               { value: '2013', label: t('Opgericht', 'Founded') },
-              { value: '100+', label: t('Studenten', 'Students') },
+              { value: '400+', label: t('Leden', 'Members') },
               { value: '2', label: t('Locaties', 'Locations') },
             ].map((stat, index) => (
               <div
@@ -146,7 +146,7 @@ export function AboutSection() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
             {[
-              { korean: '예의', english: t('Beleefdheid', 'Courtesy'), desc: t('Respect in alle interacties', 'Respect in all interactions') },
+              { korean: '예의', english: t('Discipline', 'Discipline'), desc: t('Respect in alle interacties', 'Respect in all interactions') },
               { korean: '염치', english: t('Integriteit', 'Integrity'), desc: t('Eerlijkheid en sterke moraal', 'Honesty and strong morals') },
               { korean: '인내', english: t('Doorzettingsvermogen', 'Perseverance'), desc: t('Nooit opgeven', 'Never give up') },
               { korean: '극기', english: t('Zelfbeheersing', 'Self-Control'), desc: t('Beheers je emoties', 'Master emotions') },

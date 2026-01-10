@@ -184,7 +184,7 @@ export function ContactSection() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-full"
             >
               <Link to="/register">
-                {t('Probeer gratis', 'Try free')}
+                {t('Inschrijven', 'Register')}
               </Link>
             </Button>
           </div>
