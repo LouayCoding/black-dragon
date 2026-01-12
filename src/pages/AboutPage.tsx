@@ -14,9 +14,9 @@ function AboutContent() {
       <main className="pt-20">
         <PageHero
           koreanText="소개"
-          title={Over}
-          titleHighlight={Onze School}
-          subtitle={Ontdek onze geschiedenis, waarden en toewijding aan authentiek Taekwondo onderwijs.}
+          title=Over
+          titleHighlight=Onze School
+          subtitle=Ontdek onze geschiedenis, waarden en toewijding aan authentiek Taekwondo onderwijs.
         />
         <AboutSection />
       </main>

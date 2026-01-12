@@ -14,9 +14,9 @@ function ScheduleContent() {
       <main className="pt-20">
         <PageHero
           koreanText="일정"
-          title={Les}
-          titleHighlight={Rooster}
-          subtitle={Vind de perfecte lestijd die in je schema past met onze flexibele trainingsopties.}
+          title=Les
+          titleHighlight=Rooster
+          subtitle=Vind de perfecte lestijd die in je schema past met onze flexibele trainingsopties.
         />
         <ScheduleSection />
       </main>

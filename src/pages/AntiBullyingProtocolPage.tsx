@@ -54,9 +54,9 @@ function AntiBullyingProtocolContent() {
       <main className="pt-20">
         <PageHero
           koreanText="규칙"
-          title={Pestprotocol}
-          titleHighlight={Taekwondo Black Dragon}
-          subtitle={Hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen}
+          title=Pestprotocol
+          titleHighlight=Taekwondo Black Dragon
+          subtitle=Hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen
         />
 
         <section className="section-padding bg-background">
@@ -71,7 +71,7 @@ function AntiBullyingProtocolContent() {
             >
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 md:p-8">
                 <p className="text-foreground/80 leading-relaxed">
-                  {In dit document hebben we als Taekwondo vereniging Black Dragon vastgelegd hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen. Hierin zal behandeld worden hoe wij omgaan met situaties waarin dit toch gebeurt/dreigt te gebeuren en zal uitgewerkt worden welke sancties mogelijk zijn als een situatie niet tot een oplossing komt.}
+                  In dit document hebben we als Taekwondo vereniging Black Dragon vastgelegd hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen. Hierin zal behandeld worden hoe wij omgaan met situaties waarin dit toch gebeurt/dreigt te gebeuren en zal uitgewerkt worden welke sancties mogelijk zijn als een situatie niet tot een oplossing komt.
                 </p>
               </div>
             </motion.div>
@@ -94,20 +94,20 @@ function AntiBullyingProtocolContent() {
               </div>
 
               <p className="text-foreground/70 leading-relaxed mb-6">
-                {Het is erg belangrijk dat leden zich veilig voelen in hun sportomgeving. Hier hoort bij dat zij zich niet gepest mogen voelen. Om het risico daarop zo klein mogelijk te maken hebben we een aantal gedragsregels opgesteld.}
+                Het is erg belangrijk dat leden zich veilig voelen in hun sportomgeving. Hier hoort bij dat zij zich niet gepest mogen voelen. Om het risico daarop zo klein mogelijk te maken hebben we een aantal gedragsregels opgesteld.
               </p>
 
               {/* Not Allowed */}
               <div className="mb-8">
                 <h3 className="font-semibold text-lg text-foreground mb-4 flex items-center gap-2">
                   <Ban className="w-5 h-5 text-destructive" />
-                  {Niet toegestaan:}
+                  Niet toegestaan:
                 </h3>
                 <ul className="space-y-3">
                   {notAllowed.map((item, index) => (
                     <li key={index} className="flex items-start gap-3 text-foreground/70">
                       <span className="w-2 h-2 rounded-full bg-destructive flex-shrink-0 mt-2" />
-                      <span>{item}</span>
+                      <span>item</span>
                     </li>
                   ))}
                 </ul>
@@ -117,13 +117,13 @@ function AntiBullyingProtocolContent() {
               <div>
                 <h3 className="font-semibold text-lg text-foreground mb-4 flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
-                  {Wel verwacht:}
+                  Wel verwacht:
                 </h3>
                 <ul className="space-y-3">
                   {expected.map((item, index) => (
                     <li key={index} className="flex items-start gap-3 text-foreground/70">
                       <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                      <span>{item}</span>
+                      <span>item</span>
                     </li>
                   ))}
                 </ul>
@@ -131,7 +131,7 @@ function AntiBullyingProtocolContent() {
 
               <div className="mt-6 p-4 bg-muted/50 rounded-lg">
                 <p className="text-sm text-foreground/70 italic">
-                  {Bovenstaande gedragsregels worden al bij inschrijving kenbaar gemaakt aan al onze leden en zijn tevens op te vragen bij de trainers. Verder wordt er door de leraren/trainers regelmatig aandacht aan besteedt en zien wij toe op de naleving ervan tijdens de lessen. Bovendien wordt aan ouders/verzorgers ook gevraagd om ongewenst gedrag te melden wanneer zij dit tegenkomen of vermoeden.}
+                  Bovenstaande gedragsregels worden al bij inschrijving kenbaar gemaakt aan al onze leden en zijn tevens op te vragen bij de trainers. Verder wordt er door de leraren/trainers regelmatig aandacht aan besteedt en zien wij toe op de naleving ervan tijdens de lessen. Bovendien wordt aan ouders/verzorgers ook gevraagd om ongewenst gedrag te melden wanneer zij dit tegenkomen of vermoeden.
                 </p>
               </div>
             </motion.div>
@@ -154,16 +154,16 @@ function AntiBullyingProtocolContent() {
               </div>
 
               <p className="text-foreground/70 leading-relaxed mb-6">
-                {Als er een vermoeden bestaat dat er binnen de club gepest wordt dan worden de volgende stappen doorlopen:}
+                Als er een vermoeden bestaat dat er binnen de club gepest wordt dan worden de volgende stappen doorlopen:
               </p>
 
               <div className="space-y-4">
                 {solutionSteps.map((step, index) => (
                   <div key={index} className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
                     <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary font-bold text-sm">{index + 1}</span>
+                      <span className="text-primary font-bold text-sm">index + 1</span>
                     </div>
-                    <p className="text-foreground/70 text-sm leading-relaxed flex-1">{step}</p>
+                    <p className="text-foreground/70 text-sm leading-relaxed flex-1">step</p>
                   </div>
                 ))}
               </div>
@@ -187,21 +187,21 @@ function AntiBullyingProtocolContent() {
               </div>
 
               <p className="text-foreground/70 leading-relaxed mb-8">
-                {Mochten pogingen tot verbetering van de situatie door leden, trainer en ouders niet tot een oplossing leiden dan kan de club overgaan tot het opleggen van sancties. Een besluit hiertoe volgt altijd uit samenspraak tussen trainer en bestuur. De mogelijke sancties lopen op van licht naar steeds zwaarder en kunnen in die volgorde worden gegeven als een situatie zich over langere tijd niet verbetert.}
+                Mochten pogingen tot verbetering van de situatie door leden, trainer en ouders niet tot een oplossing leiden dan kan de club overgaan tot het opleggen van sancties. Een besluit hiertoe volgt altijd uit samenspraak tussen trainer en bestuur. De mogelijke sancties lopen op van licht naar steeds zwaarder en kunnen in die volgorde worden gegeven als een situatie zich over langere tijd niet verbetert.
               </p>
 
               {/* First Sanctions */}
               <div className="mb-8">
                 <h3 className="font-semibold text-lg text-foreground mb-4">
-                  {Eerste sancties}
+                  Eerste sancties
                 </h3>
                 <div className="space-y-3">
                   {firstSanctions.map((sanction, index) => (
                     <div key={index} className="flex items-start gap-3 p-3 bg-yellow-50 dark:bg-yellow-950/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
                       <span className="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-yellow-700 dark:text-yellow-400 font-bold text-xs">{index + 1}</span>
+                        <span className="text-yellow-700 dark:text-yellow-400 font-bold text-xs">index + 1</span>
                       </span>
-                      <p className="text-foreground/70 text-sm">{sanction}</p>
+                      <p className="text-foreground/70 text-sm">sanction</p>
                     </div>
                   ))}
                 </div>
@@ -210,15 +210,15 @@ function AntiBullyingProtocolContent() {
               {/* Follow-up Sanctions */}
               <div className="mb-8">
                 <h3 className="font-semibold text-lg text-foreground mb-4">
-                  {Vervolgsancties}
+                  Vervolgsancties
                 </h3>
                 <div className="space-y-3">
                   {followUpSanctions.map((sanction, index) => (
                     <div key={index} className="flex items-start gap-3 p-3 bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800 rounded-lg">
                       <span className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-orange-700 dark:text-orange-400 font-bold text-xs">{index + 1}</span>
+                        <span className="text-orange-700 dark:text-orange-400 font-bold text-xs">index + 1</span>
                       </span>
-                      <p className="text-foreground/70 text-sm">{sanction}</p>
+                      <p className="text-foreground/70 text-sm">sanction</p>
                     </div>
                   ))}
                 </div>
@@ -227,12 +227,12 @@ function AntiBullyingProtocolContent() {
               {/* Final Sanction */}
               <div>
                 <h3 className="font-semibold text-lg text-foreground mb-4">
-                  {Laatste sanctie}
+                  Laatste sanctie
                 </h3>
                 <div className="p-4 bg-destructive/10 border border-destructive/30 rounded-lg">
                   <p className="text-foreground font-medium flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                    <span>{finalSanction}</span>
+                    <span>finalSanction</span>
                   </p>
                 </div>
               </div>
@@ -248,7 +248,7 @@ function AntiBullyingProtocolContent() {
             >
               <Users className="w-12 h-12 text-primary mx-auto mb-4" />
               <p className="text-foreground/70 text-sm leading-relaxed">
-                {Bij Taekwondo Vereniging Black Dragon streven we naar een veilige en respectvolle omgeving voor alle leden. Dit protocol helpt ons om deze waarden te handhaven.}
+                Bij Taekwondo Vereniging Black Dragon streven we naar een veilige en respectvolle omgeving voor alle leden. Dit protocol helpt ons om deze waarden te handhaven.
               </p>
             </motion.div>
           </div>

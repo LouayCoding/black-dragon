@@ -86,7 +86,7 @@ export function ContactSection() {
             <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {Twee locaties. Eén passie.}
+                Twee locaties. Eén passie.
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export function ContactSection() {
               {/* Google Map */}
               <div className="relative h-80 w-full overflow-hidden">
                 <iframe
-                  src={location.mapUrl}
+                  src=location.mapUrl
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -115,14 +115,14 @@ export function ContactSection() {
 
               {/* Location Details */}
               <div className="space-y-8">
-                <h3 className="font-serif text-3xl font-bold text-foreground">{location.name}</h3>
+                <h3 className="font-serif text-3xl font-bold text-foreground">location.name</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-semibold text-foreground/60 mb-1">{'Adres'}</p>
-                      <p className="text-foreground text-base font-medium">{location.address}</p>
+                      <p className="text-foreground text-base font-medium">location.address</p>
                     </div>
                   </div>
 
@@ -130,8 +130,8 @@ export function ContactSection() {
                     <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-semibold text-foreground/60 mb-1">{'Telefoon'}</p>
-                      <a href={`tel:${location.phone}`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
-                        {location.phone}
+                      <a href={`tel:$location.phone`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
+                        location.phone
                       </a>
                     </div>
                   </div>
@@ -140,8 +140,8 @@ export function ContactSection() {
                     <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-semibold text-foreground/60 mb-1">Email</p>
-                      <a href={`mailto:${location.email}`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
-                        {location.email}
+                      <a href={`mailto:$location.email`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
+                        location.email
                       </a>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export function ContactSection() {
                     <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-semibold text-foreground/60 mb-1">{'Trainingstijden'}</p>
-                      <p className="text-foreground text-base font-medium">{location.hours}</p>
+                      <p className="text-foreground text-base font-medium">location.hours</p>
                     </div>
                   </div>
                 </div>

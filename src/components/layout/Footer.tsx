@@ -106,7 +106,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              {Taekwondo Vereniging Black Dragon is een Goudse sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo.}
+              Taekwondo Vereniging Black Dragon is een Goudse sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo.
             </p>
             <div className="flex gap-3">
               {[Facebook, Instagram, Youtube].map((Icon, index) => (
@@ -125,16 +125,16 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-lg font-semibold mb-6">{'Snelle Links'}</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.href + link.label}>
+              quickLinks.map((link) => (
+                <li key={link}.href + link.label>
                   <Link
-                    href={link.href}
+                    href=link.href
                     className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
-                    {link.label}
+                    link.label
                   </Link>
                 </li>
-              ))}
+              ))
             </ul>
           </div>
 
@@ -142,16 +142,16 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-lg font-semibold mb-6">{'Onze Programmas'}</h4>
             <ul className="space-y-3">
-              {programs.map((program) => (
-                <li key={program.label}>
+              programs.map((program) => (
+                <li key={program}.label>
                   <Link
-                    href={program.href}
+                    href=program.href
                     className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
-                    {program.label}
+                    program.label
                   </Link>
                 </li>
-              ))}
+              ))
             </ul>
           </div>
 
@@ -186,7 +186,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-white/50 text-sm text-center md:text-left">
-          © {new Date().getFullYear()} Taekwondo Dojang. {'Alle rechten voorbehouden.'}
+          © new Date().getFullYear() Taekwondo Dojang. {'Alle rechten voorbehouden.'}
         </p>
         <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
           <Link href="/code-of-conduct" className="text-white/50 hover:text-primary text-sm transition-colors">

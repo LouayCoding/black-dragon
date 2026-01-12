@@ -98,7 +98,7 @@ export function GallerySection() {
         <div className="flex flex-wrap gap-3 mb-16">
           {categories.map((cat) => (
             <button
-              key={cat.id}
+              key=cat.id
               onClick={() => setActiveCategory(cat.id)}
               className={
                 activeCategory === cat.id
@@ -106,7 +106,7 @@ export function GallerySection() {
                   : "px-6 py-3 bg-muted text-foreground/70 text-sm font-semibold hover:bg-muted/80 hover:text-foreground transition-all duration-300"
               }
             >
-              {cat.label}
+              cat.label
             </button>
           ))}
         </div>
@@ -115,20 +115,20 @@ export function GallerySection() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {filteredItems.map((item) => (
             <button
-              key={item.id}
+              key=item.id
               onClick={() => setSelectedImage(item.id)}
               className="gallery-item group relative aspect-square overflow-hidden cursor-pointer"
             >
               <img 
-                src={item.image} 
-                alt={item.title}
+                src=item.image 
+                alt=item.title
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white font-bold text-base mb-1">{item.title}</p>
-                  <p className="text-primary text-2xl font-light">{item.korean}</p>
+                  <p className="text-white font-bold text-base mb-1">item.title</p>
+                  <p className="text-primary text-2xl font-light">item.korean</p>
                 </div>
               </div>
             </button>
@@ -149,12 +149,12 @@ export function GallerySection() {
             </button>
             <div className="max-w-4xl w-full">
               <img 
-                src={galleryItems.find(i => i.id === selectedImage)?.image}
-                alt={galleryItems.find(i => i.id === selectedImage)?.title}
+                src=galleryItems.find(i => i.id === selectedImage)?.image
+                alt=galleryItems.find(i => i.id === selectedImage)?.title
                 className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
               />
               <p className="text-secondary-foreground text-center mt-4 text-lg">
-                {galleryItems.find(i => i.id === selectedImage)?.title}
+                galleryItems.find(i => i.id === selectedImage)?.title
               </p>
             </div>
           </div>

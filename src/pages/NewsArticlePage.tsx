@@ -101,7 +101,7 @@ function NewsArticleContent() {
         <main className="pt-32 pb-24">
           <div className="container mx-auto px-4 text-center">
             <div className="h-8 w-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-muted-foreground">{Laden...}</p>
+            <p className="text-muted-foreground">Laden...</p>
           </div>
         </main>
         <Footer />
@@ -116,17 +116,17 @@ function NewsArticleContent() {
         <main className="pt-32 pb-24">
           <div className="container mx-auto px-4 text-center">
             <h1 className="font-serif text-4xl font-bold text-foreground mb-4">
-              {Artikel niet gevonden}
+              Artikel niet gevonden
             </h1>
             <p className="text-muted-foreground mb-8">
-              {Het artikel dat je zoekt bestaat niet of is verwijderd.}
+              Het artikel dat je zoekt bestaat niet of is verwijderd.
             </p>
             <Link
-              to="/news"
+              href="/news"
               className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              {Terug naar nieuws}
+              Terug naar nieuws
             </Link>
           </div>
         </main>
@@ -142,8 +142,8 @@ function NewsArticleContent() {
         {/* Hero Image */}
         <div className="relative h-[50vh] min-h-[400px]">
           <img
-            src={article.image_url || '/placeholder.svg'}
-            alt={article.title}
+            src=article.image_url || '/placeholder.svg'
+            alt=article.title
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent" />
@@ -155,37 +155,37 @@ function NewsArticleContent() {
             <div className="max-w-3xl mx-auto bg-card rounded-lg border border-border p-8 md:p-12 shadow-card">
               {/* Back Link */}
               <Link
-                to="/news"
+                href="/news"
                 className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary font-medium transition-colors mb-6"
               >
                 <ArrowLeft className="w-4 h-4" />
-                {Terug naar nieuws}
+                Terug naar nieuws
               </Link>
 
               {/* Type Badge */}
               <div className="mb-4">
                 <span className="px-3 py-1 rounded-full text-xs font-semibold inline-flex items-center gap-1 bg-blue-600 text-white">
                   <Tag className="w-3 h-3" />
-                  {Nieuws}
+                  Nieuws
                 </span>
               </div>
 
               {/* Title */}
               <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {article.title}
+                article.title
               </h1>
 
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm mb-8 pb-8 border-b border-border">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <time dateTime={article.published_at || article.created_at}>
-                    {formatDate(article.published_at || article.created_at)}
+                  <time dateTime=article.published_at || article.created_at>
+                    formatDate(article.published_at || article.created_at)
                   </time>
                 </div>
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4" />
-                  <span>{article.author}</span>
+                  <span>article.author</span>
                 </div>
               </div>
 
@@ -195,14 +195,14 @@ function NewsArticleContent() {
                   if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
                     return (
                       <h3 key={index} className="font-serif text-xl font-semibold text-foreground mt-8 mb-4">
-                        {paragraph.replace(/\*\*/g, '')}
+                        paragraph.replace(/\*\*/g, '')
                       </h3>
                     );
                   }
                   if (paragraph.startsWith('*') && paragraph.endsWith('*') && !paragraph.startsWith('**')) {
                     return (
                       <h4 key={index} className="font-semibold text-foreground mt-6 mb-2 italic">
-                        {paragraph.replace(/\*/g, '')}
+                        paragraph.replace(/\*/g, '')
                       </h4>
                     );
                   }
@@ -212,7 +212,7 @@ function NewsArticleContent() {
                       <ul key={index} className="list-disc list-inside space-y-1 mb-4">
                         {items.map((item, i) => (
                           <li key={i} className="text-muted-foreground">
-                            {item.replace('- ', '').replace(/\*\*/g, '')}
+                            item.replace('- ', '').replace(/\*\*/g, '')
                           </li>
                         ))}
                       </ul>
@@ -220,7 +220,7 @@ function NewsArticleContent() {
                   }
                   return (
                     <p key={index} className="text-muted-foreground leading-relaxed mb-4">
-                      {paragraph}
+                      paragraph
                     </p>
                   );
                 })}
@@ -229,13 +229,13 @@ function NewsArticleContent() {
               {/* Share / CTA */}
               <div className="mt-12 pt-8 border-t border-border text-center">
                 <p className="text-muted-foreground mb-4">
-                  {Heb je vragen over dit artikel?}
+                  Heb je vragen over dit artikel?
                 </p>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
                 >
-                  {Neem contact met ons op} →
+                  Neem contact met ons op →
                 </Link>
               </div>
             </div>
@@ -244,39 +244,39 @@ function NewsArticleContent() {
             {relatedArticles.length > 0 && (
               <div className="max-w-5xl mx-auto mt-16">
                 <h2 className="font-serif text-2xl font-bold text-foreground mb-8 text-center">
-                  {Gerelateerde Artikelen}
+                  Gerelateerde Artikelen
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   {relatedArticles.map((related) => {
                     return (
                       <Link
-                        key={related.id}
-                        to={`/news/${related.slug}`}
+                        key={related}.id
+                        to={`/news/$related.slug`}
                         className="group bg-card rounded-lg border border-border overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
                       >
                         <div className="relative h-40 overflow-hidden">
                           <img
-                            src={related.image_url || '/placeholder.svg'}
-                            alt={related.title}
+                            src=related.image_url || '/placeholder.svg'
+                            alt=related.title
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent" />
                           <span className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-semibold bg-blue-600 text-white">
-                            {Nieuws}
+                            Nieuws
                           </span>
                         </div>
                         <div className="p-4">
                           <div className="flex items-center gap-2 text-muted-foreground text-xs mb-2">
                             <Calendar className="w-3 h-3" />
-                            <time dateTime={related.published_at || related.created_at}>
-                              {formatDate(related.published_at || related.created_at)}
+                            <time dateTime=related.published_at || related.created_at>
+                              formatDate(related.published_at || related.created_at)
                             </time>
                           </div>
                           <h3 className="font-serif font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
-                            {related.title}
+                            related.title
                           </h3>
                           <p className="text-muted-foreground text-sm line-clamp-2">
-                            {related.excerpt}
+                            related.excerpt
                           </p>
                         </div>
                       </Link>

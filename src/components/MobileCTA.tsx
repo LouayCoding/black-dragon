@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export function MobileCTA() {
@@ -20,8 +20,8 @@ export function MobileCTA() {
           size="lg"
           className="flex-1 bg-primary hover:bg-accent text-primary-foreground font-semibold"
         >
-          <Link to="/register" className="flex items-center justify-center gap-2">
-            🥋 {Gratis Proefles}
+          <Link href="/register" className="flex items-center justify-center gap-2">
+            🥋 Gratis Proefles
           </Link>
         </Button>
         <Button
@@ -32,7 +32,7 @@ export function MobileCTA() {
         >
           <a href="tel:0201234567" className="flex items-center justify-center gap-2">
             <Phone className="w-4 h-4" />
-            {Bel}
+            Bel
           </a>
         </Button>
       </div>

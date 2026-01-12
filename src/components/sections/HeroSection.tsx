@@ -92,11 +92,11 @@ export function HeroSection() {
               className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-4"
             >
               {'Taekwondo'.split('').map((letter, i) => (
-                <span key={i} className="letter inline-block">{letter}</span>
+                <span key={i} className="letter inline-block">letter</span>
               ))}
               <span className="block mt-2 text-white">
                 {'Black Dragon'.split('').map((letter, i) => (
-                  <span key={i} className="letter inline-block">{letter === ' ' ? '\u00A0' : letter}</span>
+                  <span key={i} className="letter inline-block">letter === ' ' ? '\u00A0' : letter</span>
                 ))}
               </span>
             </h1>
@@ -106,7 +106,7 @@ export function HeroSection() {
           <p
             className="text-center text-xl sm:text-2xl text-white/80 font-light max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            {Ontwikkel kracht, discipline en zelfvertrouwen}
+            Ontwikkel kracht, discipline en zelfvertrouwen
           </p>
 
           {/* CTA Button */}

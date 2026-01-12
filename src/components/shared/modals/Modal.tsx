@@ -30,15 +30,15 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
     return (
       <div 
         className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" 
-        onClick={onClose}
+        onClick=onClose
       >
         <div 
           ref={ref}
-          className={cn(
+          className=cn(
             "w-full rounded-2xl bg-white dark:bg-zinc-900 shadow-xl max-h-[90vh] overflow-y-auto",
             maxWidthClasses[maxWidth],
             className
-          )}
+          )
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
@@ -46,16 +46,16 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
             <div className="flex items-start justify-between">
               <div>
                 <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-                  {title}
+                  title
                 </h2>
                 {description && (
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                    {description}
+                    description
                   </p>
                 )}
               </div>
               <button
-                onClick={onClose}
+                onClick=onClose
                 className="rounded-xl p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
               >
                 <X className="h-5 w-5 text-zinc-500" />
@@ -65,13 +65,13 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
 
           {/* Content */}
           <div className="px-8 pb-8">
-            {children}
+            children
           </div>
 
           {/* Footer */}
           {footer && (
             <div className="flex gap-3 px-8 pb-8 pt-2">
-              {footer}
+              footer
             </div>
           )}
         </div>

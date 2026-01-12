@@ -15,9 +15,9 @@ export function RegistrationPage() {
       <main className="pt-20">
         <PageHero
           koreanText="등록"
-          title={Word}
-          titleHighlight={Lid}
-          subtitle={Start je Taekwondo reis vandaag. Vul het formulier in en ontvang een gratis proefles.}
+          title=Word
+          titleHighlight=Lid
+          subtitle=Start je Taekwondo reis vandaag. Vul het formulier in en ontvang een gratis proefles.
         />
 
         <div className="container mx-auto px-4 max-w-4xl py-20">

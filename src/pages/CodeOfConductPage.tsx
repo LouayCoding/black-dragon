@@ -161,9 +161,9 @@ function CodeOfConductContent() {
       <main className="pt-20">
         <PageHero
           koreanText="규칙"
-          title={Gedragscode}
-          titleHighlight={Trainers & Begeleiders}
-          subtitle={In aansluiting op de Huis- en Gedragsregels van Taekwondo Vereniging Black Dragon}
+          title=Gedragscode
+          titleHighlight=Trainers & Begeleiders
+          subtitle=In aansluiting op de Huis- en Gedragsregels van Taekwondo Vereniging Black Dragon
         />
 
         <section className="section-padding bg-background">
@@ -178,7 +178,7 @@ function CodeOfConductContent() {
             >
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 md:p-8">
                 <p className="text-foreground/80 leading-relaxed">
-                  {Taekwondo Vereniging Black Dragon heeft duidelijke huis- en gedragsregels opgesteld voor alle leden. Als trainer of begeleider draag jij een belangrijke verantwoordelijkheid om deze regels niet alleen na te leven, maar ook actief te handhaven en uit te dragen. Deze gedragscode is bedoeld als aanvulling op de bestaande regels en legt extra nadruk op jouw voorbeeldfunctie en professionele verantwoordelijkheid.}
+                  Taekwondo Vereniging Black Dragon heeft duidelijke huis- en gedragsregels opgesteld voor alle leden. Als trainer of begeleider draag jij een belangrijke verantwoordelijkheid om deze regels niet alleen na te leven, maar ook actief te handhaven en uit te dragen. Deze gedragscode is bedoeld als aanvulling op de bestaande regels en legt extra nadruk op jouw voorbeeldfunctie en professionele verantwoordelijkheid.
                 </p>
               </div>
             </motion.div>
@@ -201,7 +201,7 @@ function CodeOfConductContent() {
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
                       <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground flex-1">
-                        {section.title}
+                        section.title
                       </h2>
                     </div>
 
@@ -211,10 +211,10 @@ function CodeOfConductContent() {
                           {item.subtitle && (
                             <h3 className="font-semibold text-lg text-foreground mb-2 flex items-center gap-2">
                               <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                              {item.subtitle}
+                              item.subtitle
                             </h3>
                           )}
-                          <p className="text-foreground/70 leading-relaxed">{item.text}</p>
+                          <p className="text-foreground/70 leading-relaxed">item.text</p>
                         </div>
                       ))}
                     </div>
@@ -239,11 +239,11 @@ function CodeOfConductContent() {
                   >
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <span className="text-primary font-bold">{sanction.number}</span>
+                        <span className="text-primary font-bold">sanction.number</span>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-foreground mb-2">{sanction.title}</h4>
-                        <p className="text-sm text-foreground/70">{sanction.description}</p>
+                        <h4 className="font-semibold text-foreground mb-2">sanction.title</h4>
+                        <p className="text-sm text-foreground/70">sanction.description</p>
                       </div>
                     </div>
                   </div>
@@ -260,7 +260,7 @@ function CodeOfConductContent() {
               className="mt-12 bg-muted/50 border border-border rounded-lg p-6 md:p-8"
             >
               <p className="text-foreground/70 text-sm leading-relaxed italic">
-                {Het bestuur van Taekwondo Vereniging Black Dragon behoudt zich het recht voor om in overleg met de betrokken partijen aanvullende maatregelen te treffen.}
+                Het bestuur van Taekwondo Vereniging Black Dragon behoudt zich het recht voor om in overleg met de betrokken partijen aanvullende maatregelen te treffen.
               </p>
             </motion.div>
           </div>

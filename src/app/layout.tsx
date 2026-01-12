@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="nl" className={`${lexend.variable} ${poppins.variable}`}>
-      <body>{children}</body>
+    <html lang="nl" className={`$lexend.variable $poppins.variable`}>
+      <body>children</body>
     </html>
   )
 }

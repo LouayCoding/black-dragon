@@ -41,7 +41,7 @@ export function InstructorsSection() {
     rank: '3e Dan Zwarte Band',
     experience: 'Sinds 2013',
     image: rachidImg,
-    bio: Rijksgediplomeerd Taekwondo Trainer Niveau 3 | Gecertificeerd Coach met Continentale Licentie. Erkend door Taekwondobond Nederland (TBN) en NOC*NSF. Oprichter van Taekwondo Black Dragon Den Haag (2013) en houder van de 3e Dan in Taekwondo, officieel erkend door World Taekwondo (WT) en TBN.,
+    bio: 'Rijksgediplomeerd Taekwondo Trainer Niveau 3 | Gecertificeerd Coach met Continentale Licentie. Erkend door Taekwondobond Nederland (TBN) en NOC*NSF. Oprichter van Taekwondo Black Dragon Den Haag (2013) en houder van de 3e Dan in Taekwondo', officieel erkend door World Taekwondo (WT) en TBN.,
     achievements: [
       'Mentale begeleiding: versterkt zelfvertrouwen en veerkracht',
       'Persoonlijke aanpak: trainingen afgestemd op niveau en doelen',
@@ -70,7 +70,7 @@ export function InstructorsSection() {
             <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {Ervaring. Expertise. Passie.}
+                Ervaring. Expertise. Passie.
               </p>
             </div>
           </div>
@@ -82,21 +82,21 @@ export function InstructorsSection() {
           <div>
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
-                src={instructor.image}
-                alt={instructor.name}
+                src=instructor.image
+                alt=instructor.name
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
               {/* Rank Badge */}
               <div className="absolute top-6 right-6 bg-primary text-primary-foreground px-4 py-2 font-bold text-sm">
-                {instructor.rank}
+                instructor.rank
               </div>
 
               {/* Name Overlay */}
               <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-2">{instructor.name}</h3>
-                <p className="text-primary text-base font-semibold">{instructor.role}</p>
+                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-2">instructor.name</h3>
+                <p className="text-primary text-base font-semibold">instructor.role</p>
               </div>
             </div>
           </div>
@@ -106,12 +106,12 @@ export function InstructorsSection() {
             {/* Experience */}
             <div className="flex items-center gap-4">
               <Award className="w-7 h-7 text-primary flex-shrink-0" />
-              <span className="text-xl font-bold text-foreground">{instructor.experience} {'ervaring'}</span>
+              <span className="text-xl font-bold text-foreground">instructor.experience {'ervaring'}</span>
             </div>
 
             {/* Bio */}
             <p className="text-foreground/80 text-lg leading-[1.8] max-w-[45ch]">
-              {instructor.bio}
+              instructor.bio
             </p>
 
             {/* Achievements */}
@@ -123,7 +123,7 @@ export function InstructorsSection() {
                 {instructor.achievements.map((achievement, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <Star className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/80 text-base leading-[1.7]">{achievement}</span>
+                    <span className="text-foreground/80 text-base leading-[1.7]">achievement</span>
                   </div>
                 ))}
               </div>

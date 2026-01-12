@@ -14,9 +14,9 @@ function PricingContent() {
       <main className="pt-20">
         <PageHero
           koreanText="가격"
-          title={Lidmaatschap &}
-          titleHighlight={Prijzen}
-          subtitle={Flexibele opties voor elke leerling. Begin vandaag nog met je Taekwondo reis.}
+          title=Lidmaatschap &
+          titleHighlight=Prijzen
+          subtitle=Flexibele opties voor elke leerling. Begin vandaag nog met je Taekwondo reis.
         />
         <PricingSection />
       </main>

@@ -66,9 +66,9 @@ function HouseRulesContent() {
       <main className="pt-20">
         <PageHero
           koreanText="규칙"
-          title={Huis- en}
-          titleHighlight={Gedragsregels}
-          subtitle={De vechtsportorganisatie heeft huis- en gedragsregels vastgesteld voor alle leden, trainers en ouders}
+          title=Huis- en
+          titleHighlight=Gedragsregels
+          subtitle=De vechtsportorganisatie heeft huis- en gedragsregels vastgesteld voor alle leden, trainers en ouders
         />
 
         <section className="section-padding bg-background">
@@ -87,11 +87,11 @@ function HouseRulesContent() {
                     <Award className="w-6 h-6 text-primary" />
                   </div>
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground flex-1">
-                    {codeOfHonor.title}
+                    codeOfHonor.title
                   </h2>
                 </div>
                 <p className="text-foreground/90 leading-relaxed text-lg italic pl-16">
-                  "{codeOfHonor.text}"
+                  "codeOfHonor.text"
                 </p>
               </div>
             </motion.div>
@@ -109,7 +109,7 @@ function HouseRulesContent() {
                   <Users className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground flex-1">
-                  {Gedragsregels voor het lid}
+                  Gedragsregels voor het lid
                 </h2>
               </div>
 
@@ -117,20 +117,20 @@ function HouseRulesContent() {
                 {memberRules.map((rule, index) => (
                   <li key={index} className="flex items-start gap-3 text-foreground/70">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{rule}</span>
+                    <span>rule</span>
                   </li>
                 ))}
               </ul>
 
               <div className="border-t border-border pt-6">
                 <h3 className="font-semibold text-lg text-foreground mb-4">
-                  {Aanvullende regels:}
+                  Aanvullende regels:
                 </h3>
                 <ul className="space-y-3">
                   {additionalRules.map((rule, index) => (
                     <li key={index} className="flex items-start gap-3 text-foreground/70">
                       <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                      <span>{rule}</span>
+                      <span>rule</span>
                     </li>
                   ))}
                 </ul>
@@ -150,17 +150,17 @@ function HouseRulesContent() {
                   <Shield className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground flex-1">
-                  {Gedragsregels voor de trainer}
+                  Gedragsregels voor de trainer
                 </h2>
               </div>
 
-              <p className="text-foreground/70 mb-4">{De trainer:}</p>
+              <p className="text-foreground/70 mb-4">De trainer:</p>
 
               <ul className="space-y-3">
                 {trainerRules.map((rule, index) => (
                   <li key={index} className="flex items-start gap-3 text-foreground/70">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{rule}</span>
+                    <span>rule</span>
                   </li>
                 ))}
               </ul>
@@ -179,17 +179,17 @@ function HouseRulesContent() {
                   <Heart className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground flex-1">
-                  {Gedragsregels voor de ouders/verzorgers van het lid}
+                  Gedragsregels voor de ouders/verzorgers van het lid
                 </h2>
               </div>
 
-              <p className="text-foreground/70 mb-4">{De ouder:}</p>
+              <p className="text-foreground/70 mb-4">De ouder:</p>
 
               <ul className="space-y-3">
                 {parentRules.map((rule, index) => (
                   <li key={index} className="flex items-start gap-3 text-foreground/70">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{rule}</span>
+                    <span>rule</span>
                   </li>
                 ))}
               </ul>
@@ -205,7 +205,7 @@ function HouseRulesContent() {
             >
               <UserCheck className="w-12 h-12 text-primary mx-auto mb-4" />
               <p className="text-foreground/70 text-sm leading-relaxed">
-                {Deze huis- en gedragsregels zijn van toepassing op alle leden, trainers en ouders/verzorgers van Taekwondo Vereniging Black Dragon. Door lid te worden van onze vereniging ga je akkoord met deze regels.}
+                Deze huis- en gedragsregels zijn van toepassing op alle leden, trainers en ouders/verzorgers van Taekwondo Vereniging Black Dragon. Door lid te worden van onze vereniging ga je akkoord met deze regels.
               </p>
             </motion.div>
           </div>
