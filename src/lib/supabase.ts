@@ -23,9 +23,9 @@ export interface Student {
   city: string;
   emergency_contact: string;
   emergency_phone: string;
-  program: 'little-tigers' | 'youth' | 'adult';
+  program: 'little-tigers' | 'youth' | 'women' | 'adult';
   belt: string;
-  location: 'Draaistraat 16' | 'Withuysstraat 2';
+  location: 'Den Haag - Draaistraat' | 'Den Haag - Withuysstraat';
   join_date: string;
   attendance: number;
   last_class: string | null;
@@ -138,8 +138,8 @@ export interface Lesson {
   id: string;
   title: string;
   title_en?: string;
-  program: 'little-tigers' | 'youth' | 'adult';
-  location: 'Amsterdam' | 'Rotterdam';
+  program: 'little-tigers' | 'youth' | 'women' | 'adult';
+  location: 'Den Haag - Draaistraat' | 'Den Haag - Withuysstraat';
   day_of_week: number;
   start_time: string;
   end_time: string;
@@ -296,4 +296,41 @@ export async function deleteStudent(id: string): Promise<boolean> {
   }
 
   return true;
+}
+
+// Program type
+export interface Program {
+  id: string;
+  name: string;
+  name_en: string;
+  slug: string;
+  age_range: string;
+  age_range_en: string;
+  description: string;
+  description_en: string;
+  icon: string;
+  color: string;
+  features: string[];
+  features_en: string[];
+  image_url?: string;
+  is_active?: boolean;
+  display_order?: number;
+  created_at?: string;
+  updated_at?: string;
+}
+
+// Get all active programs
+export async function getPrograms(): Promise<Program[]> {
+  const { data, error } = await supabase
+    .from('programs')
+    .select('*')
+    .eq('is_active', true)
+    .order('display_order', { ascending: true });
+
+  if (error) {
+    console.error('Error fetching programs:', error);
+    return [];
+  }
+
+  return data || [];
 }
