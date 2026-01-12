@@ -1,0 +1,3 @@
+module.exports=[63409,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(6535);a.n(d("[project]/Documents/s/black-dragon/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},93864,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(6535);a.n(d("[project]/Documents/s/black-dragon/node_modules/next/dist/client/components/builtin/global-error.js"))},55487,a=>{"use strict";a.i(63409);var b=a.i(93864);a.n(b)}];
+
+//# sourceMappingURL=1da08_next_dist_client_components_builtin_global-error_0118d649.js.map
