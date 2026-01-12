@@ -1,9 +1,10 @@
+'use client'
+
 import { useState, useMemo, useEffect } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cn } from '@/lib/utils';
 import { Calendar, ArrowRight, Tag, Search, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 
 interface NewsArticle {
@@ -105,7 +106,7 @@ export function NewsSection() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
               type="text"
-              placeholder={t('Zoek artikelen...', 'Search articles...')}
+              placeholder={'Zoek artikelen...'}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-12 pr-10 py-6 text-base bg-card border-border focus:border-primary"
@@ -114,7 +115,7 @@ export function NewsSection() {
               <button
                 onClick={() => setSearchQuery('')}
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                aria-label={t('Wis zoekopdracht', 'Clear search')}
+                aria-label={'Wis zoekopdracht'}
               >
                 <X className="w-5 h-5" />
               </button>
@@ -122,7 +123,7 @@ export function NewsSection() {
           </div>
           {searchQuery && (
             <p className="text-sm text-muted-foreground mt-3 text-center">
-              {filteredNews.length} {t('resultaten gevonden', 'results found')}
+              {filteredNews.length} {'resultaten gevonden'}
             </p>
           )}
         </div>
@@ -135,7 +136,7 @@ export function NewsSection() {
           {loading ? (
             <div className="col-span-full text-center py-16">
               <div className="h-8 w-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-              <p className="text-muted-foreground">{t('Laden...', 'Loading...')}</p>
+              <p className="text-muted-foreground">{'Laden...'}</p>
             </div>
           ) : filteredNews.length > 0 ? (
             filteredNews.map((item, index) => {
@@ -149,7 +150,7 @@ export function NewsSection() {
                   style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
                 >
                   {/* Image */}
-                  <Link to={`/news/${item.slug}`} className="block relative aspect-video overflow-hidden">
+                  <Link href={`/news/${item.slug}`} className="block relative aspect-video overflow-hidden">
                     <img
                       src={item.image_url || '/placeholder.svg'}
                       alt={item.title}
@@ -161,7 +162,7 @@ export function NewsSection() {
                         getBadgeColor()
                       )}>
                         <Tag className="w-3 h-3" />
-                        {t('Nieuws', 'News')}
+                        {'Nieuws'}
                       </span>
                     </div>
                   </Link>
@@ -175,7 +176,7 @@ export function NewsSection() {
                       </time>
                     </div>
                     
-                    <Link to={`/news/${item.slug}`}>
+                    <Link href={`/news/${item.slug}`}>
                       <h3 className="font-serif text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                         {item.title}
                       </h3>
@@ -186,10 +187,10 @@ export function NewsSection() {
                     </p>
 
                     <Link
-                      to={`/news/${item.slug}`}
+                      href={`/news/${item.slug}`}
                       className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors group/link"
                     >
-                      {t('Lees meer', 'Read more')}
+                      {'Lees meer'}
                       <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -200,10 +201,10 @@ export function NewsSection() {
             <div className="col-span-full text-center py-16">
               <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
               <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
-                {t('Geen artikelen gevonden', 'No articles found')}
+                {'Geen artikelen gevonden'}
               </h3>
               <p className="text-muted-foreground">
-                {t('Probeer een andere zoekterm', 'Try a different search term')}
+                {'Probeer een andere zoekterm'}
               </p>
             </div>
           )}
@@ -215,13 +216,13 @@ export function NewsSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <p className="text-muted-foreground mb-4">
-            {t('Blijf op de hoogte van al onze activiteiten', 'Stay updated with all our activities')}
+            {'Blijf op de hoogte van al onze activiteiten'}
           </p>
           <Link
-            to="/contact"
+            href="/contact"
             className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
           >
-            {t('Schrijf je in voor onze nieuwsbrief', 'Subscribe to our newsletter')} →
+            {'Schrijf je in voor onze nieuwsbrief'} →
           </Link>
         </div>
       </div>

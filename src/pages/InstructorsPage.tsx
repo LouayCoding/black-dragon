@@ -14,12 +14,9 @@ function InstructorsContent() {
       <main className="pt-20">
         <PageHero
           koreanText="사범"
-          title={t('Onze', 'Our')}
-          titleHighlight={t('Instructeurs', 'Instructors')}
-          subtitle={t(
-            'Leer van wereldklasse meesters met decennia aan ervaring en kampioenschapskwalificaties.',
-            'Learn from world-class masters with decades of experience and championship credentials.'
-          )}
+          title={Onze}
+          titleHighlight={Instructeurs}
+          subtitle={Leer van wereldklasse meesters met decennia aan ervaring en kampioenschapskwalificaties.}
         />
         <InstructorsSection />
       </main>

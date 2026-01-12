@@ -55,9 +55,9 @@ export function RegistrationForm() {
     
     if (!formData.agreedToTerms) {
       toast.error(
-        t('Je moet akkoord gaan met de voorwaarden', 'You must agree to the terms'),
+        Je moet akkoord gaan met de voorwaarden,
         {
-          description: t('Lees en accepteer de EVO overeenkomst om door te gaan.', 'Read and accept the EVO agreement to continue.')
+          description: Lees en accepteer de EVO overeenkomst om door te gaan.
         }
       );
       return;
@@ -66,9 +66,9 @@ export function RegistrationForm() {
     console.log('Form submitted:', formData);
     
     toast.success(
-      t('Inschrijving succesvol!', 'Registration successful!'),
+      Inschrijving succesvol!,
       {
-        description: t('We nemen binnen 24 uur contact met je op.', 'We will contact you within 24 hours.')
+        description: We nemen binnen 24 uur contact met je op.
       }
     );
 
@@ -91,14 +91,14 @@ export function RegistrationForm() {
   };
 
   const programs = [
-    { value: 'little-tigers', label: t('Kleine Tijgers (4-6 jaar)', 'Little Tigers (4-6)') },
-    { value: 'youth', label: t('Jeugd (7-17 jaar)', 'Youth (7-17)') },
-    { value: 'adult', label: t('Volwassenen (18+)', 'Adults (18+)') },
+    { value: 'little-tigers', label: Kleine Tijgers (4-6 jaar) },
+    { value: 'youth', label: Jeugd (7-17 jaar) },
+    { value: 'adult', label: Volwassenen (18+) },
   ];
 
   const locations = [
-    { value: 'draaistraat-16', label: t('Draaistraat 16 - De Ontmoetingsschool', 'Draaistraat 16 - De Ontmoetingsschool') },
-    { value: 'withuysstraat-2', label: t('Withuysstraat 2 - Gert van Wijkschool', 'Withuysstraat 2 - Gert van Wijkschool') },
+    { value: 'draaistraat-16', label: Draaistraat 16 - De Ontmoetingsschool },
+    { value: 'withuysstraat-2', label: Withuysstraat 2 - Gert van Wijkschool },
   ];
 
   const agreementText = language === 'nl' ? evoAgreementNL : evoAgreementEN;
@@ -109,32 +109,32 @@ export function RegistrationForm() {
         {/* Personal Information */}
         <div className="space-y-8">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold">
-            {t('Persoonlijke Gegevens', 'Personal Information')}
+            {Persoonlijke Gegevens}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Voornaam', 'First Name')}
+                {Voornaam}
               </label>
               <Input
                 required
                 value={formData.firstName}
                 onChange={(e) => updateFormData('firstName', e.target.value)}
-                placeholder={t('Voornaam', 'First name')}
+                placeholder={Voornaam}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Achternaam', 'Last Name')}
+                {Achternaam}
               </label>
               <Input
                 required
                 value={formData.lastName}
                 onChange={(e) => updateFormData('lastName', e.target.value)}
-                placeholder={t('Achternaam', 'Last name')}
+                placeholder={Achternaam}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
@@ -143,26 +143,26 @@ export function RegistrationForm() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="md:col-span-2 space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Straat', 'Street')}
+                {Straat}
               </label>
               <Input
                 required
                 value={formData.street}
                 onChange={(e) => updateFormData('street', e.target.value)}
-                placeholder={t('Straatnaam', 'Street name')}
+                placeholder={Straatnaam}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Huisnummer', 'House Number')}
+                {Huisnummer}
               </label>
               <Input
                 required
                 value={formData.houseNumber}
                 onChange={(e) => updateFormData('houseNumber', e.target.value)}
-                placeholder={t('Nr.', 'No.')}
+                placeholder={Nr.}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
@@ -171,26 +171,26 @@ export function RegistrationForm() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Postcode', 'Postal Code')}
+                {Postcode}
               </label>
               <Input
                 required
                 value={formData.postalCode}
                 onChange={(e) => updateFormData('postalCode', e.target.value)}
-                placeholder={t('1234 AB', '1234 AB')}
+                placeholder={1234 AB}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Woonplaats', 'City')}
+                {Woonplaats}
               </label>
               <Input
                 required
                 value={formData.city}
                 onChange={(e) => updateFormData('city', e.target.value)}
-                placeholder={t('Woonplaats', 'City')}
+                placeholder={Woonplaats}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
@@ -198,7 +198,7 @@ export function RegistrationForm() {
 
           <div className="space-y-2">
             <label className="text-sm font-medium text-muted-foreground">
-              {t('Geboortedatum', 'Date of Birth')}
+              {Geboortedatum}
             </label>
             <Input
               type="date"
@@ -213,34 +213,34 @@ export function RegistrationForm() {
         {/* Contact Information */}
         <div className="space-y-8">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold">
-            {t('Contactgegevens', 'Contact Information')}
+            {Contactgegevens}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Telefoonnummer', 'Phone Number')}
+                {Telefoonnummer}
               </label>
               <Input
                 type="tel"
                 required
                 value={formData.phone}
                 onChange={(e) => updateFormData('phone', e.target.value)}
-                placeholder={t('06 12345678', '06 12345678')}
+                placeholder={06 12345678}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('E-mailadres', 'Email Address')}
+                {E-mailadres}
               </label>
               <Input
                 type="email"
                 required
                 value={formData.email}
                 onChange={(e) => updateFormData('email', e.target.value)}
-                placeholder={t('jouw@email.nl', 'your@email.com')}
+                placeholder={jouw@email.nl}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
@@ -250,33 +250,33 @@ export function RegistrationForm() {
         {/* Emergency Contact */}
         <div className="space-y-8">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold">
-            {t('Noodcontact', 'Emergency Contact')}
+            {Noodcontact}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Naam noodcontact', 'Emergency Contact Name')}
+                {Naam noodcontact}
               </label>
               <Input
                 required
                 value={formData.emergencyContact}
                 onChange={(e) => updateFormData('emergencyContact', e.target.value)}
-                placeholder={t('Volledige naam', 'Full name')}
+                placeholder={Volledige naam}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Telefoonnummer noodcontact', 'Emergency Phone')}
+                {Telefoonnummer noodcontact}
               </label>
               <Input
                 type="tel"
                 required
                 value={formData.emergencyPhone}
                 onChange={(e) => updateFormData('emergencyPhone', e.target.value)}
-                placeholder={t('06 12345678', '06 12345678')}
+                placeholder={06 12345678}
                 className="h-12 bg-muted/50 border-0 focus-visible:ring-1 focus-visible:ring-primary"
               />
             </div>
@@ -286,13 +286,13 @@ export function RegistrationForm() {
         {/* Program Selection */}
         <div className="space-y-8">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold">
-            {t('Programma & Locatie', 'Program & Location')}
+            {Programma & Locatie}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Programma', 'Program')}
+                {Programma}
               </label>
               <select
                 required
@@ -300,7 +300,7 @@ export function RegistrationForm() {
                 onChange={(e) => updateFormData('program', e.target.value)}
                 className="w-full h-12 px-4 bg-muted/50 border-0 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
               >
-                <option value="">{t('Kies programma', 'Select program')}</option>
+                <option value="">{Kies programma}</option>
                 {programs.map((program) => (
                   <option key={program.value} value={program.value}>
                     {program.label}
@@ -311,7 +311,7 @@ export function RegistrationForm() {
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">
-                {t('Locatie', 'Location')}
+                {Locatie}
               </label>
               <select
                 required
@@ -319,7 +319,7 @@ export function RegistrationForm() {
                 onChange={(e) => updateFormData('location', e.target.value)}
                 className="w-full h-12 px-4 bg-muted/50 border-0 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
               >
-                <option value="">{t('Kies locatie', 'Select location')}</option>
+                <option value="">{Kies locatie}</option>
                 {locations.map((location) => (
                   <option key={location.value} value={location.value}>
                     {location.label}
@@ -342,23 +342,20 @@ export function RegistrationForm() {
               />
               <div className="flex-1 space-y-2">
                 <label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer block">
-                  {t(
-                    'Ik ga akkoord met de ',
-                    'I agree to the '
-                  )}
+                  {Ik ga akkoord met de }
                   <Dialog open={showAgreement} onOpenChange={setShowAgreement}>
                     <DialogTrigger asChild>
                       <button
                         type="button"
                         className="text-primary hover:underline font-medium"
                       >
-                        {t('EVO Lidmaatschapsovereenkomst', 'EVO Membership Agreement')}
+                        {EVO Lidmaatschapsovereenkomst}
                       </button>
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl max-h-[90vh]">
                       <DialogHeader>
                         <DialogTitle className="text-2xl font-serif">
-                          {t('EVO Lidmaatschapsovereenkomst', 'EVO Membership Agreement')}
+                          {EVO Lidmaatschapsovereenkomst}
                         </DialogTitle>
                       </DialogHeader>
                       <ScrollArea className="h-[70vh] pr-4">
@@ -374,7 +371,7 @@ export function RegistrationForm() {
                           variant="outline"
                           onClick={() => setShowAgreement(false)}
                         >
-                          {t('Sluiten', 'Close')}
+                          {Sluiten}
                         </Button>
                         <Button
                           type="button"
@@ -384,7 +381,7 @@ export function RegistrationForm() {
                           }}
                           className="bg-primary hover:bg-primary/90"
                         >
-                          {t('Akkoord & Sluiten', 'Accept & Close')}
+                          {Akkoord & Sluiten}
                         </Button>
                       </div>
                     </DialogContent>
@@ -392,10 +389,7 @@ export function RegistrationForm() {
                 </label>
                 {!formData.agreedToTerms && (
                   <p className="text-xs text-muted-foreground">
-                    {t(
-                      'Lees en accepteer de overeenkomst om door te gaan',
-                      'Read and accept the agreement to continue'
-                    )}
+                    {Lees en accepteer de overeenkomst om door te gaan}
                   </p>
                 )}
               </div>
@@ -408,7 +402,7 @@ export function RegistrationForm() {
           size="lg"
           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg h-14 rounded-xl"
         >
-          {t('Inschrijving Voltooien', 'Complete Registration')}
+          {Inschrijving Voltooien}
         </Button>
       </form>
     </div>

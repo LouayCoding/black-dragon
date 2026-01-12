@@ -1,9 +1,10 @@
-import { useLanguage } from '@/hooks/useLanguage';
+'use client'
+
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Check, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { MembershipBenefits } from '@/components/shared/MembershipBenefits';
 
 export function PricingSection() {
@@ -12,81 +13,72 @@ export function PricingSection() {
 
   const plans = [
     {
-      name: t('Basis', 'Basic'),
+      name: 'Basis',
       price: '32,50',
-      period: t('/maand', '/month'),
-      description: t(
-        'Ideaal voor beginners die 1x per week willen trainen.',
-        'Ideal for beginners who want to train once a week.'
-      ),
+      period: '/maand',
+      description: Ideaal voor beginners die 1x per week willen trainen.,
       features: [
-        t('1x per week training', '1x per week training'),
-        t('1x per jaar bandexamen', '1x per year belt exam'),
-        t('Toegang tot basisprogramma', 'Access to basic program'),
-        t('Online lesmateriaal', 'Online training materials'),
-        t('Maandelijks opzegbaar', 'Monthly cancellation'),
+        '1x per week training',
+        '1x per jaar bandexamen',
+        'Toegang tot basisprogramma',
+        'Online lesmateriaal',
+        'Maandelijks opzegbaar',
       ],
       highlighted: false,
-      cta: t('Kies Basis', 'Choose Basic'),
+      cta: 'Kies Basis',
     },
     {
-      name: t('Standaard', 'Standard'),
-      price: t('TBN', 'TBD'),
-      period: t('/maand', '/month'),
-      description: t(
-        'Onze meest populaire optie voor toegewijde leerlingen.',
-        'Our most popular option for dedicated students.'
-      ),
+      name: 'Standaard',
+      price: 'TBN',
+      period: '/maand',
+      description: Onze meest populaire optie voor toegewijde leerlingen.,
       features: [
-        t('2x per week training', '2x per week training'),
-        t('2x per jaar bandexamen', '2x per year belt exam'),
-        t('Toegang tot alle programmas', 'Access to all programs'),
-        t('Online lesmateriaal', 'Online training materials'),
-        t('Maandelijks opzegbaar', 'Monthly cancellation'),
+        '2x per week training',
+        '2x per jaar bandexamen',
+        'Toegang tot alle programmas',
+        'Online lesmateriaal',
+        'Maandelijks opzegbaar',
       ],
       highlighted: true,
       popular: true,
-      cta: t('Kies Standaard', 'Choose Standard'),
+      cta: 'Kies Standaard',
     },
     {
-      name: t('Intensief', 'Intensive'),
+      name: 'Intensief',
       price: '45',
-      period: t('/maand', '/month'),
-      description: t(
-        'Voor serieuze atleten die maximale vooruitgang willen.',
-        'For serious athletes who want maximum progress.'
-      ),
+      period: '/maand',
+      description: Voor serieuze atleten die maximale vooruitgang willen.,
       features: [
-        t('3x per week training', '3x per week training'),
-        t('Toegang tot alle programmas', 'Access to all programs'),
-        t('Bandexamens inbegrepen', 'Belt exams included'),
-        t('Wedstrijdtraining toegang', 'Competition training access'),
-        t('Online lesmateriaal', 'Online training materials'),
-        t('Prioriteit bij evenementen', 'Priority event registration'),
+        '3x per week training',
+        'Toegang tot alle programmas',
+        'Bandexamens inbegrepen',
+        'Wedstrijdtraining toegang',
+        'Online lesmateriaal',
+        'Prioriteit bij evenementen',
       ],
       highlighted: false,
-      cta: t('Kies Intensief', 'Choose Intensive'),
+      cta: 'Kies Intensief',
     },
   ];
 
   const extras = [
     {
-      name: t('Eenmalige Inschrijfkosten', 'One-time Registration Fee'),
+      name: 'Eenmalige Inschrijfkosten',
       price: '30',
       period: undefined,
-      description: t('Verplicht bij eerste inschrijving', 'Required upon first registration'),
+      description: 'Verplicht bij eerste inschrijving',
     },
     {
-      name: t('Privéles', 'Private Lesson'),
+      name: 'Privéles',
       price: '50',
       period: undefined,
-      description: t('1-op-1 training met een instructeur', '1-on-1 training with an instructor'),
+      description: '1-op-1 training met een instructeur',
     },
     {
-      name: t('Bandexamen (los)', 'Belt Exam (single)'),
+      name: 'Bandexamen (los)',
       price: '35',
       period: undefined,
-      description: t('Voor niet-leden of extra examens', 'For non-members or extra exams'),
+      description: 'Voor niet-leden of extra examens',
     },
   ];
 
@@ -99,7 +91,7 @@ export function PricingSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <h3 className="font-serif text-2xl md:text-3xl font-semibold text-foreground text-center mb-8">
-            {t('Waarom lid worden?', 'Why become a member?')}
+            {'Waarom lid worden?'}
           </h3>
           <MembershipBenefits variant="default" />
         </div>
@@ -124,7 +116,7 @@ export function PricingSection() {
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
                     <Star className="w-3 h-3 fill-current" />
-                    {t('Meest Populair', 'Most Popular')}
+                    {'Meest Populair'}
                   </span>
                 </div>
               )}
@@ -156,7 +148,7 @@ export function PricingSection() {
                     : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
                 )}
               >
-                <Link to="/contact">{plan.cta}</Link>
+                <Link href="/contact">{plan.cta}</Link>
               </Button>
             </div>
           ))}
@@ -168,7 +160,7 @@ export function PricingSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <h3 className="font-serif text-2xl font-semibold text-foreground text-center mb-8">
-            {t('Extra Opties', 'Additional Options')}
+            {'Extra Opties'}
           </h3>
           <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {extras.map((extra, index) => (
@@ -193,25 +185,22 @@ export function PricingSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <h3 className="font-serif text-xl font-semibold text-foreground text-center mb-3">
-            {t('Ooievaarspas Houders', 'Ooievaarspas Holders')}
+            {'Ooievaarspas Houders'}
           </h3>
           <p className="text-muted-foreground text-sm text-center mb-4">
-            {t(
-              'Wij accepteren de Ooievaarspas! Profiteer van aantrekkelijke kortingen op onze lidmaatschappen.',
-              'We accept the Ooievaarspas! Benefit from attractive discounts on our memberships.'
-            )}
+            {Wij accepteren de Ooievaarspas! Profiteer van aantrekkelijke kortingen op onze lidmaatschappen.}
           </p>
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <div className="text-center p-4 bg-card rounded-lg border border-border">
               <p className="text-2xl font-bold text-primary mb-1">100%</p>
               <p className="text-sm text-muted-foreground">
-                {t('Vergoeding onder 18 jaar', 'Reimbursement under 18 years')}
+                {'Vergoeding onder 18 jaar'}
               </p>
             </div>
             <div className="text-center p-4 bg-card rounded-lg border border-border">
               <p className="text-2xl font-bold text-primary mb-1">50%</p>
               <p className="text-sm text-muted-foreground">
-                {t('Vergoeding boven 18 jaar', 'Reimbursement over 18 years')}
+                {'Vergoeding boven 18 jaar'}
               </p>
             </div>
           </div>
@@ -222,7 +211,7 @@ export function PricingSection() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                {t('Bekijk op Ooievaarspas.nl', 'View on Ooievaarspas.nl')}
+                {'Bekijk op Ooievaarspas.nl'}
               </a>
             </Button>
           </div>
@@ -234,13 +223,10 @@ export function PricingSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <p className="text-muted-foreground text-sm mb-4">
-            {t(
-              'Alle prijzen zijn inclusief BTW. Eenmalige inschrijfkosten van €30 zijn verplicht bij eerste aanmelding. Lidmaatschap TBN (Taekwondo Bond Nederland) wordt aanbevolen. Neem contact op voor meer informatie.',
-              'All prices include VAT. One-time registration fee of €30 is required upon first sign-up. TBN (Taekwondo Bond Nederland) membership is recommended. Contact us for more information.'
-            )}
+            {Alle prijzen zijn inclusief BTW. Eenmalige inschrijfkosten van €30 zijn verplicht bij eerste aanmelding. Lidmaatschap TBN (Taekwondo Bond Nederland) wordt aanbevolen. Neem contact op voor meer informatie.}
           </p>
           <Button asChild variant="outline">
-            <Link to="/contact">{t('Vragen? Neem Contact Op', 'Questions? Contact Us')}</Link>
+            <Link href="/contact">{'Vragen? Neem Contact Op'}</Link>
           </Button>
         </div>
       </div>

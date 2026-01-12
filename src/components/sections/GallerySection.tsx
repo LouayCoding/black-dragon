@@ -1,30 +1,16 @@
-import { useState, useEffect, useRef } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
-import { X } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+'use client'
 
-gsap.registerPlugin(ScrollTrigger);
+import { useState, useEffect, useRef } from 'react';
+import { X } from 'lucide-react';
+
 
 // Import gallery images
-import highKickImg from '@/assets/gallery/high-kick.jpg';
-import championshipImg from '@/assets/gallery/championship.jpg';
-import blackBeltCeremonyImg from '@/assets/gallery/black-belt-ceremony.jpg';
-import poomsaeImg from '@/assets/gallery/poomsae.jpg';
-import littleTigersImg from '@/assets/gallery/little-tigers.jpg';
-import sparringImg from '@/assets/gallery/sparring.jpg';
-import breakingImg from '@/assets/gallery/breaking.jpg';
-import beltPromotionImg from '@/assets/gallery/belt-promotion.jpg';
 
 export function GallerySection() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const filtersRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-
+        
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(headerRef.current, {
@@ -66,22 +52,22 @@ export function GallerySection() {
   }, []);
 
   const galleryItems = [
-    { id: 1, category: 'training', title: t('Hoge trap oefening', 'High kick practice'), korean: '차기', image: highKickImg },
-    { id: 2, category: 'competition', title: t('Nationaal kampioenschap', 'National championship'), korean: '대회', image: championshipImg },
-    { id: 3, category: 'ceremony', title: t('Zwarte band ceremonie', 'Black belt ceremony'), korean: '심사', image: blackBeltCeremonyImg },
-    { id: 4, category: 'training', title: t('Poomsae vormen', 'Poomsae forms'), korean: '품새', image: poomsaeImg },
-    { id: 5, category: 'youth', title: t('Kleine tijgers les', 'Little tigers class'), korean: '어린이', image: littleTigersImg },
-    { id: 6, category: 'competition', title: t('Sparringwedstrijd', 'Sparring match'), korean: '겨루기', image: sparringImg },
-    { id: 7, category: 'training', title: t('Breektechniek', 'Breaking technique'), korean: '격파', image: breakingImg },
-    { id: 8, category: 'ceremony', title: t('Bandpromotie', 'Belt promotion'), korean: '승급', image: beltPromotionImg },
+    { id: 1, category: 'training', title: 'Hoge trap oefening', korean: '차기', image: highKickImg },
+    { id: 2, category: 'competition', title: 'Nationaal kampioenschap', korean: '대회', image: championshipImg },
+    { id: 3, category: 'ceremony', title: 'Zwarte band ceremonie', korean: '심사', image: blackBeltCeremonyImg },
+    { id: 4, category: 'training', title: 'Poomsae vormen', korean: '품새', image: poomsaeImg },
+    { id: 5, category: 'youth', title: 'Kleine tijgers les', korean: '어린이', image: littleTigersImg },
+    { id: 6, category: 'competition', title: 'Sparringwedstrijd', korean: '겨루기', image: sparringImg },
+    { id: 7, category: 'training', title: 'Breektechniek', korean: '격파', image: breakingImg },
+    { id: 8, category: 'ceremony', title: 'Bandpromotie', korean: '승급', image: beltPromotionImg },
   ];
 
   const categories = [
-    { id: 'all', label: t('Alles', 'All') },
-    { id: 'training', label: t('Training', 'Training') },
-    { id: 'competition', label: t('Wedstrijd', 'Competition') },
-    { id: 'ceremony', label: t('Ceremonies', 'Ceremonies') },
-    { id: 'youth', label: t('Jeugd', 'Youth') },
+    { id: 'all', label: 'Alles' },
+    { id: 'training', label: 'Training' },
+    { id: 'competition', label: 'Wedstrijd' },
+    { id: 'ceremony', label: 'Ceremonies' },
+    { id: 'youth', label: 'Jeugd' },
   ];
 
   const filteredItems = activeCategory === 'all' 
@@ -89,27 +75,27 @@ export function GallerySection() {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <section ref={sectionRef} id="gallery" className="py-32 bg-background">
+    <section id="gallery" className="py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div ref={headerRef} className="mb-24">
+        <div className="mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {t('Galerij', 'Gallery')}
+                {'Galerij'}
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {t('Momenten van', 'Moments of')}<br />
-              <span className="text-primary">{t('excellentie', 'excellence')}</span>
+              {'Momenten van'}<br />
+              <span className="text-primary">{'excellentie'}</span>
             </h2>
             <div className="w-20 h-1 bg-primary"></div>
           </div>
         </div>
 
         {/* Filter Tabs */}
-        <div ref={filtersRef} className="flex flex-wrap gap-3 mb-16">
+        <div className="flex flex-wrap gap-3 mb-16">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -126,7 +112,7 @@ export function GallerySection() {
         </div>
 
         {/* Gallery Grid */}
-        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {filteredItems.map((item) => (
             <button
               key={item.id}

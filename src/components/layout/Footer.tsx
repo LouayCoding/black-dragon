@@ -1,7 +1,8 @@
+'use client'
+
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -14,7 +15,6 @@ interface NewsletterSubscription {
 }
 
 export function Footer() {
-  const { t } = useLanguage();
   const { toast } = useToast();
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,8 +29,8 @@ export function Footer() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       toast({
-        title: t('Ongeldig e-mailadres', 'Invalid email address'),
-        description: t('Voer een geldig e-mailadres in.', 'Please enter a valid email address.'),
+        title: 'Ongeldig e-mailadres',
+        description: 'Voer een geldig e-mailadres in.',
         variant: 'destructive',
       });
       return;
@@ -39,8 +39,8 @@ export function Footer() {
     // Check if already subscribed
     if (subscriptions.some(sub => sub.email.toLowerCase() === email.toLowerCase())) {
       toast({
-        title: t('Al aangemeld', 'Already subscribed'),
-        description: t('Dit e-mailadres is al aangemeld voor onze nieuwsbrief.', 'This email is already subscribed to our newsletter.'),
+        title: 'Al aangemeld',
+        description: 'Dit e-mailadres is al aangemeld voor onze nieuwsbrief.',
         variant: 'destructive',
       });
       return;
@@ -62,31 +62,31 @@ export function Footer() {
     setIsSubmitting(false);
 
     toast({
-      title: t('Succesvol aangemeld!', 'Successfully subscribed!'),
-      description: t('Bedankt voor je aanmelding voor onze nieuwsbrief.', 'Thank you for subscribing to our newsletter.'),
+      title: 'Succesvol aangemeld!',
+      description: 'Bedankt voor je aanmelding voor onze nieuwsbrief.',
     });
   };
 
   const quickLinks = [
-    { label: t('Over Ons', 'About Us'), href: '/about' },
-    { label: t('Programmas', 'Programs'), href: '/programs' },
-    { label: t('Rooster', 'Schedule'), href: '/schedule' },
-    { label: t('Prijzen', 'Pricing'), href: '/pricing' },
-    { label: t('Instructeurs', 'Instructors'), href: '/instructors' },
-    { label: t('Galerij', 'Gallery'), href: '/gallery' },
-    { label: t('FAQ', 'FAQ'), href: '/faq' },
-    { label: t('Contact', 'Contact'), href: '/contact' },
-    { label: t('Gedragscode', 'Code of Conduct'), href: '/code-of-conduct' },
-    { label: t('Huis- en Gedragsregels', 'House Rules'), href: '/house-rules' },
+    { label: 'Over Ons', href: '/about' },
+    { label: 'Programmas', href: '/programs' },
+    { label: 'Rooster', href: '/schedule' },
+    { label: 'Prijzen', href: '/pricing' },
+    { label: 'Instructeurs', href: '/instructors' },
+    { label: 'Galerij', href: '/gallery' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Gedragscode', href: '/code-of-conduct' },
+    { label: 'Huis- en Gedragsregels', href: '/house-rules' },
   ];
 
   const programs = [
-    { label: t('Kinderlessen', 'Children Classes'), href: '/programs' },
-    { label: t('Tiener Programma', 'Teen Programs'), href: '/programs' },
-    { label: t('Volwassenen Training', 'Adult Training'), href: '/programs' },
-    { label: t('Gezinslessen', 'Family Classes'), href: '/programs' },
-    { label: t('Wedstrijdteam', 'Competition Team'), href: '/programs' },
-    { label: t('Privélessen', 'Private Lessons'), href: '/contact' },
+    { label: 'Kinderlessen', href: '/programs' },
+    { label: 'Tiener Programma', href: '/programs' },
+    { label: 'Volwassenen Training', href: '/programs' },
+    { label: 'Gezinslessen', href: '/programs' },
+    { label: 'Wedstrijdteam', href: '/programs' },
+    { label: 'Privélessen', href: '/contact' },
   ];
 
   return (
@@ -96,7 +96,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-3 mb-6 group">
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
               <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center transition-transform group-hover:scale-110">
                 <span className="text-primary-foreground font-serif text-xl font-bold">龍</span>
               </div>
@@ -106,10 +106,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              {t(
-                'Taekwondo Vereniging Black Dragon is een Goudse sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo.',
-                'Taekwondo Association Black Dragon is a Gouda sports club for self-defense and Olympic martial arts. Affiliated with TBN, IMAF-Netherlands and World Taekwondo.'
-              )}
+              {Taekwondo Vereniging Black Dragon is een Goudse sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo.}
             </p>
             <div className="flex gap-3">
               {[Facebook, Instagram, Youtube].map((Icon, index) => (
@@ -126,12 +123,12 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-6">{t('Snelle Links', 'Quick Links')}</h4>
+            <h4 className="font-serif text-lg font-semibold mb-6">{'Snelle Links'}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {link.label}
@@ -143,12 +140,12 @@ export function Footer() {
 
           {/* Programs */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-6">{t('Onze Programmas', 'Our Programs')}</h4>
+            <h4 className="font-serif text-lg font-semibold mb-6">{'Onze Programmas'}</h4>
             <ul className="space-y-3">
               {programs.map((program) => (
                 <li key={program.label}>
                   <Link
-                    to={program.href}
+                    href={program.href}
                     className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {program.label}
@@ -160,7 +157,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-6">{t('Contact', 'Contact Us')}</h4>
+            <h4 className="font-serif text-lg font-semibold mb-6">{'Contact'}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
@@ -189,23 +186,23 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-white/50 text-sm text-center md:text-left">
-          © {new Date().getFullYear()} Taekwondo Dojang. {t('Alle rechten voorbehouden.', 'All rights reserved.')}
+          © {new Date().getFullYear()} Taekwondo Dojang. {'Alle rechten voorbehouden.'}
         </p>
         <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
-          <Link to="/code-of-conduct" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {t('Gedragscode', 'Code of Conduct')}
+          <Link href="/code-of-conduct" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {'Gedragscode'}
           </Link>
-          <Link to="/anti-bullying-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {t('Pestprotocol', 'Anti-Bullying Protocol')}
+          <Link href="/anti-bullying-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {'Pestprotocol'}
           </Link>
-          <Link to="/sexual-harassment-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {t('Protocol Seksuele Intimidatie', 'Sexual Harassment Protocol')}
+          <Link href="/sexual-harassment-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {'Protocol Seksuele Intimidatie'}
           </Link>
-          <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {t('Privacybeleid', 'Privacy Policy')}
+          <Link href="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {'Privacybeleid'}
           </Link>
-          <Link to="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {t('Algemene Voorwaarden', 'Terms of Service')}
+          <Link href="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
+            {'Algemene Voorwaarden'}
           </Link>
         </div>
       </div>

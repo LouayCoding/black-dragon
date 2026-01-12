@@ -1,18 +1,12 @@
-import { useEffect, useRef } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
-import { Award, Star } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import rachidImg from '@/assets/instructors/grandmaster-kim.jpg';
+'use client'
 
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from 'react';
+import { Award, Star } from 'lucide-react';
+
 
 export function InstructorsSection() {
   const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const profileRef = useRef<HTMLDivElement>(null);
-
+      
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animation
@@ -43,53 +37,47 @@ export function InstructorsSection() {
 
   const instructor = {
     name: 'R. Ousllam',
-    role: t('Hoofdtrainer & Mentaal Begeleider', 'Head Trainer & Mental Coach'),
-    rank: t('3e Dan Zwarte Band', '3rd Dan Black Belt'),
-    experience: t('Sinds 2013', 'Since 2013'),
+    role: 'Hoofdtrainer & Mentaal Begeleider',
+    rank: '3e Dan Zwarte Band',
+    experience: 'Sinds 2013',
     image: rachidImg,
-    bio: t(
-      'Rijksgediplomeerd Taekwondo Trainer Niveau 3 | Gecertificeerd Coach met Continentale Licentie. Erkend door Taekwondobond Nederland (TBN) en NOC*NSF. Oprichter van Taekwondo Black Dragon Den Haag (2013) en houder van de 3e Dan in Taekwondo, officieel erkend door World Taekwondo (WT) en TBN.',
-      'Nationally Certified Taekwondo Trainer Level 3 | Certified Coach with Continental License. Recognized by Taekwondobond Nederland (TBN) and NOC*NSF. Founder of Taekwondo Black Dragon The Hague (2013) and holder of the 3rd Dan in Taekwondo, officially recognized by World Taekwondo (WT) and TBN.'
-    ),
+    bio: Rijksgediplomeerd Taekwondo Trainer Niveau 3 | Gecertificeerd Coach met Continentale Licentie. Erkend door Taekwondobond Nederland (TBN) en NOC*NSF. Oprichter van Taekwondo Black Dragon Den Haag (2013) en houder van de 3e Dan in Taekwondo, officieel erkend door World Taekwondo (WT) en TBN.,
     achievements: [
-      t('Mentale begeleiding: versterkt zelfvertrouwen en veerkracht', 'Mental coaching: strengthens confidence and resilience'),
-      t('Persoonlijke aanpak: trainingen afgestemd op niveau en doelen', 'Personal approach: training tailored to level and goals'),
-      t('Ervaring met alle leeftijden: van kinderen tot volwassenen', 'Experience with all ages: from children to adults'),
-      t('Focus op discipline en respect: persoonlijke groei naast techniek', 'Focus on discipline and respect: personal growth alongside technique'),
-      t('Competitie & recreatie: plezier én prestatie in sport', 'Competition & recreation: fun and performance in sports'),
+      'Mentale begeleiding: versterkt zelfvertrouwen en veerkracht',
+      'Persoonlijke aanpak: trainingen afgestemd op niveau en doelen',
+      'Ervaring met alle leeftijden: van kinderen tot volwassenen',
+      'Focus op discipline en respect: persoonlijke groei naast techniek',
+      'Competitie & recreatie: plezier én prestatie in sport',
     ],
   };
 
   return (
-    <section ref={sectionRef} id="instructors" className="py-32 bg-muted/30">
+    <section id="instructors" className="py-32 bg-muted/30">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div ref={headerRef} className="mb-24">
+        <div className="mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {t('Instructeur', 'Instructor')}
+                {'Instructeur'}
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {t('Jouw', 'Your')}<br />
-              <span className="text-primary">{t('Instructeur', 'Instructor')}</span>
+              {'Jouw'}<br />
+              <span className="text-primary">{'Instructeur'}</span>
             </h2>
             <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {t(
-                  'Ervaring. Expertise. Passie.',
-                  'Experience. Expertise. Passion.'
-                )}
+                {Ervaring. Expertise. Passie.}
               </p>
             </div>
           </div>
         </div>
 
         {/* Instructor Profile */}
-        <div ref={profileRef} className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
           {/* Photo */}
           <div>
             <div className="relative aspect-[3/4] overflow-hidden">
@@ -118,7 +106,7 @@ export function InstructorsSection() {
             {/* Experience */}
             <div className="flex items-center gap-4">
               <Award className="w-7 h-7 text-primary flex-shrink-0" />
-              <span className="text-xl font-bold text-foreground">{instructor.experience} {t('ervaring', 'experience')}</span>
+              <span className="text-xl font-bold text-foreground">{instructor.experience} {'ervaring'}</span>
             </div>
 
             {/* Bio */}
@@ -129,7 +117,7 @@ export function InstructorsSection() {
             {/* Achievements */}
             <div>
               <h4 className="text-base font-bold text-foreground mb-8">
-                {t('Specialisaties', 'Specializations')}
+                {'Specialisaties'}
               </h4>
               <div className="space-y-5">
                 {instructor.achievements.map((achievement, i) => (

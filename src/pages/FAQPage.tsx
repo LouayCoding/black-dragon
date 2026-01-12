@@ -14,12 +14,9 @@ function FAQContent() {
       <main className="pt-20">
         <PageHero
           koreanText="질문"
-          title={t('Veelgestelde', 'Frequently Asked')}
-          titleHighlight={t('Vragen', 'Questions')}
-          subtitle={t(
-            'Vind antwoorden op de meest gestelde vragen over onze school en trainingen.',
-            'Find answers to the most frequently asked questions about our school and training.'
-          )}
+          title={Veelgestelde}
+          titleHighlight={Vragen}
+          subtitle={Vind antwoorden op de meest gestelde vragen over onze school en trainingen.}
         />
         <FAQSection />
       </main>

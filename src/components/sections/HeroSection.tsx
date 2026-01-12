@@ -1,18 +1,12 @@
+'use client'
+
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/hooks/useLanguage';
-import gsap from 'gsap';
 
 export function HeroSection() {
-  const { t } = useLanguage();
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const koreanRef = useRef<HTMLParagraphElement>(null);
-  const blackDragonRef = useRef<HTMLSpanElement>(null);
-
+            
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Korean text - simple fade
@@ -89,20 +83,18 @@ export function HeroSection() {
           
           {/* Main Heading */}
           <div className="text-center mb-6">
-            <p 
-              ref={koreanRef}
+            <p
               className="text-base sm:text-lg text-white/60 font-light tracking-widest mb-4 uppercase"
             >
               태권도 블랙 드래곤
             </p>
-            <h1 
-              ref={titleRef}
+            <h1
               className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-4"
             >
               {'Taekwondo'.split('').map((letter, i) => (
                 <span key={i} className="letter inline-block">{letter}</span>
               ))}
-              <span ref={blackDragonRef} className="block mt-2 text-white">
+              <span className="block mt-2 text-white">
                 {'Black Dragon'.split('').map((letter, i) => (
                   <span key={i} className="letter inline-block">{letter === ' ' ? '\u00A0' : letter}</span>
                 ))}
@@ -111,27 +103,22 @@ export function HeroSection() {
           </div>
 
           {/* Subtitle */}
-          <p 
-            ref={subtitleRef}
+          <p
             className="text-center text-xl sm:text-2xl text-white/80 font-light max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            {t(
-              'Ontwikkel kracht, discipline en zelfvertrouwen',
-              'Develop strength, discipline and confidence'
-            )}
+            {Ontwikkel kracht, discipline en zelfvertrouwen}
           </p>
 
           {/* CTA Button */}
-          <div 
-            ref={buttonRef}
+          <div
             className="flex justify-center"
           >
             <Button
               asChild
               className="bg-white hover:bg-white/90 text-black px-12 py-5 text-lg font-semibold rounded-full transition-all duration-300"
             >
-              <Link to="/register">
-                {t('Start vandaag', 'Start today')}
+              <Link href="/register">
+                {'Start vandaag'}
               </Link>
             </Button>
           </div>
@@ -143,7 +130,7 @@ export function HeroSection() {
         href="#about"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500 hover:text-primary transition-colors group"
       >
-        <span className="text-xs tracking-widest font-medium">{t('SCROLL', 'SCROLL')}</span>
+        <span className="text-xs tracking-widest font-medium">{'SCROLL'}</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>
     </section>

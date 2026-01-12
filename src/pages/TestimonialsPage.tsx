@@ -14,12 +14,9 @@ function TestimonialsContent() {
       <main className="pt-20">
         <PageHero
           koreanText="후기"
-          title={t('Wat Onze Leerlingen', 'What Our Students')}
-          titleHighlight={t('Zeggen', 'Say')}
-          subtitle={t(
-            'Ontdek de ervaringen van onze leerlingen en hun families.',
-            'Discover the experiences of our students and their families.'
-          )}
+          title={Wat Onze Leerlingen}
+          titleHighlight={Zeggen}
+          subtitle={Ontdek de ervaringen van onze leerlingen en hun families.}
         />
         <TestimonialsSection />
       </main>

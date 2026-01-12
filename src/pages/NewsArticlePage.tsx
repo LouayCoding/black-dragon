@@ -101,7 +101,7 @@ function NewsArticleContent() {
         <main className="pt-32 pb-24">
           <div className="container mx-auto px-4 text-center">
             <div className="h-8 w-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-muted-foreground">{t('Laden...', 'Loading...')}</p>
+            <p className="text-muted-foreground">{Laden...}</p>
           </div>
         </main>
         <Footer />
@@ -116,17 +116,17 @@ function NewsArticleContent() {
         <main className="pt-32 pb-24">
           <div className="container mx-auto px-4 text-center">
             <h1 className="font-serif text-4xl font-bold text-foreground mb-4">
-              {t('Artikel niet gevonden', 'Article not found')}
+              {Artikel niet gevonden}
             </h1>
             <p className="text-muted-foreground mb-8">
-              {t('Het artikel dat je zoekt bestaat niet of is verwijderd.', 'The article you are looking for does not exist or has been removed.')}
+              {Het artikel dat je zoekt bestaat niet of is verwijderd.}
             </p>
             <Link
               to="/news"
               className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              {t('Terug naar nieuws', 'Back to news')}
+              {Terug naar nieuws}
             </Link>
           </div>
         </main>
@@ -159,14 +159,14 @@ function NewsArticleContent() {
                 className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary font-medium transition-colors mb-6"
               >
                 <ArrowLeft className="w-4 h-4" />
-                {t('Terug naar nieuws', 'Back to news')}
+                {Terug naar nieuws}
               </Link>
 
               {/* Type Badge */}
               <div className="mb-4">
                 <span className="px-3 py-1 rounded-full text-xs font-semibold inline-flex items-center gap-1 bg-blue-600 text-white">
                   <Tag className="w-3 h-3" />
-                  {t('Nieuws', 'News')}
+                  {Nieuws}
                 </span>
               </div>
 
@@ -229,13 +229,13 @@ function NewsArticleContent() {
               {/* Share / CTA */}
               <div className="mt-12 pt-8 border-t border-border text-center">
                 <p className="text-muted-foreground mb-4">
-                  {t('Heb je vragen over dit artikel?', 'Do you have questions about this article?')}
+                  {Heb je vragen over dit artikel?}
                 </p>
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
                 >
-                  {t('Neem contact met ons op', 'Contact us')} →
+                  {Neem contact met ons op} →
                 </Link>
               </div>
             </div>
@@ -244,7 +244,7 @@ function NewsArticleContent() {
             {relatedArticles.length > 0 && (
               <div className="max-w-5xl mx-auto mt-16">
                 <h2 className="font-serif text-2xl font-bold text-foreground mb-8 text-center">
-                  {t('Gerelateerde Artikelen', 'Related Articles')}
+                  {Gerelateerde Artikelen}
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   {relatedArticles.map((related) => {
@@ -262,7 +262,7 @@ function NewsArticleContent() {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent" />
                           <span className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-semibold bg-blue-600 text-white">
-                            {t('Nieuws', 'News')}
+                            {Nieuws}
                           </span>
                         </div>
                         <div className="p-4">

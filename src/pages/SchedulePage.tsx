@@ -14,12 +14,9 @@ function ScheduleContent() {
       <main className="pt-20">
         <PageHero
           koreanText="일정"
-          title={t('Les', 'Class')}
-          titleHighlight={t('Rooster', 'Schedule')}
-          subtitle={t(
-            'Vind de perfecte lestijd die in je schema past met onze flexibele trainingsopties.',
-            'Find the perfect class time that fits your schedule with our flexible training options.'
-          )}
+          title={Les}
+          titleHighlight={Rooster}
+          subtitle={Vind de perfecte lestijd die in je schema past met onze flexibele trainingsopties.}
         />
         <ScheduleSection />
       </main>

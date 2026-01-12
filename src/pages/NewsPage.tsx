@@ -14,12 +14,9 @@ function NewsContent() {
       <main className="pt-20">
         <PageHero
           koreanText="소식"
-          title={t('Nieuws &', 'News &')}
-          titleHighlight={t('Evenementen', 'Events')}
-          subtitle={t(
-            'Blijf op de hoogte van het laatste nieuws, evenementen en successen van onze Taekwondo school.',
-            'Stay updated with the latest news, events, and achievements from our Taekwondo school.'
-          )}
+          title={Nieuws &}
+          titleHighlight={Evenementen}
+          subtitle={Blijf op de hoogte van het laatste nieuws, evenementen en successen van onze Taekwondo school.}
         />
         <NewsSection />
       </main>

@@ -1,20 +1,13 @@
+'use client'
+
 import { useEffect, useRef } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
-gsap.registerPlugin(ScrollTrigger);
 
 export function ContactSection() {
-  const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const locationsRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
+          
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(headerRef.current, {
@@ -57,53 +50,50 @@ export function ContactSection() {
 
   const locations = [
     {
-      name: t('Draaistraat 16 - De Ontmoetingsschool', 'Draaistraat 16 - De Ontmoetingsschool'),
+      name: 'Draaistraat 16 - De Ontmoetingsschool',
       address: 'Draaistraat 16, 2516 EK Den Haag',
       phone: '06 12345678',
       email: 'info@taekwondoblackdragon.nl',
-      hours: t('Ma/Wo/Vr/Za', 'Mon/Wed/Fri/Sat'),
+      hours: 'Ma/Wo/Vr/Za',
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.123!2d4.3007!3d52.0705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b72e9e0e0e0e%3A0x0!2sDraaistraat%2016%2C%20Den%20Haag!5e0!3m2!1snl!2snl!4v1234567890123!5m2!1snl!2snl',
     },
     {
-      name: t('Withuysstraat 2 - Gert van Wijkschool', 'Withuysstraat 2 - Gert van Wijkschool'),
+      name: 'Withuysstraat 2 - Gert van Wijkschool',
       address: 'Withuysstraat 2, Den Haag',
       phone: '06 12345678',
       email: 'info@taekwondoblackdragon.nl',
-      hours: t('Di/Do', 'Tue/Thu'),
+      hours: 'Di/Do',
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.123!2d4.3007!3d52.0705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b72e9e0e0e0e%3A0x0!2sWithuysstraat%202%2C%20Den%20Haag!5e0!3m2!1snl!2snl!4v1234567890123!5m2!1snl!2snl',
     },
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="py-32 bg-background">
+    <section id="contact" className="py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div ref={headerRef} className="mb-24">
+        <div className="mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {t('Contact', 'Contact')}
+                {'Contact'}
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {t('Bezoek', 'Visit')}<br />
-              <span className="text-primary">{t('ons', 'us')}</span>
+              {'Bezoek'}<br />
+              <span className="text-primary">{'ons'}</span>
             </h2>
             <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {t(
-                  'Twee locaties. Eén passie.',
-                  'Two locations. One passion.'
-                )}
+                {Twee locaties. Eén passie.}
               </p>
             </div>
           </div>
         </div>
 
         {/* Locations Grid */}
-        <div ref={locationsRef} className="grid lg:grid-cols-2 gap-16 mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 mb-24">
           {locations.map((location, index) => (
             <div
               key={index}
@@ -131,7 +121,7 @@ export function ContactSection() {
                   <div className="flex items-start gap-4">
                     <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm font-semibold text-foreground/60 mb-1">{t('Adres', 'Address')}</p>
+                      <p className="text-sm font-semibold text-foreground/60 mb-1">{'Adres'}</p>
                       <p className="text-foreground text-base font-medium">{location.address}</p>
                     </div>
                   </div>
@@ -139,7 +129,7 @@ export function ContactSection() {
                   <div className="flex items-start gap-4">
                     <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm font-semibold text-foreground/60 mb-1">{t('Telefoon', 'Phone')}</p>
+                      <p className="text-sm font-semibold text-foreground/60 mb-1">{'Telefoon'}</p>
                       <a href={`tel:${location.phone}`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
                         {location.phone}
                       </a>
@@ -159,7 +149,7 @@ export function ContactSection() {
                   <div className="flex items-start gap-4">
                     <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm font-semibold text-foreground/60 mb-1">{t('Trainingstijden', 'Training times')}</p>
+                      <p className="text-sm font-semibold text-foreground/60 mb-1">{'Trainingstijden'}</p>
                       <p className="text-foreground text-base font-medium">{location.hours}</p>
                     </div>
                   </div>
@@ -170,21 +160,21 @@ export function ContactSection() {
         </div>
 
         {/* CTA */}
-        <div ref={ctaRef} className="text-center">
+        <div className="text-center">
           <div className="max-w-2xl mx-auto space-y-8">
             <h3 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
-              {t('Klaar om te beginnen?', 'Ready to start?')}
+              {'Klaar om te beginnen?'}
             </h3>
             <p className="text-foreground/70 text-lg">
-              {t('Claim je gratis proefles vandaag.', 'Claim your free trial today.')}
+              {'Claim je gratis proefles vandaag.'}
             </p>
             <Button
               asChild
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-full"
             >
-              <Link to="/register">
-                {t('Inschrijven', 'Register')}
+              <Link href="/register">
+                {'Inschrijven'}
               </Link>
             </Button>
           </div>

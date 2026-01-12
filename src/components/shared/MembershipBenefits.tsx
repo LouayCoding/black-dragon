@@ -14,28 +14,28 @@ export function MembershipBenefits({ variant = 'default', className }: Membershi
   const benefits = [
     {
       icon: Award,
-      title: t('Geen ervaring nodig', 'No experience needed'),
-      description: t('Iedereen kan beginnen', 'Everyone can start'),
+      title: Geen ervaring nodig,
+      description: Iedereen kan beginnen,
     },
     {
       icon: Zap,
-      title: t('Gratis proefles', 'Free trial class'),
-      description: t('Ervaar het eerst zelf', 'Experience it yourself first'),
+      title: Gratis proefles,
+      description: Ervaar het eerst zelf,
     },
     {
       icon: Target,
-      title: t('Flexibele lidmaatschappen', 'Flexible memberships'),
-      description: t('Voor elk doel een optie', 'An option for every goal'),
+      title: Flexibele lidmaatschappen,
+      description: Voor elk doel een optie,
     },
     {
       icon: Users,
-      title: t('Groepsenergie', 'Group energy'),
-      description: t('Trainen motiveert meer samen', 'Training motivates more together'),
+      title: Groepsenergie,
+      description: Trainen motiveert meer samen,
     },
     {
       icon: TrendingUp,
-      title: t('Resultaatgericht', 'Result-oriented'),
-      description: t('Discipline en progressie staan centraal', 'Discipline and progress are central'),
+      title: Resultaatgericht,
+      description: Discipline en progressie staan centraal,
     },
   ];
 

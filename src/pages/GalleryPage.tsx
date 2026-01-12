@@ -14,12 +14,9 @@ function GalleryContent() {
       <main className="pt-20">
         <PageHero
           koreanText="갤러리"
-          title={t('Foto', 'Photo')}
-          titleHighlight={t('Galerij', 'Gallery')}
-          subtitle={t(
-            'Bekijk momenten van excellentie, toewijding en prestaties van onze gemeenschap.',
-            'View moments of excellence, dedication, and achievements from our community.'
-          )}
+          title={Foto}
+          titleHighlight={Galerij}
+          subtitle={Bekijk momenten van excellentie, toewijding en prestaties van onze gemeenschap.}
         />
         <GallerySection />
       </main>

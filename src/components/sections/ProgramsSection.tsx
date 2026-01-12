@@ -1,74 +1,58 @@
-import { useLanguage } from '@/hooks/useLanguage';
+'use client'
+
 import { Users, Zap, Target, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import littleTigersImg from '@/assets/gallery/little-tigers.jpg';
-import sparringImg from '@/assets/gallery/sparring.jpg';
-import highKickImg from '@/assets/gallery/high-kick.jpg';
-import poomsaeImg from '@/assets/gallery/poomsae.jpg';
+import Link from 'next/link';
 
 export function ProgramsSection() {
-  const { t } = useLanguage();
-
+  
   const programs = [
     {
       icon: Users,
       image: littleTigersImg,
-      title: t('Kleine Tijgers', 'Little Tigers'),
-      age: t('4-6 jaar', 'Ages 4-6'),
-      description: t(
-        'Leuke introductielessen die coördinatie, focus en zelfvertrouwen opbouwen door leeftijdsgeschikte spelletjes en basis Taekwondo bewegingen.',
-        'Fun introductory classes building coordination, focus, and confidence through age-appropriate games and basic Taekwondo movements.'
-      ),
+      title: 'Kleine Tijgers',
+      age: '4-6 jaar',
+      description: Leuke introductielessen die coördinatie, focus en zelfvertrouwen opbouwen door leeftijdsgeschikte spelletjes en basis Taekwondo bewegingen.,
       features: [
-        t('Motorische ontwikkeling', 'Motor skill development'),
-        t('Basis trappen & blokken', 'Basic kicks & blocks'),
-        t('Luistervaardigheden', 'Listening skills'),
+        'Motorische ontwikkeling',
+        'Basis trappen & blokken',
+        'Luistervaardigheden',
       ],
     },
     {
       icon: Zap,
       image: sparringImg,
-      title: t('Jeugd', 'Youth'),
-      age: t('7-17 jaar', 'Ages 7-17'),
-      description: t(
-        'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
-        'Comprehensive training developing discipline, fitness, and self-defense skills while building strong character foundations.'
-      ),
+      title: 'Jeugd',
+      age: '7-17 jaar',
+      description: Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.,
       features: [
-        t('Zelfvertrouwen opbouwen', 'Build self-confidence'),
-        t('Zelfverdediging', 'Self-defense'),
-        t('Discipline & respect', 'Discipline & respect'),
+        'Zelfvertrouwen opbouwen',
+        'Zelfverdediging',
+        'Discipline & respect',
       ],
     },
     {
       icon: Heart,
       image: poomsaeImg,
-      title: t('Vrouwen', 'Women'),
-      age: t('18+ jaar', 'Ages 18+'),
-      description: t(
-        'Speciaal programma voor vrouwen gericht op kracht, zelfvertrouwen en zelfverdediging in een ondersteunende en veilige omgeving.',
-        'Special program for women focused on strength, self-confidence and self-defense in a supportive and safe environment.'
-      ),
+      title: 'Vrouwen',
+      age: '18+ jaar',
+      description: Speciaal programma voor vrouwen gericht op kracht, zelfvertrouwen en zelfverdediging in een ondersteunende en veilige omgeving.,
       features: [
-        t('Empowerment & kracht', 'Empowerment & strength'),
-        t('Zelfverdedigingstechnieken', 'Self-defense techniques'),
-        t('Veilige leeromgeving', 'Safe learning environment'),
+        'Empowerment & kracht',
+        'Zelfverdedigingstechnieken',
+        'Veilige leeromgeving',
       ],
     },
     {
       icon: Target,
       image: highKickImg,
-      title: t('Volwassenen', 'Adults'),
-      age: t('18+ jaar', 'Ages 18+'),
-      description: t(
-        'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',
-        'Dynamic training focused on personal development, working on self-confidence, conditioning and mental strength.'
-      ),
+      title: 'Volwassenen',
+      age: '18+ jaar',
+      description: Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.,
       features: [
-        t('Zelfvertrouwen opbouwen', 'Build self-confidence'),
-        t('Conditie verbeteren', 'Improve conditioning'),
-        t('Zelfverdediging', 'Self-defense'),
+        'Zelfvertrouwen opbouwen',
+        'Conditie verbeteren',
+        'Zelfverdediging',
       ],
     },
   ];
@@ -82,20 +66,17 @@ export function ProgramsSection() {
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {t('Programmas', 'Programs')}
+                {'Programmas'}
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {t('Jouw', 'Your')}<br />
-              <span className="text-primary">{t('Taekwondo Reis', 'Taekwondo Journey')}</span>
+              {'Jouw'}<br />
+              <span className="text-primary">{'Taekwondo Reis'}</span>
             </h2>
             <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {t(
-                  'Vanaf 4 jaar en ouder. Van eerste stap tot zwarte band.',
-                  'From 4 years and older. From first step to black belt.'
-                )}
+                {Vanaf 4 jaar en ouder. Van eerste stap tot zwarte band.}
               </p>
             </div>
           </div>
@@ -151,10 +132,10 @@ export function ProgramsSection() {
 
                 {/* CTA */}
                 <Link
-                  to="/register"
+                  href="/register"
                   className="inline-flex items-center text-xs font-semibold text-primary hover:text-primary/80 transition-colors group/link"
                 >
-                  {t('Meer Info', 'Learn More')}
+                  {'Meer Info'}
                   <span className="ml-1 group-hover/link:translate-x-1 transition-transform">→</span>
                 </Link>
               </div>
@@ -169,7 +150,7 @@ export function ProgramsSection() {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-full"
           >
-            <Link to="/register">{t('Probeer Gratis', 'Try Free')}</Link>
+            <Link href="/register">{'Probeer Gratis'}</Link>
           </Button>
         </div>
       </div>

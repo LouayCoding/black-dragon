@@ -15,12 +15,9 @@ function ContactContent() {
       <main className="pt-20">
         <PageHero
           koreanText="연락"
-          title={t('Neem', 'Get in')}
-          titleHighlight={t('Contact Op', 'Touch')}
-          subtitle={t(
-            'Klaar om te beginnen? Neem contact op voor een gratis proefles.',
-            'Ready to start? Contact us for a free trial class.'
-          )}
+          title={Neem}
+          titleHighlight={Contact Op}
+          subtitle={Klaar om te beginnen? Neem contact op voor een gratis proefles.}
         />
         <ContactSection />
       </main>

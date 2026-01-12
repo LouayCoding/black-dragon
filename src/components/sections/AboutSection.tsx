@@ -1,22 +1,10 @@
-import { useEffect, useRef } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import sparringImg from '@/assets/gallery/sparring.jpg';
-import highKickImg from '@/assets/gallery/high-kick.jpg';
-import littleTigersImg from '@/assets/gallery/little-tigers.jpg';
-import aboutHeroImg from '@/assets/about-hero.jpg';
+'use client'
 
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from 'react';
+
 
 export function AboutSection() {
-  const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const imagesRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
-  const valuesRef = useRef<HTMLDivElement>(null);
-
+            
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animation
@@ -80,20 +68,20 @@ export function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-32 bg-background">
+    <section id="about" className="py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header Section */}
-        <div ref={headerRef} className="mb-24">
+        <div className="mb-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="inline-block">
                 <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
-                  {t('Over Ons', 'About Us')}
+                  {'Over Ons'}
                 </span>
               </div>
               <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-                {t('Taekwondo', 'Taekwondo')}<br />
+                {'Taekwondo'}<br />
                 <span className="text-primary">Black Dragon</span>
               </h2>
               <div className="w-20 h-1 bg-primary"></div>
@@ -105,10 +93,7 @@ export function AboutSection() {
                   )}
                 </p>
                 <p className="text-foreground/70 text-base sm:text-lg leading-[1.8]">
-                  {t(
-                    'Of je nu 4 jaar bent of ouder, een beginner of gevorderd, bij ons vind je een veilige en inspirerende omgeving waar je jezelf kunt ontwikkelen. Onze ervaren instructeurs staan klaar om jou te begeleiden op jouw unieke reis door de wereld van Taekwondo.',
-                    'Whether you are 4 years old or older, a beginner or advanced, with us you will find a safe and inspiring environment where you can develop yourself. Our experienced instructors are ready to guide you on your unique journey through the world of Taekwondo.'
-                  )}
+                  {Of je nu 4 jaar bent of ouder, een beginner of gevorderd, bij ons vind je een veilige en inspirerende omgeving waar je jezelf kunt ontwikkelen. Onze ervaren instructeurs staan klaar om jou te begeleiden op jouw unieke reis door de wereld van Taekwondo.}
                 </p>
               </div>
             </div>
@@ -122,12 +107,12 @@ export function AboutSection() {
               />
               
               {/* Stats Overlay */}
-              <div ref={statsRef} className="absolute bottom-0 left-0 right-0 bg-primary">
+              <div className="absolute bottom-0 left-0 right-0 bg-primary">
                 <div className="grid grid-cols-3">
                   {[
-                    { value: '2013', label: t('Opgericht', 'Founded') },
-                    { value: '400+', label: t('Leden', 'Members') },
-                    { value: '2', label: t('Locaties', 'Locations') },
+                    { value: '2013', label: 'Opgericht' },
+                    { value: '400+', label: 'Leden' },
+                    { value: '2', label: 'Locaties' },
                   ].map((stat, index) => (
                     <div
                       key={index}
@@ -148,20 +133,20 @@ export function AboutSection() {
         </div>
 
         {/* Core Values */}
-        <div ref={valuesRef}>
+        <div>
           <div className="mb-16">
             <h3 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
-              {t('Kernwaarden', 'Core Values')}
+              {'Kernwaarden'}
             </h3>
             <div className="w-16 h-1 bg-primary mt-6"></div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
             {[
-              { korean: '예의', english: t('Discipline', 'Discipline'), desc: t('Respect in alle interacties', 'Respect in all interactions') },
-              { korean: '염치', english: t('Integriteit', 'Integrity'), desc: t('Eerlijkheid en sterke moraal', 'Honesty and strong morals') },
-              { korean: '인내', english: t('Doorzettingsvermogen', 'Perseverance'), desc: t('Nooit opgeven', 'Never give up') },
-              { korean: '극기', english: t('Zelfbeheersing', 'Self-Control'), desc: t('Beheers je emoties', 'Master emotions') },
+              { korean: '예의', english: 'Discipline', desc: 'Respect in alle interacties' },
+              { korean: '염치', english: 'Integriteit', desc: 'Eerlijkheid en sterke moraal' },
+              { korean: '인내', english: 'Doorzettingsvermogen', desc: 'Nooit opgeven' },
+              { korean: '극기', english: 'Zelfbeheersing', desc: 'Beheers je emoties' },
             ].map((value, index) => (
               <div
                 key={index}

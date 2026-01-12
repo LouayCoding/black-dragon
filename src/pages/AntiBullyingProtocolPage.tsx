@@ -10,46 +10,43 @@ function AntiBullyingProtocolContent() {
   const { t } = useLanguage();
 
   const notAllowed = [
-    t('Het beoordelen op uiterlijk, afkomst, geslacht of andere persoonskenmerken of het maken van kwetsende opmerkingen daarover.', 'Judging based on appearance, origin, gender or other personal characteristics or making hurtful comments about them.'),
+    Het beoordelen op uiterlijk, afkomst, geslacht of andere persoonskenmerken of het maken van kwetsende opmerkingen daarover.,
     t('Ongewenst aan de spullen van een ander komen.', 'Unwanted touching of someone else\'s belongings.'),
-    t('Een ander bewust hardhandig behandelen en/of fysiek pijn doen bij het oefenen.', 'Deliberately treating someone roughly and/or physically hurting them during practice.'),
-    t('Elkaar met een bijnaam aanspreken die door de bedoelde persoon er van niet als positief ervaren wordt.', 'Addressing each other with a nickname that is not experienced as positive by the intended person.'),
-    t('Vloeken of schelden, Roddelen.', 'Swearing or cursing, Gossiping.'),
+    Een ander bewust hardhandig behandelen en/of fysiek pijn doen bij het oefenen.,
+    Elkaar met een bijnaam aanspreken die door de bedoelde persoon er van niet als positief ervaren wordt.,
+    Vloeken of schelden, Roddelen.,
   ];
 
   const expected = [
-    t('Probeer ruzie altijd samen op te lossen.', 'Always try to resolve arguments together.'),
+    Probeer ruzie altijd samen op te lossen.,
     t('Wanneer dit niet lukt: zoek contact met een trainer of vertrouwenscontactpersoon.', 'When this doesn\'t work: contact a trainer or confidential contact person.'),
-    t('Luister aandachtig naar elkaar.', 'Listen carefully to each other.'),
-    t('Help elkaar waar nodig.', 'Help each other where needed.'),
-    t('Zorg dat nieuwkomers in de groep goed worden ontvangen en opgevangen.', 'Ensure that newcomers to the group are well received and supported.'),
+    Luister aandachtig naar elkaar.,
+    Help elkaar waar nodig.,
+    Zorg dat nieuwkomers in de groep goed worden ontvangen en opgevangen.,
   ];
 
   const solutionSteps = [
-    t('Er wordt vastgesteld of de gepeste heeft geprobeerd het samen met de pester op te lossen.', 'It is determined whether the bullied person has tried to resolve it together with the bully.'),
-    t('Als de gepeste er niet uitkomt grijpt de leraar/trainer in. Hij/zij brengt de partijen bij elkaar voor een verhelderingsgesprek en probeert samen met hen de ruzie of pesterijen op te lossen en (nieuwe) afspraken te maken.', 'If the bullied person cannot resolve it, the teacher/trainer intervenes. He/she brings the parties together for a clarification discussion and tries to resolve the argument or bullying together with them and make (new) agreements.'),
-    t('Er wordt contact gezocht met de ouders van de partijen nadat de kinderen hierover ingelicht zijn. Eventueel wordt een gesprek gevoerd met de hele groep.', 'Contact is made with the parents of the parties after the children have been informed. A discussion may be held with the entire group.'),
-    t('Hierin kan aan de orde komen wat de oorzaken en de gevolgen zijn voor slachtoffers, daders, meelopers en zwijgende middengroep. Besproken kan worden of ze zich realiseren welk verdriet zij veroorzaken met hun gedrag en/of houding.', 'This can address the causes and consequences for victims, perpetrators, followers and the silent middle group. It can be discussed whether they realize what sadness they cause with their behavior and/or attitude.'),
-    t('Bij herhaaldelijke ruzie/pestgedrag neemt de trainer duidelijk stelling en houdt een bestraffend gesprek met de pester.', 'In case of repeated arguments/bullying behavior, the trainer takes a clear position and has a punitive conversation with the bully.'),
+    Er wordt vastgesteld of de gepeste heeft geprobeerd het samen met de pester op te lossen.,
+    Als de gepeste er niet uitkomt grijpt de leraar/trainer in. Hij/zij brengt de partijen bij elkaar voor een verhelderingsgesprek en probeert samen met hen de ruzie of pesterijen op te lossen en (nieuwe) afspraken te maken.,
+    Er wordt contact gezocht met de ouders van de partijen nadat de kinderen hierover ingelicht zijn. Eventueel wordt een gesprek gevoerd met de hele groep.,
+    Hierin kan aan de orde komen wat de oorzaken en de gevolgen zijn voor slachtoffers, daders, meelopers en zwijgende middengroep. Besproken kan worden of ze zich realiseren welk verdriet zij veroorzaken met hun gedrag en/of houding.,
+    Bij herhaaldelijke ruzie/pestgedrag neemt de trainer duidelijk stelling en houdt een bestraffend gesprek met de pester.,
     t('De fase van bestraffen/sancties treedt in werking. Ook wordt de naam van de ruziemaker/pester vastgelegd in een verslag. Bij iedere melding omschrijft de trainer \'de toedracht\'.', 'The punishment/sanctions phase comes into effect. The name of the troublemaker/bully is also recorded in a report. With each report, the trainer describes \'the circumstances\'.'),
-    t('De trainer en ouders proberen in goed overleg samen te werken aan een voor iedereen bevredigende oplossing. Als het gaat om jonge kinderen worden de ouders hier actief bij betrokken.', 'The trainer and parents try to work together in good consultation on a solution that is satisfactory for everyone. When it comes to young children, parents are actively involved.'),
+    De trainer en ouders proberen in goed overleg samen te werken aan een voor iedereen bevredigende oplossing. Als het gaat om jonge kinderen worden de ouders hier actief bij betrokken.,
   ];
 
   const firstSanctions = [
-    t('Één training niet aanwezig zijn.', 'Not attending one training session.'),
-    t('Voor een bepaald aantal trainingen: blijven tot de andere leden naar huis vertrokken zijn.', 'For a certain number of training sessions: stay until the other members have left.'),
-    t('Afspraken maken met de pester over gedragsveranderingen. De naleving van deze afspraken komen aan het einde van iedere week (voor een periode) in een kort gesprek aan de orde.', 'Make agreements with the bully about behavioral changes. Compliance with these agreements is discussed in a short conversation at the end of each week (for a period).'),
+    Één training niet aanwezig zijn.,
+    Voor een bepaald aantal trainingen: blijven tot de andere leden naar huis vertrokken zijn.,
+    Afspraken maken met de pester over gedragsveranderingen. De naleving van deze afspraken komen aan het einde van iedere week (voor een periode) in een kort gesprek aan de orde.,
   ];
 
   const followUpSanctions = [
-    t('De ouders nadrukkelijker bij de oplossing betrekken. De club heeft een dossier bijgehouden van de acties die hebben plaatsgevonden. Dit dossier is uitgangspunt voor het gesprek.', 'Involve the parents more emphatically in the solution. The club has kept a file of the actions that have taken place. This file is the starting point for the conversation.'),
-    t('Bij aanhoudend pestgedrag de pester voor een bepaalde periode schorsen.', 'In case of persistent bullying behavior, suspend the bully for a certain period.'),
+    De ouders nadrukkelijker bij de oplossing betrekken. De club heeft een dossier bijgehouden van de acties die hebben plaatsgevonden. Dit dossier is uitgangspunt voor het gesprek.,
+    Bij aanhoudend pestgedrag de pester voor een bepaalde periode schorsen.,
   ];
 
-  const finalSanction = t(
-    'In extreme gevallen kan de pester geroyeerd worden van de club',
-    'In extreme cases, the bully can be expelled from the club'
-  );
+  const finalSanction = In extreme gevallen kan de pester geroyeerd worden van de club;
 
   return (
     <div className="min-h-screen bg-background">
@@ -57,12 +54,9 @@ function AntiBullyingProtocolContent() {
       <main className="pt-20">
         <PageHero
           koreanText="규칙"
-          title={t('Pestprotocol', 'Anti-Bullying Protocol')}
-          titleHighlight={t('Taekwondo Black Dragon', 'Taekwondo Black Dragon')}
-          subtitle={t(
-            'Hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen',
-            'How we try to prevent bullying within the club by encouraging desired behavior'
-          )}
+          title={Pestprotocol}
+          titleHighlight={Taekwondo Black Dragon}
+          subtitle={Hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen}
         />
 
         <section className="section-padding bg-background">
@@ -77,10 +71,7 @@ function AntiBullyingProtocolContent() {
             >
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 md:p-8">
                 <p className="text-foreground/80 leading-relaxed">
-                  {t(
-                    'In dit document hebben we als Taekwondo vereniging Black Dragon vastgelegd hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen. Hierin zal behandeld worden hoe wij omgaan met situaties waarin dit toch gebeurt/dreigt te gebeuren en zal uitgewerkt worden welke sancties mogelijk zijn als een situatie niet tot een oplossing komt.',
-                    'In this document, we as Taekwondo association Black Dragon have established how we try to prevent bullying within the club by encouraging desired behavior. This will cover how we deal with situations where this still happens/threatens to happen and will outline what sanctions are possible if a situation does not lead to a solution.'
-                  )}
+                  {In dit document hebben we als Taekwondo vereniging Black Dragon vastgelegd hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen. Hierin zal behandeld worden hoe wij omgaan met situaties waarin dit toch gebeurt/dreigt te gebeuren en zal uitgewerkt worden welke sancties mogelijk zijn als een situatie niet tot een oplossing komt.}
                 </p>
               </div>
             </motion.div>
@@ -98,22 +89,19 @@ function AntiBullyingProtocolContent() {
                   <Shield className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground flex-1">
-                  {t('1. Gewenste omgang bevorderen', '1. Promoting Desired Behavior')}
+                  {1. Gewenste omgang bevorderen}
                 </h2>
               </div>
 
               <p className="text-foreground/70 leading-relaxed mb-6">
-                {t(
-                  'Het is erg belangrijk dat leden zich veilig voelen in hun sportomgeving. Hier hoort bij dat zij zich niet gepest mogen voelen. Om het risico daarop zo klein mogelijk te maken hebben we een aantal gedragsregels opgesteld.',
-                  'It is very important that members feel safe in their sports environment. This includes that they should not feel bullied. To minimize the risk of this, we have established a number of behavioral rules.'
-                )}
+                {Het is erg belangrijk dat leden zich veilig voelen in hun sportomgeving. Hier hoort bij dat zij zich niet gepest mogen voelen. Om het risico daarop zo klein mogelijk te maken hebben we een aantal gedragsregels opgesteld.}
               </p>
 
               {/* Not Allowed */}
               <div className="mb-8">
                 <h3 className="font-semibold text-lg text-foreground mb-4 flex items-center gap-2">
                   <Ban className="w-5 h-5 text-destructive" />
-                  {t('Niet toegestaan:', 'Not allowed:')}
+                  {Niet toegestaan:}
                 </h3>
                 <ul className="space-y-3">
                   {notAllowed.map((item, index) => (
@@ -129,7 +117,7 @@ function AntiBullyingProtocolContent() {
               <div>
                 <h3 className="font-semibold text-lg text-foreground mb-4 flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-primary" />
-                  {t('Wel verwacht:', 'Expected:')}
+                  {Wel verwacht:}
                 </h3>
                 <ul className="space-y-3">
                   {expected.map((item, index) => (
@@ -143,10 +131,7 @@ function AntiBullyingProtocolContent() {
 
               <div className="mt-6 p-4 bg-muted/50 rounded-lg">
                 <p className="text-sm text-foreground/70 italic">
-                  {t(
-                    'Bovenstaande gedragsregels worden al bij inschrijving kenbaar gemaakt aan al onze leden en zijn tevens op te vragen bij de trainers. Verder wordt er door de leraren/trainers regelmatig aandacht aan besteedt en zien wij toe op de naleving ervan tijdens de lessen. Bovendien wordt aan ouders/verzorgers ook gevraagd om ongewenst gedrag te melden wanneer zij dit tegenkomen of vermoeden.',
-                    'The above behavioral rules are made known to all our members upon registration and can also be requested from the trainers. Furthermore, the teachers/trainers regularly pay attention to them and we monitor compliance during lessons. In addition, parents/guardians are also asked to report unwanted behavior when they encounter or suspect it.'
-                  )}
+                  {Bovenstaande gedragsregels worden al bij inschrijving kenbaar gemaakt aan al onze leden en zijn tevens op te vragen bij de trainers. Verder wordt er door de leraren/trainers regelmatig aandacht aan besteedt en zien wij toe op de naleving ervan tijdens de lessen. Bovendien wordt aan ouders/verzorgers ook gevraagd om ongewenst gedrag te melden wanneer zij dit tegenkomen of vermoeden.}
                 </p>
               </div>
             </motion.div>
@@ -164,15 +149,12 @@ function AntiBullyingProtocolContent() {
                   <MessageCircle className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground flex-1">
-                  {t('2. Situaties van pestgedrag oplossen', '2. Resolving Bullying Situations')}
+                  {2. Situaties van pestgedrag oplossen}
                 </h2>
               </div>
 
               <p className="text-foreground/70 leading-relaxed mb-6">
-                {t(
-                  'Als er een vermoeden bestaat dat er binnen de club gepest wordt dan worden de volgende stappen doorlopen:',
-                  'If there is a suspicion that bullying is taking place within the club, the following steps are taken:'
-                )}
+                {Als er een vermoeden bestaat dat er binnen de club gepest wordt dan worden de volgende stappen doorlopen:}
               </p>
 
               <div className="space-y-4">
@@ -200,21 +182,18 @@ function AntiBullyingProtocolContent() {
                   <AlertTriangle className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground flex-1">
-                  {t('3. Sancties', '3. Sanctions')}
+                  {3. Sancties}
                 </h2>
               </div>
 
               <p className="text-foreground/70 leading-relaxed mb-8">
-                {t(
-                  'Mochten pogingen tot verbetering van de situatie door leden, trainer en ouders niet tot een oplossing leiden dan kan de club overgaan tot het opleggen van sancties. Een besluit hiertoe volgt altijd uit samenspraak tussen trainer en bestuur. De mogelijke sancties lopen op van licht naar steeds zwaarder en kunnen in die volgorde worden gegeven als een situatie zich over langere tijd niet verbetert.',
-                  'If attempts to improve the situation by members, trainer and parents do not lead to a solution, the club can proceed to impose sanctions. A decision to do so always follows from consultation between trainer and board. The possible sanctions range from light to increasingly severe and can be given in that order if a situation does not improve over a longer period of time.'
-                )}
+                {Mochten pogingen tot verbetering van de situatie door leden, trainer en ouders niet tot een oplossing leiden dan kan de club overgaan tot het opleggen van sancties. Een besluit hiertoe volgt altijd uit samenspraak tussen trainer en bestuur. De mogelijke sancties lopen op van licht naar steeds zwaarder en kunnen in die volgorde worden gegeven als een situatie zich over langere tijd niet verbetert.}
               </p>
 
               {/* First Sanctions */}
               <div className="mb-8">
                 <h3 className="font-semibold text-lg text-foreground mb-4">
-                  {t('Eerste sancties', 'First Sanctions')}
+                  {Eerste sancties}
                 </h3>
                 <div className="space-y-3">
                   {firstSanctions.map((sanction, index) => (
@@ -231,7 +210,7 @@ function AntiBullyingProtocolContent() {
               {/* Follow-up Sanctions */}
               <div className="mb-8">
                 <h3 className="font-semibold text-lg text-foreground mb-4">
-                  {t('Vervolgsancties', 'Follow-up Sanctions')}
+                  {Vervolgsancties}
                 </h3>
                 <div className="space-y-3">
                   {followUpSanctions.map((sanction, index) => (
@@ -248,7 +227,7 @@ function AntiBullyingProtocolContent() {
               {/* Final Sanction */}
               <div>
                 <h3 className="font-semibold text-lg text-foreground mb-4">
-                  {t('Laatste sanctie', 'Final Sanction')}
+                  {Laatste sanctie}
                 </h3>
                 <div className="p-4 bg-destructive/10 border border-destructive/30 rounded-lg">
                   <p className="text-foreground font-medium flex items-start gap-3">
@@ -269,10 +248,7 @@ function AntiBullyingProtocolContent() {
             >
               <Users className="w-12 h-12 text-primary mx-auto mb-4" />
               <p className="text-foreground/70 text-sm leading-relaxed">
-                {t(
-                  'Bij Taekwondo Vereniging Black Dragon streven we naar een veilige en respectvolle omgeving voor alle leden. Dit protocol helpt ons om deze waarden te handhaven.',
-                  'At Taekwondo Association Black Dragon, we strive for a safe and respectful environment for all members. This protocol helps us maintain these values.'
-                )}
+                {Bij Taekwondo Vereniging Black Dragon streven we naar een veilige en respectvolle omgeving voor alle leden. Dit protocol helpt ons om deze waarden te handhaven.}
               </p>
             </motion.div>
           </div>

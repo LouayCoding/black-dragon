@@ -14,12 +14,9 @@ function ProgramsContent() {
       <main className="pt-20">
         <PageHero
           koreanText="프로그램"
-          title={t('Onze', 'Our')}
-          titleHighlight={t('Programmas', 'Programs')}
-          subtitle={t(
-            'Van kleine tijgers tot wedstrijdatleten - vind het perfecte programma voor jouw reis.',
-            'From little tigers to competition athletes - find the perfect program for your journey.'
-          )}
+          title={Onze}
+          titleHighlight={Programmas}
+          subtitle={Van kleine tijgers tot wedstrijdatleten - vind het perfecte programma voor jouw reis.}
         />
         <ProgramsSection />
       </main>

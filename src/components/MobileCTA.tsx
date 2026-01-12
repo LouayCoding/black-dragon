@@ -21,7 +21,7 @@ export function MobileCTA() {
           className="flex-1 bg-primary hover:bg-accent text-primary-foreground font-semibold"
         >
           <Link to="/register" className="flex items-center justify-center gap-2">
-            🥋 {t('Gratis Proefles', 'Free Trial')}
+            🥋 {Gratis Proefles}
           </Link>
         </Button>
         <Button
@@ -32,7 +32,7 @@ export function MobileCTA() {
         >
           <a href="tel:0201234567" className="flex items-center justify-center gap-2">
             <Phone className="w-4 h-4" />
-            {t('Bel', 'Call')}
+            {Bel}
           </a>
         </Button>
       </div>
