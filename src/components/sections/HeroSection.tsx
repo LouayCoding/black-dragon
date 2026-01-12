@@ -1,66 +1,15 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
-            
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Korean text - simple fade
-      gsap.from(koreanRef.current, {
-        opacity: 0,
-        duration: 0.6,
-        delay: 0.1,
-      });
-
-      // Letter-by-letter reveal for title
-      if (titleRef.current) {
-        const letters = titleRef.current.querySelectorAll('.letter');
-        gsap.from(letters, {
-          opacity: 0,
-          y: 20,
-          duration: 0.5,
-          stagger: 0.03,
-          delay: 0.3,
-          ease: 'power2.out',
-        });
-      }
-
-      // Black Dragon color animation to primary
-      if (blackDragonRef.current) {
-        gsap.to(blackDragonRef.current, {
-          color: 'hsl(39, 98%, 50%)',
-          duration: 1.5,
-          delay: 1.2,
-          ease: 'power2.inOut',
-        });
-      }
-
-      // Subtitle - simple fade
-      gsap.from(subtitleRef.current, {
-        opacity: 0,
-        duration: 0.8,
-        delay: 1,
-      });
-
-      // Button - simple fade
-      gsap.from(buttonRef.current, {
-        opacity: 0,
-        duration: 0.6,
-        delay: 1.4,
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section
       id="home"
-      className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950"
+      className="relative min-h-[80vh] -mt-20 lg:-mt-24 pt-20 lg:pt-24 flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950"
     >
       {/* Background Image with Overlay */}
       <div 
@@ -92,11 +41,11 @@ export function HeroSection() {
               className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-4"
             >
               {'Taekwondo'.split('').map((letter, i) => (
-                <span key={i} className="letter inline-block">letter</span>
+                <span key={i} className="letter inline-block">{letter}</span>
               ))}
-              <span className="block mt-2 text-white">
+              <span className="block mt-2 text-primary">
                 {'Black Dragon'.split('').map((letter, i) => (
-                  <span key={i} className="letter inline-block">letter === ' ' ? '\u00A0' : letter</span>
+                  <span key={i} className="letter inline-block">{letter === ' ' ? '\u00A0' : letter}</span>
                 ))}
               </span>
             </h1>

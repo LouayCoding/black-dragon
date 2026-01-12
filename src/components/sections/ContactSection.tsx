@@ -1,52 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-
 export function ContactSection() {
-          
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(headerRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      if (locationsRef.current) {
-        const locations = locationsRef.current.querySelectorAll('.location-card');
-        gsap.from(locations, {
-          opacity: 0,
-          y: 60,
-          duration: 0.8,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: locationsRef.current,
-            start: 'top 75%',
-          },
-        });
-      }
-
-      gsap.from(ctaRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: ctaRef.current,
-          start: 'top 80%',
-        },
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   const locations = [
     {
@@ -102,7 +60,7 @@ export function ContactSection() {
               {/* Google Map */}
               <div className="relative h-80 w-full overflow-hidden">
                 <iframe
-                  src=location.mapUrl
+                  src={location.mapUrl}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -115,14 +73,14 @@ export function ContactSection() {
 
               {/* Location Details */}
               <div className="space-y-8">
-                <h3 className="font-serif text-3xl font-bold text-foreground">location.name</h3>
+                <h3 className="font-serif text-3xl font-bold text-foreground">{location.name}</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-semibold text-foreground/60 mb-1">{'Adres'}</p>
-                      <p className="text-foreground text-base font-medium">location.address</p>
+                      <p className="text-foreground text-base font-medium">{location.address}</p>
                     </div>
                   </div>
 
@@ -130,8 +88,8 @@ export function ContactSection() {
                     <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-semibold text-foreground/60 mb-1">{'Telefoon'}</p>
-                      <a href={`tel:$location.phone`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
-                        location.phone
+                      <a href={`tel:${location.phone}`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
+                        {location.phone}
                       </a>
                     </div>
                   </div>
@@ -140,8 +98,8 @@ export function ContactSection() {
                     <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-semibold text-foreground/60 mb-1">Email</p>
-                      <a href={`mailto:$location.email`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
-                        location.email
+                      <a href={`mailto:${location.email}`} className="text-foreground text-base font-medium hover:text-primary transition-colors">
+                        {location.email}
                       </a>
                     </div>
                   </div>
@@ -150,7 +108,7 @@ export function ContactSection() {
                     <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-semibold text-foreground/60 mb-1">{'Trainingstijden'}</p>
-                      <p className="text-foreground text-base font-medium">location.hours</p>
+                      <p className="text-foreground text-base font-medium">{location.hours}</p>
                     </div>
                   </div>
                 </div>

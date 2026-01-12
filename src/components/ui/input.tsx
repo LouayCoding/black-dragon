@@ -11,8 +11,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         <input
-          type=type
-          className=cn(
+          type={type}
+          className={cn(
             "flex h-11 w-full rounded-md border bg-background px-4 py-2.5 text-base ring-offset-background",
             "file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground",
             "placeholder:text-muted-foreground/70",
@@ -23,13 +23,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               ? "border-destructive focus-visible:ring-destructive"
               : "border-input focus-visible:ring-ring",
             className,
-          )
+          )}
           ref={ref}
-          aria-invalid=error ? "true" : "false"
+          aria-invalid={error ? "true" : "false"}
           {...props}
         />
         {error && typeof error === "string" && (
-          <p className="mt-1.5 text-sm text-destructive">error</p>
+          <p className="mt-1.5 text-sm text-destructive">{error}</p>
         )}
       </div>
     );
@@ -38,3 +38,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 Input.displayName = "Input";
 
 export { Input };
+
+
+
+

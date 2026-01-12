@@ -1,17 +1,14 @@
 'use client'
 
-import { useLanguage } from '@/hooks/useLanguage';
 import { Users, Zap, Target, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export function ProgramsSection() {
-  const { t } = useLanguage();
-
   const programs = [
     {
       icon: Users,
-      image: littleTigersImg,
+      image: '/placeholder.svg',
       title: 'Kleine Tijgers',
       age: '4-6 jaar',
       description: 'Leuke introductielessen die coördinatie, focus en zelfvertrouwen opbouwen door leeftijdsgeschikte spelletjes en basis Taekwondo bewegingen.',
@@ -23,7 +20,7 @@ export function ProgramsSection() {
     },
     {
       icon: Zap,
-      image: sparringImg,
+      image: '/placeholder.svg',
       title: 'Jeugd',
       age: '7-17 jaar',
       description: 'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
@@ -35,7 +32,7 @@ export function ProgramsSection() {
     },
     {
       icon: Heart,
-      image: poomsaeImg,
+      image: '/placeholder.svg',
       title: 'Vrouwen',
       age: '18+ jaar',
       description: 'Speciaal programma voor vrouwen gericht op kracht, zelfvertrouwen en zelfverdediging in een ondersteunende en veilige omgeving.',
@@ -47,7 +44,7 @@ export function ProgramsSection() {
     },
     {
       icon: Target,
-      image: highKickImg,
+      image: '/placeholder.svg',
       title: 'Volwassenen',
       age: '18+ jaar',
       description: 'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',
@@ -94,8 +91,8 @@ export function ProgramsSection() {
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src=program.image
-                  alt=program.title
+                  src={program.image}
+                  alt={program.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -108,7 +105,7 @@ export function ProgramsSection() {
                 {/* Age Badge */}
                 <div className="absolute bottom-4 left-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-white bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full">
-                    program.age
+                    {program.age}
                   </span>
                 </div>
               </div>
@@ -116,10 +113,10 @@ export function ProgramsSection() {
               {/* Content */}
               <div className="p-6">
                 <h3 className="font-serif text-2xl font-bold text-foreground mb-3 leading-tight">
-                  program.title
+                  {program.title}
                 </h3>
                 <p className="text-foreground/70 text-sm leading-relaxed mb-4">
-                  program.description
+                  {program.description}
                 </p>
 
                 {/* Features */}
@@ -127,7 +124,7 @@ export function ProgramsSection() {
                   {program.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-2 text-xs text-foreground/70">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                      <span>feature</span>
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>

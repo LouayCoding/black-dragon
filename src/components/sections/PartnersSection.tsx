@@ -1,75 +1,8 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
 import { Percent, GraduationCap, Briefcase } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function PartnersSection() {
-  const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  const affiliationRef = useRef<HTMLDivElement>(null);
-  const logosRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(headerRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      if (cardsRef.current) {
-        const cards = cardsRef.current.querySelectorAll('.partner-card');
-        gsap.from(cards, {
-          opacity: 0,
-          y: 40,
-          duration: 0.6,
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: 'top 75%',
-          },
-        });
-      }
-
-      gsap.from(affiliationRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: affiliationRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      if (logosRef.current) {
-        const logos = logosRef.current.querySelectorAll('.affiliation-logo');
-        gsap.from(logos, {
-          opacity: 0,
-          scale: 0.9,
-          duration: 0.5,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: logosRef.current,
-            start: 'top 80%',
-          },
-        });
-      }
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   const discountPrograms = [
     {
@@ -140,11 +73,11 @@ export function PartnersSection() {
   ];
 
   return (
-    <section ref={sectionRef} id="partners" className="py-32 bg-background">
+    <section id="partners" className="py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div ref={headerRef} className="mb-24">
+        <div className="mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
@@ -160,15 +93,15 @@ export function PartnersSection() {
         </div>
 
         {/* Discount Programs */}
-        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24 max-w-7xl mx-auto">
           {discountPrograms.map((program, index) => {
             const CardContent = (
               <>
                 {program.logo ? (
                   <div className="w-24 h-16 flex items-center justify-center mb-4">
                     <img 
-                      src=program.logo 
-                      alt=program.title
+                      src={program.logo} 
+                      alt={program.title}
                       className="max-w-full max-h-full object-contain"
                     />
                   </div>
@@ -178,15 +111,15 @@ export function PartnersSection() {
                   </div>
                 )}
                 <h3 className="font-bold text-xl text-foreground mb-2">
-                  program.title
+                  {program.title}
                 </h3>
                 {program.discount && (
                   <div className="text-primary text-sm font-bold mb-3">
-                    program.discount
+                    {program.discount}
                   </div>
                 )}
                 <p className="text-foreground/70 text-sm leading-[1.7]">
-                  program.description
+                  {program.description}
                 </p>
               </>
             );
@@ -194,19 +127,19 @@ export function PartnersSection() {
             return program.url ? (
               <a
                 key={index}
-                href=program.url
+                href={program.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="partner-card bg-card p-8 hover:bg-muted/30 transition-colors duration-300 block"
               >
-                CardContent
+                {CardContent}
               </a>
             ) : (
               <div
                 key={index}
                 className="partner-card bg-card p-8 hover:bg-muted/30 transition-colors duration-300"
               >
-                CardContent
+                {CardContent}
               </div>
             );
           })}

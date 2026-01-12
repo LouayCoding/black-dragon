@@ -1,71 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
-
-
 export function AboutSection() {
-            
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Header animation
-      gsap.from(headerRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      // Images stagger animation
-      if (imagesRef.current) {
-        const images = imagesRef.current.querySelectorAll('.image-card');
-        gsap.from(images, {
-          opacity: 0,
-          y: 60,
-          duration: 0.6,
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: imagesRef.current,
-            start: 'top 75%',
-          },
-        });
-      }
-
-      // Stats animation
-      if (statsRef.current) {
-        const stats = statsRef.current.querySelectorAll('.stat-item');
-        gsap.from(stats, {
-          opacity: 0,
-          scale: 0.8,
-          duration: 0.5,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: statsRef.current,
-            start: 'top 80%',
-          },
-        });
-      }
-
-      // Values animation
-      if (valuesRef.current) {
-        const values = valuesRef.current.querySelectorAll('.value-card');
-        gsap.from(values, {
-          opacity: 0,
-          y: 40,
-          duration: 0.5,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: valuesRef.current,
-            start: 'top 80%',
-          },
-        });
-      }
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section id="about" className="py-32 bg-background">
@@ -87,10 +22,7 @@ export function AboutSection() {
               <div className="w-20 h-1 bg-primary"></div>
               <div className="space-y-6 max-w-2xl">
                 <p className="text-foreground/70 text-lg sm:text-xl leading-[1.8]">
-                  t(
-                    'Sinds 2013 begeleiden wij leden van alle leeftijden in hun persoonlijke groei door traditionele Taekwondo. Bij Black Dragon draait het niet alleen om het leren van technieken, maar ook om het ontwikkelen van discipline, respect en zelfvertrouwen.',
-                    'Since 2013, we guide members of all ages in their personal growth through traditional Taekwondo. At Black Dragon, it\'s not just about learning techniques, but also about developing discipline, respect and self-confidence.'
-                  )
+                  Sinds 2013 begeleiden wij leden van alle leeftijden in hun persoonlijke groei door traditionele Taekwondo. Bij Black Dragon draait het niet alleen om het leren van technieken, maar ook om het ontwikkelen van discipline, respect en zelfvertrouwen.
                 </p>
                 <p className="text-foreground/70 text-base sm:text-lg leading-[1.8]">
                   Of je nu 4 jaar bent of ouder, een beginner of gevorderd, bij ons vind je een veilige en inspirerende omgeving waar je jezelf kunt ontwikkelen. Onze ervaren instructeurs staan klaar om jou te begeleiden op jouw unieke reis door de wereld van Taekwondo.
@@ -101,7 +33,7 @@ export function AboutSection() {
             {/* About Hero Image with Stats Overlay */}
             <div className="relative h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
               <img 
-                src=aboutHeroImg 
+                src="/placeholder.svg" 
                 alt="Taekwondo Black Dragon Training"
                 className="w-full h-full object-cover"
               />
@@ -119,10 +51,10 @@ export function AboutSection() {
                       className="stat-item p-4 sm:p-6 text-center"
                     >
                       <div className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">
-                        stat.value
+                        {stat.value}
                       </div>
                       <div className="text-[10px] sm:text-xs uppercase tracking-wider text-white font-semibold">
-                        stat.label
+                        {stat.label}
                       </div>
                     </div>
                   ))}
@@ -152,12 +84,12 @@ export function AboutSection() {
                 key={index}
                 className="value-card bg-background p-8 sm:p-10 hover:bg-muted/30 transition-colors duration-300"
               >
-                <div className="text-6xl sm:text-7xl mb-6 text-primary font-light">value.korean</div>
+                <div className="text-6xl sm:text-7xl mb-6 text-primary font-light">{value.korean}</div>
                 <h4 className="font-bold text-xl text-foreground mb-3">
-                  value.english
+                  {value.english}
                 </h4>
                 <p className="text-foreground/70 text-sm leading-[1.7] max-w-[30ch]">
-                  value.desc
+                  {value.desc}
                 </p>
               </div>
             ))}

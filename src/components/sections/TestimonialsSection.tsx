@@ -1,48 +1,9 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
-import { Star, Quote } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { Star } from 'lucide-react';
 
 export function TestimonialsSection() {
-  const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(headerRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      if (cardsRef.current) {
-        const cards = cardsRef.current.querySelectorAll('.testimonial-card');
-        gsap.from(cards, {
-          opacity: 0,
-          y: 40,
-          duration: 0.6,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: 'top 75%',
-          },
-        });
-      }
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   const testimonials = [
     {
@@ -84,11 +45,11 @@ export function TestimonialsSection() {
   ];
 
   return (
-    <section ref={sectionRef} id="testimonials" className="py-32 bg-background">
+    <section id="testimonials" className="py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div ref={headerRef} className="mb-24">
+        <div className="mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
@@ -109,7 +70,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Testimonials Grid */}
-        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -124,19 +85,19 @@ export function TestimonialsSection() {
 
               {/* Text */}
               <p className="text-foreground/80 text-base leading-[1.8] mb-8">
-                "testimonial.text"
+                "{testimonial.text}"
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <span className="text-primary font-bold text-base">
-                    testimonial.name.split(' ').map(n => n[0]).join('')
+                    {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
                 <div>
-                  <p className="font-bold text-foreground text-base">testimonial.name</p>
-                  <p className="text-foreground/60 text-sm">testimonial.role</p>
+                  <p className="font-bold text-foreground text-base">{testimonial.name}</p>
+                  <p className="text-foreground/60 text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>

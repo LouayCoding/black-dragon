@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -8,35 +9,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-
 export function FAQSection() {
-  const { t } = useLanguage();
-      
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(headerRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      gsap.from(accordionRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: accordionRef.current,
-          start: 'top 75%',
-        },
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   const faqs = [
     {
@@ -45,7 +18,7 @@ export function FAQSection() {
     },
     {
       question: 'Heb ik eerdere ervaring nodig om te beginnen?',
-      answer: 'Absoluut niet! Onze lessen zijn geschikt voor alle niveaus', van absolute beginners tot gevorderden. Onze instructeurs begeleiden je stap voor stap en passen de training aan op jouw niveau.,
+      answer: 'Absoluut niet! Onze lessen zijn geschikt voor alle niveaus, van absolute beginners tot gevorderden. Onze instructeurs begeleiden je stap voor stap en passen de training aan op jouw niveau.',
     },
     {
       question: 'Wat moet ik meenemen naar mijn eerste les?',
@@ -61,7 +34,7 @@ export function FAQSection() {
     },
     {
       question: 'Hoe lang duurt het om een zwarte band te halen?',
-      answer: 'Gemiddeld duurt het 3-5 jaar om een zwarte band (1e Dan) te behalen', afhankelijk van trainingsfrequentie, toewijding en individuele voortgang. Elke stap in deze reis brengt waardevolle lessen en persoonlijke groei.,
+      answer: 'Gemiddeld duurt het 3-5 jaar om een zwarte band (1e Dan) te behalen, afhankelijk van trainingsfrequentie, toewijding en individuele voortgang. Elke stap in deze reis brengt waardevolle lessen en persoonlijke groei.',
     },
     {
       question: 'Bieden jullie proeflessen aan?',
@@ -104,14 +77,14 @@ export function FAQSection() {
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
-                value={`item-$index`}
+                value={`item-${index}`}
                 className="bg-background border-l-4 border-primary px-8 py-2 hover:bg-muted/30 transition-colors"
               >
                 <AccordionTrigger className="text-left font-bold text-lg text-foreground hover:text-primary py-6">
-                  faq.question
+                  {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-foreground/80 pb-6 leading-[1.8] text-base">
-                  faq.answer
+                  {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}

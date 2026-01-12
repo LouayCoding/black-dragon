@@ -25,11 +25,11 @@ export function BackToTop() {
 
   return (
     <button
-      onClick=scrollToTop
-      className=cn(
+      onClick={scrollToTop}
+      className={cn(
         'fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-glow flex items-center justify-center transition-all duration-300 hover:bg-accent hover:scale-110',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
-      )
+      )}
       aria-label="Scroll to top"
     >
       <ArrowUp size={20} />

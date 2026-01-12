@@ -1,11 +1,9 @@
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/hooks/useLanguage';
 import { Phone } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export function MobileCTA() {
-  const { t } = useLanguage();
 
   return (
     <motion.div

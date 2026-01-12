@@ -31,33 +31,33 @@ const FormSelect = React.forwardRef<HTMLButtonElement, FormSelectProps>(
       <div className="space-y-2">
         {label && (
           <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            label required && <span className="text-red-500">*</span>
+            {label} {required && <span className="text-red-500">*</span>}
           </label>
         )}
-        <Select value=value onValueChange=onValueChange>
+        <Select value={value} onValueChange={onValueChange}>
           <SelectTrigger 
             ref={ref}
-            className=cn(
+            className={cn(
               "h-11 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 focus:bg-white dark:focus:bg-zinc-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors",
               error && "border-red-500 focus:ring-red-500",
               className
-            )
+            )}
           >
-            <SelectValue placeholder=placeholder />
+            <SelectValue placeholder={placeholder} />
           </SelectTrigger>
           <SelectContent className="rounded-xl">
             {options.map((option) => (
-              <SelectItem key=option.value value=option.value>
-                option.label
+              <SelectItem key={option.value} value={option.value}>
+                {option.label}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
         {error && (
-          <p className="text-sm text-red-500">error</p>
+          <p className="text-sm text-red-500">{error}</p>
         )}
         {helperText && !error && (
-          <p className="text-sm text-zinc-500">helperText</p>
+          <p className="text-sm text-zinc-500">{helperText}</p>
         )}
       </div>
     )

@@ -17,7 +17,7 @@ export function PageHero({ title, titleHighlight, subtitle, koreanText, backgrou
       {backgroundImage && (
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{ backgroundImage: `url($backgroundImage)` }}
+          style={{ backgroundImage: `url(${backgroundImage})` }}
         />
       )}
       
@@ -31,22 +31,22 @@ export function PageHero({ title, titleHighlight, subtitle, koreanText, backgrou
       <div className="container mx-auto px-4 relative z-10 text-center">
         {koreanText && (
           <p className="text-primary text-lg font-medium tracking-[0.3em] mb-4 animate-fade-up">
-            koreanText
+            {koreanText}
           </p>
         )}
         
-        <h1 className=cn(
+        <h1 className={cn(
           "font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight animate-fade-up-delay-1"
-        )>
-          title
+        )}>
+          {title}
           {titleHighlight && (
-            <span className="block text-primary mt-2">titleHighlight</span>
+            <span className="block text-primary mt-2">{titleHighlight}</span>
           )}
         </h1>
         
         {subtitle && (
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto animate-fade-up-delay-2">
-            subtitle
+            {subtitle}
           </p>
         )}
       </div>

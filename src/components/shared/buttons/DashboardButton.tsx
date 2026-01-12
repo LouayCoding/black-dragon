@@ -18,11 +18,11 @@ const DashboardButton = React.forwardRef<HTMLButtonElement, DashboardButtonProps
     return (
       <Button
         ref={ref}
-        className=cn(
+        className={cn(
           "h-11 font-medium",
           variantStyles[variant],
           className
-        )
+        )}
         {...props}
       />
     )

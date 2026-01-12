@@ -1,61 +1,9 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
 import { Clock, MapPin } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function ScheduleSection() {
-  const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const scheduleRef = useRef<HTMLDivElement>(null);
-  const noteRef = useRef<HTMLParagraphElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Header animation
-      gsap.from(headerRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      // Schedule cards stagger
-      if (scheduleRef.current) {
-        const cards = scheduleRef.current.querySelectorAll('.schedule-day');
-        gsap.from(cards, {
-          opacity: 0,
-          y: 40,
-          duration: 0.6,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: scheduleRef.current,
-            start: 'top 75%',
-          },
-        });
-      }
-
-      // Note animation
-      gsap.from(noteRef.current, {
-        opacity: 0,
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: noteRef.current,
-          start: 'top 85%',
-        },
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   const schedule = [
     { day: 'Maandag', classes: [
@@ -85,11 +33,11 @@ export function ScheduleSection() {
   ];
 
   return (
-    <section ref={sectionRef} id="schedule" className="py-32 bg-background">
+    <section id="schedule" className="py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div ref={headerRef} className="mb-24">
+        <div className="mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
@@ -110,7 +58,7 @@ export function ScheduleSection() {
         </div>
 
         {/* Schedule Grid - Mobile Friendly */}
-        <div ref={scheduleRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border mb-16">
           {schedule.map((daySchedule, dayIndex) => (
             <div
               key={dayIndex}
@@ -119,7 +67,7 @@ export function ScheduleSection() {
               {/* Day Header */}
               <div className="mb-8 pb-6 border-b-2 border-border">
                 <h3 className="font-serif text-3xl font-bold text-foreground">
-                  daySchedule.day
+                  {daySchedule.day}
                 </h3>
               </div>
 
@@ -134,27 +82,27 @@ export function ScheduleSection() {
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-primary flex-shrink-0" />
                       <span className="font-bold text-base text-foreground">
-                        cls.time
+                        {cls.time}
                       </span>
                     </div>
 
                     {/* Class Name */}
                     <p className="text-foreground text-base font-semibold leading-[1.6] pl-8">
-                      cls.name
+                      {cls.name}
                     </p>
 
                     {/* Location */}
                     <div className="flex items-center gap-2 pl-8">
                       <MapPin className="w-4 h-4 text-primary/70 flex-shrink-0" />
                       <span className="text-sm text-foreground/70 font-medium">
-                        cls.location
+                        {cls.location}
                       </span>
                     </div>
 
                     {/* Divider between classes */}
-                    classIndex < daySchedule.classes.length - 1 && (
+                    {classIndex < daySchedule.classes.length - 1 && (
                       <div className="pt-4 border-b border-border/50"></div>
-                    )
+                    )}
                   </div>
                 ))}
               </div>
@@ -164,7 +112,6 @@ export function ScheduleSection() {
 
         {/* Note */}
         <p 
-          ref={noteRef}
           className="text-center text-foreground/60 text-sm leading-[1.6] max-w-2xl mx-auto"
         >
           {'* Rooster kan wijzigen tijdens feestdagen en speciale evenementen. Neem contact op voor de meest actuele informatie.'}

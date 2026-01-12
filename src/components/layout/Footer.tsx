@@ -125,16 +125,16 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-lg font-semibold mb-6">{'Snelle Links'}</h4>
             <ul className="space-y-3">
-              quickLinks.map((link) => (
-                <li key={link}.href + link.label>
+              {quickLinks.map((link) => (
+                <li key={link.href + link.label}>
                   <Link
-                    href=link.href
+                    href={link.href}
                     className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
-                    link.label
+                    {link.label}
                   </Link>
                 </li>
-              ))
+              ))}
             </ul>
           </div>
 
@@ -142,16 +142,16 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-lg font-semibold mb-6">{'Onze Programmas'}</h4>
             <ul className="space-y-3">
-              programs.map((program) => (
-                <li key={program}.label>
+              {programs.map((program) => (
+                <li key={program.label}>
                   <Link
-                    href=program.href
+                    href={program.href}
                     className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                   >
-                    program.label
+                    {program.label}
                   </Link>
                 </li>
-              ))
+              ))}
             </ul>
           </div>
 
