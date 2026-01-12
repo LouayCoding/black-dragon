@@ -1,12 +1,18 @@
-'use client'
-
 import { useEffect, useRef } from 'react';
+import { useLanguage } from '@/hooks/useLanguage';
 import { Clock, MapPin } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 
 export function ScheduleSection() {
   const { t } = useLanguage();
-        
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const scheduleRef = useRef<HTMLDivElement>(null);
+  const noteRef = useRef<HTMLParagraphElement>(null);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animation
@@ -50,59 +56,62 @@ export function ScheduleSection() {
   }, []);
 
   const schedule = [
-    { day: 'Maandag', classes: [
-      { time: '17:00-18:00', name: 'Taekwondo KIDS/JUGD', location: 'Draaistraat 16', duration: '60 min' },
-      { time: '18:00-19:00', name: 'Taekwondo JUGD/JUNIOREN', location: 'Draaistraat 16', duration: '60 min' },
-      { time: '19:30-20:30', name: 'Taekwondo/Krachttraining', location: 'Draaistraat 16', duration: '60 min' },
+    { day: t('Maandag', 'Monday'), classes: [
+      { time: '17:00-18:00', name: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '18:00-19:00', name: t('Taekwondo JUGD/JUNIOREN', 'Taekwondo YOUTH/JUNIORS'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '19:30-20:30', name: t('Taekwondo/Krachttraining', 'Taekwondo/Strength Training'), location: 'Draaistraat 16', duration: '60 min' },
     ]},
-    { day: 'Dinsdag', classes: [
-      { time: '18:00-19:00', name: 'Taekwondo KIDS/JUGD', location: 'Withuysstraat 2', duration: '60 min' },
+    { day: t('Dinsdag', 'Tuesday'), classes: [
+      { time: '18:00-19:00', name: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), location: 'Withuysstraat 2', duration: '60 min' },
     ]},
-    { day: 'Woensdag', classes: [
-      { time: '17:00-18:00', name: 'Taekwondo KIDS/JUGD', location: 'Draaistraat 16', duration: '60 min' },
-      { time: '18:00-19:00', name: 'Taekwondo JUGD/JUNIOREN', location: 'Draaistraat 16', duration: '60 min' },
-      { time: '19:30-20:30', name: 'Taekwondo/Krachttraining', location: 'Draaistraat 16', duration: '60 min' },
+    { day: t('Woensdag', 'Wednesday'), classes: [
+      { time: '17:00-18:00', name: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '18:00-19:00', name: t('Taekwondo JUGD/JUNIOREN', 'Taekwondo YOUTH/JUNIORS'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '19:30-20:30', name: t('Taekwondo/Krachttraining', 'Taekwondo/Strength Training'), location: 'Draaistraat 16', duration: '60 min' },
     ]},
-    { day: 'Donderdag', classes: [
-      { time: '18:00-19:00', name: 'Taekwondo KIDS/JUGD', location: 'Withuysstraat 2', duration: '60 min' },
+    { day: t('Donderdag', 'Thursday'), classes: [
+      { time: '18:00-19:00', name: t('Taekwondo KIDS/JUGD', 'Taekwondo KIDS/YOUTH'), location: 'Withuysstraat 2', duration: '60 min' },
     ]},
-    { day: 'Vrijdag', classes: [
-      { time: '17:00-18:00', name: 'Taekwondo/Krachttraining', location: 'Draaistraat 16', duration: '60 min' },
-      { time: '19:00-20:00', name: 'Vrouwentraining totaal', location: 'Draaistraat 16', duration: '60 min' },
+    { day: t('Vrijdag', 'Friday'), classes: [
+      { time: '17:00-18:00', name: t('Taekwondo/Krachttraining', 'Taekwondo/Strength Training'), location: 'Draaistraat 16', duration: '60 min' },
+      { time: '19:00-20:00', name: t('Vrouwentraining totaal', 'Women Training Total'), location: 'Draaistraat 16', duration: '60 min' },
     ]},
-    { day: 'Zaterdag', classes: [
-      { time: '12:00-13:30', name: 'PT training', location: 'Draaistraat 16', duration: '90 min' },
-      { time: '13:30-14:30', name: 'PT training', location: 'Draaistraat 16', duration: '60 min' },
+    { day: t('Zaterdag', 'Saturday'), classes: [
+      { time: '12:00-13:30', name: t('PT training', 'PT Training'), location: 'Draaistraat 16', duration: '90 min' },
+      { time: '13:30-14:30', name: t('PT training', 'PT Training'), location: 'Draaistraat 16', duration: '60 min' },
     ]},
   ];
 
   return (
-    <section id="schedule" className="py-32 bg-background">
+    <section ref={sectionRef} id="schedule" className="py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-24">
+        <div ref={headerRef} className="mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {'Rooster'}
+                {t('Rooster', 'Schedule')}
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {'Wekelijks'}<br />
-              <span className="text-primary">{'Rooster'}</span>
+              {t('Wekelijks', 'Weekly')}<br />
+              <span className="text-primary">{t('Rooster', 'Schedule')}</span>
             </h2>
             <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {Kies je moment. Begin vandaag.}
+                {t(
+                  'Kies je moment. Begin vandaag.',
+                  'Choose your time. Start today.'
+                )}
               </p>
             </div>
           </div>
         </div>
 
         {/* Schedule Grid - Mobile Friendly */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border mb-16">
+        <div ref={scheduleRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border mb-16">
           {schedule.map((daySchedule, dayIndex) => (
             <div
               key={dayIndex}
@@ -155,10 +164,14 @@ export function ScheduleSection() {
         </div>
 
         {/* Note */}
-        <p
+        <p 
+          ref={noteRef}
           className="text-center text-foreground/60 text-sm leading-[1.6] max-w-2xl mx-auto"
         >
-          {* Rooster kan wijzigen tijdens feestdagen en speciale evenementen. Neem contact op voor de meest actuele informatie.}
+          {t(
+            '* Rooster kan wijzigen tijdens feestdagen en speciale evenementen. Neem contact op voor de meest actuele informatie.',
+            '* Schedule subject to change for holidays and special events. Contact us for the most current information.'
+          )}
         </p>
       </div>
     </section>
