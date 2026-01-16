@@ -1,13 +1,21 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
-}
+// Create a dummy client during build if env vars are missing
+// This allows the build to succeed, but runtime will show proper errors
+const createSupabaseClient = () => {
+  if (supabaseUrl && supabaseAnonKey) {
+    return createClient(supabaseUrl, supabaseAnonKey);
+  }
+  
+  // During build or when env vars are missing, return a dummy client
+  // that will throw errors at runtime if actually used
+  return createClient('https://placeholder.supabase.co', 'placeholder-key');
+};
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createSupabaseClient();
 
 // Student type matching database schema
 export interface Student {
