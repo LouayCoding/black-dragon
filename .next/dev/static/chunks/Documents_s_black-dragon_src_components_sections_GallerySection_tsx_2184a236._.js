@@ -24,56 +24,112 @@ function GallerySection() {
             category: 'training',
             title: 'Hoge trap oefening',
             korean: '차기',
-            image: '/placeholder.svg'
+            image: '/gallery/high-kick.jpg'
         },
         {
             id: 2,
             category: 'competition',
-            title: 'Nationaal kampioenschap',
+            title: 'Kampioenschap',
             korean: '대회',
-            image: '/placeholder.svg'
+            image: '/gallery/championship.jpg'
         },
         {
             id: 3,
             category: 'ceremony',
             title: 'Zwarte band ceremonie',
             korean: '심사',
-            image: '/placeholder.svg'
+            image: '/gallery/black-belt-ceremony.jpg'
         },
         {
             id: 4,
             category: 'training',
             title: 'Poomsae vormen',
             korean: '품새',
-            image: '/placeholder.svg'
+            image: '/gallery/poomsae.jpg'
         },
         {
             id: 5,
             category: 'youth',
-            title: 'Kleine tijgers les',
+            title: 'Kleine tijgers',
             korean: '어린이',
-            image: '/placeholder.svg'
+            image: '/gallery/little-tigers.jpg'
         },
         {
             id: 6,
             category: 'competition',
             title: 'Sparringwedstrijd',
             korean: '겨루기',
-            image: '/placeholder.svg'
+            image: '/gallery/sparring.jpg'
         },
         {
             id: 7,
             category: 'training',
             title: 'Breektechniek',
             korean: '격파',
-            image: '/placeholder.svg'
+            image: '/gallery/breaking.jpg'
         },
         {
             id: 8,
             category: 'ceremony',
             title: 'Bandpromotie',
             korean: '승급',
-            image: '/placeholder.svg'
+            image: '/gallery/belt-promotion.jpg'
+        },
+        {
+            id: 9,
+            category: 'training',
+            title: 'Buiten training',
+            korean: '훈련',
+            image: '/gallery/outdoor-training.jpg'
+        },
+        {
+            id: 10,
+            category: 'ceremony',
+            title: 'Band ceremonie groep',
+            korean: '승급식',
+            image: '/gallery/belt-ceremony-group.jpg'
+        },
+        {
+            id: 11,
+            category: 'competition',
+            title: 'Jonge kampioen',
+            korean: '우승자',
+            image: '/gallery/young-champion.jpg'
+        },
+        {
+            id: 12,
+            category: 'competition',
+            title: 'Trofee winnaar',
+            korean: '승리',
+            image: '/gallery/trophy-winner.jpg'
+        },
+        {
+            id: 13,
+            category: 'competition',
+            title: 'Kampioenen',
+            korean: '챔피언',
+            image: '/gallery/championship-winners.jpg'
+        },
+        {
+            id: 14,
+            category: 'training',
+            title: 'Planken breken demonstratie',
+            korean: '격파',
+            image: '/gallery/board-breaking-demo.jpg'
+        },
+        {
+            id: 15,
+            category: 'training',
+            title: 'Breektechniek oefening',
+            korean: '격파 기술',
+            image: '/gallery/breaking-technique.jpg'
+        },
+        {
+            id: 16,
+            category: 'competition',
+            title: 'Overwinning viering',
+            korean: '축하',
+            image: '/gallery/victory-celebration.jpg'
         }
     ];
     const categories = [
@@ -117,12 +173,12 @@ function GallerySection() {
                                     children: 'Galerij'
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 49,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 40,
+                                lineNumber: 48,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -131,7 +187,7 @@ function GallerySection() {
                                     'Momenten van',
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 54,
                                         columnNumber: 31
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -139,31 +195,31 @@ function GallerySection() {
                                         children: 'excellentie'
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 55,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 45,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-20 h-1 bg-primary"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 49,
+                                lineNumber: 57,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                        lineNumber: 39,
+                        lineNumber: 47,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 38,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -174,12 +230,12 @@ function GallerySection() {
                             children: cat.label
                         }, cat.id, false, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 56,
+                            lineNumber: 64,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 54,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -194,7 +250,7 @@ function GallerySection() {
                                     className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 86,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -207,7 +263,7 @@ function GallerySection() {
                                                 children: item.title
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 94,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -215,29 +271,29 @@ function GallerySection() {
                                                 children: item.korean
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                lineNumber: 87,
+                                                lineNumber: 95,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 93,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 92,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, item.id, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 73,
+                            lineNumber: 81,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 71,
+                    lineNumber: 79,
                     columnNumber: 9
                 }, this),
                 selectedImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -251,12 +307,12 @@ function GallerySection() {
                                 size: 32
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 104,
+                                lineNumber: 112,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 100,
+                            lineNumber: 108,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -268,7 +324,7 @@ function GallerySection() {
                                     className: "w-full h-auto max-h-[80vh] object-contain rounded-lg"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 115,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -276,30 +332,30 @@ function GallerySection() {
                                     children: galleryItems.find((i)=>i.id === selectedImage)?.title
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 120,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 106,
+                            lineNumber: 114,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 96,
+                    lineNumber: 104,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-            lineNumber: 35,
+            lineNumber: 43,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-        lineNumber: 34,
+        lineNumber: 42,
         columnNumber: 5
     }, this);
 }

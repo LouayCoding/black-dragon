@@ -13,21 +13,51 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$d
 ;
 ;
 function InstructorsSection() {
-    const instructor = {
-        name: 'R. Ousllam',
-        role: 'Hoofdtrainer & Mentaal Begeleider',
-        rank: '3e Dan Zwarte Band',
-        experience: 'Sinds 2013',
-        image: '/placeholder.svg',
-        bio: 'Rijksgediplomeerd Taekwondo Trainer Niveau 3 | Gecertificeerd Coach met Continentale Licentie. Erkend door Taekwondobond Nederland (TBN) en NOC*NSF. Oprichter van Taekwondo Black Dragon Den Haag (2013) en houder van de 3e Dan in Taekwondo, officieel erkend door World Taekwondo (WT) en TBN.',
-        achievements: [
-            'Mentale begeleiding: versterkt zelfvertrouwen en veerkracht',
-            'Persoonlijke aanpak: trainingen afgestemd op niveau en doelen',
-            'Ervaring met alle leeftijden: van kinderen tot volwassenen',
-            'Focus op discipline en respect: persoonlijke groei naast techniek',
-            'Competitie & recreatie: plezier én prestatie in sport'
-        ]
-    };
+    const instructors = [
+        {
+            name: 'Rachid Ousllam',
+            role: 'Hoofdtrainer & Mentaal Begeleider',
+            rank: '3e Dan Zwarte Band',
+            experience: 'Sinds 2013',
+            image: '/gallery/rachid.jpeg',
+            bio: 'Rijksgediplomeerd Taekwondo Trainer Niveau 3 | Gecertificeerd Coach met Continentale Licentie. Erkend door Taekwondobond Nederland (TBN) en NOC*NSF. Oprichter van Taekwondo Black Dragon Den Haag (2013) en houder van de 3e Dan in Taekwondo, officieel erkend door World Taekwondo (WT) en TBN.',
+            achievements: [
+                'Mentale begeleiding: versterkt zelfvertrouwen en veerkracht',
+                'Persoonlijke aanpak: trainingen afgestemd op niveau en doelen',
+                'Ervaring met alle leeftijden: van kinderen tot volwassenen',
+                'Focus op discipline en respect: persoonlijke groei naast techniek',
+                'Competitie & recreatie: plezier én prestatie in sport'
+            ]
+        },
+        {
+            name: 'Isra Jallab',
+            role: 'Assistent Trainster',
+            rank: '1e Dan Zwarte Band',
+            experience: 'Sinds 2018',
+            image: '/instructors/isra-jallab.jpg',
+            bio: 'Gepassioneerde assistent trainster met uitgebreide ervaring in het lesgeven aan kinderen en jongeren. Isra brengt energie en enthousiasme naar elke training en inspireert jonge atleten om hun beste te geven.',
+            achievements: [
+                'Specialisatie in jeugdtraining en begeleiding',
+                'Ervaren in technieklessen en poomsae',
+                'Positieve motivator voor jonge leerlingen',
+                'Focus op spelenderwijs leren'
+            ]
+        },
+        {
+            name: 'Wissal Ousllam',
+            role: 'Assistent Trainster',
+            rank: '1e Dan Zwarte Band',
+            experience: 'Sinds 2019',
+            image: '/instructors/wissal-ousllam.jpg',
+            bio: 'Enthousiaste assistent trainster die zich richt op het ontwikkelen van technische vaardigheden en het opbouwen van zelfvertrouwen bij leerlingen. Wissal combineert discipline met een vriendelijke benadering.',
+            achievements: [
+                'Gespecialiseerd in technische training',
+                'Ervaring met zowel beginners als gevorderden',
+                'Focus op correcte uitvoering en vorm',
+                'Begeleiding bij wedstrijdvoorbereiding'
+            ]
+        }
+    ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "instructors",
         className: "py-16 bg-muted/30",
@@ -43,45 +73,45 @@ function InstructorsSection() {
                                 className: "inline-block",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-primary font-bold text-xs uppercase tracking-[0.2em]",
-                                    children: 'Instructeur'
+                                    children: 'Instructeurs'
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                    lineNumber: 30,
+                                    lineNumber: 60,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                lineNumber: 29,
+                                lineNumber: 59,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-[1.1] tracking-tight",
                                 children: [
-                                    'Jouw',
+                                    'Ons',
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                        lineNumber: 35,
-                                        columnNumber: 23
+                                        lineNumber: 65,
+                                        columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-primary",
-                                        children: 'Instructeur'
+                                        children: 'Team'
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 66,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                lineNumber: 34,
+                                lineNumber: 64,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-20 h-1 bg-primary"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                lineNumber: 38,
+                                lineNumber: 68,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -91,199 +121,207 @@ function InstructorsSection() {
                                     children: "Ervaring. Expertise. Passie."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                    lineNumber: 40,
+                                    lineNumber: 70,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                lineNumber: 39,
+                                lineNumber: 69,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                        lineNumber: 28,
+                        lineNumber: 58,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                    lineNumber: 27,
+                    lineNumber: 57,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative aspect-[3/4] overflow-hidden",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                        src: instructor.image,
-                                        alt: instructor.name,
-                                        className: "w-full h-full object-cover"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                        lineNumber: 52,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                        lineNumber: 57,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute top-6 right-6 bg-primary text-primary-foreground px-4 py-2 font-bold text-sm",
-                                        children: instructor.rank
-                                    }, void 0, false, {
-                                        fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                        lineNumber: 60,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute bottom-6 left-6 right-6",
+                    className: "space-y-16",
+                    children: instructors.map((instructor, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: `grid lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: index % 2 === 1 ? 'lg:col-start-2' : '',
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative aspect-[3/4] overflow-hidden rounded-lg",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "font-serif text-3xl sm:text-4xl font-bold text-white mb-2",
-                                                children: instructor.name
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                src: instructor.image,
+                                                alt: instructor.name,
+                                                className: "w-full h-full object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                                lineNumber: 66,
-                                                columnNumber: 17
+                                                lineNumber: 84,
+                                                columnNumber: 19
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-primary text-base font-semibold",
-                                                children: instructor.role
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                                lineNumber: 67,
-                                                columnNumber: 17
+                                                lineNumber: 89,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "absolute top-6 right-6 bg-primary text-primary-foreground px-4 py-2 font-bold text-sm",
+                                                children: instructor.rank
+                                            }, void 0, false, {
+                                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                lineNumber: 92,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "absolute bottom-6 left-6 right-6",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                        className: "font-serif text-3xl sm:text-4xl font-bold text-white mb-2",
+                                                        children: instructor.name
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                        lineNumber: 98,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-primary text-base font-semibold",
+                                                        children: instructor.role
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                        lineNumber: 99,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                lineNumber: 97,
+                                                columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                        lineNumber: 65,
-                                        columnNumber: 15
+                                        lineNumber: 83,
+                                        columnNumber: 17
                                     }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                lineNumber: 51,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                            lineNumber: 50,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "space-y-6",
-                            children: [
+                                }, void 0, false, {
+                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                    lineNumber: 82,
+                                    columnNumber: 15
+                                }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center gap-4",
+                                    className: `space-y-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`,
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"], {
-                                            className: "w-7 h-7 text-primary flex-shrink-0"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                            lineNumber: 76,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-xl font-bold text-foreground",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-4",
                                             children: [
-                                                instructor.experience,
-                                                " ",
-                                                'ervaring'
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"], {
+                                                    className: "w-7 h-7 text-primary flex-shrink-0"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                    lineNumber: 108,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-xl font-bold text-foreground",
+                                                    children: [
+                                                        instructor.experience,
+                                                        " ",
+                                                        'ervaring'
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                    lineNumber: 109,
+                                                    columnNumber: 19
+                                                }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                            lineNumber: 77,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                    lineNumber: 75,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-foreground/80 text-lg leading-[1.8] max-w-[45ch]",
-                                    children: instructor.bio
-                                }, void 0, false, {
-                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                    lineNumber: 81,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                            className: "text-base font-bold text-foreground mb-4",
-                                            children: 'Specialisaties'
+                                            lineNumber: 107,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-foreground/80 text-lg leading-[1.8]",
+                                            children: instructor.bio
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                            lineNumber: 87,
-                                            columnNumber: 15
+                                            lineNumber: 113,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-3",
-                                            children: instructor.achievements.map((achievement, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-start gap-4",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                            className: "w-5 h-5 text-primary flex-shrink-0 mt-0.5"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                                            lineNumber: 93,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-foreground/80 text-base leading-[1.7]",
-                                                            children: achievement
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                                            lineNumber: 94,
-                                                            columnNumber: 21
-                                                        }, this)
-                                                    ]
-                                                }, i, true, {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                    className: "text-base font-bold text-foreground mb-4",
+                                                    children: 'Specialisaties'
+                                                }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                                    lineNumber: 92,
+                                                    lineNumber: 119,
                                                     columnNumber: 19
-                                                }, this))
-                                        }, void 0, false, {
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "space-y-3",
+                                                    children: instructor.achievements.map((achievement, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-start gap-4",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                                    className: "w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                                    lineNumber: 125,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-foreground/80 text-base leading-[1.7]",
+                                                                    children: achievement
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                                    lineNumber: 126,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, i, true, {
+                                                            fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                            lineNumber: 124,
+                                                            columnNumber: 23
+                                                        }, this))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
+                                                    lineNumber: 122,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                            lineNumber: 90,
-                                            columnNumber: 15
+                                            lineNumber: 118,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                                    lineNumber: 86,
-                                    columnNumber: 13
+                                    lineNumber: 105,
+                                    columnNumber: 15
                                 }, this)
                             ]
-                        }, void 0, true, {
+                        }, index, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                            lineNumber: 73,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                            lineNumber: 80,
+                            columnNumber: 13
+                        }, this))
+                }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-                    lineNumber: 48,
+                    lineNumber: 78,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-            lineNumber: 24,
+            lineNumber: 54,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Documents/s/black-dragon/src/components/sections/InstructorsSection.tsx",
-        lineNumber: 23,
+        lineNumber: 53,
         columnNumber: 5
     }, this);
 }

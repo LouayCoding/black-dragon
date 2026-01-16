@@ -203,7 +203,7 @@ function PricingSection() {
         },
         {
             name: 'Standaard',
-            price: 'TBN',
+            price: '37,50',
             period: '/maand',
             description: 'Onze meest populaire optie voor toegewijde leerlingen.',
             features: [

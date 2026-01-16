@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 interface ShortcutConfig {
   key: string;
@@ -30,31 +30,31 @@ export function useKeyboardShortcuts(shortcuts: ShortcutConfig[]) {
 }
 
 export function useAdminShortcuts() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const shortcuts: ShortcutConfig[] = [
     {
       key: 'h',
       ctrlKey: true,
-      action: () => navigate('/admin/home'),
+      action: () => router.push('/admin'),
       description: 'Ga naar Dashboard',
     },
     {
       key: 'l',
       ctrlKey: true,
-      action: () => navigate('/admin/students'),
+      action: () => router.push('/admin/students'),
       description: 'Ga naar Leerlingen',
     },
     {
       key: 'r',
       ctrlKey: true,
-      action: () => navigate('/admin/schedule'),
+      action: () => router.push('/admin/schedule'),
       description: 'Ga naar Rooster',
     },
     {
       key: 'p',
       ctrlKey: true,
-      action: () => navigate('/admin/pricing'),
+      action: () => router.push('/admin/settings'),
       description: 'Ga naar Prijzen',
     },
   ];

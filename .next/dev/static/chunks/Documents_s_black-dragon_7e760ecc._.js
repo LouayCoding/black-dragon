@@ -22,7 +22,7 @@ function ProgramsSection() {
     const programs = [
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"],
-            image: '/placeholder.svg',
+            image: '/gallery/little-tigers.jpg',
             title: 'Kleine Tijgers',
             age: '4-6 jaar',
             description: 'Leuke introductielessen die coördinatie, focus en zelfvertrouwen opbouwen door leeftijdsgeschikte spelletjes en basis Taekwondo bewegingen.',
@@ -34,7 +34,7 @@ function ProgramsSection() {
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__["Zap"],
-            image: '/placeholder.svg',
+            image: '/gallery/young-champion.jpg',
             title: 'Jeugd',
             age: '7-17 jaar',
             description: 'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
@@ -46,7 +46,7 @@ function ProgramsSection() {
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Heart$3e$__["Heart"],
-            image: '/placeholder.svg',
+            image: '/gallery/poomsae.jpg',
             title: 'Vrouwen',
             age: '18+ jaar',
             description: 'Speciaal programma voor vrouwen gericht op kracht, zelfvertrouwen en zelfverdediging in een ondersteunende en veilige omgeving.',
@@ -58,7 +58,7 @@ function ProgramsSection() {
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$target$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Target$3e$__["Target"],
-            image: '/placeholder.svg',
+            image: '/gallery/breaking-technique.jpg',
             title: 'Volwassenen',
             age: '18+ jaar',
             description: 'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',
