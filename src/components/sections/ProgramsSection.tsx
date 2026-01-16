@@ -8,7 +8,7 @@ export function ProgramsSection() {
   const programs = [
     {
       icon: Users,
-      image: '/placeholder.svg',
+      image: '/gallery/little-tigers.jpg',
       title: 'Kleine Tijgers',
       age: '4-6 jaar',
       description: 'Leuke introductielessen die coördinatie, focus en zelfvertrouwen opbouwen door leeftijdsgeschikte spelletjes en basis Taekwondo bewegingen.',
@@ -20,7 +20,7 @@ export function ProgramsSection() {
     },
     {
       icon: Zap,
-      image: '/placeholder.svg',
+      image: '/gallery/young-champion.jpg',
       title: 'Jeugd',
       age: '7-17 jaar',
       description: 'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
@@ -32,7 +32,7 @@ export function ProgramsSection() {
     },
     {
       icon: Heart,
-      image: '/placeholder.svg',
+      image: '/gallery/poomsae.jpg',
       title: 'Vrouwen',
       age: '18+ jaar',
       description: 'Speciaal programma voor vrouwen gericht op kracht, zelfvertrouwen en zelfverdediging in een ondersteunende en veilige omgeving.',
@@ -44,7 +44,7 @@ export function ProgramsSection() {
     },
     {
       icon: Target,
-      image: '/placeholder.svg',
+      image: '/gallery/breaking-technique.jpg',
       title: 'Volwassenen',
       age: '18+ jaar',
       description: 'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',

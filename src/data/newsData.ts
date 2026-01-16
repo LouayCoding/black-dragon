@@ -77,7 +77,7 @@ We invite all parents, family members, and friends to cheer on our athletes. Adm
 Good luck to all our participants!`
     },
     date: '2024-02-15',
-    image: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?w=1200&q=80',
+    image: '/gallery/championship-winners.jpg',
     author: 'Meester Park'
   },
   {
@@ -123,7 +123,7 @@ The Saturday classes are taught by Instructor Choi, our specialist in children's
 Contact us at info@taekwondo.nl or call (020) 123-4567 to register your child for Saturday classes.`
     },
     date: '2024-01-28',
-    image: 'https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=1200&q=80',
+    image: '/gallery/little-tigers.jpg',
     author: 'Instructeur Choi'
   },
   {
@@ -175,7 +175,7 @@ All three candidates showed exceptional technique, discipline, and perseverance.
 Congratulations Lisa, Mark, and Emma! Your hard work has paid off. We are incredibly proud of you!`
     },
     date: '2024-01-20',
-    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80',
+    image: '/gallery/black-belt-ceremony.jpg',
     author: 'Grootmeester Kim'
   },
   {
@@ -247,7 +247,7 @@ Master Kang (7th Dan) is a renowned Poomsae expert from South Korea. He has:
 Spots are limited to 30 participants. Register quickly at the reception or email info@taekwondo.nl`
     },
     date: '2024-01-15',
-    image: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=1200&q=80',
+    image: '/gallery/poomsae.jpg',
     author: 'Meester Lee'
   },
   {
@@ -325,7 +325,7 @@ Registration is not required but helpful. Send an email to info@taekwondo.nl wit
 We look forward to meeting you!`
     },
     date: '2024-01-10',
-    image: 'https://images.unsplash.com/photo-1562771379-eafdca7a02f8?w=1200&q=80',
+    image: '/gallery/outdoor-training.jpg',
     author: 'Het Taekwondo Team'
   },
   {
@@ -395,7 +395,7 @@ The new schedule starts next week. You will receive an email with all details. T
 We thank everyone for their patience during the renovation. The new room is the result of your loyalty and we hope you are as happy with it as we are!`
     },
     date: '2024-01-05',
-    image: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1200&q=80',
+    image: '/gallery/trophy-winner.jpg',
     author: 'Grootmeester Kim'
   }
 ];

@@ -33,7 +33,7 @@ export function AboutSection() {
             {/* About Hero Image with Stats Overlay */}
             <div className="relative h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
               <img 
-                src="/placeholder.svg" 
+                src="/gallery/belt-ceremony-group.jpg" 
                 alt="Taekwondo Black Dragon Training"
                 className="w-full h-full object-cover"
               />
