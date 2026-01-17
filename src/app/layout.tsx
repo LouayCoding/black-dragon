@@ -19,6 +19,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'Black Dragon Taekwondo | Den Haag',
   description: 'Professionele Taekwondo lessen in Den Haag voor alle leeftijden. Van Kleine Tijgers tot volwassenen.',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export default function RootLayout({
