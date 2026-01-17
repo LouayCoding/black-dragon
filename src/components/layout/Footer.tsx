@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -71,7 +71,7 @@ export function Footer() {
     { label: 'Over Ons', href: '/about' },
     { label: 'Programmas', href: '/programs' },
     { label: 'Rooster', href: '/schedule' },
-    { label: 'Prijzen', href: '/pricing' },
+    { label: 'Tarieven', href: '/tarieven' },
     { label: 'Instructeurs', href: '/instructors' },
     { label: 'Galerij', href: '/gallery' },
     { label: 'FAQ', href: '/faq' },
@@ -97,27 +97,56 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-3 mb-6 group">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center transition-transform group-hover:scale-110">
-                <span className="text-primary-foreground font-serif text-xl font-bold">龍</span>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Black Dragon Logo" 
+                className="h-14 w-auto transition-transform group-hover:scale-105"
+              />
               <div>
                 <h3 className="font-serif text-lg font-bold">태권도 블랙 드래곤</h3>
-                <p className="text-xs text-white/60 tracking-widest">BLACK DRAGON</p>
+                <p className="text-xs text-white/60 tracking-widest">TAEKWONDO BLACK DRAGON</p>
               </div>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               Taekwondo Vereniging Black Dragon is een Goudse sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo.
             </p>
             <div className="flex gap-3">
-              {[Facebook, Instagram, Youtube].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              <a
+                href="https://www.facebook.com/taekwondoblackdragon/?locale=nl_NL"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Facebook size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/taekwondoblackdragon/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Instagram size={18} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@taekwondoblackdragon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <svg 
+                  viewBox="0 0 24 24" 
+                  fill="currentColor" 
+                  className="w-[18px] h-[18px]"
                 >
-                  <Icon size={18} />
-                </a>
-              ))}
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+              </a>
+              <a
+                href="mailto:info@taekwondoblackdragon.nl"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Mail size={18} />
+              </a>
             </div>
           </div>
 
@@ -168,8 +197,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary flex-shrink-0" />
-                <a href="tel:+31612345678" className="text-white/70 hover:text-primary transition-colors text-sm">
-                  06 12345678
+                <a href="tel:+31615047993" className="text-white/70 hover:text-primary transition-colors text-sm">
+                  06 15047993
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -186,7 +215,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-white/50 text-sm text-center md:text-left">
-          © new Date().getFullYear() Taekwondo Dojang. {'Alle rechten voorbehouden.'}
+          © {new Date().getFullYear()} Taekwondo Black Dragon Den Haag. Alle rechten voorbehouden.
         </p>
         <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
           <Link href="/code-of-conduct" className="text-white/50 hover:text-primary text-sm transition-colors">

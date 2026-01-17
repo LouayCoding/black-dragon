@@ -8,7 +8,7 @@ export function ProgramsSection() {
   const programs = [
     {
       icon: Users,
-      image: '/gallery/little-tigers.jpg',
+      image: '/gallery/young-champion.jpg',
       title: 'Kleine Tijgers',
       age: '4-6 jaar',
       description: 'Leuke introductielessen die coördinatie, focus en zelfvertrouwen opbouwen door leeftijdsgeschikte spelletjes en basis Taekwondo bewegingen.',
@@ -20,7 +20,7 @@ export function ProgramsSection() {
     },
     {
       icon: Zap,
-      image: '/gallery/young-champion.jpg',
+      image: '/gallery/jeugd-training.jpg',
       title: 'Jeugd',
       age: '7-17 jaar',
       description: 'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
@@ -31,20 +31,8 @@ export function ProgramsSection() {
       ],
     },
     {
-      icon: Heart,
-      image: '/gallery/poomsae.jpg',
-      title: 'Vrouwen',
-      age: '18+ jaar',
-      description: 'Speciaal programma voor vrouwen gericht op kracht, zelfvertrouwen en zelfverdediging in een ondersteunende en veilige omgeving.',
-      features: [
-        'Empowerment & kracht',
-        'Zelfverdedigingstechnieken',
-        'Veilige leeromgeving',
-      ],
-    },
-    {
       icon: Target,
-      image: '/gallery/breaking-technique.jpg',
+      image: '/gallery/volwassenen-training.jpg',
       title: 'Volwassenen',
       age: '18+ jaar',
       description: 'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',
@@ -52,6 +40,18 @@ export function ProgramsSection() {
         'Zelfvertrouwen opbouwen',
         'Conditie verbeteren',
         'Zelfverdediging',
+      ],
+    },
+    {
+      icon: Heart,
+      image: '/gallery/ladies-only-training.jpg',
+      title: 'Ladies Only',
+      age: '18+ jaar',
+      description: 'Een krachtig ladies-only programma gericht op conditie, zelfvertrouwen en zelfverdediging, speciaal ontwikkeld voor vrouwen.',
+      features: [
+        'Sterker worden, mentaal en fysiek',
+        'Zelfverdediging in de praktijk',
+        'Veilig trainen in een fijne groep',
       ],
     },
   ];
@@ -149,7 +149,7 @@ export function ProgramsSection() {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-full"
           >
-            <Link href="/register">{'Probeer Gratis'}</Link>
+            <Link href="/contact">{'Inschrijven'}</Link>
           </Button>
         </div>
       </div>

@@ -73,7 +73,7 @@ export function AboutSection() {
             <div className="w-16 h-1 bg-primary mt-6"></div>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border">
             {[
               { korean: '예의', english: 'Discipline', desc: 'Respect in alle interacties' },
               { korean: '염치', english: 'Integriteit', desc: 'Eerlijkheid en sterke moraal' },
@@ -82,13 +82,13 @@ export function AboutSection() {
             ].map((value, index) => (
               <div
                 key={index}
-                className="value-card bg-background p-8 sm:p-10 hover:bg-muted/30 transition-colors duration-300"
+                className="value-card bg-background p-4 sm:p-8 lg:p-10 hover:bg-muted/30 transition-colors duration-300"
               >
-                <div className="text-6xl sm:text-7xl mb-6 text-primary font-light">{value.korean}</div>
-                <h4 className="font-bold text-xl text-foreground mb-3">
+                <div className="text-4xl sm:text-6xl lg:text-7xl mb-4 sm:mb-6 text-primary font-light">{value.korean}</div>
+                <h4 className="font-bold text-sm sm:text-lg lg:text-xl text-foreground mb-2 sm:mb-3 break-words hyphens-auto">
                   {value.english}
                 </h4>
-                <p className="text-foreground/70 text-sm leading-[1.7] max-w-[30ch]">
+                <p className="text-foreground/70 text-xs sm:text-sm leading-[1.7]">
                   {value.desc}
                 </p>
               </div>

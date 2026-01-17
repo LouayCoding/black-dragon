@@ -18,7 +18,7 @@ export function Header() {
     { href: '/about', label: 'Over Ons' },
     { href: '/programs', label: 'Programmas' },
     { href: '/schedule', label: 'Rooster' },
-    { href: '/pricing', label: 'Prijzen' },
+    { href: '/tarieven', label: 'Tarieven' },
     { href: '/news', label: 'Nieuws' },
     { href: '/instructors', label: 'Instructeurs' },
     { href: '/gallery', label: 'Galerij' },
@@ -60,7 +60,7 @@ export function Header() {
             <img 
               src="/logo.png" 
               alt="Black Dragon Logo" 
-              className="h-20 lg:h-24 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-14 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 

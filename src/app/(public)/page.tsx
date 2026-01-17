@@ -1,4 +1,3 @@
-import { Header, Footer } from '@/components/layout'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { ProgramsSection } from '@/components/sections/ProgramsSection'
@@ -14,20 +13,16 @@ import { BackToTop } from '@/components/BackToTop'
 export default function HomePage() {
   return (
     <>
-      <Header />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ProgramsSection />
-        <ScheduleSection />
-        <InstructorsSection />
-        <TestimonialsSection />
-        <GallerySection />
-        <PartnersSection />
-        <FAQSection />
-        <ContactSection />
-      </main>
-      <Footer />
+      <HeroSection />
+      <AboutSection />
+      <ProgramsSection />
+      <ScheduleSection />
+      <InstructorsSection />
+      <TestimonialsSection />
+      <GallerySection />
+      <PartnersSection />
+      <FAQSection />
+      <ContactSection />
       <BackToTop />
     </>
   )
