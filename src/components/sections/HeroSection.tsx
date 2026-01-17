@@ -66,7 +66,7 @@ export function HeroSection() {
               asChild
               className="bg-white hover:bg-white/90 text-black px-12 py-5 text-lg font-semibold rounded-full transition-all duration-300"
             >
-              <Link href="/register">
+              <Link href="/contact">
                 {'Start vandaag'}
               </Link>
             </Button>
