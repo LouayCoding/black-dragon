@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['"Lexend"', 'sans-serif'],
-        sans: ['"Poppins"', 'sans-serif'],
+        serif: ['var(--font-montserrat)', 'sans-serif'],
+        sans: ['var(--font-poppins)', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
