@@ -88,7 +88,6 @@ export function PartnersSection() {
               {'Voor'}<br />
               <span className="text-primary">{'iedereen'}</span>
             </h2>
-            <div className="w-20 h-1 bg-primary"></div>
           </div>
         </div>
 

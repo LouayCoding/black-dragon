@@ -19,7 +19,6 @@ export function AboutSection() {
                 {'Taekwondo'}<br />
                 <span className="text-primary">Black Dragon</span>
               </h2>
-              <div className="w-20 h-1 bg-primary"></div>
               <div className="space-y-6 max-w-2xl">
                 <p className="text-foreground/70 text-lg sm:text-xl leading-[1.8]">
                   Sinds 2013 begeleiden wij leden van alle leeftijden in hun persoonlijke groei door traditionele Taekwondo. Bij Black Dragon draait het niet alleen om het leren van technieken, maar ook om het ontwikkelen van discipline, respect en zelfvertrouwen.
@@ -47,7 +46,6 @@ export function AboutSection() {
             <h3 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
               {'Kernwaarden'}
             </h3>
-            <div className="w-16 h-1 bg-primary mt-6"></div>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border">

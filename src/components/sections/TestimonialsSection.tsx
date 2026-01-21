@@ -60,7 +60,6 @@ export function TestimonialsSection() {
               {'Wat onze'}<br />
               <span className="text-primary">{'leerlingen zeggen'}</span>
             </h2>
-            <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
                 {'Echte verhalen. Echte resultaten.'}

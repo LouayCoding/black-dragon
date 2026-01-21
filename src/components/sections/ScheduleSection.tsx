@@ -41,7 +41,6 @@ export function ScheduleSection() {
               {'Wekelijks'}<br />
               <span className="text-primary">{'Rooster'}</span>
             </h2>
-            <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
                 {'Kies je moment. Begin vandaag.'}

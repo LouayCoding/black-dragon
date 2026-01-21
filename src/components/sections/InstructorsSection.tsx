@@ -96,7 +96,6 @@ export function InstructorsSection() {
               Ons<br />
               <span className="text-primary">Team</span>
             </h2>
-            <div className="w-20 h-1 bg-primary"></div>
             <p className="text-foreground text-lg sm:text-xl leading-[1.5] font-normal max-w-2xl">
               Ervaring. Expertise. Passie.
             </p>

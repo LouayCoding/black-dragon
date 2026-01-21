@@ -67,7 +67,6 @@ export function ProgramsSection() {
               {'Jouw'}<br />
               <span className="text-primary">{'Taekwondo Reis'}</span>
             </h2>
-            <div className="w-20 h-1 bg-primary"></div>
             <div className="space-y-8 max-w-2xl">
               <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
                 {'Vanaf 4 jaar en ouder. Van eerste stap tot zwarte band.'}

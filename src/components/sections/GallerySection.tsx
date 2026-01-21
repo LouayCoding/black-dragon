@@ -112,7 +112,6 @@ export function GallerySection() {
               {'Momenten van'}<br />
               <span className="text-primary">{'excellentie'}</span>
             </h2>
-            <div className="w-20 h-1 bg-primary"></div>
           </div>
         </div>
 
