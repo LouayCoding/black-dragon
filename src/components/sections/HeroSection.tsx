@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen -mt-20 lg:-mt-24 pt-20 lg:pt-24 flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950"
+      className="relative h-[85vh] -mt-20 lg:-mt-24 pt-20 lg:pt-24 flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950"
     >
       {/* Background Image with Overlay */}
       <div 
@@ -27,7 +27,7 @@ export function HeroSection() {
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       {/* Main Content */}
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-24 lg:py-32 xl:py-40">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-20">
         <div className="max-w-5xl mx-auto">
           
           {/* Main Heading */}
