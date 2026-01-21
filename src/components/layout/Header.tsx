@@ -55,12 +55,12 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="flex items-center justify-between h-16 lg:h-18">
           <Link href="/" className="group relative z-10">
             <img 
               src="/logo.png" 
               alt="Black Dragon Logo" 
-              className="h-14 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-12 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -90,7 +90,7 @@ export function Header() {
               variant="default" 
               size="sm" 
               className={cn(
-                "hidden lg:flex",
+                "hidden lg:flex rounded-md",
                 isScrolled || !isHomePage
                   ? "bg-black hover:bg-black/90 text-white"
                   : "bg-primary hover:bg-primary/90 text-primary-foreground"
@@ -119,7 +119,7 @@ export function Header() {
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 xl:hidden"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="fixed top-20 left-0 right-0 bottom-0 bg-background z-40 xl:hidden overflow-y-auto">
+          <div className="fixed top-16 left-0 right-0 bottom-0 bg-background z-40 xl:hidden overflow-y-auto">
             <nav className="container mx-auto px-4 py-8">
               <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
