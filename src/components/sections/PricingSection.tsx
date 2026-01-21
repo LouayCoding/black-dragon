@@ -124,8 +124,8 @@ export function PricingSection() {
               </div>
 
               {plan.popular && (
-                <div className="absolute top-4 right-4 z-10">
-                  <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                <div className="absolute top-3 right-3 z-10">
+                  <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
                     <Star className="w-3 h-3 fill-current" />
                     Populair
                   </span>
@@ -135,19 +135,19 @@ export function PricingSection() {
               <div className="p-6 flex flex-col flex-grow">
                 <div className="text-center mb-6">
                   <div className="flex items-baseline justify-center gap-1 mb-2">
-                    <span className="text-4xl font-bold text-foreground">€{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    <span className="text-3xl font-bold text-foreground">€{plan.price}</span>
+                    <span className="text-foreground/50 text-sm">{plan.period}</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">{plan.description}</p>
+                  <p className="text-foreground/60 text-sm">{plan.description}</p>
                 </div>
 
-                <ul className="space-y-3 mb-6 flex-grow">
+                <ul className="space-y-2.5 mb-6 flex-grow">
                   {plan.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-primary" />
+                    <li key={fIndex} className="flex items-start gap-2.5">
+                      <div className="w-4 h-4 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-foreground/60" />
                       </div>
-                      <span className="text-foreground/80 text-sm">{feature}</span>
+                      <span className="text-foreground/70 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -156,9 +156,9 @@ export function PricingSection() {
                   asChild
                   size="lg"
                   className={cn(
-                    "w-full mt-auto font-semibold",
+                    "w-full mt-auto font-semibold rounded-full",
                     plan.highlighted
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
                       : "bg-foreground hover:bg-foreground/90 text-background"
                   )}
                 >
@@ -177,15 +177,15 @@ export function PricingSection() {
           <h3 className="font-serif text-2xl font-semibold text-foreground text-center mb-8">
             Extra Opties
           </h3>
-          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {extras.map((extra, index) => (
               <div
                 key={index}
-                className="bg-card rounded-xl border border-border p-6 text-center hover:border-primary/30 hover:shadow-md transition-all"
+                className="bg-card rounded-lg p-5 text-center hover:shadow-md transition-all"
               >
-                <p className="text-3xl font-bold text-primary mb-2">€{extra.price}</p>
-                <h4 className="font-semibold text-foreground mb-1">{extra.name}</h4>
-                <p className="text-muted-foreground text-xs">{extra.description}</p>
+                <p className="text-2xl font-bold text-foreground mb-2">€{extra.price}</p>
+                <h4 className="font-semibold text-sm text-foreground mb-1">{extra.name}</h4>
+                <p className="text-foreground/50 text-xs">{extra.description}</p>
               </div>
             ))}
           </div>
