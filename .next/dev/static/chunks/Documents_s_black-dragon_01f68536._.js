@@ -20,112 +20,18 @@ function GallerySection() {
     const [activeCategory, setActiveCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('all');
     const [selectedItem, setSelectedItem] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const galleryItems = [
+        // Echte afbeeldingen - Ceremonies
         {
             id: 1,
-            category: 'training',
-            title: 'Hoge trap oefening',
-            korean: '차기',
-            media: '/gallery/high-kick.jpg',
-            type: 'image'
-        },
-        {
-            id: 2,
-            category: 'competition',
-            title: 'Kampioenschap',
-            korean: '대회',
-            media: '/gallery/championship.jpg',
-            type: 'image'
-        },
-        {
-            id: 3,
-            category: 'ceremony',
-            title: 'Zwarte band ceremonie',
-            korean: '심사',
-            media: '/gallery/black-belt-ceremony.jpg',
-            type: 'image'
-        },
-        {
-            id: 4,
-            category: 'training',
-            title: 'Poomsae vormen',
-            korean: '품새',
-            media: '/gallery/poomsae.jpg',
-            type: 'image'
-        },
-        {
-            id: 5,
-            category: 'youth',
-            title: 'Kleine tijgers',
-            korean: '어린이',
-            media: '/gallery/little-tigers.jpg',
-            type: 'image'
-        },
-        {
-            id: 6,
-            category: 'competition',
-            title: 'Sparringwedstrijd',
-            korean: '겨루기',
-            media: '/gallery/sparring.jpg',
-            type: 'image'
-        },
-        {
-            id: 7,
-            category: 'training',
-            title: 'Breektechniek',
-            korean: '격파',
-            media: '/gallery/breaking.jpg',
-            type: 'image'
-        },
-        {
-            id: 8,
-            category: 'ceremony',
-            title: 'Bandpromotie',
-            korean: '승급',
-            media: '/gallery/belt-promotion.jpg',
-            type: 'image'
-        },
-        {
-            id: 9,
-            category: 'training',
-            title: 'Buiten training',
-            korean: '훈련',
-            media: '/gallery/outdoor-training.jpg',
-            type: 'image'
-        },
-        {
-            id: 10,
             category: 'ceremony',
             title: 'Band ceremonie groep',
             korean: '승급식',
             media: '/gallery/belt-ceremony-group.jpg',
             type: 'image'
         },
+        // Echte afbeeldingen - Training
         {
-            id: 11,
-            category: 'competition',
-            title: 'Jonge kampioen',
-            korean: '우승자',
-            media: '/gallery/young-champion.jpg',
-            type: 'image'
-        },
-        {
-            id: 12,
-            category: 'competition',
-            title: 'Trofee winnaar',
-            korean: '승리',
-            media: '/gallery/trophy-winner.jpg',
-            type: 'image'
-        },
-        {
-            id: 13,
-            category: 'competition',
-            title: 'Kampioenen',
-            korean: '챔피언',
-            media: '/gallery/championship-winners.jpg',
-            type: 'image'
-        },
-        {
-            id: 14,
+            id: 2,
             category: 'training',
             title: 'Planken breken demonstratie',
             korean: '격파',
@@ -133,7 +39,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 15,
+            id: 3,
             category: 'training',
             title: 'Breektechniek oefening',
             korean: '격파 기술',
@@ -141,15 +47,339 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 16,
+            id: 4,
+            category: 'training',
+            title: 'Buiten training',
+            korean: '훈련',
+            media: '/gallery/outdoor-training.jpg',
+            type: 'image'
+        },
+        {
+            id: 5,
+            category: 'training',
+            title: 'Hoofdtrainer Rachid',
+            korean: '수석 코치',
+            media: '/gallery/rachid.jpeg',
+            type: 'image'
+        },
+        {
+            id: 6,
+            category: 'training',
+            title: 'Volwassenen training',
+            korean: '성인 훈련',
+            media: '/gallery/volwassenen-training.jpg',
+            type: 'image'
+        },
+        // Echte afbeeldingen - Wedstrijd
+        {
+            id: 7,
+            category: 'competition',
+            title: 'Kampioenen',
+            korean: '챔피언',
+            media: '/gallery/championship-winners.jpg',
+            type: 'image'
+        },
+        {
+            id: 8,
+            category: 'competition',
+            title: 'Trofee winnaar',
+            korean: '승리',
+            media: '/gallery/trophy-winner.jpg',
+            type: 'image'
+        },
+        {
+            id: 9,
             category: 'competition',
             title: 'Overwinning viering',
             korean: '축하',
             media: '/gallery/victory-celebration.jpg',
             type: 'image'
         },
+        // Echte afbeeldingen - Training (voorheen Jeugd)
+        {
+            id: 10,
+            category: 'training',
+            title: 'Jonge kampioen',
+            korean: '우승자',
+            media: '/gallery/young-champion.jpg',
+            type: 'image'
+        },
+        {
+            id: 11,
+            category: 'training',
+            title: 'Jeugd training',
+            korean: '청소년 훈련',
+            media: '/gallery/jeugd-training.jpg',
+            type: 'image'
+        },
+        // Nieuwe training afbeeldingen (training-01 t/m training-34)
+        {
+            id: 12,
+            category: 'training',
+            title: 'Training moment 1',
+            korean: '훈련',
+            media: '/gallery/training-01.jpg',
+            type: 'image'
+        },
+        {
+            id: 13,
+            category: 'training',
+            title: 'Training moment 2',
+            korean: '훈련',
+            media: '/gallery/training-02.jpg',
+            type: 'image'
+        },
+        {
+            id: 14,
+            category: 'training',
+            title: 'Training moment 3',
+            korean: '훈련',
+            media: '/gallery/training-03.jpg',
+            type: 'image'
+        },
+        {
+            id: 15,
+            category: 'training',
+            title: 'Training moment 4',
+            korean: '훈련',
+            media: '/gallery/training-04.jpg',
+            type: 'image'
+        },
+        {
+            id: 16,
+            category: 'training',
+            title: 'Training moment 5',
+            korean: '훈련',
+            media: '/gallery/training-05.jpg',
+            type: 'image'
+        },
         {
             id: 17,
+            category: 'training',
+            title: 'Training moment 6',
+            korean: '훈련',
+            media: '/gallery/training-06.jpg',
+            type: 'image'
+        },
+        {
+            id: 18,
+            category: 'training',
+            title: 'Training moment 7',
+            korean: '훈련',
+            media: '/gallery/training-07.jpg',
+            type: 'image'
+        },
+        {
+            id: 19,
+            category: 'training',
+            title: 'Training moment 8',
+            korean: '훈련',
+            media: '/gallery/training-08.jpg',
+            type: 'image'
+        },
+        {
+            id: 20,
+            category: 'training',
+            title: 'Training moment 9',
+            korean: '훈련',
+            media: '/gallery/training-09.jpg',
+            type: 'image'
+        },
+        {
+            id: 21,
+            category: 'training',
+            title: 'Training moment 10',
+            korean: '훈련',
+            media: '/gallery/training-10.jpg',
+            type: 'image'
+        },
+        {
+            id: 22,
+            category: 'training',
+            title: 'Training moment 11',
+            korean: '훈련',
+            media: '/gallery/training-11.jpg',
+            type: 'image'
+        },
+        {
+            id: 23,
+            category: 'training',
+            title: 'Training moment 12',
+            korean: '훈련',
+            media: '/gallery/training-12.jpg',
+            type: 'image'
+        },
+        {
+            id: 24,
+            category: 'training',
+            title: 'Training moment 13',
+            korean: '훈련',
+            media: '/gallery/training-13.jpg',
+            type: 'image'
+        },
+        {
+            id: 25,
+            category: 'training',
+            title: 'Training moment 14',
+            korean: '훈련',
+            media: '/gallery/training-14.jpg',
+            type: 'image'
+        },
+        {
+            id: 26,
+            category: 'training',
+            title: 'Training moment 15',
+            korean: '훈련',
+            media: '/gallery/training-15.jpg',
+            type: 'image'
+        },
+        {
+            id: 27,
+            category: 'training',
+            title: 'Training moment 16',
+            korean: '훈련',
+            media: '/gallery/training-16.jpg',
+            type: 'image'
+        },
+        {
+            id: 28,
+            category: 'training',
+            title: 'Training moment 17',
+            korean: '훈련',
+            media: '/gallery/training-17.jpg',
+            type: 'image'
+        },
+        {
+            id: 29,
+            category: 'training',
+            title: 'Training moment 18',
+            korean: '훈련',
+            media: '/gallery/training-18.jpg',
+            type: 'image'
+        },
+        {
+            id: 30,
+            category: 'training',
+            title: 'Training moment 19',
+            korean: '훈련',
+            media: '/gallery/training-19.jpg',
+            type: 'image'
+        },
+        {
+            id: 31,
+            category: 'training',
+            title: 'Training moment 21',
+            korean: '훈련',
+            media: '/gallery/training-21.jpg',
+            type: 'image'
+        },
+        {
+            id: 33,
+            category: 'training',
+            title: 'Training moment 22',
+            korean: '훈련',
+            media: '/gallery/training-22.jpg',
+            type: 'image'
+        },
+        {
+            id: 34,
+            category: 'training',
+            title: 'Training moment 23',
+            korean: '훈련',
+            media: '/gallery/training-23.jpg',
+            type: 'image'
+        },
+        {
+            id: 35,
+            category: 'training',
+            title: 'Training moment 24',
+            korean: '훈련',
+            media: '/gallery/training-24.jpg',
+            type: 'image'
+        },
+        {
+            id: 36,
+            category: 'training',
+            title: 'Training moment 25',
+            korean: '훈련',
+            media: '/gallery/training-25.jpg',
+            type: 'image'
+        },
+        {
+            id: 37,
+            category: 'training',
+            title: 'Training moment 26',
+            korean: '훈련',
+            media: '/gallery/training-26.jpg',
+            type: 'image'
+        },
+        {
+            id: 38,
+            category: 'training',
+            title: 'Training moment 27',
+            korean: '훈련',
+            media: '/gallery/training-27.jpg',
+            type: 'image'
+        },
+        {
+            id: 39,
+            category: 'training',
+            title: 'Training moment 28',
+            korean: '훈련',
+            media: '/gallery/training-28.jpg',
+            type: 'image'
+        },
+        {
+            id: 40,
+            category: 'training',
+            title: 'Training moment 29',
+            korean: '훈련',
+            media: '/gallery/training-29.jpg',
+            type: 'image'
+        },
+        {
+            id: 41,
+            category: 'training',
+            title: 'Training moment 30',
+            korean: '훈련',
+            media: '/gallery/training-30.jpg',
+            type: 'image'
+        },
+        {
+            id: 42,
+            category: 'training',
+            title: 'Training moment 31',
+            korean: '훈련',
+            media: '/gallery/training-31.jpg',
+            type: 'image'
+        },
+        {
+            id: 43,
+            category: 'training',
+            title: 'Training moment 32',
+            korean: '훈련',
+            media: '/gallery/training-32.jpg',
+            type: 'image'
+        },
+        {
+            id: 44,
+            category: 'training',
+            title: 'Training moment 33',
+            korean: '훈련',
+            media: '/gallery/training-33.jpg',
+            type: 'image'
+        },
+        {
+            id: 45,
+            category: 'training',
+            title: 'Training moment 34',
+            korean: '훈련',
+            media: '/gallery/training-34.jpg',
+            type: 'image'
+        },
+        // Video's
+        {
+            id: 46,
             category: 'videos',
             title: 'Training sessie 1',
             korean: '훈련 영상',
@@ -157,7 +387,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 18,
+            id: 47,
             category: 'videos',
             title: 'Training sessie 2',
             korean: '훈련 영상',
@@ -165,7 +395,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 19,
+            id: 48,
             category: 'videos',
             title: 'Techniek demonstratie 1',
             korean: '기술 시연',
@@ -173,7 +403,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 20,
+            id: 49,
             category: 'videos',
             title: 'Techniek demonstratie 2',
             korean: '기술 시연',
@@ -181,7 +411,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 21,
+            id: 50,
             category: 'videos',
             title: 'Wedstrijd opname 1',
             korean: '대회 영상',
@@ -189,7 +419,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 22,
+            id: 51,
             category: 'videos',
             title: 'Wedstrijd opname 2',
             korean: '대회 영상',
@@ -211,12 +441,12 @@ function GallerySection() {
             label: 'Wedstrijd'
         },
         {
-            id: 'ceremony',
-            label: 'Ceremonies'
+            id: 'belt-exam',
+            label: 'Bandexamens'
         },
         {
-            id: 'youth',
-            label: 'Jeugd'
+            id: 'ceremony',
+            label: 'Evenementen'
         },
         {
             id: 'videos',
@@ -242,12 +472,12 @@ function GallerySection() {
                                     children: 'Galerij'
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 107,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 67,
+                                lineNumber: 106,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -256,7 +486,7 @@ function GallerySection() {
                                     'Momenten van',
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 112,
                                         columnNumber: 31
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -264,31 +494,31 @@ function GallerySection() {
                                         children: 'excellentie'
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 113,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 72,
+                                lineNumber: 111,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-20 h-1 bg-primary"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 76,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                        lineNumber: 66,
+                        lineNumber: 105,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 65,
+                    lineNumber: 104,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -299,12 +529,12 @@ function GallerySection() {
                             children: cat.label
                         }, cat.id, false, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 83,
+                            lineNumber: 122,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 81,
+                    lineNumber: 120,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -319,7 +549,7 @@ function GallerySection() {
                                     className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 106,
+                                    lineNumber: 145,
                                     columnNumber: 17
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative w-full h-full",
@@ -331,7 +561,7 @@ function GallerySection() {
                                             playsInline: true
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                            lineNumber: 113,
+                                            lineNumber: 152,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -343,23 +573,23 @@ function GallerySection() {
                                                     fill: "white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                    lineNumber: 121,
+                                                    lineNumber: 160,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 159,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 158,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 151,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -372,7 +602,7 @@ function GallerySection() {
                                                 children: item.title
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                lineNumber: 129,
+                                                lineNumber: 168,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -380,29 +610,29 @@ function GallerySection() {
                                                 children: item.korean
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 169,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 167,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 166,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, item.id, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 100,
+                            lineNumber: 139,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 98,
+                    lineNumber: 137,
                     columnNumber: 9
                 }, this),
                 selectedItem && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -416,12 +646,12 @@ function GallerySection() {
                                 size: 32
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 147,
+                                lineNumber: 186,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 143,
+                            lineNumber: 182,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -434,7 +664,7 @@ function GallerySection() {
                                     className: "w-full h-auto max-h-[80vh] object-contain rounded-lg"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 151,
+                                    lineNumber: 190,
                                     columnNumber: 17
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                                     src: galleryItems.find((i)=>i.id === selectedItem)?.media,
@@ -443,7 +673,7 @@ function GallerySection() {
                                     className: "w-full h-auto max-h-[80vh] object-contain rounded-lg"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 157,
+                                    lineNumber: 196,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -451,30 +681,30 @@ function GallerySection() {
                                     children: galleryItems.find((i)=>i.id === selectedItem)?.title
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 164,
+                                    lineNumber: 203,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 149,
+                            lineNumber: 188,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 139,
+                    lineNumber: 178,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-            lineNumber: 62,
+            lineNumber: 101,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-        lineNumber: 61,
+        lineNumber: 100,
         columnNumber: 5
     }, this);
 }

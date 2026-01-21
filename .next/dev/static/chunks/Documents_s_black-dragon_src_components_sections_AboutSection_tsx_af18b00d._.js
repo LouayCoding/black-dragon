@@ -208,7 +208,7 @@ function AboutSection() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border",
+                            className: "grid grid-cols-2 lg:grid-cols-4 gap-px bg-border",
                             children: [
                                 {
                                     korean: '예의',
@@ -231,10 +231,10 @@ function AboutSection() {
                                     desc: 'Beheers je emoties'
                                 }
                             ].map((value, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "value-card bg-background p-8 sm:p-10 hover:bg-muted/30 transition-colors duration-300",
+                                    className: "value-card bg-background p-4 sm:p-8 lg:p-10 hover:bg-muted/30 transition-colors duration-300",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "text-6xl sm:text-7xl mb-6 text-primary font-light",
+                                            className: "text-4xl sm:text-6xl lg:text-7xl mb-4 sm:mb-6 text-primary font-light",
                                             children: value.korean
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/AboutSection.tsx",
@@ -242,7 +242,7 @@ function AboutSection() {
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                            className: "font-bold text-xl text-foreground mb-3",
+                                            className: "font-bold text-sm sm:text-lg lg:text-xl text-foreground mb-2 sm:mb-3 break-words hyphens-auto",
                                             children: value.english
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/AboutSection.tsx",
@@ -250,7 +250,7 @@ function AboutSection() {
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-foreground/70 text-sm leading-[1.7] max-w-[30ch]",
+                                            className: "text-foreground/70 text-xs sm:text-sm leading-[1.7]",
                                             children: value.desc
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/AboutSection.tsx",

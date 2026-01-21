@@ -46,7 +46,12 @@
           "search": ""
         }
       ],
-      "remotePatterns": [],
+      "remotePatterns": [
+        {
+          "protocol": "https",
+          "hostname": "zsibupsnbpnoxzjmnpcl.supabase.co"
+        }
+      ],
       "qualities": [
         75
       ],

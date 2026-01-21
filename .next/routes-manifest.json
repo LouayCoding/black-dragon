@@ -113,12 +113,6 @@
       "namedRegex": "^/news(?:/)?$"
     },
     {
-      "page": "/pricing",
-      "regex": "^/pricing(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/pricing(?:/)?$"
-    },
-    {
       "page": "/programs",
       "regex": "^/programs(?:/)?$",
       "routeKeys": {},
@@ -135,6 +129,12 @@
       "regex": "^/student(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/student(?:/)?$"
+    },
+    {
+      "page": "/tarieven",
+      "regex": "^/tarieven(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tarieven(?:/)?$"
     }
   ],
   "dataRoutes": [],

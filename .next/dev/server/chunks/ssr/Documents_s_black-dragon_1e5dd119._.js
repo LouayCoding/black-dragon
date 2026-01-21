@@ -20,19 +20,13 @@ function ScheduleSection() {
                 {
                     time: '17:00-18:00',
                     name: 'Taekwondo KIDS/JUGD',
-                    location: 'Draaistraat 16',
+                    location: 'Draaistraat 16 - De Ontmoetingschool',
                     duration: '60 min'
                 },
                 {
                     time: '18:00-19:00',
                     name: 'Taekwondo JUGD/JUNIOREN',
-                    location: 'Draaistraat 16',
-                    duration: '60 min'
-                },
-                {
-                    time: '19:30-20:30',
-                    name: 'Taekwondo/Krachttraining',
-                    location: 'Draaistraat 16',
+                    location: 'Draaistraat 16 - De Ontmoetingschool',
                     duration: '60 min'
                 }
             ]
@@ -43,7 +37,7 @@ function ScheduleSection() {
                 {
                     time: '18:00-19:00',
                     name: 'Taekwondo KIDS/JUGD',
-                    location: 'Withuysstraat 2',
+                    location: 'Withuysstraat 2 - Gert van Wijkschool',
                     duration: '60 min'
                 }
             ]
@@ -54,19 +48,13 @@ function ScheduleSection() {
                 {
                     time: '17:00-18:00',
                     name: 'Taekwondo KIDS/JUGD',
-                    location: 'Draaistraat 16',
+                    location: 'Draaistraat 16 - De Ontmoetingschool',
                     duration: '60 min'
                 },
                 {
                     time: '18:00-19:00',
                     name: 'Taekwondo JUGD/JUNIOREN',
-                    location: 'Draaistraat 16',
-                    duration: '60 min'
-                },
-                {
-                    time: '19:30-20:30',
-                    name: 'Taekwondo/Krachttraining',
-                    location: 'Draaistraat 16',
+                    location: 'Draaistraat 16 - De Ontmoetingschool',
                     duration: '60 min'
                 }
             ]
@@ -77,7 +65,7 @@ function ScheduleSection() {
                 {
                     time: '18:00-19:00',
                     name: 'Taekwondo KIDS/JUGD',
-                    location: 'Withuysstraat 2',
+                    location: 'Withuysstraat 2 - Gert van Wijkschool',
                     duration: '60 min'
                 }
             ]
@@ -86,32 +74,9 @@ function ScheduleSection() {
             day: 'Vrijdag',
             classes: [
                 {
-                    time: '17:00-18:00',
-                    name: 'Taekwondo/Krachttraining',
-                    location: 'Draaistraat 16',
-                    duration: '60 min'
-                },
-                {
                     time: '19:00-20:00',
-                    name: 'Vrouwentraining totaal',
-                    location: 'Draaistraat 16',
-                    duration: '60 min'
-                }
-            ]
-        },
-        {
-            day: 'Zaterdag',
-            classes: [
-                {
-                    time: '12:00-13:30',
-                    name: 'PT training',
-                    location: 'Draaistraat 16',
-                    duration: '90 min'
-                },
-                {
-                    time: '13:30-14:30',
-                    name: 'PT training',
-                    location: 'Draaistraat 16',
+                    name: 'Ladies Only',
+                    location: 'Draaistraat 16 - De Ontmoetingschool',
                     duration: '60 min'
                 }
             ]
@@ -135,12 +100,12 @@ function ScheduleSection() {
                                     children: 'Rooster'
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 36,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                lineNumber: 42,
+                                lineNumber: 35,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -149,7 +114,7 @@ function ScheduleSection() {
                                     'Wekelijks',
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 41,
                                         columnNumber: 28
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -157,20 +122,20 @@ function ScheduleSection() {
                                         children: 'Rooster'
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                        lineNumber: 49,
+                                        lineNumber: 42,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                lineNumber: 47,
+                                lineNumber: 40,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-20 h-1 bg-primary"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                lineNumber: 51,
+                                lineNumber: 44,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -180,23 +145,23 @@ function ScheduleSection() {
                                     children: 'Kies je moment. Begin vandaag.'
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 46,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                lineNumber: 52,
+                                lineNumber: 45,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                        lineNumber: 41,
+                        lineNumber: 34,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                    lineNumber: 40,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -211,12 +176,12 @@ function ScheduleSection() {
                                         children: daySchedule.day
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                        lineNumber: 69,
+                                        lineNumber: 62,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 61,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -231,7 +196,7 @@ function ScheduleSection() {
                                                             className: "w-5 h-5 text-primary flex-shrink-0"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                                            lineNumber: 83,
+                                                            lineNumber: 76,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -239,13 +204,13 @@ function ScheduleSection() {
                                                             children: cls.time
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                                            lineNumber: 84,
+                                                            lineNumber: 77,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                                    lineNumber: 82,
+                                                    lineNumber: 75,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -253,7 +218,7 @@ function ScheduleSection() {
                                                     children: cls.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                                    lineNumber: 90,
+                                                    lineNumber: 83,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -263,7 +228,7 @@ function ScheduleSection() {
                                                             className: "w-4 h-4 text-primary/70 flex-shrink-0"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                                            lineNumber: 96,
+                                                            lineNumber: 89,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -271,42 +236,42 @@ function ScheduleSection() {
                                                             children: cls.location
                                                         }, void 0, false, {
                                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                                            lineNumber: 97,
+                                                            lineNumber: 90,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                                    lineNumber: 95,
+                                                    lineNumber: 88,
                                                     columnNumber: 21
                                                 }, this),
                                                 classIndex < daySchedule.classes.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "pt-4 border-b border-border/50"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                                    lineNumber: 104,
+                                                    lineNumber: 97,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, classIndex, true, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                            lineNumber: 77,
+                                            lineNumber: 70,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 68,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, dayIndex, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                            lineNumber: 63,
+                            lineNumber: 56,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                    lineNumber: 61,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -314,18 +279,18 @@ function ScheduleSection() {
                     children: '* Rooster kan wijzigen tijdens feestdagen en speciale evenementen. Neem contact op voor de meest actuele informatie.'
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-                    lineNumber: 114,
+                    lineNumber: 107,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-            lineNumber: 37,
+            lineNumber: 30,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Documents/s/black-dragon/src/components/sections/ScheduleSection.tsx",
-        lineNumber: 36,
+        lineNumber: 29,
         columnNumber: 5
     }, this);
 }

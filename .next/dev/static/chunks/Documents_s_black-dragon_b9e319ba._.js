@@ -115,8 +115,8 @@ function Header() {
             label: 'Rooster'
         },
         {
-            href: '/pricing',
-            label: 'Prijzen'
+            href: '/tarieven',
+            label: 'Tarieven'
         },
         {
             href: '/news',
@@ -182,7 +182,7 @@ function Header() {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: "/logo.png",
                                 alt: "Black Dragon Logo",
-                                className: "h-20 lg:h-24 w-auto transition-transform duration-300 group-hover:scale-105"
+                                className: "h-14 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Header.tsx",
                                 lineNumber: 60,
@@ -483,8 +483,8 @@ function Footer() {
             href: '/schedule'
         },
         {
-            label: 'Prijzen',
-            href: '/pricing'
+            label: 'Tarieven',
+            href: '/tarieven'
         },
         {
             label: 'Instructeurs',
@@ -551,16 +551,10 @@ function Footer() {
                                     href: "/",
                                     className: "flex items-center gap-3 mb-6 group",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-12 h-12 rounded-full bg-primary flex items-center justify-center transition-transform group-hover:scale-110",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-primary-foreground font-serif text-xl font-bold",
-                                                children: "龍"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                lineNumber: 101,
-                                                columnNumber: 17
-                                            }, this)
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "/logo.png",
+                                            alt: "Black Dragon Logo",
+                                            className: "h-14 w-auto transition-transform group-hover:scale-105"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
                                             lineNumber: 100,
@@ -573,7 +567,7 @@ function Footer() {
                                                     children: "태권도 블랙 드래곤"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                    lineNumber: 104,
+                                                    lineNumber: 106,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -581,13 +575,13 @@ function Footer() {
                                                     children: "BLACK DRAGON"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                    lineNumber: 105,
+                                                    lineNumber: 107,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 105,
                                             columnNumber: 15
                                         }, this)
                                     ]
@@ -601,33 +595,82 @@ function Footer() {
                                     children: "Taekwondo Vereniging Black Dragon is een Goudse sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex gap-3",
                                     children: [
-                                        __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$facebook$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Facebook$3e$__["Facebook"],
-                                        __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$instagram$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Instagram$3e$__["Instagram"],
-                                        __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$youtube$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Youtube$3e$__["Youtube"]
-                                    ].map((Icon, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "#",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "https://facebook.com",
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
                                             className: "w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$facebook$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Facebook$3e$__["Facebook"], {
                                                 size: 18
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                lineNumber: 118,
-                                                columnNumber: 19
+                                                lineNumber: 120,
+                                                columnNumber: 17
                                             }, this)
-                                        }, index, false, {
+                                        }, void 0, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                            lineNumber: 113,
-                                            columnNumber: 17
-                                        }, this))
-                                }, void 0, false, {
+                                            lineNumber: 114,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "https://instagram.com",
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
+                                            className: "w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$instagram$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Instagram$3e$__["Instagram"], {
+                                                size: 18
+                                            }, void 0, false, {
+                                                fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
+                                                lineNumber: 128,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
+                                            lineNumber: 122,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "https://youtube.com",
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
+                                            className: "w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$youtube$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Youtube$3e$__["Youtube"], {
+                                                size: 18
+                                            }, void 0, false, {
+                                                fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
+                                                lineNumber: 136,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
+                                            lineNumber: 130,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "mailto:info@taekwondoblackdragon.nl",
+                                            className: "w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"], {
+                                                size: 18
+                                            }, void 0, false, {
+                                                fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
+                                                lineNumber: 142,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
+                                            lineNumber: 138,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -643,7 +686,7 @@ function Footer() {
                                     children: 'Snelle Links'
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                    lineNumber: 126,
+                                    lineNumber: 149,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -655,23 +698,23 @@ function Footer() {
                                                 children: link.label
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 153,
                                                 columnNumber: 19
                                             }, this)
                                         }, link.href + link.label, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 152,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 150,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                            lineNumber: 125,
+                            lineNumber: 148,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -681,7 +724,7 @@ function Footer() {
                                     children: 'Onze Programmas'
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                    lineNumber: 143,
+                                    lineNumber: 166,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -693,23 +736,23 @@ function Footer() {
                                                 children: program.label
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                lineNumber: 147,
+                                                lineNumber: 170,
                                                 columnNumber: 19
                                             }, this)
                                         }, program.label, false, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                            lineNumber: 146,
+                                            lineNumber: 169,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 167,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                            lineNumber: 142,
+                            lineNumber: 165,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -719,7 +762,7 @@ function Footer() {
                                     children: 'Contact'
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                    lineNumber: 160,
+                                    lineNumber: 183,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -733,7 +776,7 @@ function Footer() {
                                                     className: "text-primary mt-0.5 flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 186,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -742,20 +785,20 @@ function Footer() {
                                                         "De Draaistraat",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                            lineNumber: 165,
+                                                            lineNumber: 188,
                                                             columnNumber: 33
                                                         }, this),
                                                         "2516 EK Den Haag"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 187,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 185,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -766,22 +809,22 @@ function Footer() {
                                                     className: "text-primary flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                    lineNumber: 170,
+                                                    lineNumber: 193,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "tel:+31612345678",
+                                                    href: "tel:+31615047993",
                                                     className: "text-white/70 hover:text-primary transition-colors text-sm",
-                                                    children: "06 12345678"
+                                                    children: "06 15047993"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                    lineNumber: 171,
+                                                    lineNumber: 194,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                            lineNumber: 169,
+                                            lineNumber: 192,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -792,7 +835,7 @@ function Footer() {
                                                     className: "text-primary flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                    lineNumber: 176,
+                                                    lineNumber: 199,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -801,25 +844,25 @@ function Footer() {
                                                     children: "info@taekwondoblackdragon.nl"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 200,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                            lineNumber: 175,
+                                            lineNumber: 198,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 184,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                            lineNumber: 159,
+                            lineNumber: 182,
                             columnNumber: 11
                         }, this)
                     ]
@@ -839,12 +882,13 @@ function Footer() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-white/50 text-sm text-center md:text-left",
                         children: [
-                            "© new Date().getFullYear() Taekwondo Dojang. ",
-                            'Alle rechten voorbehouden.'
+                            "© ",
+                            new Date().getFullYear(),
+                            " Taekwondo Black Dragon Den Haag. Alle rechten voorbehouden."
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                        lineNumber: 188,
+                        lineNumber: 211,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -856,7 +900,7 @@ function Footer() {
                                 children: 'Gedragscode'
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                lineNumber: 192,
+                                lineNumber: 215,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -865,7 +909,7 @@ function Footer() {
                                 children: 'Pestprotocol'
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                lineNumber: 195,
+                                lineNumber: 218,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -874,7 +918,7 @@ function Footer() {
                                 children: 'Protocol Seksuele Intimidatie'
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                lineNumber: 198,
+                                lineNumber: 221,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -883,7 +927,7 @@ function Footer() {
                                 children: 'Privacybeleid'
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                lineNumber: 201,
+                                lineNumber: 224,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -892,19 +936,19 @@ function Footer() {
                                 children: 'Algemene Voorwaarden'
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                                lineNumber: 204,
+                                lineNumber: 227,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                        lineNumber: 191,
+                        lineNumber: 214,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Documents/s/black-dragon/src/components/layout/Footer.tsx",
-                lineNumber: 187,
+                lineNumber: 210,
                 columnNumber: 7
             }, this)
         ]
