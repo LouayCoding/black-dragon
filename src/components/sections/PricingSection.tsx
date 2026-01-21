@@ -82,16 +82,8 @@ export function PricingSection() {
   return (
     <section className="section-padding bg-muted/30 relative">
       <div ref={ref} className="container mx-auto px-4 max-w-7xl">
-        {/* Header with Breadcrumb */}
+        {/* Header */}
         <div className="mb-16">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm text-foreground/60 mb-6">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-foreground font-medium">Tarieven</span>
-          </div>
-
-          {/* Title */}
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
