@@ -176,98 +176,111 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Membership Benefits */}
-        <div className={cn(
-          "mb-16 transition-all duration-700",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-8">
-            Waarom lid worden?
-          </h3>
-          <MembershipBenefits variant="default" />
-        </div>
-
         {/* Extra Options */}
         <div className={cn(
           "mb-16 transition-all duration-700 delay-200",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          <h3 className="font-serif text-2xl font-semibold text-foreground text-center mb-8">
+          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-8">
             Extra Opties
           </h3>
-          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-3 gap-4">
             {extras.map((extra, index) => (
               <div
                 key={index}
-                className="bg-card rounded-lg p-5 text-center hover:shadow-md transition-all"
+                className="bg-card rounded-lg p-6 hover:shadow-md transition-all"
               >
-                <p className="text-2xl font-bold text-foreground mb-2">€{extra.price}</p>
-                <h4 className="font-semibold text-sm text-foreground mb-1">{extra.name}</h4>
-                <p className="text-foreground/50 text-xs">{extra.description}</p>
+                <div className="mb-3">
+                  <p className="text-3xl font-bold text-foreground">€{extra.price}</p>
+                </div>
+                <h4 className="font-semibold text-base text-foreground mb-2">{extra.name}</h4>
+                <p className="text-foreground/60 text-sm leading-relaxed">{extra.description}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Ooievaarspas Section - Redesigned */}
+        {/* Ooievaarspas Section */}
         <div className={cn(
-          "transition-all duration-700 delay-300",
+          "mb-16 transition-all duration-700 delay-300",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          <div className="bg-gradient-to-br from-[#00A651]/10 via-[#00A651]/5 to-transparent rounded-3xl border border-[#00A651]/20 p-8 md:p-12 max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              {/* Logo */}
-              <div className="flex-shrink-0">
-                <div className="w-32 h-32 md:w-40 md:h-40 relative bg-white rounded-2xl p-4 shadow-lg">
+          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-8">
+            Kortingen
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Ooievaarspas */}
+            <div className="bg-card rounded-lg p-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-16 h-16 relative flex-shrink-0">
                   <Image
                     src="/partners/ooievaarspas.png"
                     alt="Ooievaarspas"
                     fill
-                    className="object-contain p-2"
+                    className="object-contain"
                   />
                 </div>
-              </div>
-
-              {/* Content */}
-              <div className="flex-grow text-center md:text-left">
-                <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
-                  Ooievaarspas Houders
-                </h3>
-                <p className="text-muted-foreground mb-6 max-w-lg">
-                  Wij accepteren de Ooievaarspas! Profiteer van aantrekkelijke kortingen op onze lidmaatschappen.
-                </p>
-
-                {/* Discount Cards */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white rounded-xl p-4 shadow-sm border border-[#00A651]/20">
-                    <p className="text-3xl md:text-4xl font-bold text-[#00A651] mb-1">100%</p>
-                    <p className="text-sm text-muted-foreground font-medium">
-                      Vergoeding onder 18 jaar
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-4 shadow-sm border border-[#00A651]/20">
-                    <p className="text-3xl md:text-4xl font-bold text-[#00A651] mb-1">50%</p>
-                    <p className="text-sm text-muted-foreground font-medium">
-                      Vergoeding boven 18 jaar
-                    </p>
-                  </div>
+                <div className="flex-grow">
+                  <h4 className="font-semibold text-lg text-foreground mb-1">Ooievaarspas</h4>
+                  <p className="text-foreground/60 text-sm">
+                    Kinderen tot 18 jaar: 100% korting<br />
+                    18 jaar en ouder: 50% korting
+                  </p>
                 </div>
-
-                <Button 
-                  asChild 
-                  className="bg-[#00A651] hover:bg-[#008C45] text-white font-semibold"
-                >
-                  <a 
-                    href="https://ooievaarspas.nl/aanbiedingen/taekwondo-black-dragon/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2"
-                  >
-                    Bekijk op Ooievaarspas.nl
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </Button>
               </div>
+              <Button 
+                asChild 
+                size="sm"
+                variant="outline"
+                className="w-full"
+              >
+                <a 
+                  href="https://ooievaarspas.nl/aanbiedingen/taekwondo-black-dragon/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  Meer info
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </Button>
+            </div>
+
+            {/* Leergeld */}
+            <div className="bg-card rounded-lg p-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-16 h-16 relative flex-shrink-0">
+                  <Image
+                    src="/partners/leergeld.png"
+                    alt="Leergeld"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex-grow">
+                  <h4 className="font-semibold text-lg text-foreground mb-1">Leergeld</h4>
+                  <p className="text-foreground/60 text-sm">
+                    Vergoeding voor sportkleding en benodigdheden via Leergeld
+                  </p>
+                </div>
+              </div>
+              <Button 
+                asChild 
+                size="sm"
+                variant="outline"
+                className="w-full"
+              >
+                <a 
+                  href="https://www.leergeld.nl/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  Meer info
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
