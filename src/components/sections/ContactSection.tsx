@@ -8,6 +8,7 @@ export function ContactSection() {
 
   const locations = [
     {
+      label: 'Hoofdlocatie',
       name: 'Draaistraat 16 - De Ontmoetingsschool',
       address: 'Draaistraat 16, 2516 EK Den Haag',
       phone: '06 15047993',
@@ -16,6 +17,7 @@ export function ContactSection() {
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.123!2d4.3007!3d52.0705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b72e9e0e0e0e%3A0x0!2sDraaistraat%2016%2C%20Den%20Haag!5e0!3m2!1snl!2snl!4v1234567890123!5m2!1snl!2snl',
     },
     {
+      label: 'Locatie 2',
       name: 'Withuysstraat 2 - Gert van Wijkschool',
       address: 'Withuysstraat 2, Den Haag',
       phone: '06 15047993',
@@ -73,7 +75,12 @@ export function ContactSection() {
 
               {/* Location Details */}
               <div className="space-y-8">
-                <h3 className="font-serif text-3xl font-bold text-foreground">{location.name}</h3>
+                <div>
+                  <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-2">
+                    {location.label}
+                  </h2>
+                  <h3 className="font-serif text-3xl font-bold text-foreground">{location.name}</h3>
+                </div>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
