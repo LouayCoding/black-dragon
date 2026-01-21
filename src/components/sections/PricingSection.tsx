@@ -81,7 +81,7 @@ export function PricingSection() {
 
   return (
     <section className="section-padding bg-muted/30 relative">
-      <div ref={ref} className="container mx-auto px-4">
+      <div ref={ref} className="container mx-auto px-4 max-w-7xl">
         {/* Membership Benefits */}
         <div className={cn(
           "mb-16 transition-all duration-700",
@@ -95,7 +95,7 @@ export function PricingSection() {
 
         {/* Plans Grid */}
         <div className={cn(
-          "grid md:grid-cols-3 gap-8 mb-16 transition-all duration-700",
+          "grid md:grid-cols-3 gap-6 mb-16 transition-all duration-700",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           {plans.map((plan, index) => (
