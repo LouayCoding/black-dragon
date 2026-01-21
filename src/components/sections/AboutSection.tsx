@@ -20,10 +20,10 @@ export function AboutSection() {
                 <span className="text-primary">Black Dragon</span>
               </h2>
               <div className="space-y-6 max-w-2xl">
-                <p className="text-foreground/70 text-lg sm:text-xl leading-[1.8]">
+                <p className="text-foreground/90 text-lg leading-[1.8]">
                   Sinds 2013 begeleiden wij leden van alle leeftijden in hun persoonlijke groei door traditionele Taekwondo. Bij Black Dragon draait het niet alleen om het leren van technieken, maar ook om het ontwikkelen van discipline, respect en zelfvertrouwen.
                 </p>
-                <p className="text-foreground/70 text-base sm:text-lg leading-[1.8]">
+                <p className="text-foreground/90 text-lg leading-[1.8]">
                   Of je nu 4 jaar bent of ouder, een beginner of gevorderd, bij ons vind je een veilige en inspirerende omgeving waar je jezelf kunt ontwikkelen. Onze ervaren instructeurs staan klaar om jou te begeleiden op jouw unieke reis door de wereld van Taekwondo.
                 </p>
               </div>
@@ -60,10 +60,10 @@ export function AboutSection() {
                 className="value-card bg-background p-4 sm:p-8 lg:p-10 hover:bg-muted/30 transition-colors duration-300"
               >
                 <div className="text-4xl sm:text-6xl lg:text-7xl mb-4 sm:mb-6 text-primary font-light">{value.korean}</div>
-                <h4 className="font-bold text-sm sm:text-lg lg:text-xl text-foreground mb-2 sm:mb-3 break-words hyphens-auto">
+                <h4 className="font-bold text-lg text-foreground mb-3">
                   {value.english}
                 </h4>
-                <p className="text-foreground/70 text-xs sm:text-sm leading-[1.7]">
+                <p className="text-foreground/80 text-sm leading-[1.7]">
                   {value.desc}
                 </p>
               </div>
