@@ -30,36 +30,13 @@ export function AboutSection() {
               </div>
             </div>
             
-            {/* About Hero Image with Stats Overlay */}
+            {/* About Hero Image */}
             <div className="relative h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
               <img 
                 src="/gallery/about-team.jpg" 
                 alt="Taekwondo Black Dragon Training"
                 className="w-full h-full object-cover"
               />
-              
-              {/* Stats Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-primary">
-                <div className="grid grid-cols-3">
-                  {[
-                    { value: '2013', label: 'Opgericht' },
-                    { value: '400+', label: 'Leden' },
-                    { value: '2', label: 'Locaties' },
-                  ].map((stat, index) => (
-                    <div
-                      key={index}
-                      className="stat-item p-4 sm:p-6 text-center"
-                    >
-                      <div className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">
-                        {stat.value}
-                      </div>
-                      <div className="text-[10px] sm:text-xs uppercase tracking-wider text-white font-semibold">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
