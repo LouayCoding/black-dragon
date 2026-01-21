@@ -169,7 +169,7 @@ export function PricingSection() {
                       : "bg-foreground hover:bg-foreground/90 text-background"
                   )}
                 >
-                  <Link href="/register">{plan.cta}</Link>
+                  <Link href="/inschrijven">{plan.cta}</Link>
                 </Button>
               </div>
             </div>
@@ -287,7 +287,7 @@ export function PricingSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <p className="text-muted-foreground text-sm mb-6 max-w-2xl mx-auto">
-            Alle prijzen zijn inclusief BTW. Eenmalige inschrijfkosten van €30 zijn verplicht bij eerste aanmelding. 
+            Eenmalige inschrijfkosten van €30 zijn verplicht bij eerste aanmelding. 
             Lidmaatschap TBN (Taekwondo Bond Nederland) wordt aanbevolen.
           </p>
           <Button asChild variant="outline" size="lg">

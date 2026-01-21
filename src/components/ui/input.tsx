@@ -17,11 +17,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             "file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground",
             "placeholder:text-muted-foreground/70",
             "transition-colors duration-200",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0",
             "disabled:cursor-not-allowed disabled:opacity-50",
             error
               ? "border-destructive focus-visible:ring-destructive"
-              : "border-input focus-visible:ring-ring",
+              : "border-input focus-visible:ring-primary focus-visible:border-primary",
             className,
           )}
           ref={ref}

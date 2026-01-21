@@ -1,5 +1,7 @@
 'use client'
 
+import { FadeInView } from '@/components/animations/FadeInView';
+
 export function PartnersSection() {
 
   const discountPrograms = [
@@ -62,18 +64,18 @@ export function PartnersSection() {
   ];
 
   return (
-    <section id="partners" className="py-32 bg-background">
+    <section id="partners" className="py-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Kortingen Section */}
-        <div className="mb-20">
+        <FadeInView className="mb-20">
           <div className="mb-12">
             <div className="inline-block mb-4">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 Kortingen
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
               Voor <span className="text-primary">iedereen</span> toegankelijk
             </h2>
           </div>
@@ -110,17 +112,17 @@ export function PartnersSection() {
               </a>
             ))}
           </div>
-        </div>
+        </FadeInView>
 
         {/* Erkenningen Section */}
-        <div>
+        <FadeInView delay={0.2}>
           <div className="mb-12">
             <div className="inline-block mb-4">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 Erkenningen
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
               Officieel <span className="text-primary">erkend</span>
             </h2>
           </div>
@@ -152,7 +154,7 @@ export function PartnersSection() {
               </a>
             ))}
           </div>
-        </div>
+        </FadeInView>
       </div>
     </section>
   );

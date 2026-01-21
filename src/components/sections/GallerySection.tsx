@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { X, Play } from 'lucide-react';
+import { FadeInView } from '@/components/animations/FadeInView';
 
 type MediaType = 'image' | 'video';
 
@@ -26,6 +27,9 @@ export function GallerySection() {
     // Bandexamens
     { id: 51, category: 'belt-exam', title: 'Groepsactiviteit', korean: '단체 활동', media: '/gallery/activiteit-groep.jpg', type: 'image' },
     { id: 52, category: 'belt-exam', title: 'Bandexamen groep', korean: '승급 시험', media: '/gallery/bandexamen-groep.jpg', type: 'image' },
+    { id: 53, category: 'belt-exam', title: 'Examen moment 1', korean: '승급 시험', media: '/gallery/examen-01.jpg', type: 'image' },
+    { id: 54, category: 'belt-exam', title: 'Examen moment 2', korean: '승급 시험', media: '/gallery/examen-02.jpg', type: 'image' },
+    { id: 55, category: 'belt-exam', title: 'Examen moment 3', korean: '승급 시험', media: '/gallery/examen-03.jpg', type: 'image' },
     
     // Echte afbeeldingen - Training
     { id: 2, category: 'training', title: 'Planken breken demonstratie', korean: '격파', media: '/gallery/board-breaking-demo.jpg', type: 'image' },
@@ -101,43 +105,43 @@ export function GallerySection() {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-32 bg-background">
+    <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-16">
+        <FadeInView className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 Galerij
               </span>
             </div>
-            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               Momenten van<br />
               <span className="text-primary">excellentie</span>
             </h2>
           </div>
-        </div>
+        </FadeInView>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-2 mb-12">
+        <FadeInView delay={0.2} className="flex flex-wrap gap-2 mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={
                 activeCategory === cat.id
-                  ? "px-4 py-2 bg-foreground text-background text-sm font-semibold rounded-lg transition-all duration-300"
-                  : "px-4 py-2 bg-muted text-foreground/60 text-sm font-medium rounded-lg hover:bg-muted/80 hover:text-foreground transition-all duration-300"
+                  ? "px-3 sm:px-4 py-2 bg-foreground text-background text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300"
+                  : "px-3 sm:px-4 py-2 bg-muted text-foreground/60 text-xs sm:text-sm font-medium rounded-lg hover:bg-muted/80 hover:text-foreground transition-all duration-300"
               }
             >
               {cat.label}
             </button>
           ))}
-        </div>
+        </FadeInView>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <FadeInView delay={0.3} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {filteredItems.map((item) => (
             <button
               key={item.id}
@@ -167,7 +171,7 @@ export function GallerySection() {
               )}
             </button>
           ))}
-        </div>
+        </FadeInView>
 
         {/* Lightbox */}
         {selectedItem && (

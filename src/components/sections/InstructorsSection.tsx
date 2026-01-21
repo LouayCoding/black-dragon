@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { FadeInView } from '@/components/animations/FadeInView';
 
 interface Instructor {
   name: string;
@@ -41,9 +42,8 @@ export function InstructorsSection() {
       name: 'Ouiam Ousllam',
       role: 'Trainer',
       image: '/placeholder.svg',
-      shortBio: 'Zwarte band 1e dan met 20+ jaar ervaring. Gediplomeerd nationaal scheidsrechter en 3e plaats NK 2020.',
-      fullBio: 'Ouiam Ousllam is zwarte band 1e dan en heeft meer dan 20 jaar ervaring in taekwondo. Zij is gediplomeerd nationaal scheidsrechter. In 2020 behaalde zij de 3e plaats op het Nederlands Kampioenschap. Met veel toewijding begeleidt zij kinderen in zowel taeguk (stijltechniek) als sparring. Haar focus ligt op discipline, respect, zelfvertrouwen en plezier in taekwondo.',
-      experience: '20+ jaar ervaring',
+      shortBio: 'Zwarte band 1e dan. Gediplomeerd nationaal scheidsrechter en 3e plaats NK 2020.',
+      fullBio: 'Ouiam Ousllam is zwarte band 1e dan en gediplomeerd nationaal scheidsrechter. In 2020 behaalde zij de 3e plaats op het Nederlands Kampioenschap. Met veel toewijding begeleidt zij kinderen in zowel taeguk (stijltechniek) als sparring. Haar focus ligt op discipline, respect, zelfvertrouwen en plezier in taekwondo.',
       achievements: ['3e plaats NK 2020', 'Gediplomeerd nationaal scheidsrechter', '1e Dan Zwarte Band'],
       specialties: ['Taeguk (stijltechniek)', 'Sparring', 'Kinderbegeleiding', 'Discipline & respect'],
     },
@@ -51,19 +51,17 @@ export function InstructorsSection() {
       name: 'Isra Jallab',
       role: 'Assistent Trainster',
       image: '/instructors/wissal-ousllam.jpg',
-      shortBio: '10+ jaar ervaring. Gediplomeerd nationaal scheidsrechter. Gedreven in het begeleiden van leerlingen met focus op techniek en discipline.',
-      fullBio: 'Isra Jallab heeft meer dan 10 jaar ervaring in taekwondo. Zij is gediplomeerd nationaal scheidsrechter en gedreven in het begeleiden van leerlingen op verschillende niveaus. Haar focus ligt op techniek, discipline en persoonlijke ontwikkeling. Isra werkt met veel aandacht aan taeguk (stijltechniek) en sparring. In haar lessen staan respect, zelfvertrouwen en plezier in de sport centraal.',
-      experience: '10+ jaar ervaring',
+      shortBio: 'Gediplomeerd nationaal scheidsrechter. Gedreven in het begeleiden van leerlingen met focus op techniek en discipline.',
+      fullBio: 'Isra Jallab is gediplomeerd nationaal scheidsrechter en gedreven in het begeleiden van leerlingen op verschillende niveaus. Haar focus ligt op techniek, discipline en persoonlijke ontwikkeling. Isra werkt met veel aandacht aan taeguk (stijltechniek). In haar lessen staan respect, zelfvertrouwen en plezier in de sport centraal.',
       achievements: ['Gediplomeerd nationaal scheidsrechter'],
-      specialties: ['Taeguk (stijltechniek)', 'Sparring', 'Techniek', 'Persoonlijke ontwikkeling'],
+      specialties: ['Taeguk (stijltechniek)', 'Techniek', 'Persoonlijke ontwikkeling'],
     },
     {
       name: 'Wissal Ousllam',
       role: 'Assistent Trainster',
       image: '/instructors/isra-jallab.jpg',
-      shortBio: 'Actieve topsporter met 13+ jaar ervaring. 2e plaats NK 2025. Gediplomeerd nationaal scheidsrechter met Olympische ambitie.',
-      fullBio: 'Wissal Ousllam heeft meer dan 13 jaar ervaring in taekwondo. Zij is actief als vechter en neemt deel aan nationale en internationale toernooien. In 2025 werd zij 2e op het Nederlands Kampioenschap. Zij is ook gediplomeerd nationaal scheidsrechter. Naast haar eigen topsportcarrière begeleidt zij ook kinderen, gespecialiseerd in sparring en geavanceerde vechttechnieken. Haar doel is om zich te blijven ontwikkelen en toe te werken naar deelname aan de Olympische Spelen.',
-      experience: '13+ jaar ervaring',
+      shortBio: 'Actieve topsporter. 2e plaats NK 2025. Gediplomeerd nationaal scheidsrechter met Olympische ambitie.',
+      fullBio: 'Wissal Ousllam is actief als vechter en neemt deel aan nationale en internationale toernooien. In 2025 werd zij 2e op het Nederlands Kampioenschap. Zij is ook gediplomeerd nationaal scheidsrechter. Naast haar eigen topsportcarrière begeleidt zij ook kinderen, gespecialiseerd in sparring en geavanceerde vechttechnieken. Haar doel is om zich te blijven ontwikkelen en toe te werken naar deelname aan de Olympische Spelen.',
       achievements: ['2e plaats NK 2025', 'Gediplomeerd nationaal scheidsrechter', 'Actieve topsporter', 'Olympische ambitie'],
       specialties: ['Sparring', 'Geavanceerde vechttechnieken', 'Competitie', 'Kinderbegeleiding'],
     },
@@ -71,9 +69,8 @@ export function InstructorsSection() {
       name: 'Nando Silva',
       role: 'Assistent Trainer',
       image: '/placeholder.svg',
-      shortBio: '12+ jaar ervaring. Gediplomeerd nationaal scheidsrechter. Serieuze en gedisciplineerde trainer met focus op conditie en techniek.',
-      fullBio: 'Nando Silva heeft meer dan 12 jaar ervaring in taekwondo en staat bekend als een zeer serieuze en gedisciplineerde trainer. Hij is gediplomeerd nationaal scheidsrechter en heeft uitgebreide ervaring met wedstrijden en het begeleiden van sporters op competitief niveau. Daarnaast begeleidt hij kinderen in taeguk (stijltechniek) met veel aandacht voor techniek en precisie. Zijn trainingen zijn sterk conditiegericht, gericht op kracht, uithoudingsvermogen en mentale weerbaarheid. Discipline, respect en doorzettingsvermogen vormen de kern van zijn manier van lesgeven.',
-      experience: '12+ jaar ervaring',
+      shortBio: 'Gediplomeerd nationaal scheidsrechter. Serieuze en gedisciplineerde trainer met focus op conditie en techniek.',
+      fullBio: 'Nando Silva staat bekend als een zeer serieuze en gedisciplineerde trainer. Hij is gediplomeerd nationaal scheidsrechter en heeft uitgebreide ervaring met wedstrijden en het begeleiden van sporters op competitief niveau. Daarnaast begeleidt hij kinderen in taeguk (stijltechniek) met veel aandacht voor techniek en precisie. Zijn trainingen zijn sterk conditiegericht, gericht op kracht, uithoudingsvermogen en mentale weerbaarheid. Discipline, respect en doorzettingsvermogen vormen de kern van zijn manier van lesgeven.',
       achievements: ['Gediplomeerd nationaal scheidsrechter'],
       specialties: ['Taeguk (stijltechniek)', 'Conditietraining', 'Wedstrijdbegeleiding', 'Mentale weerbaarheid'],
     },
@@ -84,30 +81,30 @@ export function InstructorsSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-16">
+        <FadeInView className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 Instructeurs
               </span>
             </div>
-            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               Onze<br />
               <span className="text-primary">Trainers</span>
             </h2>
             <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/90 text-lg leading-[1.8]">
+              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
                 Ons team bestaat uit gediplomeerde trainers met jarenlange ervaring. Van beginnende kinderen tot gevorderde volwassenen - iedereen krijgt persoonlijke aandacht en professionele begeleiding op weg naar hun doelen.
               </p>
             </div>
           </div>
-        </div>
+        </FadeInView>
 
         {/* Hoofdtrainer - Large Section */}
-        <div className="mb-20">
+        <FadeInView delay={0.2} className="mb-20">
           <div className="grid lg:grid-cols-[450px_1fr] gap-8 lg:gap-12 items-start">
             {/* Photo */}
-            <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+            <div className="relative aspect-[3/4] rounded-lg overflow-hidden max-w-xs mx-auto lg:max-w-none lg:mx-0">
               <img 
                 src={headInstructor.image}
                 alt={headInstructor.name}
@@ -118,14 +115,14 @@ export function InstructorsSection() {
             {/* Content */}
             <div className="space-y-6">
               <div>
-                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-3">
                   {headInstructor.name}
                 </h3>
-                <p className="text-foreground/70 text-base font-medium">{headInstructor.role}</p>
-                <p className="text-foreground/50 text-sm mt-1">{headInstructor.experience}</p>
+                <p className="text-foreground/70 text-sm sm:text-base font-medium">{headInstructor.role}</p>
+                <p className="text-foreground/50 text-xs sm:text-sm mt-1">{headInstructor.experience}</p>
               </div>
 
-              <p className="text-foreground/80 text-base leading-relaxed">
+              <p className="text-foreground/80 text-sm sm:text-base leading-relaxed">
                 {headInstructor.bio}
               </p>
 
@@ -143,18 +140,18 @@ export function InstructorsSection() {
               </div>
             </div>
           </div>
-        </div>
+        </FadeInView>
 
         {/* Team Grid */}
-        <div>
-          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-8">
+        <FadeInView delay={0.3}>
+          <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-8">
             Ons Team
           </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {teamInstructors.map((instructor, index) => (
               <div 
                 key={index} 
-                className="bg-card rounded-lg overflow-hidden group hover:shadow-md transition-all duration-300 cursor-pointer"
+                className="bg-card rounded-lg overflow-hidden group transition-all duration-300 cursor-pointer"
                 onClick={() => setSelectedInstructor(instructor)}
               >
                 {/* Photo */}
@@ -171,15 +168,12 @@ export function InstructorsSection() {
                   <div>
                     <h4 className="font-serif text-base font-bold text-foreground">{instructor.name}</h4>
                     <p className="text-foreground/60 text-xs font-medium">{instructor.role}</p>
-                    {instructor.experience && (
-                      <p className="text-foreground/50 text-xs mt-0.5">{instructor.experience}</p>
-                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </FadeInView>
       </div>
 
       {/* Info Modal */}
@@ -194,9 +188,6 @@ export function InstructorsSection() {
               {/* Role & Experience */}
               <div>
                 <p className="text-foreground/80 font-medium">{selectedInstructor.role}</p>
-                {selectedInstructor.experience && (
-                  <p className="text-foreground/50 text-sm mt-1">{selectedInstructor.experience}</p>
-                )}
               </div>
 
               {/* Bio */}

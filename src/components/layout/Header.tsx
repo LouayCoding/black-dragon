@@ -46,17 +46,19 @@ export function Header() {
   }, [isMobileMenuOpen])
 
   return (
+    <>
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 transition-all duration-300',
+        isMobileMenuOpen ? 'z-[60]' : 'z-50',
         isScrolled || !isHomePage
           ? 'bg-primary backdrop-blur-md border-b border-primary'
           : 'bg-gradient-to-b from-black/60 to-transparent'
       )}
     >
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex items-center justify-between h-18 lg:h-20">
-          <Link href="/" className="group relative z-10">
+        <div className="flex items-center justify-between py-4">
+          <Link href="/" className="group relative z-[70]">
             <img 
               src="/logo.png" 
               alt="Black Dragon Logo" 
@@ -96,14 +98,14 @@ export function Header() {
                   : "bg-primary hover:bg-primary/90 text-primary-foreground"
               )}
             >
-              <Link href="/register">Inschrijven</Link>
+              <Link href="/inschrijven">Inschrijven</Link>
             </Button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={cn(
-                "xl:hidden p-2.5 rounded-lg transition-all duration-200 hover:bg-black/10",
-                isHomePage && !isScrolled ? "text-white" : "text-black"
+                "xl:hidden p-2.5 rounded-lg transition-all duration-200 hover:bg-black/10 relative z-[70]",
+                isMobileMenuOpen ? "text-black" : isHomePage && !isScrolled ? "text-white" : "text-black"
               )}
               aria-label="Toggle menu"
             >
@@ -113,42 +115,41 @@ export function Header() {
         </div>
       </div>
 
-      {isMobileMenuOpen && (
-        <>
-          <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 xl:hidden"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-          <div className="fixed top-18 left-0 right-0 bottom-0 bg-background z-40 xl:hidden overflow-y-auto">
-            <nav className="container mx-auto px-4 py-8 max-w-7xl">
-              <div className="flex flex-col gap-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      "px-4 py-3 text-base font-medium transition-all duration-200 rounded-lg",
-                      pathname === link.href
-                        ? "bg-primary text-primary-foreground"
-                        : "text-foreground hover:bg-muted"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <Link
-                  href="/register"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-4 px-4 py-3 text-base font-medium bg-primary text-primary-foreground rounded-lg text-center"
-                >
-                  Inschrijven
-                </Link>
-              </div>
-            </nav>
-          </div>
-        </>
-      )}
     </header>
+    
+    {isMobileMenuOpen && (
+      <div className="fixed inset-0 bg-primary z-[55] xl:hidden overflow-y-auto">
+        <div className="min-h-screen flex flex-col items-center justify-center px-8 py-24">
+          <nav className="w-full">
+            <div className="flex flex-col gap-6 items-center text-center">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "font-serif text-3xl font-bold inline-block",
+                    pathname === link.href ? "text-black" : "text-black/50"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/inschrijven"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={cn(
+                  "mt-8 font-serif text-3xl font-bold inline-block",
+                  pathname === '/inschrijven' ? "text-black" : "text-black/50"
+                )}
+              >
+                Inschrijven
+              </Link>
+            </div>
+          </nav>
+        </div>
+      </div>
+    )}
+    </>
   )
 }

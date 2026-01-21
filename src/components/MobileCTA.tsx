@@ -18,7 +18,7 @@ export function MobileCTA() {
           size="lg"
           className="flex-1 bg-primary hover:bg-accent text-primary-foreground font-semibold"
         >
-          <Link href="/register" className="flex items-center justify-center gap-2">
+          <Link href="/inschrijven" className="flex items-center justify-center gap-2">
             🥋 Gratis Proefles
           </Link>
         </Button>

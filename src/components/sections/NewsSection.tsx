@@ -94,7 +94,7 @@ export function NewsSection() {
   };
 
   return (
-    <section className="py-24 bg-muted/30 relative">
+    <section className="py-16 sm:py-20 lg:py-24 bg-muted/30 relative">
       <div ref={ref} className="container mx-auto px-4">
         {/* Search Bar */}
         <div className={cn(
@@ -176,7 +176,7 @@ export function NewsSection() {
                     </div>
                     
                     <Link href={`/news/${item.slug}`}>
-                      <h3 className="font-serif text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                         {item.title}
                       </h3>
                     </Link>
@@ -199,7 +199,7 @@ export function NewsSection() {
           ) : (
             <div className="col-span-full text-center py-16">
               <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+              <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-2">
                 {'Geen artikelen gevonden'}
               </h3>
               <p className="text-muted-foreground">
@@ -218,7 +218,7 @@ export function NewsSection() {
             {'Blijf op de hoogte van al onze activiteiten'}
           </p>
           <Link
-            href="/register"
+            href="/inschrijven"
             className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
           >
             {'Schrijf je in voor onze nieuwsbrief'} →

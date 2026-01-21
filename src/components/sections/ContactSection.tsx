@@ -3,6 +3,7 @@
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { FadeInView } from '@/components/animations/FadeInView';
 
 export function ContactSection() {
 
@@ -28,31 +29,31 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-32 bg-background">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-16">
+        <FadeInView className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 Contact
               </span>
             </div>
-            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               Bezoek<br />
               <span className="text-primary">ons</span>
             </h2>
             <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/90 text-lg leading-[1.8]">
+              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
                 We trainen op twee locaties in Den Haag. Kom langs voor een proefles of neem contact met ons op voor meer informatie.
               </p>
             </div>
           </div>
-        </div>
+        </FadeInView>
 
         {/* Locations Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+        <FadeInView delay={0.2} className="grid lg:grid-cols-2 gap-8 mb-20">
           {locations.map((location, index) => (
             <div
               key={index}
@@ -73,10 +74,10 @@ export function ContactSection() {
               </div>
 
               {/* Location Details */}
-              <div className="p-6 space-y-6">
+              <div className="p-4 sm:p-6 space-y-6">
                 <div>
-                  <h3 className="font-serif text-2xl font-bold text-foreground mb-1">{location.label}</h3>
-                  <p className="text-foreground/60 text-sm">{location.name}</p>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-1">{location.label}</h3>
+                  <p className="text-foreground/60 text-xs sm:text-sm">{location.name}</p>
                 </div>
                 
                 <div className="space-y-4">
@@ -132,28 +133,28 @@ export function ContactSection() {
               </div>
             </div>
           ))}
-        </div>
+        </FadeInView>
 
         {/* CTA */}
-        <div className="text-center">
+        <FadeInView delay={0.3} className="text-center">
           <div className="max-w-2xl mx-auto space-y-6">
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
+            <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
               Klaar om te beginnen?
             </h3>
-            <p className="text-foreground/70 text-base">
+            <p className="text-foreground/70 text-sm sm:text-base">
               Claim je gratis proefles vandaag.
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-foreground hover:bg-foreground/90 text-background px-10 py-6 text-base font-semibold rounded-lg"
+              className="bg-foreground hover:bg-foreground/90 text-background px-8 sm:px-10 py-5 sm:py-6 text-sm sm:text-base font-semibold rounded-lg"
             >
-              <Link href="/register">
+              <Link href="/inschrijven">
                 Inschrijven
               </Link>
             </Button>
           </div>
-        </div>
+        </FadeInView>
       </div>
     </section>
   );

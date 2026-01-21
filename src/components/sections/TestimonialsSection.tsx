@@ -1,6 +1,7 @@
 'use client'
 
 import { Star } from 'lucide-react';
+import { FadeInView } from '@/components/animations/FadeInView';
 
 export function TestimonialsSection() {
 
@@ -45,31 +46,31 @@ export function TestimonialsSection() {
   ];
 
   return (
-    <section id="testimonials" className="py-32 bg-background">
+    <section id="testimonials" className="py-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-16">
+        <FadeInView className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 Reviews
               </span>
             </div>
-            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               Wat onze<br />
               <span className="text-primary">leerlingen zeggen</span>
             </h2>
             <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/90 text-lg leading-[1.8]">
+              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
                 Ontdek de ervaringen van onze leerlingen en hun families. Van beginnende kinderen tot gevorderde volwassenen - iedereen heeft zijn eigen unieke reis bij Black Dragon.
               </p>
             </div>
           </div>
-        </div>
+        </FadeInView>
 
         {/* Testimonials Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <FadeInView delay={0.2} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -94,7 +95,7 @@ export function TestimonialsSection() {
               </div>
             </div>
           ))}
-        </div>
+        </FadeInView>
       </div>
     </section>
   );

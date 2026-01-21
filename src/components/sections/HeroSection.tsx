@@ -33,12 +33,12 @@ export function HeroSection() {
           {/* Main Heading */}
           <div className="text-center mb-6">
             <p
-              className="text-base sm:text-lg text-white/60 font-light tracking-widest mb-4 uppercase"
+              className="text-xs sm:text-sm md:text-base text-white/60 font-light tracking-widest mb-4 uppercase"
             >
               태권도 블랙 드래곤
             </p>
             <h1
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-6"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-none mb-6"
             >
               {'Taekwondo'.split('').map((letter, i) => (
                 <span key={i} className="letter inline-block">{letter}</span>
@@ -53,7 +53,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p
-            className="font-serif text-center text-base sm:text-lg md:text-xl text-white/70 font-light max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="font-serif text-center text-sm sm:text-base md:text-lg lg:text-xl text-white/70 font-light max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             Ontwikkel kracht, discipline en zelfvertrouwen
           </p>
@@ -64,9 +64,9 @@ export function HeroSection() {
           >
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-base font-semibold rounded-lg transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-5 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300"
             >
-              <Link href="/register">
+              <Link href="/inschrijven">
                 Start vandaag
               </Link>
             </Button>

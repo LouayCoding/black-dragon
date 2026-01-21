@@ -6,10 +6,13 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
-import { Phone, Mail, MapPin, CheckCircle2 } from 'lucide-react'
+import { Phone, Mail, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { cn } from '@/lib/utils'
 
-export default function RegisterPage() {
+export function RegisterSection() {
+  const { ref, isVisible } = useScrollReveal()
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -19,28 +22,11 @@ export default function RegisterPage() {
     email: '',
     phone: '',
     birthDate: '',
-    program: '',
-    location: '',
-    experience: '',
     message: '',
     parentName: '',
     parentEmail: '',
     parentPhone: '',
   })
-
-  const programs = [
-    'Kleine Tijgers (4-6 jaar)',
-    'Jeugd (7-12 jaar)',
-    'Tieners (13-17 jaar)',
-    'Volwassenen (18+ jaar)',
-    'Vrouwen Groep',
-    'Privélessen',
-  ]
-
-  const locations = [
-    'Draaistraat 16 - De Ontmoetingsschool',
-    'Withuysstraat 2 - Gert van Wijkschool',
-  ]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -52,7 +38,7 @@ export default function RegisterPage() {
     setIsSubmitting(true)
 
     // Validatie
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.program || !formData.location) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
       toast({
         title: 'Velden ontbreken',
         description: 'Vul alle verplichte velden in.',
@@ -97,35 +83,35 @@ export default function RegisterPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-background py-20">
-        <div className="container mx-auto px-4 max-w-2xl">
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center space-y-8">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/10">
               <CheckCircle2 className="w-10 h-10 text-green-500" />
             </div>
             
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
               Bedankt voor je inschrijving!
             </h1>
             
-            <p className="text-foreground/70 text-lg leading-relaxed">
+            <p className="text-foreground/70 text-sm sm:text-base lg:text-lg leading-relaxed">
               We hebben je aanmelding ontvangen en zullen binnen <strong>24 uur</strong> contact met je opnemen 
               om je gratis proefles in te plannen.
             </p>
 
-            <div className="bg-muted/50 rounded-lg p-8 space-y-4">
+            <div className="bg-muted/30 rounded-lg p-8 space-y-4">
               <h2 className="font-semibold text-lg">Wat gebeurt er nu?</h2>
               <ul className="text-left space-y-3 text-foreground/70">
                 <li className="flex gap-3">
-                  <span className="text-primary">1.</span>
+                  <span className="text-primary font-semibold">1.</span>
                   <span>We bellen je binnen 24 uur om kennis te maken</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-primary">2.</span>
+                  <span className="text-primary font-semibold">2.</span>
                   <span>We plannen samen een gratis proefles in</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-primary">3.</span>
+                  <span className="text-primary font-semibold">3.</span>
                   <span>Je ontvangt een bevestiging per e-mail</span>
                 </li>
               </ul>
@@ -160,32 +146,42 @@ export default function RegisterPage() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     )
   }
 
   return (
-    <div className="min-h-screen bg-background py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <section className="section-padding bg-muted/30">
+      <div ref={ref} className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-            Inschrijven
-          </span>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mt-4 mb-6">
-            Start je <span className="text-primary">Taekwondo</span> reis
-          </h1>
-          <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-            Vul het formulier in en ontvang een <strong>gratis proefles</strong>. 
-            We nemen binnen 24 uur contact met je op.
-          </p>
+        <div className="mb-16">
+          <div className="max-w-3xl space-y-8">
+            <div className="inline-block">
+              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+                Inschrijven
+              </span>
+            </div>
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+              Start je<br />
+              <span className="text-primary">Taekwondo</span> reis
+            </h1>
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
+                Vul het formulier in en ontvang een <strong>gratis proefles</strong>. 
+                We nemen binnen 24 uur contact met je op.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form onSubmit={handleSubmit} className={cn(
+          "space-y-8 transition-all duration-700",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           {/* Persoonlijke Gegevens */}
-          <div className="bg-muted/30 rounded-lg p-8 space-y-6">
-            <h2 className="font-serif text-2xl font-bold text-foreground">
+          <div className="bg-card rounded-lg p-8 space-y-6">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">
               Persoonlijke Gegevens
             </h2>
             
@@ -255,72 +251,10 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* Programma Keuze */}
-          <div className="bg-muted/30 rounded-lg p-8 space-y-6">
-            <h2 className="font-serif text-2xl font-bold text-foreground">
-              Programma & Locatie
-            </h2>
-            
-            <div className="space-y-2">
-              <Label htmlFor="program">Welk programma? *</Label>
-              <select
-                id="program"
-                name="program"
-                value={formData.program}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md border border-input bg-background text-foreground"
-                required
-              >
-                <option value="">Selecteer een programma</option>
-                {programs.map(program => (
-                  <option key={program} value={program}>
-                    {program}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="location">Gewenste locatie *</Label>
-              <select
-                id="location"
-                name="location"
-                value={formData.location}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md border border-input bg-background text-foreground"
-                required
-              >
-                <option value="">Selecteer een locatie</option>
-                {locations.map(location => (
-                  <option key={location} value={location}>
-                    {location}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="experience">Eerdere ervaring met vechtsporten?</Label>
-              <select
-                id="experience"
-                name="experience"
-                value={formData.experience}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md border border-input bg-background text-foreground"
-              >
-                <option value="">Selecteer...</option>
-                <option value="none">Nee, dit is mijn eerste keer</option>
-                <option value="beginner">Ja, een beetje ervaring</option>
-                <option value="intermediate">Ja, redelijk ervaren</option>
-                <option value="advanced">Ja, gevorderd niveau</option>
-              </select>
-            </div>
-          </div>
-
           {/* Ouder/Voogd Info (voor kinderen) */}
-          <div className="bg-muted/30 rounded-lg p-8 space-y-6">
+          <div className="bg-card rounded-lg p-8 space-y-6">
             <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-2">
                 Ouder/Voogd Gegevens
               </h2>
               <p className="text-sm text-foreground/60">
@@ -367,8 +301,8 @@ export default function RegisterPage() {
           </div>
 
           {/* Aanvullende Informatie */}
-          <div className="bg-muted/30 rounded-lg p-8 space-y-6">
-            <h2 className="font-serif text-2xl font-bold text-foreground">
+          <div className="bg-card rounded-lg p-8 space-y-6">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">
               Aanvullende Informatie
             </h2>
             
@@ -391,7 +325,7 @@ export default function RegisterPage() {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full sm:w-auto bg-primary hover:bg-primary/90 px-12"
+              className="w-full sm:w-auto bg-foreground hover:bg-foreground/90 text-background px-12 font-semibold"
             >
               {isSubmitting ? 'Verzenden...' : 'Gratis Proefles Aanvragen'}
             </Button>
@@ -403,9 +337,12 @@ export default function RegisterPage() {
         </form>
 
         {/* Contact Info */}
-        <div className="mt-16 pt-16 border-t border-border">
+        <div className={cn(
+          "mt-16 pt-16 border-t border-border transition-all duration-700 delay-200",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <div className="text-center space-y-6">
-            <h3 className="font-serif text-2xl font-bold text-foreground">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">
               Of neem direct contact op
             </h3>
             
@@ -441,6 +378,6 @@ export default function RegisterPage() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

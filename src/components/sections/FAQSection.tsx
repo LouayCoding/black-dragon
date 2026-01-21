@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { FadeInView } from '@/components/animations/FadeInView';
 
 export function FAQSection() {
 
@@ -47,48 +48,48 @@ export function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="py-32 bg-muted/30">
+    <section id="faq" className="py-16 sm:py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-16">
+        <FadeInView className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 FAQ
               </span>
             </div>
-            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               Heb je<br />
               <span className="text-primary">vragen?</span>
             </h2>
             <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/90 text-lg leading-[1.8]">
+              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
                 Hier vind je antwoorden op de meest gestelde vragen over onze lessen, lidmaatschap en trainingen. Staat je vraag er niet bij? Neem gerust contact met ons op.
               </p>
             </div>
           </div>
-        </div>
+        </FadeInView>
 
         {/* FAQ Accordion */}
-        <div className="max-w-7xl">
+        <FadeInView delay={0.2} className="max-w-7xl">
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-lg px-6 py-1 hover:shadow-md transition-all border-none"
+                className="bg-card rounded-lg px-4 sm:px-6 py-1 hover:shadow-md transition-all border-none"
               >
-                <AccordionTrigger className="text-left font-semibold text-base text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-semibold text-sm sm:text-base text-foreground hover:no-underline py-4 sm:py-5">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-foreground/70 pb-5 leading-relaxed text-sm">
+                <AccordionContent className="text-foreground/70 pb-4 sm:pb-5 leading-relaxed text-xs sm:text-sm">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </FadeInView>
       </div>
     </section>
   );

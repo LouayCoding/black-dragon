@@ -14,12 +14,12 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({ classNa
           "flex min-h-[120px] w-full rounded-md border bg-background px-4 py-2.5 text-base ring-offset-background",
           "placeholder:text-muted-foreground/70",
           "transition-colors duration-200",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0",
           "disabled:cursor-not-allowed disabled:opacity-50",
           "resize-y",
           error
             ? "border-destructive focus-visible:ring-destructive"
-            : "border-input focus-visible:ring-ring",
+            : "border-input focus-visible:ring-primary focus-visible:border-primary",
           className,
         )}
         ref={ref}

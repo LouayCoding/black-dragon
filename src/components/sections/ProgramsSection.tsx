@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { FadeInView } from '@/components/animations/FadeInView';
 
 export function ProgramsSection() {
   const [activeCard, setActiveCard] = useState<number | null>(null);
@@ -54,38 +55,39 @@ export function ProgramsSection() {
   ];
 
   return (
-    <section id="programs" className="py-32 bg-muted/30">
+    <section id="programs" className="py-16 sm:py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-24">
+        <FadeInView className="mb-12 sm:mb-16 lg:mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 {'Programmas'}
               </span>
             </div>
-            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               {'Voor ieder'}<br />
               <span className="text-primary">{'leeftijd & niveau'}</span>
             </h2>
             <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/90 text-lg leading-[1.8]">
+              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
                 Van 4 jaar tot volwassenen. Of je nu je eerste stap zet in Taekwondo of al jaren traint, bij Black Dragon vind je het programma dat bij jou past.
               </p>
-              <p className="text-foreground/90 text-lg leading-[1.8]">
+              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
                 Elk programma is speciaal ontworpen voor de juiste leeftijdsgroep en vaardigheidsniveau, met ervaren instructeurs die jou begeleiden naar jouw volgende zwarte band.
               </p>
             </div>
           </div>
-        </div>
+        </FadeInView>
 
-        {/* Programs Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-20">
+        {/* Programs Grid - Slider on mobile */}
+        <FadeInView delay={0.2} className="mb-12 sm:mb-16 lg:mb-20">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 lg:grid lg:grid-cols-4 lg:gap-6 pb-4 -mx-4 px-4 lg:mx-0 lg:px-0 scrollbar-hide">
           {programs.map((program, index) => (
             <div
               key={index}
-              className="relative h-[450px] rounded-xl overflow-hidden group"
+              className="relative h-[450px] rounded-xl overflow-hidden group flex-shrink-0 w-[85vw] sm:w-auto snap-center lg:snap-align-none"
             >
               {/* Full Background Image */}
               <img
@@ -120,7 +122,7 @@ export function ProgramsSection() {
                 {/* Bottom Content */}
                 <div className="space-y-3">
                   {/* Title - Always visible */}
-                  <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white leading-tight">
+                  <h3 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight">
                     {program.title}
                   </h3>
                   
@@ -146,7 +148,7 @@ export function ProgramsSection() {
 
                     {/* CTA Button */}
                     <Link
-                      href="/register"
+                      href="/inschrijven"
                       className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-black font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
                     >
                       Inschrijven
@@ -167,18 +169,19 @@ export function ProgramsSection() {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+        </FadeInView>
 
         {/* Bottom CTA */}
-        <div className="text-center">
+        <FadeInView delay={0.3} className="text-center">
           <Button
             asChild
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-lg"
           >
-            <Link href="/register">{'Inschrijven'}</Link>
+            <Link href="/inschrijven">{'Inschrijven'}</Link>
           </Button>
-        </div>
+        </FadeInView>
       </div>
     </section>
   );
