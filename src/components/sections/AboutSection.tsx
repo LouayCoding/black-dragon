@@ -42,13 +42,13 @@ export function AboutSection() {
 
         {/* Core Values */}
         <div>
-          <div className="mb-16">
-            <h3 className="font-serif text-4xl sm:text-5xl font-bold text-foreground">
+          <div className="mb-12">
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
               {'Kernwaarden'}
             </h3>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { korean: '예의', english: 'Discipline', desc: 'Respect in alle interacties' },
               { korean: '염치', english: 'Integriteit', desc: 'Eerlijkheid en sterke moraal' },
@@ -57,13 +57,13 @@ export function AboutSection() {
             ].map((value, index) => (
               <div
                 key={index}
-                className="value-card bg-background p-4 sm:p-8 lg:p-10 hover:bg-muted/30 transition-colors duration-300"
+                className="bg-card rounded-lg p-6 hover:shadow-md transition-all duration-300"
               >
-                <div className="text-4xl sm:text-6xl lg:text-7xl mb-4 sm:mb-6 text-primary font-light">{value.korean}</div>
-                <h4 className="font-bold text-lg text-foreground mb-3">
+                <div className="text-5xl mb-4 text-foreground/20 font-light">{value.korean}</div>
+                <h4 className="font-semibold text-base text-foreground mb-2">
                   {value.english}
                 </h4>
-                <p className="text-foreground/80 text-sm leading-[1.7]">
+                <p className="text-foreground/60 text-sm leading-relaxed">
                   {value.desc}
                 </p>
               </div>
