@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react';
-import { Award, Info } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 interface Instructor {
@@ -85,82 +84,77 @@ export function InstructorsSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-12">
-          <div className="max-w-3xl space-y-4">
+        <div className="mb-16">
+          <div className="max-w-3xl space-y-8">
             <div className="inline-block">
-              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
+              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 Instructeurs
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               Ons<br />
               <span className="text-primary">Team</span>
             </h2>
-            <p className="text-foreground text-lg sm:text-xl leading-[1.5] font-normal max-w-2xl">
-              Ervaring. Expertise. Passie.
-            </p>
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-foreground/90 text-lg leading-[1.8]">
+                Ons team bestaat uit ervaren en gediplomeerde trainers die met passie en toewijding elke leerling begeleiden. Van beginnende kinderen tot gevorderde volwassenen - iedereen krijgt persoonlijke aandacht en professionele begeleiding.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Hoofdtrainer - Groot */}
-        <div className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            {/* Photo */}
-            <div className="max-w-md mx-auto lg:mx-0">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+        {/* All Instructors - Uniform Grid */}
+        <div className="space-y-6">
+          {/* Hoofdtrainer */}
+          <div 
+            className="bg-card rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 cursor-pointer"
+            onClick={() => setSelectedInstructor({
+              name: headInstructor.name,
+              role: headInstructor.role,
+              image: headInstructor.image,
+              shortBio: headInstructor.shortBio,
+              fullBio: headInstructor.fullBio,
+              experience: headInstructor.experience,
+              achievements: headInstructor.achievements,
+            })}
+          >
+            <div className="grid md:grid-cols-[300px_1fr] gap-0">
+              {/* Photo */}
+              <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden">
                 <img
                   src={headInstructor.image}
                   alt={headInstructor.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                
-                {/* Name Overlay */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-2">{headInstructor.name}</h3>
-                  <p className="text-primary text-base font-semibold">{headInstructor.role}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="space-y-6">
-              {/* Experience */}
-              <div className="flex items-center gap-4">
-                <Award className="w-7 h-7 text-primary flex-shrink-0" />
-                <span className="text-xl font-bold text-foreground">{headInstructor.experience} ervaring</span>
               </div>
 
-              {/* Bio */}
-              <p className="text-foreground/80 text-lg leading-[1.8]">
-                {headInstructor.bio}
-              </p>
-
-              {/* Achievements */}
-              <div>
-                <h4 className="text-base font-bold text-foreground mb-4">
-                  Specialisaties
-                </h4>
-                <div className="space-y-2">
-                  {headInstructor.achievements.map((achievement, i) => (
-                    <p key={i} className="text-foreground/80 text-base leading-[1.7]">
-                      • {achievement}
-                    </p>
-                  ))}
+              {/* Content */}
+              <div className="p-6 md:p-8 space-y-4">
+                <div>
+                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">{headInstructor.name}</h3>
+                  <p className="text-foreground/60 text-sm font-medium">{headInstructor.role}</p>
+                  <p className="text-foreground/50 text-xs mt-1">{headInstructor.experience}</p>
                 </div>
+
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  {headInstructor.shortBio}
+                </p>
+
+                <p className="text-foreground/50 text-xs">
+                  Klik voor meer informatie
+                </p>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Team - Trainer en Assistent Trainers samen */}
-        <div>
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
-            Ons Team
-          </h3>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
+          {/* Team Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {teamInstructors.map((instructor, index) => (
-              <div key={index} className="bg-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300">
+              <div 
+                key={index} 
+                className="bg-card rounded-lg overflow-hidden group hover:shadow-md transition-all duration-300 cursor-pointer"
+                onClick={() => setSelectedInstructor(instructor)}
+              >
                 {/* Photo */}
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
@@ -168,29 +162,17 @@ export function InstructorsSection() {
                     alt={instructor.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                  {/* Info Button */}
-                  <button
-                    onClick={() => setSelectedInstructor(instructor)}
-                    className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-sm p-2 rounded-full transition-all duration-300 group/btn"
-                    aria-label={`Meer info over ${instructor.name}`}
-                  >
-                    <Info className="w-5 h-5 text-white group-hover/btn:scale-110 transition-transform" />
-                  </button>
-
-                  {/* Name Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="font-serif text-xl font-bold text-white mb-1">{instructor.name}</h4>
-                    <p className="text-primary text-sm font-semibold">{instructor.role}</p>
-                  </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-4">
-                  <p className="text-foreground/70 text-sm leading-relaxed">
-                    {instructor.shortBio}
-                  </p>
+                <div className="p-4 space-y-2">
+                  <div>
+                    <h4 className="font-serif text-base font-bold text-foreground">{instructor.name}</h4>
+                    <p className="text-foreground/60 text-xs font-medium">{instructor.role}</p>
+                    {instructor.experience && (
+                      <p className="text-foreground/50 text-xs mt-0.5">{instructor.experience}</p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -200,48 +182,38 @@ export function InstructorsSection() {
 
       {/* Info Modal */}
       <Dialog open={!!selectedInstructor} onOpenChange={() => setSelectedInstructor(null)}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-lg">
           <DialogHeader>
             <DialogTitle className="font-serif text-2xl">{selectedInstructor?.name}</DialogTitle>
           </DialogHeader>
           
           {selectedInstructor && (
-            <div className="space-y-6">
-              {/* Photo and Role */}
-              <div className="flex items-start gap-4">
-                <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-                  <img
-                    src={selectedInstructor.image}
-                    alt={selectedInstructor.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-primary font-semibold">{selectedInstructor.role}</p>
-                  {selectedInstructor.experience && (
-                    <p className="text-foreground/60 text-sm mt-1">{selectedInstructor.experience}</p>
-                  )}
-                </div>
+            <div className="space-y-5">
+              {/* Role & Experience */}
+              <div>
+                <p className="text-foreground/80 font-medium">{selectedInstructor.role}</p>
+                {selectedInstructor.experience && (
+                  <p className="text-foreground/50 text-sm mt-1">{selectedInstructor.experience}</p>
+                )}
               </div>
 
               {/* Bio */}
               <div>
-                <h4 className="font-semibold text-foreground mb-2">Over</h4>
-                <p className="text-foreground/80 leading-relaxed">{selectedInstructor.fullBio}</p>
+                <p className="text-foreground/70 text-sm leading-relaxed">{selectedInstructor.fullBio}</p>
               </div>
 
               {/* Achievements */}
               {selectedInstructor.achievements && selectedInstructor.achievements.length > 0 && (
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">Prestaties</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <h4 className="font-semibold text-foreground text-sm mb-2 uppercase tracking-wide">Prestaties</h4>
+                  <div className="space-y-1.5">
                     {selectedInstructor.achievements.map((achievement, i) => (
-                      <span
+                      <p
                         key={i}
-                        className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                        className="text-foreground/60 text-sm pl-3 border-l-2 border-border"
                       >
                         {achievement}
-                      </span>
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -250,15 +222,15 @@ export function InstructorsSection() {
               {/* Specialties */}
               {selectedInstructor.specialties && selectedInstructor.specialties.length > 0 && (
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">Specialisaties</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <h4 className="font-semibold text-foreground text-sm mb-2 uppercase tracking-wide">Specialisaties</h4>
+                  <div className="space-y-1.5">
                     {selectedInstructor.specialties.map((specialty, i) => (
-                      <span
+                      <p
                         key={i}
-                        className="bg-muted text-foreground/80 px-3 py-1 rounded-full text-sm font-medium"
+                        className="text-foreground/60 text-sm pl-3 border-l-2 border-border"
                       >
                         {specialty}
-                      </span>
+                      </p>
                     ))}
                   </div>
                 </div>
