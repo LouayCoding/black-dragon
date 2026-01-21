@@ -82,20 +82,37 @@ export function PricingSection() {
   return (
     <section className="section-padding bg-muted/30 relative">
       <div ref={ref} className="container mx-auto px-4 max-w-7xl">
-        {/* Membership Benefits */}
-        <div className={cn(
-          "mb-16 transition-all duration-700",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-foreground text-center mb-8">
-            Waarom lid worden?
-          </h3>
-          <MembershipBenefits variant="default" />
+        {/* Header with Breadcrumb */}
+        <div className="mb-16">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm text-foreground/60 mb-6">
+            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-foreground font-medium">Tarieven</span>
+          </div>
+
+          {/* Title */}
+          <div className="max-w-3xl space-y-8">
+            <div className="inline-block">
+              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+                Tarieven
+              </span>
+            </div>
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+              Kies jouw<br />
+              <span className="text-primary">lidmaatschap</span>
+            </h1>
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-foreground/90 text-lg leading-[1.8]">
+                Ontdek welk trainingsplan het beste bij jou past. Van 1x per week tot intensieve training - wij hebben voor ieder niveau en elke ambitie een passend lidmaatschap.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Plans Grid */}
         <div className={cn(
-          "grid md:grid-cols-3 gap-6 mb-16 transition-all duration-700",
+          "grid md:grid-cols-3 gap-6 mb-20 transition-all duration-700",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           {plans.map((plan, index) => (
@@ -165,6 +182,17 @@ export function PricingSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Membership Benefits */}
+        <div className={cn(
+          "mb-16 transition-all duration-700",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
+          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-8">
+            Waarom lid worden?
+          </h3>
+          <MembershipBenefits variant="default" />
         </div>
 
         {/* Extra Options */}
