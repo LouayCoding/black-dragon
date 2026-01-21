@@ -51,38 +51,38 @@ export function FAQSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
-              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {'Veelgestelde vragen'}
+              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+                FAQ
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {'Heb je'}<br />
-              <span className="text-primary">{'vragen?'}</span>
+              Heb je<br />
+              <span className="text-primary">vragen?</span>
             </h2>
-            <div className="space-y-8 max-w-2xl">
-              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                Antwoorden op je vragen.
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-foreground/90 text-lg leading-[1.8]">
+                Hier vind je antwoorden op de meest gestelde vragen over onze lessen, lidmaatschap en trainingen. Staat je vraag er niet bij? Neem gerust contact met ons op.
               </p>
             </div>
           </div>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-6">
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-background border-l-4 border-primary px-8 py-2 hover:bg-muted/30 transition-colors"
+                className="bg-card rounded-lg px-6 py-1 hover:shadow-md transition-all border-none"
               >
-                <AccordionTrigger className="text-left font-bold text-lg text-foreground hover:text-primary py-6">
+                <AccordionTrigger className="text-left font-semibold text-base text-foreground hover:no-underline py-5">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-foreground/80 pb-6 leading-[1.8] text-base">
+                <AccordionContent className="text-foreground/70 pb-5 leading-relaxed text-sm">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
