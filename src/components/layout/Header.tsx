@@ -85,23 +85,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button 
-              asChild 
-              variant="outline" 
-              size="sm" 
-              className={cn(
-                "hidden md:flex gap-2",
-                isHomePage && !isScrolled 
-                  ? "border-white/20 text-white hover:bg-white/10" 
-                  : "border-border"
-              )}
-            >
-              <a href="tel:+31615047993">
-                <Phone className="w-4 h-4" />
-                <span className="hidden lg:inline">06 15047993</span>
-              </a>
-            </Button>
-            
             <Button asChild variant="default" size="sm" className="hidden lg:flex bg-primary hover:bg-primary/90">
               <Link href="/register">Inschrijven</Link>
             </Button>
