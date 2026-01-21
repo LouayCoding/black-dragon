@@ -102,25 +102,22 @@ export function PricingSection() {
             <div
               key={index}
               className={cn(
-                "relative bg-card rounded-lg border-2 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col h-full",
+                "relative rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col h-full group",
                 plan.highlighted
-                  ? "border-primary shadow-lg shadow-primary/10 scale-[1.02]"
-                  : "border-border hover:border-primary/50"
+                  ? "shadow-lg"
+                  : ""
               )}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
             >
-              {/* Header Image */}
-              <div className="relative h-40 w-full overflow-hidden">
+              {/* Background Image */}
+              <div className="absolute inset-0">
                 <Image
                   src={plan.image}
                   alt={plan.name}
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="font-serif text-2xl font-bold text-white">{plan.name}</h3>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60" />
               </div>
 
               {plan.popular && (
@@ -132,22 +129,23 @@ export function PricingSection() {
                 </div>
               )}
 
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="relative z-10 p-6 flex flex-col flex-grow">
                 <div className="text-center mb-6">
+                  <h3 className="font-serif text-2xl font-bold text-white mb-3">{plan.name}</h3>
                   <div className="flex items-baseline justify-center gap-1 mb-2">
-                    <span className="text-3xl font-bold text-foreground">€{plan.price}</span>
-                    <span className="text-foreground/50 text-sm">{plan.period}</span>
+                    <span className="text-3xl font-bold text-white">€{plan.price}</span>
+                    <span className="text-white/60 text-sm">{plan.period}</span>
                   </div>
-                  <p className="text-foreground/60 text-sm">{plan.description}</p>
+                  <p className="text-white/70 text-sm">{plan.description}</p>
                 </div>
 
                 <ul className="space-y-2.5 mb-6 flex-grow">
                   {plan.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-2.5">
-                      <div className="w-4 h-4 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-foreground/60" />
+                      <div className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-white" />
                       </div>
-                      <span className="text-foreground/70 text-sm">{feature}</span>
+                      <span className="text-white/90 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
