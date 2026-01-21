@@ -92,8 +92,8 @@ export function InstructorsSection() {
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              Gedreven trainers met<br />
-              <span className="text-primary">jarenlange ervaring</span>
+              Onze<br />
+              <span className="text-primary">Trainers</span>
             </h2>
             <div className="space-y-6 max-w-2xl">
               <p className="text-foreground/90 text-lg leading-[1.8]">
