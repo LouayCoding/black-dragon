@@ -38,7 +38,7 @@ export function HeroSection() {
               태권도 블랙 드래곤
             </p>
             <h1
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-none mb-6 lg:mb-8"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-6"
             >
               {'Taekwondo'.split('').map((letter, i) => (
                 <span key={i} className="letter inline-block">{letter}</span>
