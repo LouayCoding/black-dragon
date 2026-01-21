@@ -92,62 +92,64 @@ export function InstructorsSection() {
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              Ons<br />
-              <span className="text-primary">Team</span>
+              Gedreven trainers met<br />
+              <span className="text-primary">jarenlange ervaring</span>
             </h2>
             <div className="space-y-6 max-w-2xl">
               <p className="text-foreground/90 text-lg leading-[1.8]">
-                Ons team bestaat uit ervaren en gediplomeerde trainers die met passie en toewijding elke leerling begeleiden. Van beginnende kinderen tot gevorderde volwassenen - iedereen krijgt persoonlijke aandacht en professionele begeleiding.
+                Ons team bestaat uit gediplomeerde trainers met jarenlange ervaring. Van beginnende kinderen tot gevorderde volwassenen - iedereen krijgt persoonlijke aandacht en professionele begeleiding op weg naar hun doelen.
               </p>
             </div>
           </div>
         </div>
 
-        {/* All Instructors - Uniform Grid */}
-        <div className="space-y-6">
-          {/* Hoofdtrainer */}
-          <div 
-            className="bg-card rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 cursor-pointer"
-            onClick={() => setSelectedInstructor({
-              name: headInstructor.name,
-              role: headInstructor.role,
-              image: headInstructor.image,
-              shortBio: headInstructor.shortBio,
-              fullBio: headInstructor.fullBio,
-              experience: headInstructor.experience,
-              achievements: headInstructor.achievements,
-            })}
-          >
-            <div className="grid md:grid-cols-[300px_1fr] gap-0">
-              {/* Photo */}
-              <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden">
-                <img
-                  src={headInstructor.image}
-                  alt={headInstructor.name}
-                  className="w-full h-full object-cover"
-                />
+        {/* Hoofdtrainer - Large Section */}
+        <div className="mb-20">
+          <div className="grid lg:grid-cols-[450px_1fr] gap-8 lg:gap-12 items-start">
+            {/* Photo */}
+            <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+              <img 
+                src={headInstructor.image}
+                alt={headInstructor.name}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3">
+                  {headInstructor.name}
+                </h3>
+                <p className="text-foreground/70 text-base font-medium">{headInstructor.role}</p>
+                <p className="text-foreground/50 text-sm mt-1">{headInstructor.experience}</p>
               </div>
 
-              {/* Content */}
-              <div className="p-6 md:p-8 space-y-4">
-                <div>
-                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-1">{headInstructor.name}</h3>
-                  <p className="text-foreground/60 text-sm font-medium">{headInstructor.role}</p>
-                  <p className="text-foreground/50 text-xs mt-1">{headInstructor.experience}</p>
+              <p className="text-foreground/80 text-base leading-relaxed">
+                {headInstructor.bio}
+              </p>
+
+              <div>
+                <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wide">
+                  Kwalificaties
+                </h4>
+                <div className="space-y-2.5">
+                  {headInstructor.achievements.map((achievement, i) => (
+                    <p key={i} className="text-foreground/70 text-sm leading-relaxed pl-4 border-l-2 border-border">
+                      {achievement}
+                    </p>
+                  ))}
                 </div>
-
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  {headInstructor.shortBio}
-                </p>
-
-                <p className="text-foreground/50 text-xs">
-                  Klik voor meer informatie
-                </p>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Team Grid */}
+        {/* Team Grid */}
+        <div>
+          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-8">
+            Ons Team
+          </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {teamInstructors.map((instructor, index) => (
               <div 
