@@ -61,17 +61,20 @@ export function ProgramsSection() {
         <div className="mb-24">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
-              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
+              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
                 {'Programmas'}
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {'Jouw'}<br />
-              <span className="text-primary">{'Taekwondo Reis'}</span>
+              {'Voor ieder'}<br />
+              <span className="text-primary">{'leeftijd & niveau'}</span>
             </h2>
-            <div className="space-y-8 max-w-2xl">
-              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {'Vanaf 4 jaar en ouder. Van eerste stap tot zwarte band.'}
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-foreground/90 text-lg leading-[1.8]">
+                Van 4 jaar tot volwassenen. Of je nu je eerste stap zet in Taekwondo of al jaren traint, bij Black Dragon vind je het programma dat bij jou past.
+              </p>
+              <p className="text-foreground/90 text-lg leading-[1.8]">
+                Elk programma is speciaal ontworpen voor de juiste leeftijdsgroep en vaardigheidsniveau, met ervaren instructeurs die jou begeleiden naar jouw volgende zwarte band.
               </p>
             </div>
           </div>
