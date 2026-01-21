@@ -1,27 +1,27 @@
 'use client'
 
-import { Clock, MapPin } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 export function ScheduleSection() {
 
 
   const schedule = [
     { day: 'Maandag', classes: [
-      { time: '17:00-18:00', name: 'Taekwondo KIDS/JEUGD', location: 'Draaistraat 16 - De Ontmoetingschool', duration: '60 min' },
-      { time: '18:00-19:00', name: 'Taekwondo JEUGD/SENIOREN', location: 'Draaistraat 16 - De Ontmoetingschool', duration: '60 min' },
+      { time: '17:00-18:00', name: 'Taekwondo KIDS/JEUGD', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Taekwondo JEUGD/SENIOREN', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
     ]},
     { day: 'Dinsdag', classes: [
-      { time: '18:00-19:00', name: 'Taekwondo KIDS/JEUGD', location: 'Withuysstraat 2 - Gert van Wijkschool', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Taekwondo KIDS/JEUGD', location: 'Withuysstraat 2, Den Haag', duration: '60 min' },
     ]},
     { day: 'Woensdag', classes: [
-      { time: '17:00-18:00', name: 'Taekwondo KIDS/JEUGD', location: 'Draaistraat 16 - De Ontmoetingschool', duration: '60 min' },
-      { time: '18:00-19:00', name: 'Taekwondo JEUGD/SENIOREN', location: 'Draaistraat 16 - De Ontmoetingschool', duration: '60 min' },
+      { time: '17:00-18:00', name: 'Taekwondo KIDS/JEUGD', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Taekwondo JEUGD/SENIOREN', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
     ]},
     { day: 'Donderdag', classes: [
-      { time: '18:00-19:00', name: 'Taekwondo KIDS/JEUGD', location: 'Withuysstraat 2 - Gert van Wijkschool', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Taekwondo KIDS/JEUGD', location: 'Withuysstraat 2, Den Haag', duration: '60 min' },
     ]},
     { day: 'Vrijdag', classes: [
-      { time: '18:00-19:00', name: 'Ladies Only', location: 'Draaistraat 16 - De Ontmoetingschool', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Ladies Only', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
     ]},
   ];
 
@@ -84,10 +84,9 @@ export function ScheduleSection() {
                         <p className="font-semibold text-base text-foreground">
                           {cls.name}
                         </p>
-                        <div className="flex items-center gap-2 text-sm text-foreground/60">
-                          <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
-                          <span>{cls.location}</span>
-                        </div>
+                        <p className="text-sm text-foreground/60">
+                          {cls.location}
+                        </p>
                       </div>
 
                       {/* Duration Badge */}
