@@ -25,6 +25,7 @@ export function GallerySection() {
     
     // Bandexamens
     { id: 51, category: 'belt-exam', title: 'Groepsactiviteit', korean: '단체 활동', media: '/gallery/activiteit-groep.jpg', type: 'image' },
+    { id: 52, category: 'belt-exam', title: 'Bandexamen groep', korean: '승급 시험', media: '/gallery/bandexamen-groep.jpg', type: 'image' },
     
     // Echte afbeeldingen - Training
     { id: 2, category: 'training', title: 'Planken breken demonstratie', korean: '격파', media: '/gallery/board-breaking-demo.jpg', type: 'image' },
