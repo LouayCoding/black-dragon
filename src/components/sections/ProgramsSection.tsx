@@ -1,13 +1,11 @@
 'use client'
 
-import { Users, Zap, Target, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export function ProgramsSection() {
   const programs = [
     {
-      icon: Users,
       image: '/gallery/young-champion.jpg',
       title: 'Kleine Tijgers',
       age: '4-6 jaar',
@@ -19,7 +17,6 @@ export function ProgramsSection() {
       ],
     },
     {
-      icon: Zap,
       image: '/gallery/jeugd-training.jpg',
       title: 'Jeugd',
       age: '7-17 jaar',
@@ -31,8 +28,7 @@ export function ProgramsSection() {
       ],
     },
     {
-      icon: Target,
-      image: '/gallery/volwassenen-training.jpg',
+      image: '/gallery/volwassenen-sparring.jpg',
       title: 'Volwassenen',
       age: '18+ jaar',
       description: 'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',
@@ -43,7 +39,6 @@ export function ProgramsSection() {
       ],
     },
     {
-      icon: Heart,
       image: '/gallery/ladies-only-training.jpg',
       title: 'Ladies Only',
       age: '18+ jaar',
@@ -96,11 +91,6 @@ export function ProgramsSection() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                
-                {/* Icon Badge */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                  <program.icon className="w-5 h-5 text-primary-foreground" />
-                </div>
 
                 {/* Age Badge */}
                 <div className="absolute bottom-4 left-4">
