@@ -50,7 +50,7 @@ export function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled || !isHomePage
-          ? 'bg-background/95 backdrop-blur-md border-b border-border/50'
+          ? 'bg-primary backdrop-blur-md border-b border-primary'
           : 'bg-gradient-to-b from-black/60 to-transparent'
       )}
     >
@@ -72,8 +72,8 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg relative group",
                   pathname === link.href
-                    ? isHomePage && !isScrolled ? "text-white" : "text-primary"
-                    : isHomePage && !isScrolled ? "text-white/80 hover:text-white" : "text-foreground/70 hover:text-foreground"
+                    ? isHomePage && !isScrolled ? "text-white" : "text-black font-semibold"
+                    : isHomePage && !isScrolled ? "text-white/80 hover:text-white" : "text-black/70 hover:text-black"
                 )}
               >
                 {link.label}
@@ -85,15 +85,25 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button asChild variant="default" size="sm" className="hidden lg:flex bg-primary hover:bg-primary/90">
+            <Button 
+              asChild 
+              variant="default" 
+              size="sm" 
+              className={cn(
+                "hidden lg:flex",
+                isScrolled || !isHomePage
+                  ? "bg-black hover:bg-black/90 text-white"
+                  : "bg-primary hover:bg-primary/90 text-primary-foreground"
+              )}
+            >
               <Link href="/register">Inschrijven</Link>
             </Button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={cn(
-                "xl:hidden p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10",
-                isHomePage && !isScrolled ? "text-white" : "text-foreground"
+                "xl:hidden p-2.5 rounded-lg transition-all duration-200 hover:bg-black/10",
+                isHomePage && !isScrolled ? "text-white" : "text-black"
               )}
               aria-label="Toggle menu"
             >
