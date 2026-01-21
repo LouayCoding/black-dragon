@@ -127,8 +127,8 @@ export function GallerySection() {
               onClick={() => setActiveCategory(cat.id)}
               className={
                 activeCategory === cat.id
-                  ? "px-4 py-2 bg-foreground text-background text-sm font-semibold rounded-full transition-all duration-300"
-                  : "px-4 py-2 bg-muted text-foreground/60 text-sm font-medium rounded-full hover:bg-muted/80 hover:text-foreground transition-all duration-300"
+                  ? "px-4 py-2 bg-foreground text-background text-sm font-semibold rounded-lg transition-all duration-300"
+                  : "px-4 py-2 bg-muted text-foreground/60 text-sm font-medium rounded-lg hover:bg-muted/80 hover:text-foreground transition-all duration-300"
               }
             >
               {cat.label}

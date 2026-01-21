@@ -154,7 +154,7 @@ export function PricingSection() {
                   asChild
                   size="lg"
                   className={cn(
-                    "w-full mt-auto font-semibold rounded-full",
+                    "w-full mt-auto font-semibold rounded-lg",
                     plan.highlighted
                       ? "bg-primary hover:bg-primary/90 text-primary-foreground"
                       : "bg-foreground hover:bg-foreground/90 text-background"

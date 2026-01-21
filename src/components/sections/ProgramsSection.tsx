@@ -174,7 +174,7 @@ export function ProgramsSection() {
           <Button
             asChild
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-full"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-lg"
           >
             <Link href="/register">{'Inschrijven'}</Link>
           </Button>

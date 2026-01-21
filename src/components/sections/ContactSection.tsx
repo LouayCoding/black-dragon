@@ -146,7 +146,7 @@ export function ContactSection() {
             <Button
               asChild
               size="lg"
-              className="bg-foreground hover:bg-foreground/90 text-background px-10 py-6 text-base font-semibold rounded-full"
+              className="bg-foreground hover:bg-foreground/90 text-background px-10 py-6 text-base font-semibold rounded-lg"
             >
               <Link href="/register">
                 Inschrijven
