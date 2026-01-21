@@ -85,8 +85,7 @@ export function ProgramsSection() {
           {programs.map((program, index) => (
             <div
               key={index}
-              onClick={() => setActiveCard(activeCard === index ? null : index)}
-              className="relative h-[400px] lg:h-[450px] rounded-xl overflow-hidden cursor-pointer group"
+              className="relative h-[450px] rounded-xl overflow-hidden group"
             >
               {/* Full Background Image */}
               <img
@@ -95,76 +94,76 @@ export function ProgramsSection() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 transition-opacity duration-300" />
+              {/* Dark Overlay - Always visible on mobile, hover on desktop */}
+              <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-300 ${
+                activeCard === index 
+                  ? 'from-black via-black/95 to-black/80' 
+                  : 'from-black via-black/60 to-black/20 lg:group-hover:from-black lg:group-hover:via-black/95 lg:group-hover:to-black/80'
+              }`} />
 
-              {/* Always Visible: Title & Age */}
-              <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-between">
-                {/* Age Badge - Top */}
-                <div className="flex justify-end">
+              {/* Content Container */}
+              <div className={`absolute inset-0 p-5 flex flex-col transition-all duration-500 ${
+                activeCard === index 
+                  ? 'justify-end' 
+                  : 'justify-between lg:group-hover:justify-end'
+              }`}>
+                
+                {/* Top: Age Badge - always visible */}
+                <div className={`flex justify-end transition-opacity duration-300 ${
+                  activeCard === index ? 'lg:opacity-100' : 'opacity-100'
+                }`}>
                   <span className="text-xs font-bold uppercase tracking-wider text-white bg-primary/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
                     {program.age}
                   </span>
                 </div>
 
-                {/* Title - Bottom */}
-                <div>
-                  <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white leading-tight">
-                    {program.title}
-                  </h3>
-                </div>
-              </div>
-
-              {/* Hover/Click Overlay - Info appears */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-t from-black via-black/95 to-black/80 transition-all duration-500 flex flex-col justify-end p-4 lg:p-6 ${
-                  activeCard === index
-                    ? 'opacity-100'
-                    : 'opacity-0 pointer-events-none lg:pointer-events-auto lg:group-hover:opacity-100'
-                }`}
-              >
-                {/* Age Badge */}
-                <div className="flex justify-end mb-auto pt-0">
-                  <span className="text-xs font-bold uppercase tracking-wider text-white bg-primary backdrop-blur-sm px-3 py-1.5 rounded-full">
-                    {program.age}
-                  </span>
-                </div>
-
-                {/* Content */}
+                {/* Bottom Content */}
                 <div className="space-y-3">
+                  {/* Title - Always visible */}
                   <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white leading-tight">
                     {program.title}
                   </h3>
                   
-                  <p className="text-white/90 text-xs lg:text-sm leading-relaxed line-clamp-3">
-                    {program.description}
-                  </p>
+                  {/* Info - Show on click (mobile) or hover (desktop) */}
+                  <div className={`space-y-3 transition-all duration-500 ${
+                    activeCard === index 
+                      ? 'opacity-100 max-h-96' 
+                      : 'opacity-0 max-h-0 overflow-hidden lg:group-hover:opacity-100 lg:group-hover:max-h-96'
+                  }`}>
+                    <p className="text-white/90 text-sm leading-relaxed">
+                      {program.description}
+                    </p>
 
-                  {/* Features */}
-                  <ul className="space-y-1.5">
-                    {program.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="flex items-start gap-2 text-xs text-white/80">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    {/* Features */}
+                    <ul className="space-y-1.5">
+                      {program.features.map((feature, fIndex) => (
+                        <li key={fIndex} className="flex items-start gap-2 text-xs text-white/90">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  {/* CTA Button */}
-                  <Link
-                    href="/register"
-                    className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-black font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-xs lg:text-sm mt-3"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Inschrijven
-                    <span className="ml-2">→</span>
-                  </Link>
+                    {/* CTA Button */}
+                    <Link
+                      href="/register"
+                      className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-black font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
+                    >
+                      Inschrijven
+                      <span className="ml-2">→</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
-              {/* Mobile: Show Info Indicator */}
-              <div className="lg:hidden absolute bottom-4 right-4 w-8 h-8 bg-primary/90 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-sm font-bold">
-                {activeCard === index ? '×' : 'i'}
+              {/* Mobile: Clickable Overlay + Info Button */}
+              <div 
+                onClick={() => setActiveCard(activeCard === index ? null : index)}
+                className="lg:hidden absolute inset-0 cursor-pointer"
+              >
+                <div className="absolute bottom-4 right-4 w-10 h-10 bg-primary backdrop-blur-sm rounded-full flex items-center justify-center text-black text-lg font-bold shadow-lg pointer-events-none">
+                  {activeCard === index ? '×' : 'i'}
+                </div>
               </div>
             </div>
           ))}
