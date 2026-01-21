@@ -76,10 +76,8 @@ export function ContactSection() {
               {/* Location Details */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-2">
-                    {location.label}
-                  </h2>
-                  <h3 className="font-serif text-3xl font-bold text-foreground">{location.name}</h3>
+                  <h3 className="font-serif text-3xl font-bold text-foreground mb-2">{location.label}</h3>
+                  <p className="text-foreground/70 text-lg">{location.name}</p>
                 </div>
                 
                 <div className="space-y-6">
