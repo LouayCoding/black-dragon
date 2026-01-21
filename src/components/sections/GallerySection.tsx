@@ -105,30 +105,30 @@ export function GallerySection() {
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
-              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {'Galerij'}
+              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+                Galerij
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {'Momenten van'}<br />
-              <span className="text-primary">{'excellentie'}</span>
+              Momenten van<br />
+              <span className="text-primary">excellentie</span>
             </h2>
           </div>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-3 mb-16">
+        <div className="flex flex-wrap gap-2 mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={
                 activeCategory === cat.id
-                  ? "px-6 py-3 bg-primary text-primary-foreground text-sm font-bold transition-all duration-300"
-                  : "px-6 py-3 bg-muted text-foreground/70 text-sm font-semibold hover:bg-muted/80 hover:text-foreground transition-all duration-300"
+                  ? "px-4 py-2 bg-foreground text-background text-sm font-semibold rounded-full transition-all duration-300"
+                  : "px-4 py-2 bg-muted text-foreground/60 text-sm font-medium rounded-full hover:bg-muted/80 hover:text-foreground transition-all duration-300"
               }
             >
               {cat.label}
@@ -142,7 +142,7 @@ export function GallerySection() {
             <button
               key={item.id}
               onClick={() => setSelectedItem(item.id)}
-              className="gallery-item group relative aspect-square overflow-hidden cursor-pointer"
+              className="gallery-item group relative aspect-square overflow-hidden cursor-pointer rounded-lg"
             >
               {item.type === 'image' ? (
                 <img 
@@ -159,19 +159,12 @@ export function GallerySection() {
                     playsInline
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                    <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                    <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="w-6 h-6 text-foreground ml-0.5" fill="currentColor" />
                     </div>
                   </div>
                 </div>
               )}
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white font-bold text-base mb-1">{item.title}</p>
-                  <p className="text-primary text-2xl font-light">{item.korean}</p>
-                </div>
-              </div>
             </button>
           ))}
         </div>

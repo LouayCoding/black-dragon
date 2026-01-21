@@ -49,55 +49,48 @@ export function TestimonialsSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
-              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {'Getuigenissen'}
+              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+                Reviews
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {'Wat onze'}<br />
-              <span className="text-primary">{'leerlingen zeggen'}</span>
+              Wat onze<br />
+              <span className="text-primary">leerlingen zeggen</span>
             </h2>
-            <div className="space-y-8 max-w-2xl">
-              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {'Echte verhalen. Echte resultaten.'}
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-foreground/90 text-lg leading-[1.8]">
+                Ontdek de ervaringen van onze leerlingen en hun families. Van beginnende kinderen tot gevorderde volwassenen - iedereen heeft zijn eigen unieke reis bij Black Dragon.
               </p>
             </div>
           </div>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="testimonial-card bg-background p-8 sm:p-10 border-l-4 border-primary hover:bg-muted/30 transition-colors duration-300"
+              className="bg-card rounded-lg p-6 hover:shadow-md transition-all duration-300"
             >
               {/* Rating */}
-              <div className="flex gap-1 mb-6">
+              <div className="flex gap-0.5 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  <Star key={i} className="w-4 h-4 fill-foreground/20 text-foreground/20" />
                 ))}
               </div>
 
               {/* Text */}
-              <p className="text-foreground/80 text-base leading-[1.8] mb-8">
+              <p className="text-foreground/70 text-sm leading-relaxed mb-6">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <span className="text-primary font-bold text-base">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-bold text-foreground text-base">{testimonial.name}</p>
-                  <p className="text-foreground/60 text-sm">{testimonial.role}</p>
-                </div>
+              <div className="pt-4 border-t border-border">
+                <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
+                <p className="text-foreground/50 text-xs mt-0.5">{testimonial.role}</p>
               </div>
             </div>
           ))}
