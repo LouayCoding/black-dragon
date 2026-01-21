@@ -53,7 +53,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p
-            className="font-serif text-center text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 font-light max-w-3xl mx-auto mb-12 lg:mb-16 leading-relaxed"
+            className="font-serif text-center text-base sm:text-lg md:text-xl text-white/70 font-light max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             Ontwikkel kracht, discipline en zelfvertrouwen
           </p>
@@ -64,10 +64,10 @@ export function HeroSection() {
           >
             <Button
               asChild
-              className="bg-white hover:bg-white/90 text-black px-12 py-5 text-lg font-semibold rounded-full transition-all duration-300"
+              className="bg-foreground hover:bg-foreground/90 text-background px-10 py-6 text-base font-semibold rounded-full transition-all duration-300"
             >
               <Link href="/register">
-                {'Start vandaag'}
+                Start vandaag
               </Link>
             </Button>
           </div>
