@@ -53,7 +53,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p
-            className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 font-light max-w-3xl mx-auto mb-12 lg:mb-16 leading-relaxed"
+            className="font-serif text-center text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 font-light max-w-3xl mx-auto mb-12 lg:mb-16 leading-relaxed"
           >
             Ontwikkel kracht, discipline en zelfvertrouwen
           </p>
