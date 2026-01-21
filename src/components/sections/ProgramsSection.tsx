@@ -149,7 +149,7 @@ export function ProgramsSection() {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold rounded-full"
           >
-            <Link href="/contact">{'Inschrijven'}</Link>
+            <Link href="/register">{'Inschrijven'}</Link>
           </Button>
         </div>
       </div>

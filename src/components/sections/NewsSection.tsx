@@ -218,7 +218,7 @@ export function NewsSection() {
             {'Blijf op de hoogte van al onze activiteiten'}
           </p>
           <Link
-            href="/contact"
+            href="/register"
             className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
           >
             {'Schrijf je in voor onze nieuwsbrief'} →

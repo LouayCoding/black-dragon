@@ -162,7 +162,7 @@ export function PricingSection() {
                       : "bg-foreground hover:bg-foreground/90 text-background"
                   )}
                 >
-                  <Link href="/contact">{plan.cta}</Link>
+                  <Link href="/register">{plan.cta}</Link>
                 </Button>
               </div>
             </div>

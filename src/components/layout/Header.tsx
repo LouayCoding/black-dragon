@@ -103,7 +103,7 @@ export function Header() {
             </Button>
             
             <Button asChild variant="default" size="sm" className="hidden lg:flex bg-primary hover:bg-primary/90">
-              <Link href="/contact">Inschrijven</Link>
+              <Link href="/register">Inschrijven</Link>
             </Button>
 
             <button
@@ -145,7 +145,7 @@ export function Header() {
                   </Link>
                 ))}
                 <Link
-                  href="/contact"
+                  href="/register"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="mt-4 px-4 py-3 text-base font-medium bg-primary text-primary-foreground rounded-lg text-center"
                 >
