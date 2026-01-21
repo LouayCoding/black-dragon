@@ -64,7 +64,7 @@ export function HeroSection() {
           >
             <Button
               asChild
-              className="bg-foreground hover:bg-foreground/90 text-background px-10 py-6 text-base font-semibold rounded-full transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-base font-semibold rounded-full transition-all duration-300"
             >
               <Link href="/register">
                 Start vandaag
