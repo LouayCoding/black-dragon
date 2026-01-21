@@ -176,111 +176,107 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Extra Options */}
+        {/* Extra Opties & Kortingen */}
         <div className={cn(
           "mb-16 transition-all duration-700 delay-200",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-8">
-            Extra Opties
-          </h3>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {extras.map((extra, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-lg p-6 hover:shadow-md transition-all"
-              >
-                <div className="mb-3">
-                  <p className="text-3xl font-bold text-foreground">€{extra.price}</p>
-                </div>
-                <h4 className="font-semibold text-base text-foreground mb-2">{extra.name}</h4>
-                <p className="text-foreground/60 text-sm leading-relaxed">{extra.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Ooievaarspas Section */}
-        <div className={cn(
-          "mb-16 transition-all duration-700 delay-300",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )}>
-          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-8">
-            Kortingen
+            Extra Opties & Kortingen
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Ooievaarspas */}
-            <div className="bg-card rounded-lg p-6">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 relative flex-shrink-0">
-                  <Image
-                    src="/partners/ooievaarspas.png"
-                    alt="Ooievaarspas"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="flex-grow">
-                  <h4 className="font-semibold text-lg text-foreground mb-1">Ooievaarspas</h4>
-                  <p className="text-foreground/60 text-sm">
-                    Kinderen tot 18 jaar: 100% korting<br />
-                    18 jaar en ouder: 50% korting
-                  </p>
-                </div>
-              </div>
-              <Button 
-                asChild 
-                size="sm"
-                variant="outline"
-                className="w-full"
-              >
-                <a 
-                  href="https://ooievaarspas.nl/aanbiedingen/taekwondo-black-dragon/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2"
+          {/* Extra Options */}
+          <div className="mb-12">
+            <h4 className="text-lg font-semibold text-foreground mb-4">Eenmalige Kosten</h4>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {extras.map((extra, index) => (
+                <div
+                  key={index}
+                  className="bg-card rounded-lg p-5 hover:shadow-md transition-all"
                 >
-                  Meer info
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </Button>
+                  <p className="text-2xl font-bold text-foreground mb-2">€{extra.price}</p>
+                  <h5 className="font-semibold text-sm text-foreground mb-1">{extra.name}</h5>
+                  <p className="text-foreground/60 text-xs leading-relaxed">{extra.description}</p>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* Leergeld */}
-            <div className="bg-card rounded-lg p-6">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 relative flex-shrink-0">
-                  <Image
-                    src="/partners/leergeld.png"
-                    alt="Leergeld"
-                    fill
-                    className="object-contain"
-                  />
+          {/* Kortingen */}
+          <div>
+            <h4 className="text-lg font-semibold text-foreground mb-4">Beschikbare Kortingen</h4>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {/* Ooievaarspas */}
+              <div className="bg-card rounded-lg p-5">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-12 h-12 relative flex-shrink-0">
+                    <Image
+                      src="/partners/ooievaarspas.png"
+                      alt="Ooievaarspas"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="flex-grow">
+                    <h5 className="font-semibold text-base text-foreground mb-1">Ooievaarspas</h5>
+                    <p className="text-foreground/60 text-xs">
+                      Tot 18 jaar: 100% • 18+ jaar: 50%
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-grow">
-                  <h4 className="font-semibold text-lg text-foreground mb-1">Leergeld</h4>
-                  <p className="text-foreground/60 text-sm">
-                    Vergoeding voor sportkleding en benodigdheden via Leergeld
-                  </p>
-                </div>
-              </div>
-              <Button 
-                asChild 
-                size="sm"
-                variant="outline"
-                className="w-full"
-              >
-                <a 
-                  href="https://www.leergeld.nl/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2"
+                <Button 
+                  asChild 
+                  size="sm"
+                  variant="outline"
+                  className="w-full text-xs"
                 >
-                  Meer info
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </Button>
+                  <a 
+                    href="https://ooievaarspas.nl/aanbiedingen/taekwondo-black-dragon/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2"
+                  >
+                    Meer info
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </Button>
+              </div>
+
+              {/* Leergeld */}
+              <div className="bg-card rounded-lg p-5">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-12 h-12 relative flex-shrink-0">
+                    <Image
+                      src="/partners/leergeld.png"
+                      alt="Leergeld"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="flex-grow">
+                    <h5 className="font-semibold text-base text-foreground mb-1">Leergeld</h5>
+                    <p className="text-foreground/60 text-xs">
+                      Vergoeding sportkleding & materiaal
+                    </p>
+                  </div>
+                </div>
+                <Button 
+                  asChild 
+                  size="sm"
+                  variant="outline"
+                  className="w-full text-xs"
+                >
+                  <a 
+                    href="https://www.leergeld.nl/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2"
+                  >
+                    Meer info
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
