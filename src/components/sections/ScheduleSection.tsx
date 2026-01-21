@@ -30,71 +30,73 @@ export function ScheduleSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
-              <span className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
-                {'Rooster'}
+              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+                {'Trainingsschema'}
               </span>
             </div>
             <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {'Wekelijks'}<br />
-              <span className="text-primary">{'Rooster'}</span>
+              {'Wanneer kun je'}<br />
+              <span className="text-primary">{'trainen?'}</span>
             </h2>
-            <div className="space-y-8 max-w-2xl">
-              <p className="text-foreground text-xl sm:text-2xl leading-[1.5] font-normal">
-                {'Kies je moment. Begin vandaag.'}
+            <div className="space-y-6 max-w-2xl">
+              <p className="text-foreground/90 text-lg leading-[1.8]">
+                We trainen wekelijks op twee locaties in Den Haag. Kies de tijden en locatie die het beste bij jou passen.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Schedule Grid - Mobile Friendly */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border mb-16">
+        {/* Schedule Grid - Clean & Clear */}
+        <div className="space-y-3 mb-12">
           {schedule.map((daySchedule, dayIndex) => (
             <div
               key={dayIndex}
-              className="schedule-day bg-background p-6 sm:p-8 hover:bg-muted/30 transition-colors duration-300"
+              className="bg-card rounded-lg overflow-hidden hover:shadow-md transition-all duration-300"
             >
               {/* Day Header */}
-              <div className="mb-8 pb-6 border-b-2 border-border">
-                <h3 className="font-serif text-3xl font-bold text-foreground">
+              <div className="bg-muted/50 px-6 py-3">
+                <h3 className="font-serif text-xl font-bold text-foreground">
                   {daySchedule.day}
                 </h3>
               </div>
 
               {/* Classes */}
-              <div className="space-y-4">
+              <div className="divide-y divide-border/50">
                 {daySchedule.classes.map((cls, classIndex) => (
                   <div
                     key={classIndex}
-                    className="space-y-2"
+                    className="px-6 py-4 hover:bg-muted/20 transition-colors duration-200"
                   >
-                    {/* Time */}
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="font-bold text-base text-foreground">
-                        {cls.time}
-                      </span>
+                    <div className="grid md:grid-cols-[180px_1fr_auto] gap-4 items-center">
+                      {/* Time */}
+                      <div className="flex items-center gap-3">
+                        <Clock className="w-5 h-5 text-foreground/40 flex-shrink-0" />
+                        <span className="font-bold text-base text-foreground">
+                          {cls.time}
+                        </span>
+                      </div>
+
+                      {/* Class Info */}
+                      <div className="space-y-1">
+                        <p className="font-semibold text-base text-foreground">
+                          {cls.name}
+                        </p>
+                        <div className="flex items-center gap-2 text-sm text-foreground/60">
+                          <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+                          <span>{cls.location}</span>
+                        </div>
+                      </div>
+
+                      {/* Duration Badge */}
+                      <div className="flex justify-end md:justify-start">
+                        <span className="text-sm text-foreground/60 font-medium">
+                          {cls.duration}
+                        </span>
+                      </div>
                     </div>
-
-                    {/* Class Name */}
-                    <p className="text-foreground text-base font-semibold leading-[1.6] pl-8">
-                      {cls.name}
-                    </p>
-
-                    {/* Location */}
-                    <div className="flex items-center gap-2 pl-8">
-                      <MapPin className="w-4 h-4 text-primary/70 flex-shrink-0" />
-                      <span className="text-sm text-foreground/70 font-medium">
-                        {cls.location}
-                      </span>
-                    </div>
-
-                    {/* Divider between classes */}
-                    {classIndex < daySchedule.classes.length - 1 && (
-                      <div className="pt-4 border-b border-border/50"></div>
-                    )}
                   </div>
                 ))}
               </div>
@@ -103,11 +105,11 @@ export function ScheduleSection() {
         </div>
 
         {/* Note */}
-        <p 
-          className="text-center text-foreground/60 text-sm leading-[1.6] max-w-2xl mx-auto"
-        >
-          {'* Rooster kan wijzigen tijdens feestdagen en speciale evenementen. Neem contact op voor de meest actuele informatie.'}
-        </p>
+        <div className="bg-muted/30 rounded-lg p-5 max-w-3xl mx-auto">
+          <p className="text-center text-foreground/70 text-sm leading-relaxed">
+            <strong className="text-foreground">Let op:</strong> Rooster kan wijzigen tijdens feestdagen en speciale evenementen. Neem contact op voor de meest actuele informatie.
+          </p>
+        </div>
       </div>
     </section>
   );
