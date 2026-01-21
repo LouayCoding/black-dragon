@@ -22,7 +22,9 @@ export function GallerySection() {
   const galleryItems: GalleryItem[] = [
     // Echte afbeeldingen - Ceremonies
     { id: 1, category: 'ceremony', title: 'Band ceremonie groep', korean: '승급식', media: '/gallery/belt-ceremony-group.jpg', type: 'image' },
-    { id: 51, category: 'ceremony', title: 'Groepsactiviteit', korean: '단체 활동', media: '/gallery/activiteit-groep.jpg', type: 'image' },
+    
+    // Bandexamens
+    { id: 51, category: 'belt-exam', title: 'Groepsactiviteit', korean: '단체 활동', media: '/gallery/activiteit-groep.jpg', type: 'image' },
     
     // Echte afbeeldingen - Training
     { id: 2, category: 'training', title: 'Planken breken demonstratie', korean: '격파', media: '/gallery/board-breaking-demo.jpg', type: 'image' },
