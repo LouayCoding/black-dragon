@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[80vh] -mt-20 lg:-mt-24 pt-20 lg:pt-24 flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950"
+      className="relative min-h-screen -mt-20 lg:-mt-24 pt-20 lg:pt-24 flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950"
     >
       {/* Background Image with Overlay */}
       <div 
@@ -27,8 +27,8 @@ export function HeroSection() {
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       {/* Main Content */}
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="max-w-4xl mx-auto">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-24 lg:py-32 xl:py-40">
+        <div className="max-w-5xl mx-auto">
           
           {/* Main Heading */}
           <div className="text-center mb-6">
@@ -38,7 +38,7 @@ export function HeroSection() {
               태권도 블랙 드래곤
             </p>
             <h1
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-4"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-none mb-6 lg:mb-8"
             >
               {'Taekwondo'.split('').map((letter, i) => (
                 <span key={i} className="letter inline-block">{letter}</span>
@@ -53,7 +53,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p
-            className="text-center text-xl sm:text-2xl text-white/80 font-light max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 font-light max-w-3xl mx-auto mb-12 lg:mb-16 leading-relaxed"
           >
             Ontwikkel kracht, discipline en zelfvertrouwen
           </p>
