@@ -54,7 +54,7 @@ export function Header() {
           : 'bg-gradient-to-b from-black/60 to-transparent'
       )}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex items-center justify-between h-18 lg:h-20">
           <Link href="/" className="group relative z-10">
             <img 
@@ -120,7 +120,7 @@ export function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <div className="fixed top-18 left-0 right-0 bottom-0 bg-background z-40 xl:hidden overflow-y-auto">
-            <nav className="container mx-auto px-4 py-8">
+            <nav className="container mx-auto px-4 py-8 max-w-7xl">
               <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <Link
