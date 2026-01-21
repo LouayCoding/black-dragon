@@ -17,7 +17,7 @@ export function PricingSection() {
       price: '32,50',
       period: '/maand',
       description: 'Ideaal voor beginners die 1x per week willen trainen.',
-      image: '/gallery/poomsae.jpg',
+      image: '/pricing/basis.jpg',
       features: [
         '1x per week training',
         '1x per jaar bandexamen',
@@ -32,7 +32,7 @@ export function PricingSection() {
       price: '37,50',
       period: '/maand',
       description: 'Onze meest populaire optie voor toegewijde leerlingen.',
-      image: '/gallery/sparring.jpg',
+      image: '/pricing/standaard.jpg',
       features: [
         '2x per week training',
         '2x per jaar bandexamen',
@@ -48,7 +48,7 @@ export function PricingSection() {
       price: '45',
       period: '/maand',
       description: 'Voor serieuze atleten die maximale vooruitgang willen.',
-      image: '/gallery/championship.jpg',
+      image: '/pricing/intensief.jpg',
       features: [
         '3x per week training',
         'Toegang tot alle programmas',

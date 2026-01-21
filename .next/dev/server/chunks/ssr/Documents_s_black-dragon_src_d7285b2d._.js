@@ -194,7 +194,7 @@ function PricingSection() {
             price: '32,50',
             period: '/maand',
             description: 'Ideaal voor beginners die 1x per week willen trainen.',
-            image: '/gallery/poomsae.jpg',
+            image: '/pricing/basis.jpg',
             features: [
                 '1x per week training',
                 '1x per jaar bandexamen',
@@ -209,7 +209,7 @@ function PricingSection() {
             price: '37,50',
             period: '/maand',
             description: 'Onze meest populaire optie voor toegewijde leerlingen.',
-            image: '/gallery/sparring.jpg',
+            image: '/pricing/standaard.jpg',
             features: [
                 '2x per week training',
                 '2x per jaar bandexamen',
@@ -225,7 +225,7 @@ function PricingSection() {
             price: '45',
             period: '/maand',
             description: 'Voor serieuze atleten die maximale vooruitgang willen.',
-            image: '/gallery/championship.jpg',
+            image: '/pricing/intensief.jpg',
             features: [
                 '3x per week training',
                 'Toegang tot alle programmas',
@@ -448,7 +448,7 @@ function PricingSection() {
                                             size: "lg",
                                             className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("w-full mt-auto font-semibold", plan.highlighted ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg" : "bg-foreground hover:bg-foreground/90 text-background"),
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/contact",
+                                                href: "/register",
                                                 children: plan.cta
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/PricingSection.tsx",
