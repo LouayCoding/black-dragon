@@ -22,9 +22,6 @@ export function GallerySection() {
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
 
   const galleryItems: GalleryItem[] = [
-    // Echte afbeeldingen - Ceremonies
-    { id: 1, category: 'ceremony', title: 'Band ceremonie groep', korean: '승급식', media: '/gallery/belt-ceremony-group.jpg', type: 'image' },
-    
     // Bandexamens
     { id: 51, category: 'belt-exam', title: 'Groepsactiviteit', korean: '단체 활동', media: '/gallery/activiteit-groep.jpg', type: 'image' },
     { id: 52, category: 'belt-exam', title: 'Bandexamen groep', korean: '승급 시험', media: '/gallery/bandexamen-groep.jpg', type: 'image' },
@@ -97,7 +94,6 @@ export function GallerySection() {
     { id: 'training', label: 'Training' },
     { id: 'competition', label: 'Wedstrijd' },
     { id: 'belt-exam', label: 'Bandexamens' },
-    { id: 'ceremony', label: 'Activiteiten' },
     { id: 'videos', label: "Video's" },
   ];
 
