@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image';
 import { FadeInView } from '@/components/animations/FadeInView'
 
 export function AboutSection() {
@@ -32,10 +33,11 @@ export function AboutSection() {
             
             {/* About Hero Image */}
             <div className="relative h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
-              <img 
+              <Image 
                 src="/gallery/about-team.jpg" 
                 alt="Taekwondo Black Dragon Training"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
           </div>

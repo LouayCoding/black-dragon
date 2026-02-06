@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { 
   LayoutDashboard, 
@@ -103,7 +104,7 @@ export default function AdminLayout({
         
         <div className="flex h-16 items-center justify-between px-6 border-b border-border">
           <Link href="/admin" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+            <Image src="/logo.png" alt="Logo" width={40} height={40} className="h-10 w-auto" />
             <span className="font-bold text-lg">Admin</span>
           </Link>
           <button

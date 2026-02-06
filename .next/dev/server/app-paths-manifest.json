@@ -1,7 +1,5 @@
 {
-  "/(public)/contact/page": "app/(public)/contact/page.js",
+  "/(public)/gallery/page": "app/(public)/gallery/page.js",
   "/(public)/page": "app/(public)/page.js",
-  "/(public)/register/page": "app/(public)/register/page.js",
-  "/(public)/tarieven/page": "app/(public)/tarieven/page.js",
   "/_not-found/page": "app/_not-found/page.js"
 }

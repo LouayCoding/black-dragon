@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image';
 import { FadeInView } from '@/components/animations/FadeInView';
 
 export function PartnersSection() {
@@ -90,10 +91,12 @@ export function PartnersSection() {
                 className="bg-card rounded-lg p-6 hover:shadow-md transition-all duration-300 block"
               >
                 {program.logo && (
-                  <div className="h-12 flex items-center mb-4">
-                    <img 
+                  <div className="h-12 flex items-center mb-4 relative w-full">
+                    <Image 
                       src={program.logo} 
                       alt={program.title}
+                      width={200}
+                      height={48}
                       className="max-h-full object-contain"
                     />
                   </div>
@@ -137,10 +140,12 @@ export function PartnersSection() {
                 className="bg-card rounded-lg p-4 hover:shadow-md transition-all duration-300 flex flex-col items-center text-center"
               >
                 {program.logo && (
-                  <div className="h-16 w-full flex items-center justify-center mb-3">
-                    <img 
+                  <div className="h-16 w-full flex items-center justify-center mb-3 relative">
+                    <Image 
                       src={program.logo} 
                       alt={program.title}
+                      width={150}
+                      height={64}
                       className="max-h-full max-w-full object-contain"
                     />
                   </div>

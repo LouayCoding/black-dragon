@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { FadeInView } from '@/components/animations/FadeInView';
 
@@ -105,10 +106,11 @@ export function InstructorsSection() {
           <div className="grid lg:grid-cols-[450px_1fr] gap-8 lg:gap-12 items-start">
             {/* Photo */}
             <div className="relative aspect-[3/4] rounded-lg overflow-hidden max-w-xs mx-auto lg:max-w-none lg:mx-0">
-              <img 
+              <Image 
                 src={headInstructor.image}
                 alt={headInstructor.name}
-                className="w-full h-full object-cover object-center"
+                fill
+                className="object-cover object-center"
               />
             </div>
 
@@ -156,10 +158,11 @@ export function InstructorsSection() {
               >
                 {/* Photo */}
                 <div className="relative aspect-[3/4] overflow-hidden">
-                  <img
+                  <Image
                     src={instructor.image}
                     alt={instructor.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
 

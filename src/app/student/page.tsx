@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { Calendar, User, LogOut, AlertCircle, CheckCircle } from 'lucide-react'
 import { supabase, Student, Attendance } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
@@ -124,7 +125,7 @@ export default function StudentPortal() {
       <div className="min-h-screen bg-muted/30 flex items-center justify-center p-4">
         <div className="bg-background rounded-xl border border-border p-8 w-full max-w-md">
           <div className="text-center mb-8">
-            <img src="/logo.png" alt="Logo" className="h-16 mx-auto mb-4" />
+            <Image src="/logo.png" alt="Logo" width={64} height={64} className="h-16 mx-auto mb-4" />
             <h1 className="text-2xl font-bold text-foreground">Leerling Portal</h1>
             <p className="text-foreground/60 mt-2">Log in om je ziek te melden</p>
           </div>
@@ -172,7 +173,7 @@ export default function StudentPortal() {
       <div className="bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Logo" className="h-12" />
+            <Image src="/logo.png" alt="Logo" width={48} height={48} className="h-12" />
             <div>
               <h1 className="font-bold text-lg">{student?.name}</h1>
               <p className="text-sm text-foreground/60">{student?.email}</p>

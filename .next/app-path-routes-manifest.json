@@ -3,6 +3,7 @@
   "/(public)/contact/page": "/contact",
   "/(public)/faq/page": "/faq",
   "/(public)/gallery/page": "/gallery",
+  "/(public)/inschrijven/page": "/inschrijven",
   "/(public)/instructors/page": "/instructors",
   "/(public)/news/page": "/news",
   "/(public)/page": "/",

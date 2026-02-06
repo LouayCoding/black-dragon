@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FadeInView } from '@/components/animations/FadeInView';
 
 export function ProgramsSection() {
@@ -90,10 +91,11 @@ export function ProgramsSection() {
               className="relative h-[450px] rounded-xl overflow-hidden group flex-shrink-0 w-[85vw] sm:w-auto snap-center lg:snap-align-none"
             >
               {/* Full Background Image */}
-              <img
+              <Image
                 src={program.image}
                 alt={program.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
               {/* Dark Overlay - Always visible on mobile, hover on desktop */}

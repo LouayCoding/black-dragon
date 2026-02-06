@@ -29,6 +29,47 @@ function GallerySection() {
             media: '/gallery/belt-ceremony-group.jpg',
             type: 'image'
         },
+        // Bandexamens
+        {
+            id: 51,
+            category: 'belt-exam',
+            title: 'Groepsactiviteit',
+            korean: '단체 활동',
+            media: '/gallery/activiteit-groep.jpg',
+            type: 'image'
+        },
+        {
+            id: 52,
+            category: 'belt-exam',
+            title: 'Bandexamen groep',
+            korean: '승급 시험',
+            media: '/gallery/bandexamen-groep.jpg',
+            type: 'image'
+        },
+        {
+            id: 53,
+            category: 'belt-exam',
+            title: 'Examen moment 1',
+            korean: '승급 시험',
+            media: '/gallery/examen-01.jpg',
+            type: 'image'
+        },
+        {
+            id: 54,
+            category: 'belt-exam',
+            title: 'Examen moment 2',
+            korean: '승급 시험',
+            media: '/gallery/examen-02.jpg',
+            type: 'image'
+        },
+        {
+            id: 55,
+            category: 'belt-exam',
+            title: 'Examen moment 3',
+            korean: '승급 시험',
+            media: '/gallery/examen-03.jpg',
+            type: 'image'
+        },
         // Echte afbeeldingen - Training
         {
             id: 2,
@@ -274,7 +315,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 33,
+            id: 32,
             category: 'training',
             title: 'Training moment 22',
             korean: '훈련',
@@ -282,7 +323,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 34,
+            id: 33,
             category: 'training',
             title: 'Training moment 23',
             korean: '훈련',
@@ -290,7 +331,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 35,
+            id: 34,
             category: 'training',
             title: 'Training moment 24',
             korean: '훈련',
@@ -298,7 +339,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 36,
+            id: 35,
             category: 'training',
             title: 'Training moment 25',
             korean: '훈련',
@@ -306,7 +347,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 37,
+            id: 36,
             category: 'training',
             title: 'Training moment 26',
             korean: '훈련',
@@ -314,7 +355,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 38,
+            id: 37,
             category: 'training',
             title: 'Training moment 27',
             korean: '훈련',
@@ -322,7 +363,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 39,
+            id: 38,
             category: 'training',
             title: 'Training moment 28',
             korean: '훈련',
@@ -330,7 +371,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 40,
+            id: 39,
             category: 'training',
             title: 'Training moment 29',
             korean: '훈련',
@@ -338,7 +379,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 41,
+            id: 40,
             category: 'training',
             title: 'Training moment 30',
             korean: '훈련',
@@ -346,7 +387,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 42,
+            id: 41,
             category: 'training',
             title: 'Training moment 31',
             korean: '훈련',
@@ -354,7 +395,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 43,
+            id: 42,
             category: 'training',
             title: 'Training moment 32',
             korean: '훈련',
@@ -362,7 +403,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 44,
+            id: 43,
             category: 'training',
             title: 'Training moment 33',
             korean: '훈련',
@@ -370,7 +411,7 @@ function GallerySection() {
             type: 'image'
         },
         {
-            id: 45,
+            id: 44,
             category: 'training',
             title: 'Training moment 34',
             korean: '훈련',
@@ -379,7 +420,7 @@ function GallerySection() {
         },
         // Video's
         {
-            id: 46,
+            id: 45,
             category: 'videos',
             title: 'Training sessie 1',
             korean: '훈련 영상',
@@ -387,7 +428,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 47,
+            id: 46,
             category: 'videos',
             title: 'Training sessie 2',
             korean: '훈련 영상',
@@ -395,7 +436,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 48,
+            id: 47,
             category: 'videos',
             title: 'Techniek demonstratie 1',
             korean: '기술 시연',
@@ -403,7 +444,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 49,
+            id: 48,
             category: 'videos',
             title: 'Techniek demonstratie 2',
             korean: '기술 시연',
@@ -411,7 +452,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 50,
+            id: 49,
             category: 'videos',
             title: 'Wedstrijd opname 1',
             korean: '대회 영상',
@@ -419,7 +460,7 @@ function GallerySection() {
             type: 'video'
         },
         {
-            id: 51,
+            id: 50,
             category: 'videos',
             title: 'Wedstrijd opname 2',
             korean: '대회 영상',
@@ -446,7 +487,7 @@ function GallerySection() {
         },
         {
             id: 'ceremony',
-            label: 'Evenementen'
+            label: 'Activiteiten'
         },
         {
             id: 'videos',
@@ -456,183 +497,142 @@ function GallerySection() {
     const filteredItems = activeCategory === 'all' ? galleryItems : galleryItems.filter((item)=>item.category === activeCategory);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "gallery",
-        className: "py-32 bg-background",
+        className: "py-16 sm:py-24 lg:py-32 bg-background",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto px-4 max-w-7xl",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mb-24",
+                    className: "mb-16",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "max-w-3xl space-y-8",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "inline-block",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-primary font-bold text-xs uppercase tracking-[0.2em]",
-                                    children: 'Galerij'
+                                    className: "text-primary font-bold text-sm uppercase tracking-[0.2em]",
+                                    children: "Galerij"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 114,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 106,
+                                lineNumber: 113,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight",
+                                className: "font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight",
                                 children: [
-                                    'Momenten van',
+                                    "Momenten van",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 112,
-                                        columnNumber: 31
+                                        lineNumber: 119,
+                                        columnNumber: 27
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-primary",
-                                        children: 'excellentie'
+                                        children: "excellentie"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 120,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 111,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-20 h-1 bg-primary"
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 115,
+                                lineNumber: 118,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                        lineNumber: 105,
+                        lineNumber: 112,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 104,
+                    lineNumber: 111,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex flex-wrap gap-3 mb-16",
+                    className: "flex flex-wrap gap-2 mb-12",
                     children: categories.map((cat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             onClick: ()=>setActiveCategory(cat.id),
-                            className: activeCategory === cat.id ? "px-6 py-3 bg-primary text-primary-foreground text-sm font-bold transition-all duration-300" : "px-6 py-3 bg-muted text-foreground/70 text-sm font-semibold hover:bg-muted/80 hover:text-foreground transition-all duration-300",
+                            className: activeCategory === cat.id ? "px-3 sm:px-4 py-2 bg-foreground text-background text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300" : "px-3 sm:px-4 py-2 bg-muted text-foreground/60 text-xs sm:text-sm font-medium rounded-lg hover:bg-muted/80 hover:text-foreground transition-all duration-300",
                             children: cat.label
                         }, cat.id, false, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 122,
+                            lineNumber: 128,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 120,
+                    lineNumber: 126,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2",
                     children: filteredItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             onClick: ()=>setSelectedItem(item.id),
-                            className: "gallery-item group relative aspect-square overflow-hidden cursor-pointer",
-                            children: [
-                                item.type === 'image' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                    src: item.media,
-                                    alt: item.title,
-                                    className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                }, void 0, false, {
-                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 145,
-                                    columnNumber: 17
-                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative w-full h-full",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
-                                            src: item.media,
-                                            className: "w-full h-full object-cover",
-                                            muted: true,
-                                            playsInline: true
-                                        }, void 0, false, {
-                                            fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                            lineNumber: 152,
-                                            columnNumber: 19
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute inset-0 flex items-center justify-center bg-black/30",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
-                                                    className: "w-8 h-8 text-white ml-1",
-                                                    fill: "white"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                    lineNumber: 160,
-                                                    columnNumber: 23
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                lineNumber: 159,
-                                                columnNumber: 21
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                            lineNumber: 158,
-                                            columnNumber: 19
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 151,
-                                    columnNumber: 17
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute bottom-0 left-0 right-0 p-6",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-white font-bold text-base mb-1",
-                                                children: item.title
-                                            }, void 0, false, {
-                                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                lineNumber: 168,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-primary text-2xl font-light",
-                                                children: item.korean
-                                            }, void 0, false, {
-                                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                                lineNumber: 169,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                            className: "gallery-item group relative aspect-square overflow-hidden cursor-pointer rounded-lg",
+                            children: item.type === 'image' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                src: item.media,
+                                alt: item.title,
+                                className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            }, void 0, false, {
+                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
+                                lineNumber: 151,
+                                columnNumber: 17
+                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative w-full h-full",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                        src: item.media,
+                                        className: "w-full h-full object-cover",
+                                        muted: true,
+                                        playsInline: true
+                                    }, void 0, false, {
                                         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                        lineNumber: 167,
-                                        columnNumber: 17
+                                        lineNumber: 158,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute inset-0 flex items-center justify-center bg-black/30",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-12 h-12 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
+                                                className: "w-6 h-6 text-foreground ml-0.5",
+                                                fill: "currentColor"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
+                                                lineNumber: 166,
+                                                columnNumber: 23
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
+                                            lineNumber: 165,
+                                            columnNumber: 21
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
+                                        lineNumber: 164,
+                                        columnNumber: 19
                                     }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 166,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, item.id, true, {
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
+                                lineNumber: 157,
+                                columnNumber: 17
+                            }, this)
+                        }, item.id, false, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 139,
+                            lineNumber: 145,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 137,
+                    lineNumber: 143,
                     columnNumber: 9
                 }, this),
                 selectedItem && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -646,12 +646,12 @@ function GallerySection() {
                                 size: 32
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                lineNumber: 186,
+                                lineNumber: 185,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 182,
+                            lineNumber: 181,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -664,7 +664,7 @@ function GallerySection() {
                                     className: "w-full h-auto max-h-[80vh] object-contain rounded-lg"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 190,
+                                    lineNumber: 189,
                                     columnNumber: 17
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                                     src: galleryItems.find((i)=>i.id === selectedItem)?.media,
@@ -673,7 +673,7 @@ function GallerySection() {
                                     className: "w-full h-auto max-h-[80vh] object-contain rounded-lg"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 195,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -681,30 +681,30 @@ function GallerySection() {
                                     children: galleryItems.find((i)=>i.id === selectedItem)?.title
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                                    lineNumber: 203,
+                                    lineNumber: 202,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                            lineNumber: 188,
+                            lineNumber: 187,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-                    lineNumber: 178,
+                    lineNumber: 177,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-            lineNumber: 101,
+            lineNumber: 108,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Documents/s/black-dragon/src/components/sections/GallerySection.tsx",
-        lineNumber: 100,
+        lineNumber: 107,
         columnNumber: 5
     }, this);
 }

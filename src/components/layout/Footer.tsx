@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Instagram, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { Input } from '@/components/ui/input';
@@ -97,9 +98,11 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-3 mb-6 group">
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="Black Dragon Logo" 
+                width={56}
+                height={56}
                 className="h-14 w-auto transition-transform group-hover:scale-105"
               />
               <div>

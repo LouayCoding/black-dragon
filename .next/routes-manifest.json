@@ -12,6 +12,12 @@
       "priority": true,
       "statusCode": 308,
       "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/register",
+      "destination": "/inschrijven",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/register(?:/)?$"
     }
   ],
   "headers": [],
@@ -99,6 +105,12 @@
       "regex": "^/gallery(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/gallery(?:/)?$"
+    },
+    {
+      "page": "/inschrijven",
+      "regex": "^/inschrijven(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/inschrijven(?:/)?$"
     },
     {
       "page": "/instructors",

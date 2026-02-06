@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -59,9 +60,11 @@ export function Header() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex items-center justify-between py-4">
           <Link href="/" className="group relative z-[70]">
-            <img 
+            <Image 
               src="/logo.png" 
               alt="Black Dragon Logo" 
+              width={56}
+              height={56}
               className="h-12 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>

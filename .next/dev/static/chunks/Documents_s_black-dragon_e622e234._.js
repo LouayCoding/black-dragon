@@ -19,10 +19,8 @@ function useScrollReveal(threshold = 0.1, rootMargin = '0px') {
             if (!element) return;
             const observer = new IntersectionObserver({
                 "useScrollReveal.useEffect": ([entry])=>{
-                    if (entry.isIntersecting) {
-                        setIsVisible(true);
-                        observer.unobserve(element);
-                    }
+                    // Toggle visibility based on intersection
+                    setIsVisible(entry.isIntersecting);
                 }
             }["useScrollReveal.useEffect"], {
                 threshold,
@@ -68,7 +66,7 @@ const Input = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$Docu
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                 type: type,
-                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("flex h-11 w-full rounded-md border bg-background px-4 py-2.5 text-base ring-offset-background", "file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground", "placeholder:text-muted-foreground/70", "transition-colors duration-200", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2", "disabled:cursor-not-allowed disabled:opacity-50", error ? "border-destructive focus-visible:ring-destructive" : "border-input focus-visible:ring-ring", className),
+                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("flex h-11 w-full rounded-md border bg-background px-4 py-2.5 text-base ring-offset-background", "file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground", "placeholder:text-muted-foreground/70", "transition-colors duration-200", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0", "disabled:cursor-not-allowed disabled:opacity-50", error ? "border-destructive focus-visible:ring-destructive" : "border-input focus-visible:ring-primary focus-visible:border-primary", className),
                 ref: ref,
                 "aria-invalid": error ? "true" : "false",
                 ...props
@@ -197,7 +195,7 @@ function NewsSection() {
         return 'bg-blue-600 text-white';
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "py-24 bg-muted/30 relative",
+        className: "py-16 sm:py-20 lg:py-24 bg-muted/30 relative",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             ref: ref,
             className: "container mx-auto px-4",
@@ -371,7 +369,7 @@ function NewsSection() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             href: `/news/${item.slug}`,
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "font-serif text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors",
+                                                className: "font-serif text-lg sm:text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors",
                                                 children: item.title
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/NewsSection.tsx",
@@ -432,7 +430,7 @@ function NewsSection() {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "font-serif text-xl font-semibold text-foreground mb-2",
+                                className: "font-serif text-lg sm:text-xl font-semibold text-foreground mb-2",
                                 children: 'Geen artikelen gevonden'
                             }, void 0, false, {
                                 fileName: "[project]/Documents/s/black-dragon/src/components/sections/NewsSection.tsx",
@@ -470,7 +468,7 @@ function NewsSection() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$s$2f$black$2d$dragon$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/contact",
+                            href: "/inschrijven",
                             className: "inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors",
                             children: [
                                 'Schrijf je in voor onze nieuwsbrief',

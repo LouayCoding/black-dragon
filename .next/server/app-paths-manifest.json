@@ -3,6 +3,7 @@
   "/(public)/contact/page": "app/(public)/contact/page.js",
   "/(public)/faq/page": "app/(public)/faq/page.js",
   "/(public)/gallery/page": "app/(public)/gallery/page.js",
+  "/(public)/inschrijven/page": "app/(public)/inschrijven/page.js",
   "/(public)/instructors/page": "app/(public)/instructors/page.js",
   "/(public)/news/page": "app/(public)/news/page.js",
   "/(public)/page": "app/(public)/page.js",

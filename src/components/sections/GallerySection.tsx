@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { X, Play } from 'lucide-react';
 import { FadeInView } from '@/components/animations/FadeInView';
 
@@ -149,10 +150,11 @@ export function GallerySection() {
               className="gallery-item group relative aspect-square overflow-hidden cursor-pointer rounded-lg"
             >
               {item.type === 'image' ? (
-                <img 
+                <Image 
                   src={item.media} 
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               ) : (
                 <div className="relative w-full h-full">
@@ -187,9 +189,11 @@ export function GallerySection() {
             </button>
             <div className="max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
               {galleryItems.find(i => i.id === selectedItem)?.type === 'image' ? (
-                <img 
-                  src={galleryItems.find(i => i.id === selectedItem)?.media}
-                  alt={galleryItems.find(i => i.id === selectedItem)?.title}
+                <Image 
+                  src={galleryItems.find(i => i.id === selectedItem)?.media || ''}
+                  alt={galleryItems.find(i => i.id === selectedItem)?.title || ''}
+                  width={1200}
+                  height={800}
                   className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
                 />
               ) : (

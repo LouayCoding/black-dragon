@@ -5,6 +5,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cn } from '@/lib/utils';
 import { Calendar, ArrowRight, Tag, Search, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Input } from '@/components/ui/input';
 
 interface NewsArticle {
@@ -150,10 +151,11 @@ export function NewsSection() {
                 >
                   {/* Image */}
                   <Link href={`/news/${item.slug}`} className="block relative aspect-video overflow-hidden">
-                    <img
+                    <Image
                       src={item.image_url || '/placeholder.svg'}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
                       <span className={cn(

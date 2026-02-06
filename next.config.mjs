@@ -8,6 +8,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/register',
+        destination: '/inschrijven',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig
