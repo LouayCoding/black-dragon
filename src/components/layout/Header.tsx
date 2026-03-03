@@ -15,12 +15,14 @@ export function Header() {
   const isHomePage = pathname === '/'
 
   const navLinks = [
+    { href: '/about', label: 'Over Ons' },
     { href: '/programs', label: 'Programmas' },
     { href: '/schedule', label: 'Rooster' },
     { href: '/tarieven', label: 'Tarieven' },
+    { href: '/news', label: 'Nieuws' },
     { href: '/instructors', label: 'Instructeurs' },
-    { href: '/about', label: 'Over Ons' },
     { href: '/gallery', label: 'Galerij' },
+    { href: '/faq', label: 'FAQ' },
     { href: '/contact', label: 'Contact' },
   ]
 
