@@ -75,7 +75,7 @@ export function PricingSection() {
     {
       name: 'Bandexamen',
       price: '35',
-      description: 'Voor niet-leden of extra examens',
+      description: 'Enkel voor leden',
     },
   ];
 

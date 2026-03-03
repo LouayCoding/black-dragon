@@ -281,7 +281,7 @@ export default function StudentPortal() {
                 <p className="text-foreground/60">Programma</p>
                 <p className="font-medium">
                   {student?.program === 'little-tigers' && 'Kleine Tijgers'}
-                  {student?.program === 'youth' && 'Jeugd'}
+                  {student?.program === 'youth' && 'Junioren'}
                   {student?.program === 'women' && 'Vrouwen'}
                   {student?.program === 'adult' && 'Volwassenen'}
                 </p>

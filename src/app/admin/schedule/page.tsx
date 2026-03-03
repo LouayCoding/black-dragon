@@ -13,7 +13,7 @@ import { useToast } from '@/hooks/use-toast'
 const DAYS = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag']
 const PROGRAMS = [
   { value: 'little-tigers', label: 'Kleine Tijgers' },
-  { value: 'youth', label: 'Jeugd' },
+  { value: 'youth', label: 'Junioren' },
   { value: 'women', label: 'Vrouwen' },
   { value: 'adult', label: 'Volwassenen' }
 ]

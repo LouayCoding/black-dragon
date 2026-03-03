@@ -8,18 +8,18 @@ export function ScheduleSection() {
 
   const schedule = [
     { day: 'Maandag', classes: [
-      { time: '17:00-18:00', name: 'Taekwondo KIDS/JEUGD', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
-      { time: '18:00-19:00', name: 'Taekwondo JEUGD/SENIOREN', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
+      { time: '17:00-18:00', name: 'Taekwondo KIDS/JUNIOREN', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Taekwondo JUNIOREN/SENIOREN', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
     ]},
     { day: 'Dinsdag', classes: [
-      { time: '18:00-19:00', name: 'Taekwondo KIDS/JEUGD', location: 'Withuysstraat 2, Den Haag', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Taekwondo KIDS/JUNIOREN', location: 'Withuysstraat 2, Den Haag', duration: '60 min' },
     ]},
     { day: 'Woensdag', classes: [
-      { time: '17:00-18:00', name: 'Taekwondo KIDS/JEUGD', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
-      { time: '18:00-19:00', name: 'Taekwondo JEUGD/SENIOREN', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
+      { time: '17:00-18:00', name: 'Taekwondo KIDS/JUNIOREN', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Taekwondo JUNIOREN/SENIOREN', location: 'Draaistraat 16, Den Haag', duration: '60 min' },
     ]},
     { day: 'Donderdag', classes: [
-      { time: '18:00-19:00', name: 'Taekwondo KIDS/JEUGD', location: 'Withuysstraat 2, Den Haag', duration: '60 min' },
+      { time: '18:00-19:00', name: 'Taekwondo KIDS/JUNIOREN', location: 'Withuysstraat 2, Den Haag', duration: '60 min' },
     ]},
     { day: 'Vrijdag', classes: [
       { time: '18:00-19:00', name: 'Ladies Only', location: 'Draaistraat 16, Den Haag', duration: '60 min' },

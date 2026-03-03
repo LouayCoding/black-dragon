@@ -38,7 +38,7 @@ Hierna te noemen: "het lid"
 
 3.2 Er zijn verschillende soorten lidmaatschappen:
 - Little Tigers (4-6 jaar)
-- Jeugd (7-17 jaar)
+- Junioren (7-17 jaar)
 - Volwassenen (18+ jaar)
 - Gezinslidmaatschap
 

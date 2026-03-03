@@ -35,7 +35,7 @@ export const newsData: NewsItem[] = [
 
 Onze school neemt deel met meer dan 30 leerlingen in verschillende categorieën:
 - Kleine Tijgers (4-6 jaar)
-- Jeugd (7-12 jaar)
+- Junioren (7-12 jaar)
 - Tieners (13-17 jaar)
 - Volwassenen (18+)
 
@@ -93,8 +93,8 @@ Good luck to all our participants!`
 
 **Nieuwe lesschema zaterdag:**
 - 09:00 - 09:45: Kleine Tijgers (4-6 jaar)
-- 10:00 - 11:00: Jeugd Beginners (7-12 jaar)
-- 11:15 - 12:15: Jeugd Gevorderden (7-12 jaar)
+- 10:00 - 11:00: Junioren Beginners (7-12 jaar)
+- 11:15 - 12:15: Junioren Gevorderden (7-12 jaar)
 
 Deze lessen zijn ideaal voor:
 - Kinderen van werkende ouders
@@ -268,7 +268,7 @@ Proefles Kleine Tijgers (4-6 jaar)
 Een speelse introductie voor de allerkleinsten.
 
 *11:00 - 12:00*
-Proefles Jeugd (7-12 jaar)
+Proefles Junioren (7-12 jaar)
 Leer de basistrappen en ontdek je kracht.
 
 *12:00 - 13:00*

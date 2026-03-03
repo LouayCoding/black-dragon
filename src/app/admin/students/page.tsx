@@ -12,7 +12,7 @@ import { useToast } from '@/hooks/use-toast'
 
 const PROGRAMS = [
   { value: 'little-tigers', label: 'Kleine Tijgers' },
-  { value: 'youth', label: 'Jeugd' },
+  { value: 'youth', label: 'Junioren' },
   { value: 'women', label: 'Vrouwen' },
   { value: 'adult', label: 'Volwassenen' }
 ]

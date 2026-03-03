@@ -31,7 +31,7 @@ const mockStudents = [
 ];
 
 const mockClasses = [
-  { id: '1', name: 'Jeugd Training', day: 'Maandag', time: '18:00', location: 'Amsterdam' },
+  { id: '1', name: 'Junioren Training', day: 'Maandag', time: '18:00', location: 'Amsterdam' },
   { id: '2', name: 'Volwassenen', day: 'Maandag', time: '19:30', location: 'Amsterdam' },
 ];
 

@@ -41,9 +41,9 @@ export function GallerySection() {
     { id: 8, category: 'competition', title: 'Trofee winnaar', korean: '승리', media: '/gallery/trophy-winner.jpg', type: 'image' },
     { id: 9, category: 'competition', title: 'Overwinning viering', korean: '축하', media: '/gallery/victory-celebration.jpg', type: 'image' },
     
-    // Echte afbeeldingen - Training (voorheen Jeugd)
+    // Echte afbeeldingen - Training (voorheen Junioren)
     { id: 10, category: 'training', title: 'Jonge kampioen', korean: '우승자', media: '/gallery/young-champion.jpg', type: 'image' },
-    { id: 11, category: 'training', title: 'Jeugd training', korean: '청소년 훈련', media: '/gallery/jeugd-training.jpg', type: 'image' },
+    { id: 11, category: 'training', title: 'Junioren training', korean: '청소년 훈련', media: '/gallery/jeugd-training.jpg', type: 'image' },
     
     // Nieuwe training afbeeldingen (training-01 t/m training-34)
     { id: 12, category: 'training', title: 'Training moment 1', korean: '훈련', media: '/gallery/training-01.jpg', type: 'image' },

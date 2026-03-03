@@ -132,7 +132,7 @@ export default function AbsencesPage() {
                       <div className="text-foreground/70">
                         <span className="font-medium">Programma:</span>{' '}
                         {absence.student.program === 'little-tigers' && 'Kleine Tijgers'}
-                        {absence.student.program === 'youth' && 'Jeugd'}
+                        {absence.student.program === 'youth' && 'Junioren'}
                         {absence.student.program === 'women' && 'Vrouwen'}
                         {absence.student.program === 'adult' && 'Volwassenen'}
                       </div>

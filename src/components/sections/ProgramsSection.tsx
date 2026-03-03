@@ -22,7 +22,7 @@ export function ProgramsSection() {
     },
     {
       image: '/gallery/jeugd-training.jpg',
-      title: 'Jeugd',
+      title: 'Junioren',
       age: '7-17 jaar',
       description: 'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
       features: [
