@@ -89,6 +89,24 @@
       "namedRegex": "^/admin/students(?:/)?$"
     },
     {
+      "page": "/algemene-voorwaarden",
+      "regex": "^/algemene\\-voorwaarden(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/algemene\\-voorwaarden(?:/)?$"
+    },
+    {
+      "page": "/anti-bullying-protocol",
+      "regex": "^/anti\\-bullying\\-protocol(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/anti\\-bullying\\-protocol(?:/)?$"
+    },
+    {
+      "page": "/code-of-conduct",
+      "regex": "^/code\\-of\\-conduct(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/code\\-of\\-conduct(?:/)?$"
+    },
+    {
       "page": "/contact",
       "regex": "^/contact(?:/)?$",
       "routeKeys": {},
@@ -105,6 +123,12 @@
       "regex": "^/gallery(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/gallery(?:/)?$"
+    },
+    {
+      "page": "/house-rules",
+      "regex": "^/house\\-rules(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/house\\-rules(?:/)?$"
     },
     {
       "page": "/inschrijven",
@@ -125,6 +149,12 @@
       "namedRegex": "^/news(?:/)?$"
     },
     {
+      "page": "/privacy-beleid",
+      "regex": "^/privacy\\-beleid(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-beleid(?:/)?$"
+    },
+    {
       "page": "/programs",
       "regex": "^/programs(?:/)?$",
       "routeKeys": {},
@@ -135,6 +165,12 @@
       "regex": "^/schedule(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/schedule(?:/)?$"
+    },
+    {
+      "page": "/sexual-harassment-protocol",
+      "regex": "^/sexual\\-harassment\\-protocol(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sexual\\-harassment\\-protocol(?:/)?$"
     },
     {
       "page": "/student",

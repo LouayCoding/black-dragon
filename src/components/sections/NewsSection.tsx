@@ -211,20 +211,32 @@ export function NewsSection() {
           )}
         </div>
 
-        {/* Load More */}
+        {/* CTA */}
         <div className={cn(
           "text-center mt-12 transition-all duration-700 delay-500",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <p className="text-muted-foreground mb-4">
-            {'Blijf op de hoogte van al onze activiteiten'}
+            Volg ons op social media voor het laatste nieuws
           </p>
-          <Link
-            href="/inschrijven"
-            className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
-          >
-            {'Schrijf je in voor onze nieuwsbrief'} →
-          </Link>
+          <div className="flex justify-center gap-4">
+            <a
+              href="https://www.instagram.com/taekwondoblackdragon/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
+            >
+              Instagram →
+            </a>
+            <a
+              href="https://www.facebook.com/taekwondoblackdragon/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
+            >
+              Facebook →
+            </a>
+          </div>
         </div>
       </div>
     </section>

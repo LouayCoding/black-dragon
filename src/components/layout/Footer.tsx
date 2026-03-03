@@ -1,93 +1,29 @@
-'use client'
-
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
-
-interface NewsletterSubscription {
-  id: string;
-  email: string;
-  createdAt: string;
-}
+import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
-  const { toast } = useToast();
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [subscriptions, setSubscriptions] = useLocalStorage<NewsletterSubscription[]>('newsletter-subscriptions', []);
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!email.trim()) return;
-
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast({
-        title: 'Ongeldig e-mailadres',
-        description: 'Voer een geldig e-mailadres in.',
-        variant: 'destructive',
-      });
-      return;
-    }
-
-    // Check if already subscribed
-    if (subscriptions.some(sub => sub.email.toLowerCase() === email.toLowerCase())) {
-      toast({
-        title: 'Al aangemeld',
-        description: 'Dit e-mailadres is al aangemeld voor onze nieuwsbrief.',
-        variant: 'destructive',
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    const newSubscription: NewsletterSubscription = {
-      id: Date.now().toString(),
-      email: email.trim(),
-      createdAt: new Date().toISOString(),
-    };
-
-    setSubscriptions([...subscriptions, newSubscription]);
-    setEmail('');
-    setIsSubmitting(false);
-
-    toast({
-      title: 'Succesvol aangemeld!',
-      description: 'Bedankt voor je aanmelding voor onze nieuwsbrief.',
-    });
-  };
-
-  const quickLinks = [
-    { label: 'Over Ons', href: '/about' },
+  const siteLinks = [
     { label: 'Programmas', href: '/programs' },
     { label: 'Rooster', href: '/schedule' },
     { label: 'Tarieven', href: '/tarieven' },
-    { label: 'Instructeurs', href: '/instructors' },
+    { label: 'Over Ons', href: '/about' },
     { label: 'Galerij', href: '/gallery' },
-    { label: 'FAQ', href: '/faq' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Gedragscode', href: '/code-of-conduct' },
-    { label: 'Huis- en Gedragsregels', href: '/house-rules' },
+  ];
+
+  const moreLinks = [
+    { label: 'Nieuws', href: '/news' },
+    { label: 'Instructeurs', href: '/instructors' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Inschrijven', href: '/inschrijven' },
   ];
 
   const programs = [
-    { label: 'Kinderlessen', href: '/programs' },
-    { label: 'Tiener Programma', href: '/programs' },
-    { label: 'Volwassenen Training', href: '/programs' },
-    { label: 'Gezinslessen', href: '/programs' },
-    { label: 'Wedstrijdteam', href: '/programs' },
-    { label: 'Privélessen', href: '/contact' },
+    { label: 'Kleine Tijgers (4-6)', href: '/programs' },
+    { label: 'Junioren (7-17)', href: '/programs' },
+    { label: 'Volwassenen (18+)', href: '/programs' },
+    { label: 'Ladies Only', href: '/programs' },
   ];
 
   return (
@@ -111,7 +47,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Taekwondo Vereniging Black Dragon is een Goudse sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo.
+              Taekwondo Vereniging Black Dragon Den Haag. Sportclub voor zelfverdediging en Olympische vechtsport. Aangesloten bij TBN, IMAF-Nederland en World Taekwondo.
             </p>
             <div className="flex gap-3">
               <a
@@ -153,11 +89,24 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Pagina's */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-6">{'Snelle Links'}</h4>
+            <h4 className="font-serif text-lg font-semibold mb-6">Pagina&apos;s</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
+              {siteLinks.map((link) => (
+                <li key={link.href + link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h4 className="font-serif text-lg font-semibold mt-8 mb-4">Meer</h4>
+            <ul className="space-y-3">
+              {moreLinks.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}
@@ -170,9 +119,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Programs */}
+          {/* Programmas */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-6">{'Onze Programmas'}</h4>
+            <h4 className="font-serif text-lg font-semibold mb-6">Programma&apos;s</h4>
             <ul className="space-y-3">
               {programs.map((program) => (
                 <li key={program.label}>
@@ -234,20 +183,23 @@ export function Footer() {
           © {new Date().getFullYear()} Taekwondo Black Dragon Den Haag. Alle rechten voorbehouden.
         </p>
         <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
+          <Link href="/algemene-voorwaarden" className="text-white/50 hover:text-primary text-sm transition-colors">
+            Algemene Voorwaarden
+          </Link>
+          <Link href="/privacy-beleid" className="text-white/50 hover:text-primary text-sm transition-colors">
+            Privacybeleid
+          </Link>
           <Link href="/code-of-conduct" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {'Gedragscode'}
+            Gedragscode
           </Link>
           <Link href="/anti-bullying-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {'Pestprotocol'}
+            Pestprotocol
           </Link>
           <Link href="/sexual-harassment-protocol" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {'Protocol Seksuele Intimidatie'}
+            Protocol Seksuele Intimidatie
           </Link>
-          <Link href="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {'Privacybeleid'}
-          </Link>
-          <Link href="/faq" className="text-white/50 hover:text-primary text-sm transition-colors">
-            {'Algemene Voorwaarden'}
+          <Link href="/house-rules" className="text-white/50 hover:text-primary text-sm transition-colors">
+            Huisregels
           </Link>
         </div>
       </div>

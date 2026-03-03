@@ -15,15 +15,11 @@ export function Header() {
   const isHomePage = pathname === '/'
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'Over Ons' },
     { href: '/programs', label: 'Programmas' },
     { href: '/schedule', label: 'Rooster' },
     { href: '/tarieven', label: 'Tarieven' },
-    { href: '/news', label: 'Nieuws' },
-    { href: '/instructors', label: 'Instructeurs' },
+    { href: '/about', label: 'Over Ons' },
     { href: '/gallery', label: 'Galerij' },
-    { href: '/faq', label: 'FAQ' },
     { href: '/contact', label: 'Contact' },
   ]
 
@@ -53,7 +49,7 @@ export function Header() {
         'fixed top-0 left-0 right-0 transition-all duration-300',
         isMobileMenuOpen ? 'z-[60]' : 'z-50',
         isScrolled || !isHomePage
-          ? 'bg-primary backdrop-blur-md border-b border-primary'
+          ? 'bg-background/95 backdrop-blur-md'
           : 'bg-gradient-to-b from-black/60 to-transparent'
       )}
     >
@@ -77,8 +73,8 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg relative group",
                   pathname === link.href
-                    ? isHomePage && !isScrolled ? "text-white" : "text-black font-semibold"
-                    : isHomePage && !isScrolled ? "text-white/80 hover:text-white" : "text-black/70 hover:text-black"
+                    ? isHomePage && !isScrolled ? "text-white" : "text-white font-semibold"
+                    : isHomePage && !isScrolled ? "text-white/80 hover:text-white" : "text-white/70 hover:text-white"
                 )}
               >
                 {link.label}
@@ -97,7 +93,7 @@ export function Header() {
               className={cn(
                 "hidden lg:flex rounded",
                 isScrolled || !isHomePage
-                  ? "bg-zinc-800 hover:bg-zinc-700 text-white"
+                  ? "bg-primary hover:bg-primary/90 text-primary-foreground"
                   : "bg-primary hover:bg-primary/90 text-primary-foreground"
               )}
             >
@@ -107,8 +103,12 @@ export function Header() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={cn(
-                "xl:hidden p-2.5 rounded-lg transition-all duration-200 hover:bg-black/10 relative z-[70]",
-                isMobileMenuOpen ? "text-black" : isHomePage && !isScrolled ? "text-white" : "text-black"
+                "xl:hidden p-2.5 rounded-lg transition-all duration-200 relative z-[70]",
+                isMobileMenuOpen 
+                  ? "text-foreground" 
+                  : isHomePage && !isScrolled 
+                    ? "text-white" 
+                    : "text-foreground"
               )}
               aria-label="Toggle menu"
             >
@@ -120,39 +120,51 @@ export function Header() {
 
     </header>
     
-    {isMobileMenuOpen && (
-      <div className="fixed inset-0 bg-primary z-[55] xl:hidden overflow-y-auto">
-        <div className="min-h-screen flex flex-col items-center justify-center px-8 py-24">
-          <nav className="w-full">
-            <div className="flex flex-col gap-6 items-center text-center">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={cn(
-                    "font-serif text-3xl font-bold inline-block",
-                    pathname === link.href ? "text-black" : "text-black/50"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+    <div 
+      className={cn(
+        "fixed inset-0 bg-background/95 backdrop-blur-md z-[55] xl:hidden overflow-y-auto transition-all duration-500 ease-in-out",
+        isMobileMenuOpen 
+          ? "opacity-100 visible translate-y-0" 
+          : "opacity-0 invisible -translate-y-4"
+      )}
+    >
+      <div className="min-h-screen flex flex-col items-center justify-center px-8 py-24">
+        <nav className="w-full">
+          <div className="flex flex-col gap-6 items-center text-center">
+            {navLinks.map((link, index) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={cn(
+                  "font-serif text-3xl font-bold inline-block transition-all duration-500",
+                  pathname === link.href ? "text-primary" : "text-foreground/50 hover:text-foreground",
+                  isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                )}
+                style={{ transitionDelay: isMobileMenuOpen ? `${150 + index * 75}ms` : '0ms' }}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Button
+              asChild
+              className={cn(
+                "mt-8 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-500",
+                isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              )}
+              style={{ transitionDelay: isMobileMenuOpen ? `${150 + navLinks.length * 75}ms` : '0ms' }}
+            >
               <Link
                 href="/inschrijven"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={cn(
-                  "mt-8 font-serif text-3xl font-bold inline-block",
-                  pathname === '/inschrijven' ? "text-black" : "text-black/50"
-                )}
               >
                 Inschrijven
               </Link>
-            </div>
-          </nav>
-        </div>
+            </Button>
+          </div>
+        </nav>
       </div>
-    )}
+    </div>
     </>
   )
 }

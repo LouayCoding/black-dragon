@@ -60,25 +60,38 @@ export function RegisterSection() {
       return
     }
 
-    // Simuleer API call - in productie zou dit naar een backend gaan
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    try {
+      const { supabase } = await import('@/lib/supabase')
+      const { error } = await supabase
+        .from('registrations')
+        .insert([{
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          birth_date: formData.birthDate || null,
+          parent_name: formData.parentName || null,
+          parent_email: formData.parentEmail || null,
+          parent_phone: formData.parentPhone || null,
+          message: formData.message || null,
+        }])
 
-    // Sla op in localStorage voor demo doeleinden
-    const registrations = JSON.parse(localStorage.getItem('registrations') || '[]')
-    registrations.push({
-      ...formData,
-      id: Date.now().toString(),
-      createdAt: new Date().toISOString(),
-    })
-    localStorage.setItem('registrations', JSON.stringify(registrations))
+      if (error) throw error
 
-    setIsSubmitted(true)
+      setIsSubmitted(true)
+      toast({
+        title: 'Inschrijving ontvangen!',
+        description: 'We nemen zo snel mogelijk contact met je op.',
+      })
+    } catch (error) {
+      console.error('Registration error:', error)
+      toast({
+        title: 'Er ging iets mis',
+        description: 'Probeer het opnieuw of neem contact op via telefoon.',
+        variant: 'destructive',
+      })
+    }
     setIsSubmitting(false)
-
-    toast({
-      title: 'Inschrijving ontvangen! 🥋',
-      description: 'We nemen zo snel mogelijk contact met je op.',
-    })
   }
 
   if (isSubmitted) {

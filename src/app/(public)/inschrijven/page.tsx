@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
-import { Phone, Mail, CheckCircle2 } from 'lucide-react'
+import { Phone, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
 
 export default function InschrijvenPage() {
@@ -25,7 +25,6 @@ export default function InschrijvenPage() {
     parentPhone: '',
   })
 
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
@@ -35,7 +34,6 @@ export default function InschrijvenPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Validatie
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
       toast({
         title: 'Velden ontbreken',
@@ -46,7 +44,6 @@ export default function InschrijvenPage() {
       return
     }
 
-    // Email validatie
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(formData.email)) {
       toast({
@@ -58,25 +55,38 @@ export default function InschrijvenPage() {
       return
     }
 
-    // Simuleer API call - in productie zou dit naar een backend gaan
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    try {
+      const { supabase } = await import('@/lib/supabase')
+      const { error } = await supabase
+        .from('registrations')
+        .insert([{
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          birth_date: formData.birthDate || null,
+          parent_name: formData.parentName || null,
+          parent_email: formData.parentEmail || null,
+          parent_phone: formData.parentPhone || null,
+          message: formData.message || null,
+        }])
 
-    // Sla op in localStorage voor demo doeleinden
-    const registrations = JSON.parse(localStorage.getItem('registrations') || '[]')
-    registrations.push({
-      ...formData,
-      id: Date.now().toString(),
-      createdAt: new Date().toISOString(),
-    })
-    localStorage.setItem('registrations', JSON.stringify(registrations))
+      if (error) throw error
 
-    setIsSubmitted(true)
+      setIsSubmitted(true)
+      toast({
+        title: 'Inschrijving ontvangen!',
+        description: 'We nemen zo snel mogelijk contact met je op.',
+      })
+    } catch (error) {
+      console.error('Registration error:', error)
+      toast({
+        title: 'Er ging iets mis',
+        description: 'Probeer het opnieuw of neem contact op via telefoon.',
+        variant: 'destructive',
+      })
+    }
     setIsSubmitting(false)
-
-    toast({
-      title: 'Inschrijving ontvangen! 🥋',
-      description: 'We nemen zo snel mogelijk contact met je op.',
-    })
   }
 
   if (isSubmitted) {
@@ -90,38 +100,36 @@ export default function InschrijvenPage() {
             
             <div className="space-y-4">
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground">
-                Bedankt voor je inschrijving!
+                Bedankt!
               </h1>
-              
-              <p className="text-foreground/90 text-lg leading-[1.8] max-w-2xl mx-auto">
-                We hebben je aanmelding ontvangen en zullen binnen <strong>24 uur</strong> contact met je opnemen 
-                om je gratis proefles in te plannen.
+              <p className="text-foreground/70 text-lg leading-[1.8] max-w-2xl mx-auto">
+                We hebben je aanmelding ontvangen en nemen binnen <strong className="text-foreground">24 uur</strong> contact met je op.
               </p>
             </div>
 
-            <div className="bg-card rounded-lg shadow-md p-8 lg:p-10 space-y-6 text-left">
-              <h2 className="font-serif text-2xl font-bold text-foreground text-center">Wat gebeurt er nu?</h2>
-              <ul className="space-y-4 text-foreground/90 text-lg">
+            <div className="bg-card border border-border rounded-lg p-8 lg:p-10 space-y-6 text-left">
+              <h2 className="font-serif text-xl font-bold text-foreground text-center">Wat gebeurt er nu?</h2>
+              <ul className="space-y-4 text-foreground/70">
                 <li className="flex gap-4 items-start">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">1</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-sm">1</span>
                   <span className="pt-1">We bellen je binnen 24 uur om kennis te maken</span>
                 </li>
                 <li className="flex gap-4 items-start">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">2</span>
-                  <span className="pt-1">We plannen samen een gratis proefles in</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-sm">2</span>
+                  <span className="pt-1">We plannen samen een proefles in</span>
                 </li>
                 <li className="flex gap-4 items-start">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">3</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-sm">3</span>
                   <span className="pt-1">Je ontvangt een bevestiging per e-mail</span>
                 </li>
               </ul>
             </div>
 
-            <div className="pt-8 space-y-6">
-              <p className="text-foreground/70 text-lg">
-                Vragen? Neem direct contact met ons op:
+            <div className="space-y-4">
+              <p className="text-foreground/50 text-sm">
+                Vragen? Bel of WhatsApp ons direct:
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-3 justify-center">
                 <Button asChild variant="outline" size="lg" className="rounded-lg">
                   <a href="tel:+31615047993" className="flex items-center gap-2">
                     <Phone className="w-4 h-4" />
@@ -139,11 +147,9 @@ export default function InschrijvenPage() {
               </div>
             </div>
 
-            <div className="pt-8">
-              <Button asChild size="lg" className="rounded-lg bg-zinc-800 hover:bg-zinc-700">
-                <Link href="/">Terug naar home</Link>
-              </Button>
-            </div>
+            <Button asChild size="lg" variant="outline" className="rounded-lg">
+              <Link href="/">Terug naar home</Link>
+            </Button>
           </div>
         </div>
       </div>
@@ -151,68 +157,63 @@ export default function InschrijvenPage() {
   }
 
   return (
-    <section className="section-padding bg-muted/30 relative">
+    <section className="py-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <div className="max-w-3xl space-y-8">
-            <div className="inline-block">
-              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
-                Inschrijven
-              </span>
-            </div>
+            <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+              Inschrijven
+            </span>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              Start je<br />
-              <span className="text-primary">Taekwondo reis</span>
+              Schrijf je<br />
+              <span className="text-primary">vandaag in</span>
             </h1>
-            <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
-                Vul het formulier in en ontvang een <strong>gratis proefles</strong>. We nemen binnen 24 uur contact met je op.
-              </p>
-            </div>
+            <p className="text-foreground/70 text-sm sm:text-base lg:text-lg leading-[1.8] max-w-2xl">
+              Vul het formulier in en we nemen binnen 24 uur contact met je op.
+            </p>
           </div>
         </div>
 
         {/* Form Section */}
-        <div className="max-w-4xl">
-          <form onSubmit={handleSubmit} className="space-y-8">
+        <div className="max-w-3xl">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Persoonlijke Gegevens */}
-            <div className="space-y-6">
-              <h2 className="font-serif text-2xl lg:text-3xl font-bold text-foreground">
+            <div className="bg-card border border-border rounded-lg p-6 sm:p-8 space-y-6">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground">
                 Persoonlijke Gegevens
               </h2>
               
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName" className="text-base">Voornaam *</Label>
+                  <Label htmlFor="firstName">Voornaam *</Label>
                   <Input
                     id="firstName"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="Bijv. Ahmed"
-                    className="h-12"
+                    className="h-11"
                     required
                   />
                 </div>
-                
                 <div className="space-y-2">
-                  <Label htmlFor="lastName" className="text-base">Achternaam *</Label>
+                  <Label htmlFor="lastName">Achternaam *</Label>
                   <Input
                     id="lastName"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Bijv. van der Berg"
-                    className="h-12"
+                    className="h-11"
                     required
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-base">E-mailadres *</Label>
+                  <Label htmlFor="email">E-mailadres *</Label>
                   <Input
                     id="email"
                     name="email"
@@ -220,13 +221,12 @@ export default function InschrijvenPage() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="jouw@email.nl"
-                    className="h-12"
+                    className="h-11"
                     required
                   />
                 </div>
-                
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-base">Telefoonnummer *</Label>
+                  <Label htmlFor="phone">Telefoonnummer *</Label>
                   <Input
                     id="phone"
                     name="phone"
@@ -234,51 +234,51 @@ export default function InschrijvenPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="06 12345678"
-                    className="h-12"
+                    className="h-11"
                     required
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="birthDate" className="text-base">Geboortedatum</Label>
+              <div className="space-y-2 max-w-xs">
+                <Label htmlFor="birthDate">Geboortedatum</Label>
                 <Input
                   id="birthDate"
                   name="birthDate"
                   type="date"
                   value={formData.birthDate}
                   onChange={handleChange}
-                  className="h-12"
+                  className="h-11"
                 />
               </div>
             </div>
 
-            {/* Ouder/Voogd Info (voor kinderen) */}
-            <div className="space-y-6">
+            {/* Ouder/Voogd */}
+            <div className="bg-card border border-border rounded-lg p-6 sm:p-8 space-y-6">
               <div>
-                <h2 className="font-serif text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-1">
                   Ouder/Voogd Gegevens
                 </h2>
-                <p className="text-sm text-foreground/70">
+                <p className="text-xs text-foreground/50">
                   Alleen invullen indien de deelnemer jonger is dan 18 jaar
                 </p>
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="parentName" className="text-base">Naam ouder/voogd</Label>
+                <Label htmlFor="parentName">Naam ouder/voogd</Label>
                 <Input
                   id="parentName"
                   name="parentName"
                   value={formData.parentName}
                   onChange={handleChange}
                   placeholder="Volledige naam"
-                  className="h-12"
+                  className="h-11"
                 />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <Label htmlFor="parentEmail" className="text-base">E-mailadres ouder/voogd</Label>
+                  <Label htmlFor="parentEmail">E-mailadres ouder/voogd</Label>
                   <Input
                     id="parentEmail"
                     name="parentEmail"
@@ -286,12 +286,11 @@ export default function InschrijvenPage() {
                     value={formData.parentEmail}
                     onChange={handleChange}
                     placeholder="ouder@email.nl"
-                    className="h-12"
+                    className="h-11"
                   />
                 </div>
-                
                 <div className="space-y-2">
-                  <Label htmlFor="parentPhone" className="text-base">Telefoon ouder/voogd</Label>
+                  <Label htmlFor="parentPhone">Telefoon ouder/voogd</Label>
                   <Input
                     id="parentPhone"
                     name="parentPhone"
@@ -299,44 +298,42 @@ export default function InschrijvenPage() {
                     value={formData.parentPhone}
                     onChange={handleChange}
                     placeholder="06 12345678"
-                    className="h-12"
+                    className="h-11"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Aanvullende Informatie */}
-            <div className="space-y-6">
-              <h2 className="font-serif text-2xl lg:text-3xl font-bold text-foreground">
-                Aanvullende Informatie
+            {/* Opmerkingen */}
+            <div className="bg-card border border-border rounded-lg p-6 sm:p-8 space-y-6">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground">
+                Opmerkingen
               </h2>
-              
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-base">Heb je nog vragen of opmerkingen?</Label>
+                <Label htmlFor="message">Heb je nog vragen of opmerkingen?</Label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Bijvoorbeeld specifieke wensen, medische informatie, of vragen..."
-                  rows={5}
+                  rows={4}
                   className="resize-none"
                 />
               </div>
             </div>
 
-            {/* Submit Button */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-between items-center pt-4">
+            {/* Submit */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-2">
               <Button
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto bg-primary hover:bg-primary/90 px-12 py-6 text-base rounded-lg"
+                className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-5 text-base font-semibold rounded-lg"
               >
-                {isSubmitting ? 'Verzenden...' : 'Gratis Proefles Aanvragen'}
+                {isSubmitting ? 'Verzenden...' : 'Inschrijven'}
               </Button>
-              
-              <p className="text-sm text-foreground/70 text-center sm:text-right">
+              <p className="text-xs text-foreground/50">
                 * Verplichte velden
               </p>
             </div>

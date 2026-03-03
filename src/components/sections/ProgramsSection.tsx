@@ -60,25 +60,20 @@ export function ProgramsSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <FadeInView className="mb-12 sm:mb-16 lg:mb-24">
+        <FadeInView className="mb-12 sm:mb-16 lg:mb-20">
           <div className="max-w-3xl space-y-8">
             <div className="inline-block">
               <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
-                {'Programmas'}
+                Programma&apos;s
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-              {'Voor ieder'}<br />
-              <span className="text-primary">{'leeftijd & niveau'}</span>
+              Voor iedere<br />
+              <span className="text-primary">leeftijd &amp; niveau</span>
             </h2>
-            <div className="space-y-6 max-w-2xl">
-              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
-                Van 4 jaar tot volwassenen. Of je nu je eerste stap zet in Taekwondo of al jaren traint, bij Black Dragon vind je het programma dat bij jou past.
-              </p>
-              <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
-                Elk programma is speciaal ontworpen voor de juiste leeftijdsgroep en vaardigheidsniveau, met ervaren instructeurs die jou begeleiden naar jouw volgende zwarte band.
-              </p>
-            </div>
+            <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8] max-w-2xl">
+              Van 4 jaar tot volwassenen — bij Black Dragon vind je het programma dat bij jou past. Tik op een programma voor meer info.
+            </p>
           </div>
         </FadeInView>
 
@@ -88,7 +83,8 @@ export function ProgramsSection() {
           {programs.map((program, index) => (
             <div
               key={index}
-              className="relative h-[450px] rounded-xl overflow-hidden group flex-shrink-0 w-[85vw] sm:w-auto snap-center lg:snap-align-none"
+              onClick={() => setActiveCard(activeCard === index ? null : index)}
+              className="relative h-[450px] rounded-xl overflow-hidden group flex-shrink-0 w-[85vw] sm:w-auto snap-center lg:snap-align-none cursor-pointer"
             >
               {/* Full Background Image */}
               <Image
@@ -98,7 +94,7 @@ export function ProgramsSection() {
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
-              {/* Dark Overlay - Always visible on mobile, hover on desktop */}
+              {/* Dark Overlay */}
               <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-300 ${
                 activeCard === index 
                   ? 'from-black via-black/95 to-black/80' 
@@ -112,10 +108,8 @@ export function ProgramsSection() {
                   : 'justify-between lg:group-hover:justify-end'
               }`}>
                 
-                {/* Top: Age Badge - always visible */}
-                <div className={`flex justify-end transition-opacity duration-300 ${
-                  activeCard === index ? 'lg:opacity-100' : 'opacity-100'
-                }`}>
+                {/* Top: Age Badge */}
+                <div className="flex justify-end">
                   <span className="text-xs font-bold uppercase tracking-wider text-white bg-primary/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
                     {program.age}
                   </span>
@@ -123,12 +117,11 @@ export function ProgramsSection() {
 
                 {/* Bottom Content */}
                 <div className="space-y-3">
-                  {/* Title - Always visible */}
                   <h3 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight">
                     {program.title}
                   </h3>
                   
-                  {/* Info - Show on click (mobile) or hover (desktop) */}
+                  {/* Expandable Info */}
                   <div className={`space-y-3 transition-all duration-500 ${
                     activeCard === index 
                       ? 'opacity-100 max-h-96' 
@@ -138,7 +131,6 @@ export function ProgramsSection() {
                       {program.description}
                     </p>
 
-                    {/* Features */}
                     <ul className="space-y-1.5">
                       {program.features.map((feature, fIndex) => (
                         <li key={fIndex} className="flex items-start gap-2 text-xs text-white/90">
@@ -148,25 +140,15 @@ export function ProgramsSection() {
                       ))}
                     </ul>
 
-                    {/* CTA Button */}
                     <Link
                       href="/inschrijven"
+                      onClick={(e) => e.stopPropagation()}
                       className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-black font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
                     >
                       Inschrijven
-                      <span className="ml-2">→</span>
+                      <span className="ml-2">&rarr;</span>
                     </Link>
                   </div>
-                </div>
-              </div>
-
-              {/* Mobile: Clickable Overlay + Info Button */}
-              <div 
-                onClick={() => setActiveCard(activeCard === index ? null : index)}
-                className="lg:hidden absolute inset-0 cursor-pointer"
-              >
-                <div className="absolute bottom-4 right-4 w-10 h-10 bg-primary backdrop-blur-sm rounded-full flex items-center justify-center text-black text-lg font-bold shadow-lg pointer-events-none">
-                  {activeCard === index ? '×' : 'i'}
                 </div>
               </div>
             </div>
@@ -175,13 +157,21 @@ export function ProgramsSection() {
         </FadeInView>
 
         {/* Bottom CTA */}
-        <FadeInView delay={0.3} className="text-center">
+        <FadeInView delay={0.3} className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             asChild
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-lg"
           >
-            <Link href="/inschrijven">{'Inschrijven'}</Link>
+            <Link href="/inschrijven">Inschrijven</Link>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-border text-foreground hover:bg-muted px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-lg"
+          >
+            <Link href="/schedule">Bekijk Rooster</Link>
           </Button>
         </FadeInView>
       </div>

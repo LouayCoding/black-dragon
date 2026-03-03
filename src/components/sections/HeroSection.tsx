@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative h-[85vh] -mt-20 lg:-mt-24 pt-20 lg:pt-24 flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950"
+      className="relative h-[70vh] lg:h-[85vh] -mt-20 lg:-mt-24 pt-20 lg:pt-24 flex items-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950"
     >
       {/* Background Image with Overlay */}
       <div 
@@ -40,14 +40,8 @@ export function HeroSection() {
             <h1
               className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-none mb-6"
             >
-              {'Taekwondo'.split('').map((letter, i) => (
-                <span key={i} className="letter inline-block">{letter}</span>
-              ))}
-              <span className="block mt-2 text-primary">
-                {'Black Dragon'.split('').map((letter, i) => (
-                  <span key={i} className="letter inline-block">{letter === ' ' ? '\u00A0' : letter}</span>
-                ))}
-              </span>
+              Taekwondo
+              <span className="block mt-2 text-primary">Black Dragon</span>
             </h1>
           </div>
 
@@ -58,17 +52,20 @@ export function HeroSection() {
             Ontwikkel kracht, discipline en zelfvertrouwen
           </p>
 
-          {/* CTA Button */}
-          <div
-            className="flex justify-center"
-          >
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               asChild
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-5 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300"
             >
-              <Link href="/inschrijven">
-                Start vandaag
-              </Link>
+              <Link href="/inschrijven">Gratis Proefles</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white/10 px-8 py-5 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300"
+            >
+              <Link href="/programs">Bekijk Programma&apos;s</Link>
             </Button>
           </div>
         </div>
@@ -77,9 +74,8 @@ export function HeroSection() {
       {/* Scroll Indicator */}
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500 hover:text-primary transition-colors group"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 hover:text-primary transition-colors"
       >
-        <span className="text-xs tracking-widest font-medium">{'SCROLL'}</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>
     </section>
