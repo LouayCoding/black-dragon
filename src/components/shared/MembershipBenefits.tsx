@@ -17,7 +17,7 @@ export function MembershipBenefits({ variant = 'default', className }: Membershi
     },
     {
       icon: Zap,
-      title: 'Gratis proefles',
+      title: 'Proefles mogelijk',
       description: 'Ervaar het eerst zelf',
     },
     {

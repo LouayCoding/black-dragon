@@ -109,7 +109,7 @@ export function RegisterSection() {
             
             <p className="text-foreground/70 text-sm sm:text-base lg:text-lg leading-relaxed">
               We hebben je aanmelding ontvangen en zullen binnen <strong>24 uur</strong> contact met je opnemen 
-              om je gratis proefles in te plannen.
+              om alles te bespreken.
             </p>
 
             <div className="bg-muted/30 rounded-lg p-8 space-y-4">
@@ -121,7 +121,7 @@ export function RegisterSection() {
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-semibold">2.</span>
-                  <span>We plannen samen een gratis proefles in</span>
+                  <span>We plannen samen je eerste training in</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-semibold">3.</span>
@@ -180,8 +180,7 @@ export function RegisterSection() {
             </h1>
             <div className="space-y-6 max-w-2xl">
               <p className="text-foreground/90 text-sm sm:text-base lg:text-lg leading-[1.8]">
-                Vul het formulier in en ontvang een <strong>gratis proefles</strong>. 
-                We nemen binnen 24 uur contact met je op.
+                Vul het formulier in en we nemen binnen 24 uur contact met je op.
               </p>
             </div>
           </div>
@@ -340,7 +339,7 @@ export function RegisterSection() {
               disabled={isSubmitting}
               className="w-full sm:w-auto bg-foreground hover:bg-foreground/90 text-background px-12 font-semibold"
             >
-              {isSubmitting ? 'Verzenden...' : 'Gratis Proefles Aanvragen'}
+              {isSubmitting ? 'Verzenden...' : 'Inschrijven'}
             </Button>
             
             <p className="text-sm text-foreground/60 text-center sm:text-right">

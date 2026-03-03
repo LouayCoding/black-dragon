@@ -58,7 +58,7 @@ export function HeroSection() {
               asChild
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-5 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300"
             >
-              <Link href="/inschrijven">Gratis Proefles</Link>
+              <Link href="/inschrijven">Inschrijven</Link>
             </Button>
             <Button
               asChild

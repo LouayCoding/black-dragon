@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Poppins, Montserrat } from 'next/font/google'
 import '@/styles/index.css'
 import { Header } from '@/components/layout/Header'
@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     shortcut: '/logo.png',
     apple: '/logo.png',
   },
+  other: {
+    'theme-color': '#0a0a0a',
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0a0a0a',
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({
