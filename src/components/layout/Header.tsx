@@ -18,6 +18,7 @@ export function Header() {
     { href: '/programs', label: 'Programmas' },
     { href: '/schedule', label: 'Rooster' },
     { href: '/tarieven', label: 'Tarieven' },
+    { href: '/instructors', label: 'Instructeurs' },
     { href: '/about', label: 'Over Ons' },
     { href: '/gallery', label: 'Galerij' },
     { href: '/contact', label: 'Contact' },
