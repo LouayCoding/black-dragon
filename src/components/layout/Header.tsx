@@ -48,10 +48,10 @@ export function Header() {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 transition-all duration-300',
-        isMobileMenuOpen ? 'z-[60]' : 'z-50',
-        isScrolled || !isHomePage
+        isMobileMenuOpen ? 'z-[60] bg-primary' : 'z-50',
+        !isMobileMenuOpen && (isScrolled || !isHomePage)
           ? 'bg-background/95 backdrop-blur-md'
-          : 'bg-gradient-to-b from-black/60 to-transparent'
+          : !isMobileMenuOpen ? 'bg-gradient-to-b from-black/60 to-transparent' : ''
       )}
     >
       <div className="container mx-auto px-4 max-w-7xl">
@@ -74,8 +74,8 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg relative group",
                   pathname === link.href
-                    ? isHomePage && !isScrolled ? "text-white" : "text-white font-semibold"
-                    : isHomePage && !isScrolled ? "text-white/80 hover:text-white" : "text-white/70 hover:text-white"
+                    ? "text-primary font-semibold"
+                    : isHomePage && !isScrolled ? "text-white/80 hover:text-primary" : "text-white/70 hover:text-primary"
                 )}
               >
                 {link.label}
@@ -106,7 +106,7 @@ export function Header() {
               className={cn(
                 "xl:hidden p-2.5 rounded-lg transition-all duration-200 relative z-[70]",
                 isMobileMenuOpen 
-                  ? "text-foreground" 
+                  ? "text-primary-foreground" 
                   : isHomePage && !isScrolled 
                     ? "text-white" 
                     : "text-foreground"
@@ -123,7 +123,7 @@ export function Header() {
     
     <div 
       className={cn(
-        "fixed inset-0 bg-background/95 backdrop-blur-md z-[55] xl:hidden overflow-y-auto transition-all duration-500 ease-in-out",
+        "fixed inset-0 bg-primary z-[55] xl:hidden overflow-y-auto transition-all duration-500 ease-in-out",
         isMobileMenuOpen 
           ? "opacity-100 visible translate-y-0" 
           : "opacity-0 invisible -translate-y-4"
@@ -139,7 +139,7 @@ export function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={cn(
                   "font-serif text-3xl font-bold inline-block transition-all duration-500",
-                  pathname === link.href ? "text-primary" : "text-foreground/50 hover:text-foreground",
+                  pathname === link.href ? "text-primary-foreground" : "text-primary-foreground/60 hover:text-primary-foreground",
                   isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 )}
                 style={{ transitionDelay: isMobileMenuOpen ? `${150 + index * 75}ms` : '0ms' }}
@@ -150,7 +150,7 @@ export function Header() {
             <Button
               asChild
               className={cn(
-                "mt-8 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-500",
+                "mt-8 bg-primary-foreground hover:bg-primary-foreground/90 text-primary px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-500",
                 isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}
               style={{ transitionDelay: isMobileMenuOpen ? `${150 + navLinks.length * 75}ms` : '0ms' }}

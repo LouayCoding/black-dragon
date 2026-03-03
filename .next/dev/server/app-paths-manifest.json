@@ -1,14 +1,4 @@
 {
-  "/(public)/about/page": "app/(public)/about/page.js",
-  "/(public)/code-of-conduct/page": "app/(public)/code-of-conduct/page.js",
-  "/(public)/contact/page": "app/(public)/contact/page.js",
-  "/(public)/faq/page": "app/(public)/faq/page.js",
-  "/(public)/gallery/page": "app/(public)/gallery/page.js",
-  "/(public)/house-rules/page": "app/(public)/house-rules/page.js",
-  "/(public)/inschrijven/page": "app/(public)/inschrijven/page.js",
   "/(public)/page": "app/(public)/page.js",
-  "/(public)/programs/page": "app/(public)/programs/page.js",
-  "/(public)/schedule/page": "app/(public)/schedule/page.js",
-  "/(public)/tarieven/page": "app/(public)/tarieven/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/(public)/schedule/page": "app/(public)/schedule/page.js"
 }
