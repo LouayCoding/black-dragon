@@ -65,11 +65,6 @@ export function PricingSection() {
       price: '€70',
       description: '1-op-1 training met instructeur',
     },
-    {
-      name: 'Bandexamen',
-      price: '',
-      description: 'Inbegrepen bij lidmaatschap',
-    },
   ];
 
   return (
@@ -160,7 +155,7 @@ export function PricingSection() {
           <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-6">
             Extra kosten
           </h3>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             {extras.map((extra, index) => (
               <div
                 key={index}
