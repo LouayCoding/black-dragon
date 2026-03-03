@@ -22,161 +22,54 @@ export default function SexualHarassmentProtocolPage() {
 
             <div>
               <p className="text-muted-foreground leading-relaxed">
-                Taekwondo Vereniging Black Dragon tolereert geen enkele vorm van seksuele intimidatie. Dit protocol beschrijft wat seksuele intimidatie is, hoe wij dit voorkomen en wat er gebeurt als het toch voorkomt. Wij volgen hierin de richtlijnen van NOC*NSF en de Taekwondo Bond Nederland.
+                In dit document hebben wij als directie van Taekwondo Vereniging Black Dragon vastgelegd hoe wij door gewenst gedrag te stimuleren en risicosituaties te mijden, seksuele intimidatie binnen de club trachten te voorkomen. Hierin wordt behandeld hoe wij omgaan met situaties waarin dit toch gebeurt of dreigt te gebeuren en welke sancties mogelijk zijn als een situatie niet tot een oplossing komt.
               </p>
             </div>
 
             {/* Sectie 1 */}
             <div>
               <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                1. Wat is Seksuele Intimidatie?
+                1. Gewenste omgang bevorderen
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                Seksuele intimidatie is elke vorm van seksueel gedrag of seksuele toenadering die als ongewenst wordt ervaren. Dit omvat onder andere:
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Het is erg belangrijk dat leden zich veilig voelen in hun sportomgeving. Hier hoort bij dat zij zich niet seksueel geïntimideerd mogen voelen. Om het risico daarop zo klein mogelijk te maken hebben we een aantal omgangsregels opgesteld:
               </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Ongewenste seksuele opmerkingen, grappen of toespelingen</li>
-                <li>Ongewenste aanrakingen, omhelzingen of kussen</li>
-                <li>Ongewenste seksueel getinte berichten (via telefoon, sociale media, etc.)</li>
-                <li>Het tonen van seksueel beeldmateriaal</li>
-                <li>Gluren of bespieden</li>
-                <li>Seksueel misbruik of aanranding</li>
-                <li>Het uitoefenen van druk om seksuele handelingen te verrichten</li>
-              </ul>
+              <ol className="list-decimal pl-6 space-y-2 text-muted-foreground">
+                <li>Ik accepteer en respecteer de ander zoals hij is en discrimineer niet. Iedereen telt mee binnen de club.</li>
+                <li>Ik houd rekening met de grenzen die de ander aangeeft.</li>
+                <li>Ik val de ander niet lastig.</li>
+                <li>Ik berokken de ander geen schade.</li>
+                <li>Ik maak op geen enkele wijze misbruik van mijn machtspositie.</li>
+                <li>Ik scheld niet en maak geen gemene grappen of opmerkingen over anderen.</li>
+                <li>Ik negeer de ander niet.</li>
+                <li>Ik doe niet mee aan pesten, uitlachen of roddelen.</li>
+                <li>Ik vecht niet, ik gebruik geen geweld, ik bedreig de ander niet, ik neem geen wapens mee.</li>
+                <li>Ik kom niet ongewenst te dichtbij en raak de ander niet tegen zijn of haar wil aan.</li>
+                <li>Ik geef de ander geen ongewenste seksueel getinte aandacht.</li>
+                <li>Ik stel geen ongepaste vragen en maak geen ongewenste opmerkingen over iemands persoonlijk leven of uiterlijk.</li>
+                <li>Als iemand mij hindert of lastig valt dan vraag ik hem/haar hiermee te stoppen.</li>
+                <li>Als dat niet helpt, vraag ik een ander om hulp.</li>
+                <li>Ik help anderen om zich ook aan deze afspraken te houden en spreek degene die zich daar niet aan houdt erop aan en meld dit zo nodig bij de trainers/directie.</li>
+              </ol>
+
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                Bovenstaande regels worden al bij inschrijving kenbaar gemaakt aan al onze leden en zij dienen hiermee akkoord te gaan voordat ze lid kunnen worden. Aan leden maar ook aan trainers/coaches, directie en aan ouders/verzorgers wordt gevraagd om ongewenst gedrag bij de VCP te melden wanneer zij dit tegenkomen of vermoeden.
+              </p>
             </div>
 
-            {/* Sectie 2 */}
+            {/* Sectie 2 - VCP */}
             <div>
               <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                2. Uitgangspunten
-              </h2>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Seksuele intimidatie is absoluut onacceptabel, ongeacht wie het doet</li>
-                <li>Het slachtoffer bepaalt of gedrag als ongewenst wordt ervaren</li>
-                <li>Elke melding wordt serieus genomen en vertrouwelijk behandeld</li>
-                <li>De bescherming van het slachtoffer staat voorop</li>
-                <li>De vereniging hanteert een zerotolerancebeleid</li>
-                <li>Alle betrokkenen (leden, instructeurs, vrijwilligers, bezoekers) vallen onder dit protocol</li>
-              </ul>
-            </div>
-
-            {/* Sectie 3 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                3. Preventie
+                Vertrouwenscontactpersoon (VCP)
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-3">
-                Wij nemen de volgende preventieve maatregelen:
+                Bij een vertrouwenscontactpersoon (VCP) kan je grensoverschrijdend gedrag melden. Als je niet bij een trainer of sportschoolhouder terecht kan of wil, benader dan een VCP. De VCP kan achterhalen wat er is gebeurd en inschatten wat de beste vervolgstappen zijn.
               </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Alle instructeurs en trainers beschikken over een geldige Verklaring Omtrent het Gedrag (VOG)</li>
-                <li>Instructeurs volgen de gedragscode voor trainers/coaches van NOC*NSF</li>
-                <li>Er wordt altijd met minimaal twee begeleiders gewerkt bij jeugdactiviteiten</li>
-                <li>Kleedkamers en douches zijn gescheiden en worden niet gedeeld met begeleiders</li>
-                <li>Fysiek contact tijdens trainingen is alleen functioneel en sportgerelateerd</li>
-                <li>Eén-op-één situaties met minderjarigen worden zoveel mogelijk vermeden</li>
-                <li>Open communicatie wordt gestimuleerd</li>
-              </ul>
-            </div>
-
-            {/* Sectie 4 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                4. Gedragscode Instructeurs
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                Instructeurs en begeleiders houden zich aan de volgende regels:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>De instructeur onthoudt zich van elke vorm van seksuele intimidatie</li>
-                <li>De instructeur raakt de sporter niet onnodig aan</li>
-                <li>De instructeur heeft geen seksuele relatie met een minderjarige sporter</li>
-                <li>De instructeur maakt geen seksueel getinte opmerkingen</li>
-                <li>De instructeur stuurt geen persoonlijke berichten van seksuele aard naar sporters</li>
-                <li>De instructeur dringt niet binnen in de privésfeer van sporters</li>
-                <li>De instructeur geeft het goede voorbeeld in woord en daad</li>
-              </ul>
-            </div>
-
-            {/* Sectie 5 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                5. Melden van Seksuele Intimidatie
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                Als u te maken krijgt met seksuele intimidatie of dit signaleert, kunt u dit op de volgende manieren melden:
-              </p>
-
-              <div className="space-y-4">
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Intern</h3>
-                  <ul className="list-disc pl-6 space-y-1 text-muted-foreground text-sm">
-                    <li>Bij de vertrouwenspersoon van de vereniging</li>
-                    <li>Bij een bestuurslid</li>
-                    <li>Via e-mail: info@taekwondoblackdragon.nl</li>
-                  </ul>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Extern</h3>
-                  <ul className="list-disc pl-6 space-y-1 text-muted-foreground text-sm">
-                    <li>Vertrouwenspunt Sport: 0900-2025590 (www.centrumveiligesport.nl)</li>
-                    <li>Taekwondo Bond Nederland (TBN)</li>
-                    <li>Politie (in geval van strafbare feiten): 0900-8844 of 112</li>
-                  </ul>
-                </div>
+              <div className="bg-muted/50 rounded-lg p-4">
+                <p className="text-muted-foreground text-sm">
+                  Een melding van grensoverschrijdend gedrag wordt altijd in vertrouwelijkheid gedaan. Maar vertrouwelijkheid betekent niet hetzelfde als geheimhouding.
+                </p>
               </div>
-            </div>
-
-            {/* Sectie 6 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                6. Procedure na Melding
-              </h2>
-              <div className="space-y-4">
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 1 – Opvang en eerste gesprek</h3>
-                  <p className="text-muted-foreground text-sm">Het slachtoffer wordt opgevangen door de vertrouwenspersoon. Er vindt een vertrouwelijk gesprek plaats om de situatie in kaart te brengen.</p>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 2 – Beoordeling en onderzoek</h3>
-                  <p className="text-muted-foreground text-sm">Het bestuur beoordeelt de melding en besluit of een intern onderzoek nodig is. Bij strafbare feiten wordt geadviseerd aangifte te doen bij de politie.</p>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 3 – Maatregelen</h3>
-                  <p className="text-muted-foreground text-sm">Afhankelijk van de ernst kunnen maatregelen variëren van een officiële waarschuwing tot directe schorsing, beëindiging van het lidmaatschap en/of aangifte bij de politie.</p>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 4 – Nazorg</h3>
-                  <p className="text-muted-foreground text-sm">Het slachtoffer wordt ondersteund en eventueel doorverwezen naar professionele hulpverlening. Er vindt regelmatig contact plaats om het herstel te monitoren.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Sectie 7 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                7. Sancties
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                Bij vastgestelde seksuele intimidatie kan het bestuur de volgende sancties opleggen:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Officiële waarschuwing</li>
-                <li>Tijdelijke schorsing</li>
-                <li>Definitieve beëindiging van het lidmaatschap</li>
-                <li>Melding bij de Taekwondo Bond Nederland</li>
-                <li>Aangifte bij de politie</li>
-              </ul>
-            </div>
-
-            {/* Sectie 8 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                8. Vertrouwelijkheid
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Alle meldingen worden strikt vertrouwelijk behandeld. Informatie wordt alleen gedeeld met personen die direct betrokken zijn bij de afhandeling van de melding. De privacy van zowel het slachtoffer als de beschuldigde wordt gerespecteerd, conform de AVG.
-              </p>
             </div>
 
             <div className="border-t pt-8 mt-10">
@@ -185,9 +78,6 @@ export default function SexualHarassmentProtocolPage() {
                 Den Haag<br />
                 E-mail: info@taekwondoblackdragon.nl<br />
                 Telefoon: 06 15047993
-              </p>
-              <p className="text-muted-foreground text-sm mt-4">
-                <em>Laatst bijgewerkt: Maart 2025</em>
               </p>
             </div>
           </div>

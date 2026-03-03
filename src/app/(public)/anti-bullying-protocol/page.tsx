@@ -22,149 +22,106 @@ export default function AntiBullyingProtocolPage() {
 
             <div>
               <p className="text-muted-foreground leading-relaxed">
-                Taekwondo Vereniging Black Dragon hecht groot belang aan een veilige, respectvolle en plezierige sportomgeving voor al onze leden. Pesten in welke vorm dan ook wordt niet getolereerd. Dit protocol beschrijft hoe wij pesten voorkomen, signaleren en aanpakken.
+                In dit document hebben wij als Taekwondo Vereniging Black Dragon vastgelegd hoe wij door gewenst gedrag te stimuleren pesten binnen de club trachten te voorkomen. Hierin wordt behandeld hoe wij omgaan met situaties waarin dit toch gebeurt of dreigt te gebeuren en welke sancties mogelijk zijn als een situatie niet tot een oplossing komt.
               </p>
             </div>
 
             {/* Sectie 1 */}
             <div>
               <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                1. Wat is Pesten?
+                1. Gewenste omgang bevorderen
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-3">
-                Pesten is het systematisch en herhaaldelijk uitoefenen van negatieve handelingen door één of meerdere personen, gericht op een ander persoon. Dit kan verschillende vormen aannemen:
+                Het is erg belangrijk dat leden zich veilig voelen in hun sportomgeving. Hier hoort bij dat zij zich niet gepest mogen voelen. Om het risico daarop zo klein mogelijk te maken hebben we een aantal gedragsregels opgesteld.
               </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li><strong>Fysiek pesten:</strong> Duwen, schoppen, slaan of beschadigen van eigendommen</li>
-                <li><strong>Verbaal pesten:</strong> Schelden, uitlachen, beledigen of bedreigen</li>
-                <li><strong>Sociaal pesten:</strong> Buitensluiten, negeren, roddelen of isoleren</li>
-                <li><strong>Cyberpesten:</strong> Pesten via sociale media, WhatsApp of andere digitale kanalen</li>
+
+              <p className="text-foreground font-semibold mb-2">De volgende zaken zijn in onze club niet toegestaan:</p>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
+                <li>Het beoordelen op uiterlijk, afkomst, geslacht of andere persoonskenmerken of het maken van kwetsende opmerkingen daarover.</li>
+                <li>Ongewenst aan de spullen van een ander komen.</li>
+                <li>Een ander bewust hardhandig behandelen en/of fysiek pijn doen bij het oefenen.</li>
+                <li>Elkaar met een bijnaam aanspreken die door de bedoelde persoon niet als positief ervaren wordt.</li>
+                <li>Vloeken, schelden of roddelen.</li>
               </ul>
+
+              <p className="text-foreground font-semibold mb-2">Daarnaast verwachten wij van leden uitdrukkelijk het volgende:</p>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
+                <li>Probeer ruzie altijd samen op te lossen.</li>
+                <li>Wanneer dit niet lukt: zoek contact met een trainer of vertrouwenscontactpersoon.</li>
+                <li>Luister aandachtig naar elkaar.</li>
+                <li>Help elkaar waar nodig.</li>
+                <li>Zorg dat nieuwkomers in de groep goed worden ontvangen en opgevangen.</li>
+              </ul>
+
+              <p className="text-muted-foreground leading-relaxed">
+                Bovenstaande gedragsregels worden al bij inschrijving kenbaar gemaakt aan al onze leden en zijn tevens op te vragen bij de trainers. Verder wordt er door de leraren/trainers regelmatig aandacht aan besteed en zien wij toe op de naleving ervan tijdens de lessen. Bovendien wordt aan ouders/verzorgers ook gevraagd om ongewenst gedrag te melden wanneer zij dit tegenkomen of vermoeden.
+              </p>
             </div>
 
             {/* Sectie 2 */}
             <div>
               <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                2. Uitgangspunten
+                2. Situaties van pestgedrag oplossen
               </h2>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Iedereen heeft het recht zich veilig te voelen bij Taekwondo Black Dragon</li>
-                <li>Pesten wordt nooit geaccepteerd, door niemand</li>
-                <li>In de Taekwondo-filosofie staan respect, discipline en zelfbeheersing centraal</li>
-                <li>Iedereen – leden, instructeurs, ouders en vrijwilligers – draagt bij aan een positieve sfeer</li>
-                <li>Signalen van pestgedrag worden altijd serieus genomen</li>
-              </ul>
+              <p className="text-muted-foreground leading-relaxed mb-3">
+                Als er een vermoeden bestaat dat er binnen de club gepest wordt, dan worden de volgende stappen doorlopen:
+              </p>
+
+              <div className="space-y-4">
+                <div className="bg-muted/50 rounded-lg p-4">
+                  <h3 className="font-semibold text-foreground mb-2">Stap 1 – Zelf oplossen</h3>
+                  <p className="text-muted-foreground text-sm">Er wordt vastgesteld of de gepeste heeft geprobeerd het samen met de pester op te lossen.</p>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-4">
+                  <h3 className="font-semibold text-foreground mb-2">Stap 2 – Trainer grijpt in</h3>
+                  <p className="text-muted-foreground text-sm">Als de gepeste er niet uitkomt, grijpt de leraar/trainer in. Hij/zij brengt de partijen bij elkaar voor een verhelderingsgesprek en probeert samen met hen de ruzie of pesterijen op te lossen en (nieuwe) afspraken te maken.</p>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-4">
+                  <h3 className="font-semibold text-foreground mb-2">Stap 3 – Ouders betrekken</h3>
+                  <p className="text-muted-foreground text-sm">Er wordt contact gezocht met de ouders van de betrokken partijen nadat de kinderen hierover ingelicht zijn. Eventueel wordt een gesprek gevoerd met de hele groep, waarin de oorzaken en gevolgen voor slachtoffers, daders, meelopers en de zwijgende middengroep aan bod komen.</p>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-4">
+                  <h3 className="font-semibold text-foreground mb-2">Stap 4 – Bestraffend gesprek</h3>
+                  <p className="text-muted-foreground text-sm">Bij herhaaldelijke ruzie/pestgedrag neemt de trainer duidelijk stelling en houdt een bestraffend gesprek met de pester. De naam van de ruziemaker/pester wordt vastgelegd in een verslag. Bij iedere melding omschrijft de trainer de toedracht.</p>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-4">
+                  <h3 className="font-semibold text-foreground mb-2">Stap 5 – Samenwerking</h3>
+                  <p className="text-muted-foreground text-sm">De trainer en ouders proberen in goed overleg samen te werken aan een voor iedereen bevredigende oplossing. Als het gaat om jonge kinderen worden de ouders hier actief bij betrokken.</p>
+                </div>
+              </div>
             </div>
 
             {/* Sectie 3 */}
             <div>
               <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                3. Preventie
+                3. Sancties
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                Wij nemen de volgende preventieve maatregelen:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Het actief bespreken van respect en sportiviteit tijdens trainingen</li>
-                <li>Het hanteren van duidelijke gedragsregels voor alle leden</li>
-                <li>Het creëren van een open en veilige sfeer waarin leden zich durven uitspreken</li>
-                <li>Het trainen van instructeurs in het herkennen van pestgedrag</li>
-                <li>Regelmatig contact met ouders/verzorgers van jonge leden</li>
-                <li>Voorbeeldgedrag van instructeurs en bestuursleden</li>
-              </ul>
-            </div>
-
-            {/* Sectie 4 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                4. Signaleren
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                Mogelijke signalen van pesten zijn onder andere:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Een lid komt niet meer graag naar training of meldt zich vaak af</li>
-                <li>Een lid trekt zich terug of is stiller dan normaal</li>
-                <li>Een lid heeft onverklaarbare verwondingen of beschadigde spullen</li>
-                <li>Een lid wordt zichtbaar buitengesloten door anderen</li>
-                <li>Verandering in gedrag, prestatie of motivatie</li>
-              </ul>
-            </div>
-
-            {/* Sectie 5 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                5. Procedure bij Pestgedrag
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                Wanneer pestgedrag wordt gesignaleerd of gemeld, volgen wij het onderstaande stappenplan:
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Mochten pogingen tot verbetering van de situatie door leden, trainer en ouders niet tot een oplossing leiden, dan kan de club overgaan tot het opleggen van sancties. Een besluit hiertoe volgt altijd uit samenspraak tussen trainer en bestuur. De mogelijke sancties lopen op van licht naar zwaarder:
               </p>
 
               <div className="space-y-4">
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 1 – Melding</h3>
-                  <p className="text-muted-foreground text-sm">Het pestgedrag wordt gemeld bij een instructeur of het bestuur. Dit kan door het slachtoffer zelf, een medelid, ouder/verzorger of instructeur.</p>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 2 – Gesprek met betrokkenen</h3>
-                  <p className="text-muted-foreground text-sm">Er wordt apart gesproken met het slachtoffer en de pester(s) om de situatie in kaart te brengen. Bij minderjarigen worden ouders/verzorgers geïnformeerd.</p>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 3 – Afspraken maken</h3>
-                  <p className="text-muted-foreground text-sm">Er worden duidelijke afspraken gemaakt met de pester(s). Het ongewenste gedrag moet onmiddellijk stoppen. De afspraken worden vastgelegd.</p>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 4 – Opvolging</h3>
-                  <p className="text-muted-foreground text-sm">Na twee weken vindt een evaluatiegesprek plaats met alle betrokkenen om te controleren of het pestgedrag is gestopt.</p>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <h3 className="font-semibold text-foreground mb-2">Stap 5 – Sancties (indien nodig)</h3>
-                  <p className="text-muted-foreground text-sm">Bij herhaling kunnen sancties worden opgelegd, variërend van een officiële waarschuwing tot tijdelijke schorsing of in ernstige gevallen beëindiging van het lidmaatschap.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Sectie 6 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                6. Vertrouwenspersoon
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Leden en ouders/verzorgers kunnen terecht bij de vertrouwenspersoon van de vereniging voor het melden van pestgedrag of andere ongewenste situaties. De vertrouwenspersoon behandelt meldingen vertrouwelijk en helpt bij het vinden van een passende oplossing. Neem contact op via info@taekwondoblackdragon.nl.
-              </p>
-            </div>
-
-            {/* Sectie 7 */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-                7. Verantwoordelijkheden
-              </h2>
-              <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Instructeurs:</h3>
-                  <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-                    <li>Zijn alert op pestgedrag tijdens trainingen</li>
-                    <li>Grijpen direct in bij pestgedrag</li>
-                    <li>Melden signalen bij het bestuur</li>
-                    <li>Bevorderen een positieve groepsdynamiek</li>
+                  <h3 className="font-semibold text-foreground mb-2">Eerste sancties</h3>
+                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                    <li>Eén training niet aanwezig mogen zijn.</li>
+                    <li>Voor een bepaald aantal trainingen: blijven tot de andere leden naar huis vertrokken zijn.</li>
+                    <li>Afspraken maken met de pester over gedragsveranderingen. De naleving van deze afspraken komt aan het einde van iedere week (voor een bepaalde periode) in een kort gesprek aan de orde.</li>
                   </ul>
                 </div>
+
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Ouders/verzorgers:</h3>
-                  <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-                    <li>Zijn alert op signalen van pesten bij hun kind</li>
-                    <li>Melden pestgedrag bij de instructeur of het bestuur</li>
-                    <li>Ondersteunen de aanpak van de vereniging</li>
-                    <li>Stimuleren respectvol gedrag</li>
+                  <h3 className="font-semibold text-foreground mb-2">Vervolgsancties</h3>
+                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                    <li>De ouders nadrukkelijker bij de oplossing betrekken. De club heeft een dossier bijgehouden van de acties die hebben plaatsgevonden. Dit dossier is uitgangspunt voor het gesprek.</li>
+                    <li>Bij aanhoudend pestgedrag de pester voor een bepaalde periode schorsen.</li>
                   </ul>
                 </div>
+
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Leden:</h3>
-                  <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-                    <li>Behandelen elkaar met respect</li>
-                    <li>Melden pestgedrag wanneer zij dit zien of ervaren</li>
-                    <li>Sluiten niemand buiten</li>
-                    <li>Houden zich aan de gedragscode</li>
+                  <h3 className="font-semibold text-foreground mb-2">Laatste sanctie</h3>
+                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                    <li>In extreme gevallen kan de pester geroyeerd worden van de club.</li>
                   </ul>
                 </div>
               </div>
@@ -176,9 +133,6 @@ export default function AntiBullyingProtocolPage() {
                 Den Haag<br />
                 E-mail: info@taekwondoblackdragon.nl<br />
                 Telefoon: 06 15047993
-              </p>
-              <p className="text-muted-foreground text-sm mt-4">
-                <em>Laatst bijgewerkt: Maart 2025</em>
               </p>
             </div>
           </div>
