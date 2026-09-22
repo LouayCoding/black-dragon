@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cn } from '@/lib/utils';
-import { Calendar, ArrowRight, Tag, Search, X } from 'lucide-react';
+import { Calendar, ArrowRight, Tag, MagnifyingGlass, X } from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
@@ -103,7 +103,7 @@ export function NewsSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <MagnifyingGlass className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
               type="text"
               placeholder={'Zoek artikelen...'}
@@ -200,7 +200,7 @@ export function NewsSection() {
             })
           ) : (
             <div className="col-span-full text-center py-16">
-              <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+              <MagnifyingGlass className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
               <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-2">
                 {'Geen artikelen gevonden'}
               </h3>

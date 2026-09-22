@@ -1,6 +1,6 @@
 'use client'
 
-import { Settings, Database, Users, Bell } from 'lucide-react'
+import { Database, Users, Bell } from '@phosphor-icons/react/dist/ssr'
 
 export default function SettingsPage() {
   return (

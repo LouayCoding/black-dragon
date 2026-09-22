@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
-import { Phone, CheckCircle2 } from 'lucide-react'
+import { Phone, CheckCircle } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
 export default function InschrijvenPage() {
@@ -56,22 +56,16 @@ export default function InschrijvenPage() {
     }
 
     try {
-      const { supabase } = await import('@/lib/supabase')
-      const { error } = await supabase
-        .from('registrations')
-        .insert([{
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          birth_date: formData.birthDate || null,
-          parent_name: formData.parentName || null,
-          parent_email: formData.parentEmail || null,
-          parent_phone: formData.parentPhone || null,
-          message: formData.message || null,
-        }])
+      const response = await fetch('/api/inschrijven', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const result = await response.json().catch(() => null)
 
-      if (error) throw error
+      if (!response.ok) {
+        throw new Error(result?.error || 'Verzenden mislukt')
+      }
 
       setIsSubmitted(true)
       toast({
@@ -82,7 +76,7 @@ export default function InschrijvenPage() {
       console.error('Registration error:', error)
       toast({
         title: 'Er ging iets mis',
-        description: 'Probeer het opnieuw of neem contact op via telefoon.',
+        description: error instanceof Error ? error.message : 'Probeer het opnieuw of neem contact op via telefoon.',
         variant: 'destructive',
       })
     }
@@ -95,7 +89,7 @@ export default function InschrijvenPage() {
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center space-y-10">
             <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-primary/10">
-              <CheckCircle2 className="w-12 h-12 text-primary" />
+              <CheckCircle className="w-12 h-12 text-primary" weight="fill" />
             </div>
             
             <div className="space-y-4">

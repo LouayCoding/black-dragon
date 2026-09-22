@@ -1,20 +1,24 @@
 import type { Metadata, Viewport } from 'next'
-import { Poppins, Montserrat } from 'next/font/google'
+import { Geist, Geist_Mono, Inter } from 'next/font/google'
 import '@/styles/index.css'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
 import { Toaster } from '@/components/ui/toaster'
 
-const poppins = Poppins({ 
-  weight: ['400', '500', '600', '700'],
+const geist = Geist({
   subsets: ['latin'],
-  variable: '--font-poppins',
+  variable: '--font-heading',
+  display: 'swap',
 })
 
-const montserrat = Montserrat({ 
-  weight: ['400', '500', '600', '700', '800', '900'],
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -41,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="nl" className={`${poppins.variable} ${montserrat.variable}`}>
-      <body>
+    <html lang="nl" className={`${geist.variable} ${inter.variable} ${geistMono.variable}`}>
+      <body className={inter.className}>
         {children}
         <Toaster />
       </body>

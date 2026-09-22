@@ -1,4 +1,4 @@
-import { CheckCircle2, Users, Target, TrendingUp, Award, Zap } from 'lucide-react';
+import { Users, Target, TrendUp, Trophy, Lightning } from '@phosphor-icons/react/dist/ssr';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -11,12 +11,12 @@ export function MembershipBenefits({ variant = 'default', className }: Membershi
 
   const benefits = [
     {
-      icon: Award,
+      icon: Trophy,
       title: 'Geen ervaring nodig',
       description: 'Iedereen kan beginnen',
     },
     {
-      icon: Zap,
+      icon: Lightning,
       title: 'Proefles mogelijk',
       description: 'Ervaar het eerst zelf',
     },
@@ -31,7 +31,7 @@ export function MembershipBenefits({ variant = 'default', className }: Membershi
       description: 'Trainen motiveert meer samen',
     },
     {
-      icon: TrendingUp,
+      icon: TrendUp,
       title: 'Resultaatgericht',
       description: 'Discipline en progressie staan centraal',
     },

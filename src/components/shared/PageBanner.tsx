@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ChevronRight, Home } from 'lucide-react';
+import { CaretRight, House } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/lib/utils';
 
 interface BreadcrumbItem {
@@ -36,7 +36,7 @@ export function PageBanner({ title, breadcrumbs, className }: PageBannerProps) {
         <nav className="flex items-center gap-1.5 text-xs md:text-sm mb-3" aria-label="Breadcrumb">
           {items.map((item, index) => (
             <div key={index} className="flex items-center gap-1.5">
-              {index === 0 && <Home className="w-3.5 h-3.5 md:w-4 md:h-4 text-korean-black/80" />}
+              {index === 0 && <House className="w-3.5 h-3.5 md:w-4 md:h-4 text-korean-black/80" />}
               
               {item.href ? (
                 <Link 
@@ -50,7 +50,7 @@ export function PageBanner({ title, breadcrumbs, className }: PageBannerProps) {
               )}
               
               {index < items.length - 1 && (
-                <ChevronRight className="w-3.5 h-3.5 md:w-4 md:h-4 text-korean-black/50" />
+                <CaretRight className="w-3.5 h-3.5 md:w-4 md:h-4 text-korean-black/50" />
               )}
             </div>
           ))}

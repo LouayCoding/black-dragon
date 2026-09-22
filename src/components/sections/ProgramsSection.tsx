@@ -1,72 +1,203 @@
 'use client'
 
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
+import { CaretRight, Plus } from '@phosphor-icons/react/dist/ssr';
 import { FadeInView } from '@/components/animations/FadeInView';
+
+const programs = [
+  {
+    image: '/gallery/young-champion.jpg',
+    title: 'Kleine Tijgers',
+    age: '4-6 jaar',
+    teaser: 'Speels kennismaken met Taekwondo',
+    description: 'Leuke introductielessen die coördinatie, focus en zelfvertrouwen opbouwen door leeftijdsgeschikte spelletjes en basis Taekwondo bewegingen.',
+    features: [
+      'Motorische ontwikkeling',
+      'Basis trappen & blokken',
+      'Luistervaardigheden',
+    ],
+  },
+  {
+    image: '/gallery/jeugd-training.jpg',
+    title: 'Junioren',
+    age: '7-17 jaar',
+    teaser: 'Discipline, fitheid & zelfverdediging',
+    description: 'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
+    features: [
+      'Zelfvertrouwen opbouwen',
+      'Zelfverdediging',
+      'Discipline & respect',
+    ],
+  },
+  {
+    image: '/gallery/volwassenen-sparring.jpg',
+    title: 'Volwassenen',
+    age: '18+ jaar',
+    teaser: 'Conditie, kracht & mentale focus',
+    description: 'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',
+    features: [
+      'Zelfvertrouwen opbouwen',
+      'Conditie verbeteren',
+      'Zelfverdediging',
+    ],
+  },
+  {
+    image: '/gallery/ladies-only-training.jpg',
+    title: 'Ladies Only',
+    age: '18+ jaar',
+    teaser: 'Trainen in een veilige, fijne groep',
+    description: 'Een krachtig ladies-only programma gericht op conditie, zelfvertrouwen en zelfverdediging, speciaal ontwikkeld voor vrouwen.',
+    features: [
+      'Sterker worden, mentaal en fysiek',
+      'Zelfverdediging in de praktijk',
+      'Veilig trainen in een fijne groep',
+    ],
+  },
+];
+
+function ProgramCard({
+  program,
+  index,
+  isOpen,
+  onToggle,
+}: {
+  program: (typeof programs)[number];
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const contentId = `program-content-${index}`;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+      className="flex-shrink-0 w-[82vw] snap-center sm:w-auto sm:snap-align-none"
+    >
+      <div
+        role="button"
+        tabIndex={0}
+        aria-expanded={isOpen}
+        aria-controls={contentId}
+        onClick={onToggle}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onToggle();
+          }
+        }}
+        className="relative h-[440px] sm:h-[460px] lg:h-[480px] rounded-lg overflow-hidden group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      >
+        {/* Full Background Image */}
+        <Image
+          src={program.image}
+          alt={program.title}
+          fill
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 45vw, 82vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+
+        {/* Dark Overlay */}
+        <div
+          className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
+            isOpen
+              ? 'from-black via-black/90 to-black/50'
+              : 'from-black/95 via-black/40 to-black/10 group-hover:via-black/70'
+          }`}
+        />
+
+        {/* Top: Age Badge + Toggle Indicator */}
+        <div className="absolute inset-x-0 top-0 p-4 flex items-center justify-between">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-white bg-primary/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+            {program.age}
+          </span>
+          <span
+            className={`flex items-center justify-center w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white transition-transform duration-300 ${
+              isOpen ? 'rotate-45 bg-primary border-primary' : ''
+            }`}
+          >
+            <Plus className="w-4 h-4" weight="bold" />
+          </span>
+        </div>
+
+        {/* Bottom Content */}
+        <div className="absolute inset-x-0 bottom-0 p-5 space-y-3">
+          <div>
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white leading-tight">
+              {program.title}
+            </h3>
+            <p
+              className={`text-white/70 text-sm mt-1 transition-opacity duration-300 ${
+                isOpen ? 'opacity-0 h-0' : 'opacity-100'
+              }`}
+            >
+              {program.teaser}
+            </p>
+          </div>
+
+          {/* Expandable Info */}
+          <AnimatePresence initial={false}>
+            {isOpen && (
+              <motion.div
+                id={contentId}
+                key="content"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+                className="overflow-hidden"
+              >
+                <div className="space-y-3 pt-1">
+                  <p className="text-white/90 text-sm leading-relaxed">
+                    {program.description}
+                  </p>
+
+                  <ul className="space-y-1.5">
+                    {program.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2 text-xs text-white/90">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    href="/inschrijven"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center justify-center w-full gap-1 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
+                  >
+                    Inschrijven
+                    <CaretRight className="w-4 h-4" weight="bold" />
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export function ProgramsSection() {
   const [activeCard, setActiveCard] = useState<number | null>(null);
-  const programs = [
-    {
-      image: '/gallery/young-champion.jpg',
-      title: 'Kleine Tijgers',
-      age: '4-6 jaar',
-      description: 'Leuke introductielessen die coördinatie, focus en zelfvertrouwen opbouwen door leeftijdsgeschikte spelletjes en basis Taekwondo bewegingen.',
-      features: [
-        'Motorische ontwikkeling',
-        'Basis trappen & blokken',
-        'Luistervaardigheden',
-      ],
-    },
-    {
-      image: '/gallery/jeugd-training.jpg',
-      title: 'Junioren',
-      age: '7-17 jaar',
-      description: 'Uitgebreide training die discipline, fitheid en zelfverdedigingsvaardigheden ontwikkelt terwijl sterke karakterfundamenten worden gelegd.',
-      features: [
-        'Zelfvertrouwen opbouwen',
-        'Zelfverdediging',
-        'Discipline & respect',
-      ],
-    },
-    {
-      image: '/gallery/volwassenen-sparring.jpg',
-      title: 'Volwassenen',
-      age: '18+ jaar',
-      description: 'Dynamische training gericht op persoonlijke ontwikkeling, waarbij je werkt aan zelfvertrouwen, conditie en mentale kracht.',
-      features: [
-        'Zelfvertrouwen opbouwen',
-        'Conditie verbeteren',
-        'Zelfverdediging',
-      ],
-    },
-    {
-      image: '/gallery/ladies-only-training.jpg',
-      title: 'Ladies Only',
-      age: '18+ jaar',
-      description: 'Een krachtig ladies-only programma gericht op conditie, zelfvertrouwen en zelfverdediging, speciaal ontwikkeld voor vrouwen.',
-      features: [
-        'Sterker worden, mentaal en fysiek',
-        'Zelfverdediging in de praktijk',
-        'Veilig trainen in een fijne groep',
-      ],
-    },
-  ];
 
   return (
     <section id="programs" className="py-16 sm:py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4 max-w-7xl">
-        
+
         {/* Header */}
-        <FadeInView className="mb-12 sm:mb-16 lg:mb-20">
-          <div className="max-w-3xl space-y-8">
-            <div className="inline-block">
-              <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
-                Programma&apos;s
-              </span>
-            </div>
+        <FadeInView className="mb-16 sm:mb-20 lg:mb-24">
+          <div className="max-w-3xl space-y-6">
+            <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+              Programma&apos;s
+            </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
               Voor iedere<br />
               <span className="text-primary">leeftijd &amp; niveau</span>
@@ -77,91 +208,33 @@ export function ProgramsSection() {
           </div>
         </FadeInView>
 
-        {/* Programs Grid - Slider on mobile */}
-        <FadeInView delay={0.2} className="mb-12 sm:mb-16 lg:mb-20">
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 lg:grid lg:grid-cols-4 lg:gap-6 pb-4 -mx-4 px-4 lg:mx-0 lg:px-0 scrollbar-hide">
-          {programs.map((program, index) => (
-            <div
-              key={index}
-              onClick={() => setActiveCard(activeCard === index ? null : index)}
-              className="relative h-[450px] rounded-xl overflow-hidden group flex-shrink-0 w-[85vw] sm:w-auto snap-center lg:snap-align-none cursor-pointer"
-            >
-              {/* Full Background Image */}
-              <Image
-                src={program.image}
-                alt={program.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+        {/* Programs Grid — horizontal scroll on mobile, 2-col on tablet, 4-col on desktop */}
+        <div className="mb-16 sm:mb-20 lg:mb-24">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4 lg:gap-6 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
+            {programs.map((program, index) => (
+              <ProgramCard
+                key={program.title}
+                program={program}
+                index={index}
+                isOpen={activeCard === index}
+                onToggle={() => setActiveCard((prev) => (prev === index ? null : index))}
               />
-              
-              {/* Dark Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-300 ${
-                activeCard === index 
-                  ? 'from-black via-black/95 to-black/80' 
-                  : 'from-black via-black/60 to-black/20 lg:group-hover:from-black lg:group-hover:via-black/95 lg:group-hover:to-black/80'
-              }`} />
-
-              {/* Content Container */}
-              <div className={`absolute inset-0 p-5 flex flex-col transition-all duration-500 ${
-                activeCard === index 
-                  ? 'justify-end' 
-                  : 'justify-between lg:group-hover:justify-end'
-              }`}>
-                
-                {/* Top: Age Badge */}
-                <div className="flex justify-end">
-                  <span className="text-xs font-bold uppercase tracking-wider text-white bg-primary/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                    {program.age}
-                  </span>
-                </div>
-
-                {/* Bottom Content */}
-                <div className="space-y-3">
-                  <h3 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight">
-                    {program.title}
-                  </h3>
-                  
-                  {/* Expandable Info */}
-                  <div className={`space-y-3 transition-all duration-500 ${
-                    activeCard === index 
-                      ? 'opacity-100 max-h-96' 
-                      : 'opacity-0 max-h-0 overflow-hidden lg:group-hover:opacity-100 lg:group-hover:max-h-96'
-                  }`}>
-                    <p className="text-white/90 text-sm leading-relaxed">
-                      {program.description}
-                    </p>
-
-                    <ul className="space-y-1.5">
-                      {program.features.map((feature, fIndex) => (
-                        <li key={fIndex} className="flex items-start gap-2 text-xs text-white/90">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <Link
-                      href="/inschrijven"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-black font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
-                    >
-                      Inschrijven
-                      <span className="ml-2">&rarr;</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
           </div>
-        </FadeInView>
+
+          {/* Mobile swipe hint */}
+          <div className="flex sm:hidden items-center justify-center gap-1.5 mt-4 text-muted-foreground text-xs font-medium">
+            <span>Swipe voor meer programma&apos;s</span>
+            <CaretRight className="w-3.5 h-3.5" />
+          </div>
+        </div>
 
         {/* Bottom CTA */}
-        <FadeInView delay={0.3} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <FadeInView delay={0.15} className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             asChild
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-lg"
+            className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 font-semibold rounded-lg"
           >
             <Link href="/inschrijven">Inschrijven</Link>
           </Button>
@@ -169,7 +242,7 @@ export function ProgramsSection() {
             asChild
             size="lg"
             variant="outline"
-            className="border-border text-foreground hover:bg-muted px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-lg"
+            className="w-full sm:w-auto border-border text-foreground hover:bg-muted px-8 sm:px-12 font-semibold rounded-lg"
           >
             <Link href="/schedule">Bekijk Rooster</Link>
           </Button>

@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
-import { Phone, Mail, CheckCircle2 } from 'lucide-react'
+import { Phone, Envelope, CheckCircle } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { cn } from '@/lib/utils'
@@ -61,22 +61,16 @@ export function RegisterSection() {
     }
 
     try {
-      const { supabase } = await import('@/lib/supabase')
-      const { error } = await supabase
-        .from('registrations')
-        .insert([{
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          birth_date: formData.birthDate || null,
-          parent_name: formData.parentName || null,
-          parent_email: formData.parentEmail || null,
-          parent_phone: formData.parentPhone || null,
-          message: formData.message || null,
-        }])
+      const response = await fetch('/api/inschrijven', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const result = await response.json().catch(() => null)
 
-      if (error) throw error
+      if (!response.ok) {
+        throw new Error(result?.error || 'Verzenden mislukt')
+      }
 
       setIsSubmitted(true)
       toast({
@@ -87,7 +81,7 @@ export function RegisterSection() {
       console.error('Registration error:', error)
       toast({
         title: 'Er ging iets mis',
-        description: 'Probeer het opnieuw of neem contact op via telefoon.',
+        description: error instanceof Error ? error.message : 'Probeer het opnieuw of neem contact op via telefoon.',
         variant: 'destructive',
       })
     }
@@ -100,7 +94,7 @@ export function RegisterSection() {
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center space-y-8">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/10">
-              <CheckCircle2 className="w-10 h-10 text-green-500" />
+              <CheckCircle className="w-10 h-10 text-green-500" weight="fill" />
             </div>
             
             <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
@@ -371,7 +365,7 @@ export function RegisterSection() {
                 href="mailto:info@taekwondoblackdragon.nl"
                 className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
               >
-                <Mail className="w-5 h-5" />
+                <Envelope className="w-5 h-5" />
                 <span>info@taekwondoblackdragon.nl</span>
               </a>
               

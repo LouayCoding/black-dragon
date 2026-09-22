@@ -1,0 +1,17 @@
+{
+  "source": {
+    "host": "mail.mijndomein.nl",
+    "port": 993
+  },
+  "destination": {
+    "host": "s20372.fra1.stableserver.net",
+    "port": 993
+  },
+  "accounts": [
+    {
+      "email": "info@taekwondoblackdragon.nl",
+      "sourcePassword": "",
+      "destinationPassword": ""
+    }
+  ]
+}

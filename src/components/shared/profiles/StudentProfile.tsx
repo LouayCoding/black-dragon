@@ -1,5 +1,5 @@
 import * as React from "react"
-import { X, Mail, Phone, MapPin, Calendar, Award, TrendingUp, Clock } from "lucide-react"
+import { X, Envelope, Phone, MapPin, Calendar, Trophy, TrendUp, Clock } from "@phosphor-icons/react/dist/ssr"
 import { cn } from "@/lib/utils"
 
 export interface StudentData {
@@ -68,7 +68,7 @@ const StudentProfile = React.forwardRef<HTMLDivElement, StudentProfileProps>(
                 
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+                    <Envelope className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-zinc-500 dark:text-zinc-400">Email</p>
@@ -105,7 +105,7 @@ const StudentProfile = React.forwardRef<HTMLDivElement, StudentProfileProps>(
 
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center flex-shrink-0">
-                    <Award className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+                    <Trophy className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-zinc-500 dark:text-zinc-400">Band</p>
@@ -115,7 +115,7 @@ const StudentProfile = React.forwardRef<HTMLDivElement, StudentProfileProps>(
 
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+                    <TrendUp className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-zinc-500 dark:text-zinc-400">Aanwezigheid</p>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Calendar, User, LogOut, AlertCircle, CheckCircle } from 'lucide-react'
+import { Calendar, SignOut, CheckCircle } from '@phosphor-icons/react/dist/ssr'
 import { supabase, Student, Attendance } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
@@ -180,7 +180,7 @@ export default function StudentPortal() {
             </div>
           </div>
           <Button variant="outline" onClick={handleLogout}>
-            <LogOut className="w-4 h-4 mr-2" />
+            <SignOut className="w-4 h-4 mr-2" />
             Uitloggen
           </Button>
         </div>

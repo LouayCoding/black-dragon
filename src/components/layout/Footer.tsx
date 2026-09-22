@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { FacebookLogo, InstagramLogo, Envelope, Phone, MapPin } from '@phosphor-icons/react/dist/ssr';
 
 export function Footer() {
   const siteLinks = [
-    { label: 'Programmas', href: '/programs' },
+    { label: "Programma's", href: '/programs' },
     { label: 'Rooster', href: '/schedule' },
     { label: 'Tarieven', href: '/tarieven' },
     { label: 'Over Ons', href: '/about' },
@@ -56,7 +56,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Facebook size={18} />
+                <FacebookLogo size={18} />
               </a>
               <a
                 href="https://www.instagram.com/taekwondoblackdragon/"
@@ -64,7 +64,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Instagram size={18} />
+                <InstagramLogo size={18} />
               </a>
               <a
                 href="https://www.tiktok.com/@taekwondoblackdragon"
@@ -84,7 +84,7 @@ export function Footer() {
                 href="mailto:info@taekwondoblackdragon.nl"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Mail size={18} />
+                <Envelope size={18} />
               </a>
             </div>
           </div>
@@ -167,7 +167,7 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-primary flex-shrink-0" />
+                <Envelope size={18} className="text-primary flex-shrink-0" />
                 <a href="mailto:info@taekwondoblackdragon.nl" className="text-white/70 hover:text-primary transition-colors text-sm">
                   info@taekwondoblackdragon.nl
                 </a>

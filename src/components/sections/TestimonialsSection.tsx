@@ -1,6 +1,6 @@
 'use client'
 
-import { Star } from 'lucide-react';
+import { Star } from '@phosphor-icons/react/dist/ssr';
 import { FadeInView } from '@/components/animations/FadeInView';
 
 export function TestimonialsSection() {
@@ -60,7 +60,7 @@ export function TestimonialsSection() {
               {/* Rating */}
               <div className="flex gap-0.5 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
+                  <Star key={i} className="w-3.5 h-3.5 text-primary" weight="fill" />
                 ))}
               </div>
 

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { X, Play } from 'lucide-react';
+import { X, Play } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/components/ui/button';
 import { FadeInView } from '@/components/animations/FadeInView';
 
@@ -185,7 +185,7 @@ export function GallerySection() {
                 {item.type === 'video' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="w-5 h-5 text-black ml-0.5" fill="currentColor" />
+                      <Play className="w-5 h-5 text-black ml-0.5" weight="fill" />
                     </div>
                   </div>
                 )}

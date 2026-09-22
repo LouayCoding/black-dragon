@@ -24,8 +24,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['var(--font-montserrat)', 'sans-serif'],
-        sans: ['var(--font-poppins)', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-heading)', 'Geist', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-heading)', 'Geist', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",

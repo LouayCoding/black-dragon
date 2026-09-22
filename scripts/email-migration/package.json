@@ -1,0 +1,9 @@
+{
+  "name": "email-migration",
+  "private": true,
+  "type": "module",
+  "description": "Kopieer mailboxen van Mijndomein naar Verpex via IMAP.",
+  "dependencies": {
+    "imapflow": "^1.2.18"
+  }
+}

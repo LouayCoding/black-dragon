@@ -49,15 +49,6 @@ export function InstructorsSection() {
       specialties: ['Taeguk (stijltechniek)', 'Sparring', 'Kinderbegeleiding', 'Discipline & respect'],
     },
     {
-      name: 'Isra Jallab',
-      role: 'Assistent Trainster',
-      image: '/instructors/isra-jallab.jpg',
-      shortBio: 'Gediplomeerd nationaal scheidsrechter. Gedreven in het begeleiden van leerlingen met focus op techniek en discipline.',
-      fullBio: 'Isra Jallab is gediplomeerd nationaal scheidsrechter en gedreven in het begeleiden van leerlingen op verschillende niveaus. Haar focus ligt op techniek, discipline en persoonlijke ontwikkeling. Isra werkt met veel aandacht aan taeguk (stijltechniek). In haar lessen staan respect, zelfvertrouwen en plezier in de sport centraal.',
-      achievements: ['Gediplomeerd nationaal scheidsrechter'],
-      specialties: ['Taeguk (stijltechniek)', 'Techniek', 'Persoonlijke ontwikkeling'],
-    },
-    {
       name: 'Wissal Ousllam',
       role: 'Assistent Trainster',
       image: '/instructors/wissal-ousllam.jpg',
@@ -65,6 +56,15 @@ export function InstructorsSection() {
       fullBio: 'Wissal Ousllam is actief als vechter en neemt deel aan nationale en internationale toernooien. In 2025 werd zij 2e op het Nederlands Kampioenschap. Zij is ook gediplomeerd nationaal scheidsrechter. Naast haar eigen topsportcarrière begeleidt zij ook kinderen, gespecialiseerd in sparring en geavanceerde vechttechnieken. Haar doel is om zich te blijven ontwikkelen en toe te werken naar deelname aan de Olympische Spelen.',
       achievements: ['2e plaats NK 2025', 'Gediplomeerd nationaal scheidsrechter', 'Actieve topsporter', 'Olympische ambitie'],
       specialties: ['Sparring', 'Geavanceerde vechttechnieken', 'Competitie', 'Kinderbegeleiding'],
+    },
+    {
+      name: 'Isra Jallab',
+      role: 'Assistent Trainster',
+      image: '/instructors/isra-jallab.jpg',
+      shortBio: 'Gediplomeerd nationaal scheidsrechter. Gedreven in het begeleiden van leerlingen met focus op techniek en discipline.',
+      fullBio: 'Isra Jallab is gediplomeerd nationaal scheidsrechter en gedreven in het begeleiden van leerlingen op verschillende niveaus. Haar focus ligt op techniek, discipline en persoonlijke ontwikkeling. Isra werkt met veel aandacht aan taeguk (stijltechniek). In haar lessen staan respect, zelfvertrouwen en plezier in de sport centraal.',
+      achievements: ['Gediplomeerd nationaal scheidsrechter'],
+      specialties: ['Taeguk (stijltechniek)', 'Techniek', 'Persoonlijke ontwikkeling'],
     },
     {
       name: 'Nando Silva',

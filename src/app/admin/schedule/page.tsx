@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Plus, Edit, Trash2, Clock, MapPin } from 'lucide-react'
+import { Plus, PencilSimple, Trash, Clock, MapPin } from '@phosphor-icons/react/dist/ssr'
 import { supabase, Lesson } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
@@ -323,10 +323,10 @@ export default function SchedulePage() {
                     </div>
                     <div className="flex gap-2">
                       <Button variant="outline" size="sm" onClick={() => openEditDialog(lesson)}>
-                        <Edit className="w-4 h-4" />
+                        <PencilSimple className="w-4 h-4" />
                       </Button>
                       <Button variant="outline" size="sm" onClick={() => handleDelete(lesson.id)}>
-                        <Trash2 className="w-4 h-4 text-red-600" />
+                        <Trash className="w-4 h-4 text-red-600" />
                       </Button>
                     </div>
                   </div>

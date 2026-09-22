@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Users, Calendar, AlertCircle, TrendingUp } from 'lucide-react'
+import { Users, Calendar, WarningCircle, TrendUp } from '@phosphor-icons/react/dist/ssr'
 import { supabase } from '@/lib/supabase'
 
 interface DashboardStats {
@@ -56,7 +56,7 @@ export default function AdminDashboard() {
     {
       name: 'Actieve Leerlingen',
       value: stats.activeStudents,
-      icon: TrendingUp,
+      icon: TrendUp,
       color: 'text-green-600',
       bgColor: 'bg-green-50'
     },
@@ -70,7 +70,7 @@ export default function AdminDashboard() {
     {
       name: 'Ziekmeldingen',
       value: stats.pendingAbsences,
-      icon: AlertCircle,
+      icon: WarningCircle,
       color: 'text-red-600',
       bgColor: 'bg-red-50'
     }
@@ -125,7 +125,7 @@ export default function AdminDashboard() {
             </a>
             <a href="/admin/absences" className="block p-4 rounded-lg border border-border hover:bg-muted transition-colors">
               <div className="flex items-center gap-3">
-                <AlertCircle className="w-5 h-5 text-primary" />
+                <WarningCircle className="w-5 h-5 text-primary" />
                 <span className="font-medium">Ziekmeldingen Bekijken</span>
               </div>
             </a>

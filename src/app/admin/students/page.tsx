@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Plus, Edit, Trash2, UserPlus, Calendar } from 'lucide-react'
+import { Plus, PencilSimple, Trash, UserPlus, Calendar } from '@phosphor-icons/react/dist/ssr'
 import { supabase, Student } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
@@ -420,10 +420,10 @@ export default function StudentsPage() {
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex gap-2 justify-end">
                       <Button variant="outline" size="sm" onClick={() => openEditDialog(student)}>
-                        <Edit className="w-4 h-4" />
+                        <PencilSimple className="w-4 h-4" />
                       </Button>
                       <Button variant="outline" size="sm" onClick={() => handleDelete(student.id)}>
-                        <Trash2 className="w-4 h-4 text-red-600" />
+                        <Trash className="w-4 h-4 text-red-600" />
                       </Button>
                     </div>
                   </td>

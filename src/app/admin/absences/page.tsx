@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Calendar, User, FileText } from 'lucide-react'
+import { Calendar, User, FileText } from '@phosphor-icons/react/dist/ssr'
 import { supabase, Attendance, Student } from '@/lib/supabase'
 import { useToast } from '@/hooks/use-toast'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'

@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button';
-import { Check, Star, ExternalLink } from 'lucide-react';
+import { Check, Star, ArrowSquareOut } from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FadeInView } from '@/components/animations/FadeInView';
@@ -16,7 +16,6 @@ export function PricingSection() {
       image: '/pricing/basis.jpg',
       features: [
         '1x per week training',
-        '1x per jaar bandexamen',
         'Toegang tot basisprogramma',
         'Online lesmateriaal',
       ],
@@ -30,7 +29,6 @@ export function PricingSection() {
       image: '/pricing/standaard.jpg',
       features: [
         '2x per week training',
-        '2x per jaar bandexamen',
         'Toegang tot alle programma\'s',
         'Online lesmateriaal',
       ],
@@ -109,7 +107,7 @@ export function PricingSection() {
               {plan.popular && (
                 <div className="absolute top-4 right-4 z-10">
                   <span className="bg-primary text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-full flex items-center gap-1">
-                    <Star className="w-3 h-3 fill-current" />
+                    <Star className="w-3 h-3" weight="fill" />
                     Populair
                   </span>
                 </div>
@@ -192,7 +190,7 @@ export function PricingSection() {
                 <div className="flex-grow">
                   <h5 className="font-semibold text-foreground mb-1 flex items-center gap-2">
                     Ooievaarspas
-                    <ExternalLink className="w-3.5 h-3.5 text-foreground/30 group-hover:text-primary transition-colors" />
+                    <ArrowSquareOut className="w-3.5 h-3.5 text-foreground/30 group-hover:text-primary transition-colors" />
                   </h5>
                   <p className="text-foreground/50 text-sm">
                     Tot 18 jaar: <strong className="text-foreground">100% vergoed</strong> &middot; 18+: <strong className="text-foreground">50% vergoed</strong>
@@ -214,7 +212,7 @@ export function PricingSection() {
                 <div className="flex-grow">
                   <h5 className="font-semibold text-foreground mb-1 flex items-center gap-2">
                     Leergeld
-                    <ExternalLink className="w-3.5 h-3.5 text-foreground/30 group-hover:text-primary transition-colors" />
+                    <ArrowSquareOut className="w-3.5 h-3.5 text-foreground/30 group-hover:text-primary transition-colors" />
                   </h5>
                   <p className="text-foreground/50 text-sm">
                     Vergoeding sportkleding &amp; materiaal

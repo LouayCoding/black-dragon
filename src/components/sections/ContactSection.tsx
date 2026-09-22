@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Envelope, Phone, MapPin, Clock } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FadeInView } from '@/components/animations/FadeInView';
@@ -72,7 +72,7 @@ export function ContactSection() {
               {/* Email */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-primary" />
+                  <Envelope className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="font-semibold text-foreground text-sm mb-1">E-mail</p>

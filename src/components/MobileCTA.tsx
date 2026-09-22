@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Phone } from 'lucide-react';
+import { Phone } from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 

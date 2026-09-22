@@ -1,6 +1,6 @@
 'use client'
 
-import { Clock, MapPin } from 'lucide-react';
+import { Clock, MapPin } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FadeInView } from '@/components/animations/FadeInView';

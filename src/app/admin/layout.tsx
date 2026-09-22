@@ -5,25 +5,25 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { 
-  LayoutDashboard, 
+  SquaresFour, 
   Users, 
   Calendar, 
-  ClipboardList, 
-  Settings,
-  LogOut,
-  Menu,
+  ClipboardText, 
+  Gear,
+  SignOut,
+  List,
   X
-} from 'lucide-react'
+} from '@phosphor-icons/react/dist/ssr'
 import { cn } from '@/lib/utils'
 import { getSession, signOut, isAdmin } from '@/lib/supabase-auth'
 import { useToast } from '@/hooks/use-toast'
 
 const navigation = [
-  { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+  { name: 'Dashboard', href: '/admin', icon: SquaresFour },
   { name: 'Leerlingen', href: '/admin/students', icon: Users },
   { name: 'Rooster', href: '/admin/schedule', icon: Calendar },
-  { name: 'Ziekmeldingen', href: '/admin/absences', icon: ClipboardList },
-  { name: 'Instellingen', href: '/admin/settings', icon: Settings },
+  { name: 'Ziekmeldingen', href: '/admin/absences', icon: ClipboardText },
+  { name: 'Instellingen', href: '/admin/settings', icon: Gear },
 ]
 
 export default function AdminLayout({
@@ -142,7 +142,7 @@ export default function AdminLayout({
             onClick={handleLogout}
             className="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-sm font-medium text-foreground/70 hover:bg-muted hover:text-foreground transition-colors"
           >
-            <LogOut className="w-5 h-5" />
+            <SignOut className="w-5 h-5" />
             Uitloggen
           </button>
         </div>
@@ -154,7 +154,7 @@ export default function AdminLayout({
             onClick={() => setSidebarOpen(true)}
             className="lg:hidden"
           >
-            <Menu className="w-6 h-6" />
+            <List className="w-6 h-6" />
           </button>
           <div className="flex-1" />
           <Link href="/" className="text-sm text-foreground/70 hover:text-foreground">
