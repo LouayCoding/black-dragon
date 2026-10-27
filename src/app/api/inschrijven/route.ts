@@ -1,9 +1,8 @@
+import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
 
-const RECIPIENT = 'info@taekwondoblackdragon.nl'
-const FROM =
-  process.env.RESEND_FROM ??
-  'Taekwondo Black Dragon <inschrijven@taekwondoblackdragon.nl>'
+const RECIPIENT = process.env.MAIL_TO ?? 'info@taekwondoblackdragon.nl'
+const FROM = process.env.MAIL_FROM ?? 'Taekwondo Black Dragon <inschrijven@stack666.com>'
 
 type RegistrationBody = {
   firstName?: unknown
@@ -60,9 +59,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Voer een geldig e-mailadres in.' }, { status: 400 })
   }
 
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
-    console.error('Inschrijving mail failed: RESEND_API_KEY ontbreekt')
+  const host = process.env.SMTP_HOST
+  const user = process.env.SMTP_USER
+  const pass = process.env.SMTP_PASS
+  if (!host || !user || !pass) {
+    console.error('Inschrijving mail failed: SMTP-instellingen ontbreken')
     return NextResponse.json(
       { error: 'De aanmelding kon niet worden verstuurd. Probeer het opnieuw of bel ons.' },
       { status: 502 },
@@ -96,30 +97,21 @@ export async function POST(request: Request) {
   `
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: FROM,
-        to: [RECIPIENT],
-        reply_to: email,
-        subject: `Nieuwe inschrijving: ${name}`,
-        html,
-        text,
-      }),
+    const transporter = nodemailer.createTransport({
+      host,
+      port: Number(process.env.SMTP_PORT ?? 587),
+      secure: process.env.SMTP_SECURE === 'true',
+      auth: { user, pass },
     })
 
-    if (!response.ok) {
-      const result = (await response.json().catch(() => null)) as { message?: string } | null
-      console.error('Inschrijving mail rejected', result?.message ?? response.status)
-      return NextResponse.json(
-        { error: 'De aanmelding kon niet worden verstuurd. Probeer het opnieuw of bel ons.' },
-        { status: 502 },
-      )
-    }
+    await transporter.sendMail({
+      from: FROM,
+      to: RECIPIENT,
+      replyTo: email,
+      subject: `Nieuwe inschrijving: ${name}`,
+      html,
+      text,
+    })
   } catch (error) {
     console.error('Inschrijving mail failed', error)
     return NextResponse.json(
